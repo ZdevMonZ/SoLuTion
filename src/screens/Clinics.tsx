@@ -124,7 +124,7 @@ export function Clinics() {
             */}
             <iframe
               key={district.key}
-              src={`/map-blue.html?d=${district.key}`}
+              src={`${import.meta.env.BASE_URL}map-blue.html?d=${district.key}`}
               title={`Clinic map — ${district.name}`}
               style={{ width: '100%', height: '100%', border: 0, display: 'block' }}
             />
