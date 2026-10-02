@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solution clinic map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+  html, body { margin:0; height:100%; background:#EEF1F5; }
+  #map { position:absolute; inset:0; }
+  .leaflet-container { font-family:'Karla', system-ui, sans-serif; background:#EEF1F5; }
+  .leaflet-control-attribution { font-size:10px; background:rgba(255,255,255,.72); }
+  .leaflet-tile-pane { filter:saturate(.3) brightness(1.04) contrast(.92) hue-rotate(178deg); }
+  .pin { display:flex; flex-direction:column; align-items:center; }
+  .pin .dot { border-radius:50%; border:2px solid #fff; display:flex; align-items:center; justify-content:center;
+    font-weight:700; color:#fff; box-shadow:0 6px 16px rgba(11,30,61,.35); font-family:'Karla',system-ui,sans-serif; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  var DISTRICTS = {
+    myeongdong: { center: [37.5638, 126.9873], zoom: 16, pins: [
+      [37.56338, 126.98405], [37.56455, 126.98560], [37.56600, 126.98860], [37.56145, 126.99290] ] },
+    hongdae: { center: [37.5565, 126.9245], zoom: 16, pins: [
+      [37.55690, 126.92390], [37.55520, 126.92600], [37.55840, 126.92230], [37.55380, 126.92750] ] },
+    gangnam: { center: [37.4990, 127.0290], zoom: 16, pins: [
+      [37.49790, 127.02760], [37.50010, 127.02540], [37.50120, 127.03080], [37.49630, 127.03250] ] }
+  };
+
+  var key = (new URLSearchParams(location.search).get('d') || 'myeongdong').toLowerCase();
+  var d = DISTRICTS[key] || DISTRICTS.myeongdong;
+
+  var map = L.map('map', { center: d.center, zoom: d.zoom, zoomControl: true, scrollWheelZoom: false });
+  L.control.zoom({ position: 'bottomright' }).addTo(map);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors', maxZoom: 19
+  }).addTo(map);
+
+  var STYLES = [
+    { size: 38, fs: 14, bg: 'linear-gradient(150deg,#3F6DC4,#2E5AAC)', stem: '#2E5AAC' },
+    { size: 32, fs: 12, bg: 'linear-gradient(150deg,#7FAEE4,#5B8FD4)', stem: '#5B8FD4' },
+    { size: 32, fs: 12, bg: 'linear-gradient(150deg,#7FAEE4,#5B8FD4)', stem: '#5B8FD4' },
+    { size: 30, fs: 12, bg: 'rgba(138,147,166,.95)', stem: '#8A93A6' }
+  ];
+
+  d.pins.forEach(function (ll, i) {
+    var s = STYLES[i] || STYLES[3];
+    var html = '<div class="pin"><div class="dot" style="width:' + s.size + 'px;height:' + s.size +
+      'px;font-size:' + s.fs + 'px;background:' + s.bg + '">' + (i + 1) +
+      '</div><div style="width:2px;height:9px;background:' + s.stem + '"></div></div>';
+    L.marker(ll, { icon: L.divIcon({ className: '', html: html, iconSize: [s.size, s.size + 9], iconAnchor: [s.size / 2, s.size + 9] }) }).addTo(map);
+  });
+</script>
+</body>
+</html>

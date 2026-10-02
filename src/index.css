@@ -1,0 +1,218 @@
+/*
+ * Base sheet and the handful of things inline styles cannot express: keyframes,
+ * hover, and focus.
+ *
+ * Everything else is an inline style built from `theme.ts`, which is how the
+ * design itself is written — one place per colour, and no second cascade to keep
+ * in sync with it.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Karla:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fafafa;
+  font-family: 'Karla', system-ui, sans-serif;
+  color: #14203a;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #2e5aac;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1e4490;
+  text-decoration: underline;
+}
+
+/*
+ * Every tappable thing in the design is a styled div, so the keyboard needs a
+ * visible ring of its own — the browser draws none for a div.
+ */
+*:focus-visible {
+  outline: 2px solid #2e5aac;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  text-align: inherit;
+}
+
+/* --- Hover states, named for what they sit on. --- */
+
+.btn-primary:hover {
+  background: #24488c;
+  box-shadow: 0 14px 30px rgba(46, 90, 172, 0.3);
+}
+
+.btn-ghost:hover {
+  border-color: #8fb8e8;
+  color: #2e5aac;
+}
+
+.btn-bright:hover {
+  filter: brightness(1.08);
+}
+
+.btn-close:hover {
+  background: #f3f6fa;
+  color: #14203a;
+}
+
+.btn-step:hover {
+  background: #f3f6fa;
+}
+
+.nav-item:hover {
+  background: #eff4fb;
+  color: #2e5aac;
+}
+
+.link-quiet:hover {
+  color: #2e5aac;
+}
+
+.card-hover:hover {
+  border-color: #cfdff4;
+}
+
+.card-lift:hover {
+  border-color: #8fb8e8;
+  box-shadow: 0 16px 36px rgba(20, 32, 58, 0.08);
+}
+
+.card-lift-soft:hover {
+  border-color: #8fb8e8;
+  box-shadow: 0 14px 32px rgba(20, 32, 58, 0.07);
+}
+
+.opt:hover {
+  border-color: #8fb8e8;
+}
+
+.chip-soft:hover {
+  background: #eff4fb;
+  color: #2e5aac;
+}
+
+.tag-hover:hover {
+  border-color: #8fb8e8;
+  background: #eff4fb;
+}
+
+.dashed-hover:hover {
+  border-color: #8fb8e8;
+  background: #f7fafe;
+}
+
+/* A disabled option says so by not responding, in the design's own grey. */
+.is-disabled {
+  cursor: not-allowed;
+}
+
+.is-disabled:hover {
+  border-color: inherit;
+  background: inherit;
+  box-shadow: none;
+  filter: none;
+}
+
+/* --- Motion. The design's own keyframes, unchanged. --- */
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes glowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glowSpinRev {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ringOut {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(300px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/*
+ * Someone who has asked their system for less motion gets none of it. The pages
+ * still read the same: every animation here is decoration around static content.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
