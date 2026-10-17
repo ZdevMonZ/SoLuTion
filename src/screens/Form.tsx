@@ -17,6 +17,7 @@ import {
   Shell,
   StepProgress,
 } from '../components/primitives'
+import { screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
 import { DISTRICTS } from '../data/catalog'
 import { SKIN_TONE, ageBandLabel, genderLabel } from '../data/strings'
@@ -34,13 +35,14 @@ const optionStyle = (on: boolean) => ({
 
 export function Form() {
   const { profile, setAgeBand, setGender, setFitzpatrick, setDistrict, go } = useStore()
+  const narrow = useNarrow()
 
   return (
-    <div style={{ flex: 1, padding: '48px 32px 80px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 48, 80) }}>
       <Shell width={720}>
         <StepProgress step={1} />
 
-        <Display size={38} style={{ marginTop: 36, lineHeight: 1.2 }}>
+        <Display size={38} style={{ marginTop: narrow ? 24 : 36, lineHeight: 1.2 }}>
           A few details, then one photo.
         </Display>
         <Prose size={16} style={{ marginTop: 14, maxWidth: 560, lineHeight: 1.7 }}>
@@ -48,7 +50,7 @@ export function Form() {
           until you book.
         </Prose>
 
-        <Card style={{ marginTop: 40, padding: 32 }}>
+        <Card style={{ marginTop: narrow ? 28 : 40, padding: narrow ? 20 : 32 }}>
           <FieldLabel>AGE RANGE</FieldLabel>
           <div style={{ marginTop: 14, display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {AGE_BANDS.map((band) => (
@@ -75,7 +77,7 @@ export function Form() {
             style={{
               marginTop: 14,
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))',
+              gridTemplateColumns: 'repeat(auto-fit,minmax(min(150px,100%),1fr))',
               gap: 10,
             }}
           >
@@ -160,7 +162,7 @@ export function Form() {
             style={{
               marginTop: 14,
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit,minmax(196px,1fr))',
+              gridTemplateColumns: 'repeat(auto-fit,minmax(min(196px,100%),1fr))',
               gap: 12,
             }}
           >
@@ -247,7 +249,7 @@ export function Form() {
           <Note style={{ maxWidth: 420, lineHeight: 1.6 }}>
             Your webcam frame stays in the browser and is discarded after the reading.
           </Note>
-          <PrimaryButton onClick={() => go('capture')} fontSize={16}>
+          <PrimaryButton onClick={() => go('capture')} fontSize={16} full={narrow}>
             <span>Continue to camera</span>
             <span style={{ display: 'flex' }}>
               <Icon path={PATHS.arrow} size={19} weight={1.7} />

@@ -16,6 +16,7 @@
  * clock. The reading is then permanently "older" than the screen waiting for it.
  */
 import { useEffect, useState } from 'react'
+import { useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
 import { SIMULATED_ANALYSIS_MILLIS, useStore } from '../state/store'
 
@@ -41,6 +42,7 @@ const STARS = [
 
 export function Analyzing() {
   const { analysis, go } = useStore()
+  const narrow = useNarrow()
   // Whatever the store held when this screen opened — null on a first reading, the
   // previous one on a retake.
   const [before] = useState(() => analysis)
@@ -85,7 +87,7 @@ export function Analyzing() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '80px 32px',
+        padding: narrow ? '48px 16px' : '80px 32px',
         background: 'radial-gradient(70% 60% at 50% 46%, #17325C 0%, #0E2245 46%, #0B1E3D 100%)',
       }}
       role="status"
@@ -182,9 +184,9 @@ export function Analyzing() {
 
       <div
         style={{
-          marginTop: 48,
+          marginTop: narrow ? 32 : 48,
           fontFamily: FONT_DISPLAY,
-          fontSize: 30,
+          fontSize: narrow ? 26 : 30,
           fontWeight: 300,
           letterSpacing: '-.01em',
           color: '#F4F7FB',
@@ -227,7 +229,7 @@ export function Analyzing() {
       </div>
       <div
         style={{
-          marginTop: 48,
+          marginTop: narrow ? 32 : 48,
           fontSize: 13,
           lineHeight: 1.7,
           color: 'rgba(212,222,238,.6)',

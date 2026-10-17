@@ -16,6 +16,7 @@ import {
   Shell,
   Tag,
 } from '../components/primitives'
+import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
 import {
   DISTRICTS,
@@ -46,6 +47,7 @@ export function Clinics() {
   const { profile, savedClinicIds, setDistrict, selectClinic, toggleSavedClinic, go } = useStore()
   const treatment = useTreatment()
   const district = districtByKey(profile.districtKey) ?? DISTRICTS[0]
+  const narrow = useNarrow()
 
   const cheapest = cheapestPrice(district.key, treatment.id)
   const clinics = clinicsIn(district.key)
@@ -53,7 +55,7 @@ export function Clinics() {
     .sort((a, b) => a.price - b.price)
 
   return (
-    <div style={{ flex: 1, padding: '32px 32px 60px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 32, 60) }}>
       <Shell>
         <div
           style={{
@@ -73,7 +75,7 @@ export function Clinics() {
               {treatment.shortName} · price per session, lowest first
             </div>
           </div>
-          <div style={{ display: 'flex', gap: 9 }}>
+          <div style={{ display: 'flex', gap: narrow ? 8 : 9, width: narrow ? '100%' : undefined }}>
             {DISTRICTS.map((d) => {
               const on = d.key === district.key
               return (
@@ -82,7 +84,9 @@ export function Clinics() {
                   onClick={() => setDistrict(d.key)}
                   className="opt"
                   style={{
-                    padding: '10px 16px',
+                    padding: narrow ? '10px 6px' : '10px 16px',
+                    flex: narrow ? 1 : undefined,
+                    textAlign: 'center',
                     borderRadius: 9,
                     fontSize: 13.5,
                     fontWeight: 600,
@@ -100,22 +104,24 @@ export function Clinics() {
 
         <div
           style={{
-            marginTop: 26,
+            marginTop: narrow ? 20 : 26,
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,1.15fr) minmax(0,1fr)',
-            gap: 24,
+            gridTemplateColumns: columns(narrow, 'minmax(0,1.15fr) minmax(0,1fr)'),
+            gap: narrow ? 16 : 24,
             alignItems: 'start',
           }}
         >
           <div
             style={{
-              position: 'sticky',
-              top: 92,
-              borderRadius: 20,
+              // On a phone the map heads the list at a third of the screen, not
+              // a sticky full-height panel the list would scroll under.
+              position: narrow ? 'relative' : 'sticky',
+              top: narrow ? undefined : 92,
+              borderRadius: narrow ? 16 : 20,
               overflow: 'hidden',
               border: `1px solid ${C.border}`,
               background: '#EEF1F5',
-              height: 620,
+              height: narrow ? 280 : 620,
             }}
           >
             {/*
@@ -131,9 +137,9 @@ export function Clinics() {
             <div
               style={{
                 position: 'absolute',
-                left: 18,
-                top: 18,
-                padding: '9px 15px',
+                left: narrow ? 12 : 18,
+                top: narrow ? 12 : 18,
+                padding: narrow ? '7px 12px' : '9px 15px',
                 borderRadius: 10,
                 background: 'rgba(255,255,255,.94)',
                 border: `1px solid ${C.border}`,
@@ -155,9 +161,9 @@ export function Clinics() {
                 <Card
                   key={clinic.id}
                   className="card-lift-soft"
-                  style={{ padding: 24, borderRadius: 18 }}
+                  style={{ padding: narrow ? '18px 16px' : 24, borderRadius: 18 }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: narrow ? 12 : 16 }}>
                     <div
                       style={{
                         width: 30,
@@ -191,7 +197,7 @@ export function Clinics() {
                           style={{
                             minWidth: 0,
                             fontFamily: FONT_DISPLAY,
-                            fontSize: 18,
+                            fontSize: narrow ? 16.5 : 18,
                             fontWeight: 600,
                             lineHeight: 1.35,
                             color: C.ink,

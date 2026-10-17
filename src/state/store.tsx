@@ -15,7 +15,7 @@ import {
   type ReactNode,
 } from 'react'
 import { measureCanvas } from '../analysis/capture'
-import { urgencyOf } from '../analysis/ranking'
+import { levelDistance, urgencyOf } from '../analysis/ranking'
 import { MIN_SKIN_COVERAGE, analyse, referenceResult } from '../analysis/skinScoring'
 import type { FitzpatrickType } from '../analysis/phototype'
 import type { AgeBand, Gender, SkinAnalysisResult, UserProfile } from '../analysis/types'
@@ -140,10 +140,16 @@ const initialState: State = {
 /**
  * The matched list. Every treatment, ordered so the category needing most
  * attention leads; a treatment covering several categories is ranked by its
- * most-urgent one.
+ * most-urgent one. Inside one category, the treatments pitched at the level the
+ * reading found come first (`levelDistance`), and catalogue order settles the rest
+ * — `sort` is stable, and each area's entries are listed in the order to offer them.
  */
 const recommend = (result: SkinAnalysisResult): Treatment[] =>
-  [...TREATMENTS].sort((a, b) => urgencyOf(b.targets, result) - urgencyOf(a.targets, result))
+  [...TREATMENTS].sort(
+    (a, b) =>
+      urgencyOf(b.targets, result) - urgencyOf(a.targets, result) ||
+      levelDistance(a.targets, a.suits, result) - levelDistance(b.targets, b.suits, result),
+  )
 
 export interface Store extends State {
   savedReport: SkinAnalysisResult | null

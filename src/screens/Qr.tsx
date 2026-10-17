@@ -17,6 +17,7 @@ import {
   Shell,
   Well,
 } from '../components/primitives'
+import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
 import { STORE_ITEMS } from '../data/catalog'
 import { useStore } from '../state/store'
@@ -32,20 +33,21 @@ const STEPS = [
 export function Qr() {
   const { redeemedRewardId, go } = useStore()
   const reward = STORE_ITEMS.find((item) => item.id === redeemedRewardId) ?? STORE_ITEMS[0]
+  const narrow = useNarrow()
 
   return (
-    <div style={{ flex: 1, padding: '44px 32px 80px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 44, 80) }}>
       <Shell width={1000}>
         <BackLink onClick={() => go('rewards')}>Rewards</BackLink>
 
         <Card
           style={{
-            marginTop: 22,
-            padding: 44,
-            borderRadius: 22,
+            marginTop: narrow ? 16 : 22,
+            padding: narrow ? '28px 20px' : 44,
+            borderRadius: narrow ? 18 : 22,
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,auto) minmax(0,1fr)',
-            gap: 48,
+            gridTemplateColumns: columns(narrow, 'minmax(0,auto) minmax(0,1fr)'),
+            gap: narrow ? 28 : 48,
             alignItems: 'center',
           }}
         >
@@ -61,8 +63,8 @@ export function Qr() {
               aria-hidden
               style={{
                 position: 'absolute',
-                width: 400,
-                height: 400,
+                width: narrow ? 320 : 400,
+                height: narrow ? 320 : 400,
                 borderRadius: '50%',
                 background:
                   'radial-gradient(circle at 50% 50%, rgba(46,90,172,.11) 0%, rgba(143,184,232,.09) 44%, rgba(143,184,232,0) 70%)',
@@ -72,7 +74,7 @@ export function Qr() {
             <div
               style={{
                 position: 'relative',
-                padding: 22,
+                padding: narrow ? 14 : 22,
                 borderRadius: 20,
                 background: C.surface,
                 border: `1px solid ${C.border}`,

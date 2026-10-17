@@ -7,6 +7,7 @@
  */
 import { Icon, PATHS } from './Icons'
 import { Pressable } from './primitives'
+import { useNarrow } from './layout'
 import { C, FONT_DISPLAY } from '../theme'
 import { LANG_LABEL } from '../data/languages'
 import { useStore, type Page } from '../state/store'
@@ -78,6 +79,31 @@ export function Mark({ size = 30 }: { size?: number }) {
 export function TopNav() {
   const { page, signedIn, go, openModal } = useStore()
   const active = NAV_FOR[page]
+  const narrow = useNarrow()
+
+  const tabs = NAV.map((item) => {
+    const on = active === item.id
+    return (
+      <Pressable
+        key={item.id}
+        onClick={() => go(item.page)}
+        className="nav-item"
+        style={{
+          padding: narrow ? '9px 4px' : '9px 15px',
+          flex: narrow ? 1 : undefined,
+          textAlign: 'center',
+          borderRadius: 9,
+          fontSize: narrow ? 13.5 : 14.5,
+          fontWeight: on ? 600 : 500,
+          whiteSpace: 'nowrap',
+          color: on ? C.blue : C.bodyFaint,
+          background: on ? C.chip : 'transparent',
+        }}
+      >
+        {item.label}
+      </Pressable>
+    )
+  })
 
   return (
     <div
@@ -94,23 +120,23 @@ export function TopNav() {
         style={{
           maxWidth: 1320,
           margin: '0 auto',
-          padding: '0 32px',
-          height: 68,
+          padding: narrow ? '0 16px' : '0 32px',
+          height: narrow ? 56 : 68,
           display: 'flex',
           alignItems: 'center',
-          gap: 28,
+          gap: narrow ? 12 : 28,
         }}
       >
         <Pressable
           onClick={() => go('landing')}
-          style={{ display: 'flex', alignItems: 'center', gap: 11, flex: 'none' }}
+          style={{ display: 'flex', alignItems: 'center', gap: narrow ? 9 : 11, flex: 'none' }}
           label="Solution home"
         >
-          <Mark />
+          <Mark size={narrow ? 24 : 30} />
           <div
             style={{
               fontFamily: FONT_DISPLAY,
-              fontSize: 20,
+              fontSize: narrow ? 18 : 20,
               fontWeight: 600,
               letterSpacing: '-.01em',
               color: C.ink,
@@ -120,39 +146,29 @@ export function TopNav() {
           </div>
         </Pressable>
 
-        <nav style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 4, minWidth: 0 }}>
-          {NAV.map((item) => {
-            const on = active === item.id
-            return (
-              <Pressable
-                key={item.id}
-                onClick={() => go(item.page)}
-                className="nav-item"
-                style={{
-                  padding: '9px 15px',
-                  borderRadius: 9,
-                  fontSize: 14.5,
-                  fontWeight: on ? 600 : 500,
-                  whiteSpace: 'nowrap',
-                  color: on ? C.blue : C.bodyFaint,
-                  background: on ? C.chip : 'transparent',
-                }}
-              >
-                {item.label}
-              </Pressable>
-            )
-          })}
-        </nav>
+        {/* On a phone the tabs take their own row below, full width. */}
+        {narrow ? (
+          <div style={{ flex: 1 }} />
+        ) : (
+          <nav style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 4, minWidth: 0 }}>
+            {tabs}
+          </nav>
+        )}
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12, flex: 'none' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: narrow ? 8 : 12, flex: 'none' }}>
           <Pressable
             onClick={() => openModal('lang')}
             className="btn-ghost"
+            label={narrow ? `Language: ${LANG_LABEL}` : undefined}
             style={{
               display: 'flex',
               alignItems: 'center',
+              justifyContent: 'center',
               gap: 8,
-              padding: '8px 13px',
+              // The globe alone on a phone, at a size a thumb can hit.
+              padding: narrow ? 0 : '8px 13px',
+              width: narrow ? 40 : undefined,
+              height: narrow ? 40 : undefined,
               borderRadius: 9,
               border: `1px solid ${C.border}`,
               fontSize: 13.5,
@@ -163,8 +179,12 @@ export function TopNav() {
             <span style={{ display: 'flex', color: C.muted }}>
               <Icon path={PATHS.globe} size={17} />
             </span>
-            <span>{LANG_LABEL}</span>
-            <span style={{ fontSize: 10, color: C.muted }}>▾</span>
+            {narrow ? null : (
+              <>
+                <span>{LANG_LABEL}</span>
+                <span style={{ fontSize: 10, color: C.muted }}>▾</span>
+              </>
+            )}
           </Pressable>
 
           {signedIn ? (
@@ -192,13 +212,15 @@ export function TopNav() {
               onClick={() => openModal('signup')}
               className="btn-primary"
               style={{
-                padding: '10px 18px',
+                padding: narrow ? '0 14px' : '10px 18px',
+                height: narrow ? 40 : undefined,
                 borderRadius: 9,
                 background: C.blue,
                 color: '#fff',
                 fontFamily: FONT_DISPLAY,
-                fontSize: 14,
+                fontSize: narrow ? 13.5 : 14,
                 fontWeight: 600,
+                whiteSpace: 'nowrap',
               }}
             >
               Sign up
@@ -206,6 +228,18 @@ export function TopNav() {
           )}
         </div>
       </div>
+
+      {narrow ? (
+        <nav
+          style={{
+            display: 'flex',
+            gap: 2,
+            padding: '0 12px 8px',
+          }}
+        >
+          {tabs}
+        </nav>
+      ) : null}
     </div>
   )
 }

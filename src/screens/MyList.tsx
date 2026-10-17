@@ -7,12 +7,20 @@
  * disagree.
  */
 import { Icon, PATHS } from '../components/Icons'
-import { Card, Display, Note, Pressable, Shell } from '../components/primitives'
+import {
+  Card,
+  Display,
+  Note,
+  Pressable,
+  Shell,
+} from '../components/primitives'
+import { screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
 import {
   SEED_POSTS,
   clinicById,
   districtByKey,
+  priceRangeIn,
   treatmentById,
   won,
 } from '../data/catalog'
@@ -31,6 +39,7 @@ interface Row {
 
 export function MyList() {
   const {
+    profile,
     savedTreatmentIds,
     savedClinicIds,
     userPosts,
@@ -42,6 +51,7 @@ export function MyList() {
     toggleSavedClinic,
     go,
   } = useStore()
+  const narrow = useNarrow()
   const treatment = useTreatment()
   const feed = [...userPosts, ...SEED_POSTS]
 
@@ -53,7 +63,7 @@ export function MyList() {
         key: id,
         title: t.name,
         sub: t.cardSummary,
-        meta: t.priceRange,
+        meta: priceRangeIn(profile.districtKey, t.id),
         posts: feed.filter((p) => p.treatmentId === t.id).length,
         open: () => {
           selectTreatment(t.id)
@@ -113,7 +123,7 @@ export function MyList() {
   ]
 
   return (
-    <div style={{ flex: 1, padding: '44px 32px 80px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 44, 80) }}>
       <Shell>
         <Display size={34}>My list</Display>
         <Note style={{ marginTop: 10, fontSize: 15, color: C.bodyMuted }}>
@@ -122,10 +132,10 @@ export function MyList() {
 
         <div
           style={{
-            marginTop: 30,
+            marginTop: narrow ? 22 : 30,
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)',
-            gap: 28,
+            gridTemplateColumns: narrow ? 'minmax(0,1fr)' : 'minmax(0,1fr) minmax(0,1fr)',
+            gap: narrow ? 32 : 28,
             alignItems: 'start',
           }}
         >
@@ -159,7 +169,7 @@ export function MyList() {
 
               <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 14 }}>
                 {col.rows.map((row) => (
-                  <Card key={row.key} className="card-lift-soft" style={{ padding: 24, borderRadius: 18 }}>
+                  <Card key={row.key} className="card-lift-soft" style={{ padding: narrow ? '18px 16px' : 24, borderRadius: 18 }}>
                     <div
                       style={{
                         display: 'flex',

@@ -19,6 +19,7 @@ import {
   Shell,
   Well,
 } from '../components/primitives'
+import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, SHADOW_PANEL } from '../theme'
 import { DISTRICTS, clinicById, clinicsIn, districtByKey, won } from '../data/catalog'
 import { useStore, useTreatment } from '../state/store'
@@ -46,22 +47,23 @@ export function Booking() {
   // Reachable from My List, where the saved clinic may sit in another district.
   const clinic = clinicById(selectedClinicId) ?? clinicsIn(district.key)[0]
   const chosenDay = DAYS.find((d) => d.num === day) ?? DAYS[1]
+  const narrow = useNarrow()
 
   return (
-    <div style={{ flex: 1, padding: '32px 32px 80px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 32, 80) }}>
       <Shell width={1100}>
         <BackLink onClick={() => go('clinics')}>Clinics in {district.name}</BackLink>
 
         <div
           style={{
-            marginTop: 22,
+            marginTop: narrow ? 16 : 22,
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,1.3fr) minmax(0,1fr)',
-            gap: 32,
+            gridTemplateColumns: columns(narrow, 'minmax(0,1.3fr) minmax(0,1fr)'),
+            gap: narrow ? 18 : 32,
             alignItems: 'start',
           }}
         >
-          <Card style={{ padding: 32, borderRadius: 22 }}>
+          <Card style={{ padding: narrow ? '22px 18px' : 32, borderRadius: narrow ? 18 : 22 }}>
             <Display size={30}>Book a consultation</Display>
 
             <div style={{ marginTop: 28 }}>
@@ -71,7 +73,10 @@ export function Booking() {
               style={{
                 marginTop: 14,
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit,minmax(104px,1fr))',
+                // Four to a row on a phone, so the week reads as two even lines.
+                gridTemplateColumns: narrow
+                  ? 'repeat(4,minmax(0,1fr))'
+                  : 'repeat(auto-fit,minmax(min(104px,100%),1fr))',
                 gap: 10,
               }}
             >
@@ -131,7 +136,7 @@ export function Booking() {
                     disabled={!slot.open}
                     className={slot.open ? 'opt' : undefined}
                     style={{
-                      padding: '12px 20px',
+                      padding: narrow ? '12px 14px' : '12px 20px',
                       borderRadius: 10,
                       fontSize: 14,
                       background: slot.open ? (on ? C.chip : C.surface) : C.surfaceMuted,
@@ -166,9 +171,9 @@ export function Booking() {
 
           <Card
             style={{
-              position: 'sticky',
+              position: narrow ? 'static' : 'sticky',
               top: 92,
-              padding: 28,
+              padding: narrow ? '22px 18px' : 28,
               border: `1px solid ${C.borderBlue}`,
               boxShadow: SHADOW_PANEL,
             }}

@@ -5,7 +5,15 @@
  * sentence under the dial is computed rather than written — the two cannot drift.
  * An item priced above the balance is drawn locked and does not respond.
  */
-import { Card, Eyebrow, Note, Pressable, ScoreRing, Shell } from '../components/primitives'
+import {
+  Card,
+  Eyebrow,
+  Note,
+  Pressable,
+  ScoreRing,
+  Shell,
+} from '../components/primitives'
+import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
 import { EARN_RULES, NEXT_TIER_POINTS, STARTING_POINTS, STORE_ITEMS } from '../data/catalog'
 import { useStore } from '../state/store'
@@ -15,19 +23,27 @@ const KIND_LABEL = { PHYSICAL: 'PHYSICAL ITEM', COUPON: 'DIGITAL COUPON' } as co
 export function Rewards() {
   const { selectReward, go } = useStore()
   const toGo = Math.max(0, NEXT_TIER_POINTS - STARTING_POINTS)
+  const narrow = useNarrow()
 
   return (
-    <div style={{ flex: 1, padding: '44px 32px 80px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 44, 80) }}>
       <Shell>
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.25fr)',
-            gap: 32,
+            gridTemplateColumns: columns(narrow, 'minmax(0,1fr) minmax(0,1.25fr)'),
+            gap: narrow ? 18 : 32,
             alignItems: 'stretch',
           }}
         >
-          <Card style={{ position: 'relative', overflow: 'hidden', padding: 36, borderRadius: 22 }}>
+          <Card
+            style={{
+              position: 'relative',
+              overflow: 'hidden',
+              padding: narrow ? '22px 20px' : 36,
+              borderRadius: narrow ? 18 : 22,
+            }}
+          >
             <div
               aria-hidden
               style={{
@@ -56,27 +72,27 @@ export function Rewards() {
               <Eyebrow size={11.5}>POINTS BALANCE</Eyebrow>
               <div
                 style={{
-                  marginTop: 28,
+                  marginTop: narrow ? 20 : 28,
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 30,
+                  gap: narrow ? 20 : 30,
                   flexWrap: 'wrap',
                 }}
               >
                 <ScoreRing
                   value={STARTING_POINTS}
                   max={NEXT_TIER_POINTS}
-                  size={176}
+                  size={narrow ? 136 : 176}
                   thickness={0.14}
                   numeral={STARTING_POINTS.toLocaleString('en-US')}
                   caption="POINTS"
-                  numeralSize={42}
+                  numeralSize={narrow ? 34 : 42}
                 />
                 <div style={{ flex: 1, minWidth: 180 }}>
                   <div
                     style={{
                       fontFamily: FONT_DISPLAY,
-                      fontSize: 22,
+                      fontSize: narrow ? 19 : 22,
                       fontWeight: 600,
                       lineHeight: 1.4,
                       color: C.ink,
@@ -161,7 +177,7 @@ export function Rewards() {
               style={{
                 marginTop: 18,
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit,minmax(232px,1fr))',
+                gridTemplateColumns: 'repeat(auto-fit,minmax(min(232px,100%),1fr))',
                 gap: 16,
               }}
             >

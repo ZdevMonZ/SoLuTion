@@ -51,6 +51,18 @@ button {
   text-align: inherit;
 }
 
+/*
+ * iOS Safari zooms the whole page into any field set below 16px the moment it
+ * takes focus, and does not zoom back out. On a phone every field is 16px.
+ */
+@media (max-width: 760px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
 /* --- Hover states, named for what they sit on. --- */
 
 .btn-primary:hover {

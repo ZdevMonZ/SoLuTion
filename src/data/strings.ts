@@ -18,6 +18,7 @@ import type {
   SkinCategory,
 } from '../analysis/types'
 import { focusCategories } from '../analysis/types'
+import type { Pitch, Suits } from '../analysis/ranking'
 
 // --- Enum labels (EnumStrings.kt) ---
 
@@ -285,6 +286,26 @@ export const CAPTURE = {
   skip: 'Skip the capture',
 } as const
 
+// --- How a treatment's level sits against the reading (ranking.ts `pitchFor`) ---
+
+export const FIT = {
+  heading: 'SUITS YOU IF',
+  meantFor: 'MEANT FOR',
+  /** Without a reading, one line per area: "Pores: Needs care, Focus first". */
+  meantForLines: (suits: Suits): string[] =>
+    (Object.entries(suits) as [SkinCategory, SeverityLevel[]][]).map(
+      ([category, levels]) => `${categoryLabel(category)}: ${levels.map(levelLabel).join(', ')}`,
+    ),
+  /** With a reading, one sentence about the area that put this treatment here. */
+  verdict: (pitch: Pitch): string => {
+    const where = `Your reading puts ${categoryLabel(pitch.category).toLowerCase()} at "${levelLabel(pitch.level)}"`
+    if (pitch.verdict === 'fits') return `${where} — the level this is meant for.`
+    if (pitch.verdict === 'stronger')
+      return `${where}, milder than this is meant for. A gentler option may be all you need.`
+    return `${where}. This may be too gentle on its own, so ask about the stronger options too.`
+  },
+} as const
+
 // --- Chrome that is not derived from a reading ---
 
 export const UI = {
@@ -306,6 +327,9 @@ export const UI = {
   topMatch: 'TOP MATCH',
   priceRange: 'PRICE RANGE',
   perSession: 'PER SESSION',
+  course: 'COURSE',
+  downtime: 'DOWNTIME',
+  results: 'RESULTS',
   priceNote:
     'Chosen by our specialists. Prices are sample data for this prototype; final pricing is confirmed at the clinic.',
   partnerOffer:

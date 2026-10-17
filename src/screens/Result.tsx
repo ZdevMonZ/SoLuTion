@@ -21,6 +21,7 @@ import {
   ScoreRing,
   Shell,
 } from '../components/primitives'
+import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, FONT_MONO, toneFor } from '../theme'
 import {
   SKIN_TONE,
@@ -79,9 +80,10 @@ function SkinToneCard({
       : null
   const agreement =
     gap === null ? null : gap === 0 ? SKIN_TONE.agrees : gap === 1 ? SKIN_TONE.near : SKIN_TONE.differs
+  const narrow = useNarrow()
 
   return (
-    <Card style={{ padding: 26, borderRadius: 18 }}>
+    <Card style={{ padding: narrow ? '20px 18px' : 26, borderRadius: 18 }}>
       <FieldLabel>{SKIN_TONE.title}</FieldLabel>
       <div style={{ marginTop: 18, display: 'flex', flexWrap: 'wrap', gap: 28 }}>
         <div style={{ minWidth: 130 }}>
@@ -157,12 +159,13 @@ function SkinToneCard({
 export function Result() {
   const { analysis, capturedUrl, hasEnteredTabShell, profile, setFitzpatrick, go, openModal } =
     useStore()
+  const narrow = useNarrow()
 
   // Reachable only behind a reading; the guard is here so a stray navigation lands
   // somewhere sensible rather than on a blank page.
   if (!analysis) {
     return (
-      <div style={{ flex: 1, padding: '80px 32px' }}>
+      <div style={{ flex: 1, padding: screenPadding(narrow, 80, 80) }}>
         <Shell width={620}>
           <Display size={30}>No reading yet.</Display>
           <Prose style={{ marginTop: 14 }}>Take one and this page fills in.</Prose>
@@ -179,17 +182,24 @@ export function Result() {
   const count = COUNT_WORDS[rows.length] ?? String(rows.length)
 
   return (
-    <div style={{ flex: 1, padding: '48px 32px 80px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 48, 80) }}>
       <Shell>
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,.9fr) minmax(0,1.1fr)',
-            gap: 48,
+            gridTemplateColumns: columns(narrow, 'minmax(0,.9fr) minmax(0,1.1fr)'),
+            gap: narrow ? 28 : 48,
             alignItems: 'center',
           }}
         >
-          <Card style={{ position: 'relative', padding: 36, borderRadius: 22, overflow: 'hidden' }}>
+          <Card
+            style={{
+              position: 'relative',
+              padding: narrow ? 20 : 36,
+              borderRadius: narrow ? 18 : 22,
+              overflow: 'hidden',
+            }}
+          >
             <div
               aria-hidden
               style={{
@@ -208,7 +218,7 @@ export function Result() {
                 position: 'relative',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 32,
+                gap: narrow ? 20 : 32,
                 flexWrap: 'wrap',
               }}
             >
@@ -216,7 +226,8 @@ export function Result() {
                 value={analysis.overallScore}
                 numeral={String(analysis.overallScore)}
                 caption={UI.outOf}
-                size={150}
+                size={narrow ? 120 : 150}
+                numeralSize={narrow ? 40 : 48}
                 thickness={0.15}
               />
               <div style={{ flex: 1, minWidth: 200 }}>
@@ -225,7 +236,7 @@ export function Result() {
                   style={{
                     marginTop: 12,
                     fontFamily: FONT_DISPLAY,
-                    fontSize: 24,
+                    fontSize: narrow ? 20 : 24,
                     fontWeight: 400,
                     lineHeight: 1.4,
                     color: C.ink,
@@ -306,12 +317,20 @@ export function Result() {
               headline does — higher is better, so a short bar is the one to look at first, and
               nothing here is an alarm.
             </Prose>
-            <div style={{ marginTop: 28, display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+            <div
+              style={{
+                marginTop: narrow ? 22 : 28,
+                display: narrow ? 'grid' : 'flex',
+                flexWrap: 'wrap',
+                gap: narrow ? 10 : 12,
+              }}
+            >
               <PrimaryButton
                 onClick={() => (hasEnteredTabShell ? go('treatments') : openModal('signup'))}
                 height={52}
                 padding={26}
                 fontSize={15.5}
+                full={narrow}
               >
                 <span>{UI.seeTreatments}</span>
                 <span style={{ display: 'flex' }}>
@@ -322,7 +341,7 @@ export function Result() {
                 The browser's own print dialog saves a PDF. A button that opened
                 nothing would be the one thing on this page that is not real.
               */}
-              <GhostButton onClick={() => window.print()} height={52}>
+              <GhostButton onClick={() => window.print()} height={52} full={narrow}>
                 <span style={{ display: 'flex' }}>
                   <Icon path={PATHS.download} size={18} weight={1.6} />
                 </span>
@@ -331,7 +350,12 @@ export function Result() {
               <Pressable
                 onClick={() => go('capture')}
                 className="link-quiet"
-                style={{ fontSize: 13.5, color: C.muted, padding: '0 6px' }}
+                style={{
+                  fontSize: 13.5,
+                  color: C.muted,
+                  padding: narrow ? '10px 6px' : '0 6px',
+                  textAlign: 'center',
+                }}
               >
                 {UI.retake}
               </Pressable>
@@ -341,9 +365,9 @@ export function Result() {
 
         <div
           style={{
-            marginTop: 36,
+            marginTop: narrow ? 28 : 36,
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit,minmax(288px,1fr))',
+            gridTemplateColumns: 'repeat(auto-fit,minmax(min(288px,100%),1fr))',
             gap: 18,
           }}
         >
@@ -353,7 +377,11 @@ export function Result() {
               <Card
                 key={row.category}
                 className="card-hover"
-                style={{ padding: '26px 24px', borderRadius: 18, border: `1px solid ${tone.border}` }}
+                style={{
+                  padding: narrow ? '20px 18px' : '26px 24px',
+                  borderRadius: 18,
+                  border: `1px solid ${tone.border}`,
+                }}
               >
                 <div
                   style={{

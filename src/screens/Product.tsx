@@ -18,6 +18,7 @@ import {
   Prose,
   Shell,
 } from '../components/primitives'
+import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, FONT_MONO, houseOf } from '../theme'
 import { productById, productsFor, tieFor, won } from '../data/catalog'
 import { useStore, useTreatment } from '../state/store'
@@ -28,29 +29,31 @@ export function Product() {
   const product = productById(selectedProductId) ?? productsFor(treatment)[0]
   const house = houseOf(product.brand)
   const [checkoutNote, setCheckoutNote] = useState(false)
+  const narrow = useNarrow()
 
   return (
-    <div style={{ flex: 1, padding: '32px 32px 80px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 32, 80) }}>
       <Shell width={1200}>
         <BackLink onClick={() => go('detail')}>{treatment.name}</BackLink>
 
         <div
           style={{
-            marginTop: 22,
+            marginTop: narrow ? 16 : 22,
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)',
-            gap: 48,
+            gridTemplateColumns: columns(narrow, 'minmax(0,1fr) minmax(0,1fr)'),
+            gap: narrow ? 24 : 48,
             alignItems: 'start',
           }}
         >
           <div
             style={{
               position: 'relative',
-              borderRadius: 22,
+              borderRadius: narrow ? 18 : 22,
               overflow: 'hidden',
               border: `1px solid ${house.frameBorder}`,
               background: house.hero,
-              aspectRatio: '4/5',
+              // A 4:5 frame is most of a phone's screen before any words; square there.
+              aspectRatio: narrow ? '1' : '4/5',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

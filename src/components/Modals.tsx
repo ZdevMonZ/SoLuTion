@@ -11,6 +11,7 @@ import type { ReactNode } from 'react'
 import { Icon, PATHS } from './Icons'
 import { Mark } from './TopNav'
 import { Card, Dot, FieldLabel, Pressable, PrimaryButton } from './primitives'
+import { columns, useNarrow } from './layout'
 import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
 import { LANGUAGES } from '../data/languages'
 import { CLINICS, TREATMENTS, clinicsIn } from '../data/catalog'
@@ -26,6 +27,7 @@ function Backdrop({ onClose, children, width }: { onClose: () => void; children:
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [onClose])
+  const narrow = useNarrow()
 
   return (
     <div
@@ -38,9 +40,7 @@ function Backdrop({ onClose, children, width }: { onClose: () => void; children:
         background: 'rgba(11,30,61,.44)',
         backdropFilter: 'blur(3px)',
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 32,
+        padding: narrow ? 12 : 32,
         overflow: 'auto',
       }}
     >
@@ -51,9 +51,12 @@ function Backdrop({ onClose, children, width }: { onClose: () => void; children:
         role="dialog"
         aria-modal
         style={{
+          // Auto margins centre the sheet, and unlike flex centring they let a
+          // sheet taller than a phone's screen scroll from its top edge.
+          margin: 'auto',
           width: '100%',
           maxWidth: width,
-          borderRadius: 22,
+          borderRadius: narrow ? 18 : 22,
           background: C.surface,
           border: `1px solid ${C.border}`,
           boxShadow: '0 40px 80px rgba(11,30,61,.28)',
@@ -92,11 +95,12 @@ function CloseButton({ onClick }: { onClick: () => void }) {
 
 export function LanguageModal() {
   const { closeModal } = useStore()
+  const narrow = useNarrow()
   return (
     <Backdrop onClose={closeModal} width={560}>
       <div
         style={{
-          padding: '28px 32px 0',
+          padding: narrow ? '22px 20px 0' : '28px 32px 0',
           display: 'flex',
           alignItems: 'flex-start',
           justifyContent: 'space-between',
@@ -115,7 +119,7 @@ export function LanguageModal() {
       </div>
       <div
         style={{
-          padding: '24px 32px 32px',
+          padding: narrow ? '20px 20px 22px' : '24px 32px 32px',
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gap: 12,
@@ -178,16 +182,25 @@ export function LanguageModal() {
 
 export function SignupModal() {
   const { closeModal, completeSignup, skipSignup, analysis } = useStore()
+  const narrow = useNarrow()
 
   return (
     <Backdrop onClose={closeModal} width={920}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)' }}>
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: columns(narrow, 'minmax(0,1fr) minmax(0,1fr)'),
+        }}
+      >
         <div
           style={{
             position: 'relative',
-            padding: 40,
+            padding: narrow ? '24px 20px' : 40,
             background: 'linear-gradient(170deg,#F7F9FC,#EFF4FB)',
-            borderRight: `1px solid ${C.rule}`,
+            borderRight: narrow ? undefined : `1px solid ${C.rule}`,
+            borderTop: narrow ? `1px solid ${C.rule}` : undefined,
+            // Stacked on a phone, the form (and its close button) comes first.
+            order: narrow ? 1 : undefined,
             overflow: 'hidden',
           }}
         >
@@ -207,8 +220,8 @@ export function SignupModal() {
           <div style={{ position: 'relative' }}>
             <div
               style={{
-                width: 74,
-                height: 74,
+                width: narrow ? 56 : 74,
+                height: narrow ? 56 : 74,
                 borderRadius: '50%',
                 background: C.surface,
                 border: `1px solid ${C.borderBlue}`,
@@ -225,9 +238,9 @@ export function SignupModal() {
             </div>
             <div
               style={{
-                marginTop: 26,
+                marginTop: narrow ? 18 : 26,
                 fontFamily: FONT_DISPLAY,
-                fontSize: 27,
+                fontSize: narrow ? 22 : 27,
                 fontWeight: 400,
                 lineHeight: 1.3,
                 letterSpacing: '-.02em',
@@ -259,7 +272,7 @@ export function SignupModal() {
           </div>
         </div>
 
-        <div style={{ padding: 40, display: 'flex', flexDirection: 'column' }}>
+        <div style={{ padding: narrow ? '22px 20px' : 40, display: 'flex', flexDirection: 'column' }}>
           <div
             style={{
               display: 'flex',
@@ -397,6 +410,7 @@ export function ComposerModal() {
   // silently on the click.
   const canPublish = text.trim().length > 0
   const verified = bookedClinic?.name === clinicTag
+  const narrow = useNarrow()
 
   const selectStyle = {
     marginTop: 10,
@@ -415,7 +429,7 @@ export function ComposerModal() {
     <Backdrop onClose={closeModal} width={680}>
       <div
         style={{
-          padding: '26px 32px',
+          padding: narrow ? '18px 20px' : '26px 32px',
           borderBottom: `1px solid ${C.borderFaint}`,
           display: 'flex',
           alignItems: 'center',
@@ -429,7 +443,7 @@ export function ComposerModal() {
         <CloseButton onClick={closeModal} />
       </div>
 
-      <div style={{ padding: '28px 32px' }}>
+      <div style={{ padding: narrow ? '20px' : '28px 32px' }}>
         <div style={{ display: 'flex', gap: 12 }}>
           <div
             className="is-disabled"
@@ -489,7 +503,14 @@ export function ComposerModal() {
           {text.length} / {MAX_POST}
         </div>
 
-        <div style={{ marginTop: 20, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+        <div
+          style={{
+            marginTop: 20,
+            display: 'grid',
+            gridTemplateColumns: columns(narrow, '1fr 1fr'),
+            gap: 16,
+          }}
+        >
           <label>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
               <FieldLabel>TREATMENT TAG</FieldLabel>
@@ -563,7 +584,7 @@ export function ComposerModal() {
 
       <div
         style={{
-          padding: '20px 32px 26px',
+          padding: narrow ? '16px 20px 20px' : '20px 32px 26px',
           borderTop: `1px solid ${C.borderFaint}`,
           display: 'flex',
           gap: 12,

@@ -17,6 +17,7 @@ import {
   Prose,
   Shell,
 } from '../components/primitives'
+import { columns, useNarrow } from '../components/layout'
 import { BAR_FILL, C, FONT_DISPLAY, FONT_MONO, LUNION, SOLION } from '../theme'
 import { useStore } from '../state/store'
 
@@ -34,7 +35,14 @@ const HERO_BARS = [
   { name: 'Laxity', level: 'Steady', ratio: 0.52 },
 ]
 
-const STEPS = [
+const STEPS: {
+  n: string
+  title: string
+  body: string
+  phoneTitle?: string
+  phoneBody?: string
+  path: string
+}[] = [
   {
     n: '01',
     title: 'Tell us the basics',
@@ -44,7 +52,9 @@ const STEPS = [
   {
     n: '02',
     title: 'Use your webcam',
+    phoneTitle: 'Use your camera',
     body: 'One frame from your laptop camera, processed in the browser.',
+    phoneBody: 'One frame from your phone camera, processed in the browser.',
     path: PATHS.camera,
   },
   {
@@ -63,6 +73,9 @@ const STEPS = [
 
 export function Landing() {
   const { go, savedReport, openSavedReport, deleteSavedReport } = useStore()
+  const narrow = useNarrow()
+  // The design says "laptop"; on a phone that is the wrong device to name.
+  const device = narrow ? 'phone camera' : 'laptop webcam'
 
   return (
     <div style={{ flex: 1 }}>
@@ -124,10 +137,10 @@ export function Landing() {
         <Shell
           style={{
             position: 'relative',
-            padding: '96px 32px 104px',
+            padding: narrow ? '40px 16px 56px' : '96px 32px 104px',
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,1.05fr) minmax(0,.95fr)',
-            gap: 64,
+            gridTemplateColumns: columns(narrow, 'minmax(0,1.05fr) minmax(0,.95fr)'),
+            gap: narrow ? 40 : 64,
             alignItems: 'center',
           }}
         >
@@ -149,24 +162,43 @@ export function Landing() {
               </Eyebrow>
             </div>
 
-            <Display size={60} style={{ marginTop: 26, lineHeight: 1.08, letterSpacing: '-.025em' }}>
+            <Display
+              size={60}
+              style={{ marginTop: narrow ? 20 : 26, lineHeight: 1.08, letterSpacing: '-.025em' }}
+            >
               Your first skin diagnosis, built by a dermatologist.
             </Display>
-            <Prose size={18} color={C.body} style={{ marginTop: 24, maxWidth: 560, lineHeight: 1.7 }}>
-              Solution reads your skin from your laptop webcam, explains what it finds in plain
+            <Prose
+              size={narrow ? 16 : 18}
+              color={C.body}
+              style={{ marginTop: narrow ? 18 : 24, maxWidth: 560, lineHeight: 1.7 }}
+            >
+              Solution reads your skin from your {device}, explains what it finds in plain
               language, and shows you which Seoul clinics treat it — with prices, before you walk in.
             </Prose>
 
             <div
-              style={{ marginTop: 36, display: 'flex', flexWrap: 'wrap', gap: 14, alignItems: 'center' }}
+              style={{
+                marginTop: narrow ? 28 : 36,
+                display: narrow ? 'grid' : 'flex',
+                flexWrap: 'wrap',
+                gap: narrow ? 10 : 14,
+                alignItems: 'center',
+              }}
             >
-              <PrimaryButton onClick={() => go('form')} height={56} fontSize={16.5}>
+              <PrimaryButton onClick={() => go('form')} height={56} fontSize={16.5} full={narrow}>
                 <span>Start Diagnosis</span>
                 <span style={{ display: 'flex' }}>
                   <Icon path={PATHS.arrow} size={19} weight={1.7} />
                 </span>
               </PrimaryButton>
-              <GhostButton onClick={() => go('treatments')} height={56} padding={26} fontSize={16}>
+              <GhostButton
+                onClick={() => go('treatments')}
+                height={56}
+                padding={26}
+                fontSize={16}
+                full={narrow}
+              >
                 Browse treatments
               </GhostButton>
             </div>
@@ -204,7 +236,7 @@ export function Landing() {
               </div>
             ) : null}
 
-            <div style={{ marginTop: 34, display: 'flex', flexWrap: 'wrap', gap: 28 }}>
+            <div style={{ marginTop: 34, display: 'flex', flexWrap: 'wrap', gap: narrow ? 22 : 28 }}>
               {STATS.map((s) => (
                 <div key={s.label}>
                   <div
@@ -260,8 +292,9 @@ export function Landing() {
                       inset: 0,
                       borderRadius: '50%',
                       background: `conic-gradient(from 220deg, ${C.blueLight} 0%, ${C.blue} 62%, #EEF2F7 62%, #EEF2F7 100%)`,
-                      mask: 'radial-gradient(circle, transparent 82%, #000 83%)',
-                      WebkitMask: 'radial-gradient(circle, transparent 82%, #000 83%)',
+                      // `closest-side`: see ScoreRing. The design's bare `circle` draws no ring.
+                      mask: 'radial-gradient(circle closest-side, transparent 82%, #000 83%)',
+                      WebkitMask: 'radial-gradient(circle closest-side, transparent 82%, #000 83%)',
                     }}
                   />
                   <div style={{ textAlign: 'center' }}>
@@ -345,7 +378,7 @@ export function Landing() {
         </Shell>
       </section>
 
-      <Shell style={{ padding: '88px 32px' }}>
+      <Shell style={{ padding: narrow ? '48px 16px' : '88px 32px' }}>
         <div style={{ maxWidth: 620 }}>
           <Eyebrow size={12.5}>HOW IT WORKS</Eyebrow>
           <Display size={38} style={{ marginTop: 16, lineHeight: 1.2 }}>
@@ -354,9 +387,9 @@ export function Landing() {
         </div>
         <div
           style={{
-            marginTop: 44,
+            marginTop: narrow ? 28 : 44,
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit,minmax(min(240px,100%),1fr))',
             gap: 20,
           }}
         >
@@ -392,10 +425,10 @@ export function Landing() {
                   color: C.ink,
                 }}
               >
-                {s.title}
+                {(narrow && s.phoneTitle) || s.title}
               </div>
               <Prose size={14} style={{ marginTop: 9, lineHeight: 1.7 }}>
-                {s.body}
+                {(narrow && s.phoneBody) || s.body}
               </Prose>
             </Card>
           ))}
@@ -405,10 +438,10 @@ export function Landing() {
       <section style={{ borderTop: `1px solid ${C.border}`, background: C.surfaceMuted }}>
         <Shell
           style={{
-            padding: '80px 32px',
+            padding: narrow ? '48px 16px' : '80px 32px',
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)',
-            gap: 56,
+            gridTemplateColumns: columns(narrow, 'minmax(0,1fr) minmax(0,1fr)'),
+            gap: narrow ? 28 : 56,
             alignItems: 'center',
           }}
         >
@@ -423,7 +456,7 @@ export function Landing() {
               through Solution.
             </Prose>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: narrow ? 12 : 18 }}>
             {[
               { house: SOLION, name: 'SOLION', when: 'Daytime', body: 'Sun protection that keeps treated pigmentation from returning.' },
               { house: LUNION, name: 'LUNION', when: 'Nighttime', body: 'Recovery for the nights right after a session.' },
@@ -431,7 +464,7 @@ export function Landing() {
               <div
                 key={h.name}
                 style={{
-                  padding: '26px 22px',
+                  padding: narrow ? '20px 16px' : '26px 22px',
                   borderRadius: 18,
                   background: h.house.bg,
                   border: `1px solid ${h.house.bg === C.surface ? C.border : h.house.border}`,
@@ -468,7 +501,7 @@ export function Landing() {
         </Shell>
       </section>
 
-      <Shell style={{ padding: '88px 32px 96px', textAlign: 'center' }}>
+      <Shell style={{ padding: narrow ? '52px 16px 60px' : '88px 32px 96px', textAlign: 'center' }}>
         <Display size={36}>Start with the reading. Decide later.</Display>
         <Prose
           size={16}
@@ -476,8 +509,8 @@ export function Landing() {
         >
           No account needed to see your result. Nothing is sent to a clinic until you book.
         </Prose>
-        <div style={{ margin: '32px auto 0', width: 'fit-content' }}>
-          <PrimaryButton onClick={() => go('form')} height={56} fontSize={16.5}>
+        <div style={{ margin: '32px auto 0', width: narrow ? '100%' : 'fit-content' }}>
+          <PrimaryButton onClick={() => go('form')} height={56} fontSize={16.5} full={narrow}>
             <span>Start Diagnosis</span>
             <span style={{ display: 'flex' }}>
               <Icon path={PATHS.arrow} size={19} weight={1.7} />
@@ -489,10 +522,10 @@ export function Landing() {
       <footer style={{ background: C.navy, color: 'rgba(212,222,238,.8)' }}>
         <Shell
           style={{
-            padding: '52px 32px',
+            padding: narrow ? '36px 16px' : '52px 32px',
             display: 'flex',
             flexWrap: 'wrap',
-            gap: 32,
+            gap: narrow ? 20 : 32,
             alignItems: 'center',
             justifyContent: 'space-between',
           }}

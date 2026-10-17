@@ -23,6 +23,7 @@ import { Treatments } from './screens/Treatments'
 import { ComposerModal, LanguageModal, SignupModal } from './components/Modals'
 import { TopNav } from './components/TopNav'
 import { Pressable } from './components/primitives'
+import { useNarrow } from './components/layout'
 import { C } from './theme'
 import { useStore, type Page } from './state/store'
 
@@ -64,6 +65,7 @@ const RAIL: [Page, string][] = [
 export default function App() {
   const { page, modal, go } = useStore()
   const Screen = SCREENS[page]
+  const narrow = useNarrow()
 
   return (
     <div
@@ -81,60 +83,67 @@ export default function App() {
       {modal === 'signup' ? <SignupModal /> : null}
       {modal === 'composer' ? <ComposerModal /> : null}
 
-      <div
-        style={{
-          position: 'sticky',
-          bottom: 0,
-          zIndex: 50,
-          background: 'rgba(255,255,255,.95)',
-          backdropFilter: 'blur(10px)',
-          borderTop: `1px solid ${C.border}`,
-        }}
-      >
+      {/*
+        A jump rail for walking the prototype on a laptop. On a phone it filled a
+        third of the screen with links a visitor has no use for, and the nav and
+        the funnel's own buttons already reach every screen.
+      */}
+      {narrow ? null : (
         <div
           style={{
-            maxWidth: 1320,
-            margin: '0 auto',
-            padding: '12px 32px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 7,
-            alignItems: 'center',
+            position: 'sticky',
+            bottom: 0,
+            zIndex: 50,
+            background: 'rgba(255,255,255,.95)',
+            backdropFilter: 'blur(10px)',
+            borderTop: `1px solid ${C.border}`,
           }}
         >
           <div
             style={{
-              fontSize: 11,
-              fontWeight: 600,
-              letterSpacing: '.1em',
-              color: C.faint,
-              marginRight: 6,
+              maxWidth: 1320,
+              margin: '0 auto',
+              padding: '12px 32px',
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 7,
+              alignItems: 'center',
             }}
           >
-            PROTOTYPE
+            <div
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                letterSpacing: '.1em',
+                color: C.faint,
+                marginRight: 6,
+              }}
+            >
+              PROTOTYPE
+            </div>
+            {RAIL.map(([id, label]) => {
+              const on = id === page
+              return (
+                <Pressable
+                  key={id}
+                  onClick={() => go(id)}
+                  className="opt"
+                  style={{
+                    padding: '6px 11px',
+                    borderRadius: 8,
+                    fontSize: 11.5,
+                    background: on ? C.ink : C.surface,
+                    border: `1px solid ${on ? C.ink : C.border}`,
+                    color: on ? '#fff' : C.bodyMuted,
+                  }}
+                >
+                  {label}
+                </Pressable>
+              )
+            })}
           </div>
-          {RAIL.map(([id, label]) => {
-            const on = id === page
-            return (
-              <Pressable
-                key={id}
-                onClick={() => go(id)}
-                className="opt"
-                style={{
-                  padding: '6px 11px',
-                  borderRadius: 8,
-                  fontSize: 11.5,
-                  background: on ? C.ink : C.surface,
-                  border: `1px solid ${on ? C.ink : C.border}`,
-                  color: on ? '#fff' : C.bodyMuted,
-                }}
-              >
-                {label}
-              </Pressable>
-            )
-          })}
         </div>
-      </div>
+      )}
     </div>
   )
 }

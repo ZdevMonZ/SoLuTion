@@ -25,7 +25,7 @@ src/
                 strings.ts (every sentence derived from a reading)
                 languages.ts
   state/        store.tsx — the whole funnel, the web's DermaViewModel
-  components/   Icons · primitives · TopNav · Modals · QrCode
+  components/   Icons · primitives · layout (phone switch) · TopNav · Modals · QrCode
   screens/      one file per screen, numbered as in the design
   theme.ts      every colour and gradient, transcribed from the design
 public/
@@ -71,6 +71,24 @@ kept in `localStorage`; the frame itself is an object URL that dies with the tab
 - **Seven readings, not five.** Redness and balance were added to the analysis
   after the design was drawn, and the result screen renders whatever the reading
   contains.
+- **Nineteen treatments, in ladders.** The design draws four and the Android
+  catalogue has six. Thirteen more (October 2026) give every reading area a run
+  from gentle to strong — brightening care, toning, then fractional pico for
+  pigmentation; Shurink, Thermage, then Ulthera for laxity; and so on. Which
+  treatments exist, typical courses, downtime and cautions were checked against a
+  published Gangnam clinic menu (31 treatment pages); every sentence and every
+  price here is our own, and no clinic's copy is reproduced.
+- **The match follows the level, not just the area.** Each treatment names the
+  reading levels it is meant for, per area (`suits`). Inside an area, the matched
+  list puts the ones that fit the reading's level first (`levelDistance` in
+  `analysis/ranking.ts`), so "Steady" pigmentation leads with brightening care and
+  "Focus first" with toning. The detail page says whether a treatment fits *your*
+  reading, and adds the course, downtime, results and a "suits you if" list.
+- **Price ranges come from the clinics.** The design's fixed ranges were the
+  Myeongdong clinics' spread, and read wrong for anyone staying in Hongdae or
+  Gangnam. `priceRangeIn` derives the range from the chosen district's clinics,
+  so Myeongdong still shows the design's numbers — except acne care, which reads
+  ₩88,000 rather than ₩85,000 because no clinic row ever went that low.
 - **The language picker offers English only.** The other three are listed in the
   design's own disabled style and do nothing, because there is no translated copy
   behind them. Add a strings table and flip `available` in `data/languages.ts`.
@@ -79,6 +97,18 @@ kept in `localStorage`; the frame itself is an object URL that dies with the tab
   says that where it is, rather than appearing to work.
 - **"Save as PDF" opens the browser's print dialog**, which is a real way to save
   one.
+- **Phones get one column.** The design is drawn for a laptop only. Below 760 px
+  (`components/layout.ts`) every two-column screen stacks, the gutter drops to
+  16 px, headlines scale to about three quarters, the nav tabs take a second header
+  row, and the prototype jump rail is hidden — on a phone it covered a third of the
+  screen, and the nav and the funnel's own buttons reach every screen without it.
+  Copy that names the laptop says "phone camera" there. The camera viewfinder
+  keeps its 16:10 shape on purpose: the guide oval and the analysed crop are one
+  geometry (`analysis/capture.ts`), so a portrait viewfinder means re-deriving that
+  geometry, not restyling a box.
+- **The score dials draw their ring.** The design masks them with
+  `radial-gradient(circle, …)`, which measures to the box's corner and leaves no
+  ring visible; `closest-side` is what it meant. Keep it across design syncs.
 - **Prices, clinics and posts are sample data**, labelled on every screen that
   shows them — as they were on Android.
 
@@ -90,7 +120,10 @@ The funnel was driven end to end in
 headless Chrome with a fake camera: every screen renders with no console errors,
 the capture gate turns down a frame with no face and offers a retake, a bookmarked
 treatment reaches My List, a published post appears in the feed, and a reading
-survives a reload.
+survives a reload. Every screen and the three overlays were also driven at a 390 px phone
+viewport — none scrolls sideways — and re-checked at 820 and 1024 px. The
+matched-list order was checked against synthetic readings for every area and
+level, and the detail page's fit sentence against the reference reading.
 
 Not verified: a real face through a real webcam — the blink path and a scored
 photograph need a person in front of the camera.

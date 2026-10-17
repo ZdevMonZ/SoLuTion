@@ -8,6 +8,7 @@
  * free rather than being re-implemented per screen.
  */
 import type { CSSProperties, ReactNode } from 'react'
+import { useNarrow } from './layout'
 import { BAR_FILL, C, FONT_DISPLAY, FONT_MONO, SHADOW_CTA } from '../theme'
 
 /** The page's content column. Every screen in the design sits in this box. */
@@ -177,11 +178,13 @@ export function Display({
   color?: string
   style?: CSSProperties
 }) {
+  const narrow = useNarrow()
   return (
     <div
       style={{
         fontFamily: FONT_DISPLAY,
-        fontSize: size,
+        // A laptop headline set at 60px breaks one word per line on a phone.
+        fontSize: narrow && size > 24 ? Math.max(24, Math.round(size * 0.72)) : size,
         fontWeight: weight,
         lineHeight: 1.25,
         letterSpacing: '-.02em',
@@ -283,7 +286,10 @@ export function ScoreRing({
 }) {
   const filled = Math.min(1, Math.max(0, value / max)) * 100
   const inner = (100 - thickness * 100).toFixed(0)
-  const mask = `radial-gradient(circle, transparent ${inner}%, #000 ${Number(inner) + 1}%)`
+  // `closest-side`, not the design's bare `circle`: that one measures to the box's
+  // corner, which puts the opaque band outside the circle, and the dial draws no
+  // ring at all. Keep this across design syncs.
+  const mask = `radial-gradient(circle closest-side, transparent ${inner}%, #000 ${Number(inner) + 1}%)`
   return (
     <div
       style={{

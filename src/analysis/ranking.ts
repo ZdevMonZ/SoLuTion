@@ -11,6 +11,7 @@
 import {
   SEVERITY_RANK,
   categoryOf,
+  type SeverityLevel,
   type SkinAnalysisResult,
   type SkinCategory,
 } from './types'
@@ -64,4 +65,59 @@ export function leadCategory(
     }
   }
   return best
+}
+
+/** Which levels a treatment is pitched at, per area — `Treatment.suits`. */
+export type Suits = Partial<Record<SkinCategory, SeverityLevel[]>>
+
+/**
+ * How a treatment's intended level compares with what this reading found in the
+ * area that earned it: `fits` when that level is one it is meant for, `stronger`
+ * when the reading is milder than anything it is meant for, `gentler` when the
+ * reading is past it. `distance` is the number of rungs to the nearest level it
+ * does suit — 0 when it fits.
+ */
+export interface Pitch {
+  category: SkinCategory
+  level: SeverityLevel
+  verdict: 'fits' | 'stronger' | 'gentler'
+  distance: number
+}
+
+export function pitchFor(
+  targets: SkinCategory[],
+  suits: Suits,
+  result: SkinAnalysisResult,
+): Pitch | null {
+  const category = leadCategory(targets, result)
+  const row = category ? categoryOf(result, category) : undefined
+  const levels = category ? suits[category] : undefined
+  if (!category || !row || !levels || levels.length === 0) return null
+  const at = SEVERITY_RANK[row.level]
+  const nearest = levels
+    .map((l) => SEVERITY_RANK[l])
+    .reduce((a, b) => (Math.abs(b - at) < Math.abs(a - at) ? b : a))
+  return {
+    category,
+    level: row.level,
+    verdict: nearest === at ? 'fits' : nearest > at ? 'stronger' : 'gentler',
+    distance: Math.abs(nearest - at),
+  }
+}
+
+/** Past any real distance (levels run 1..4), for a treatment with nothing to say. */
+const NO_PITCH = 4
+
+/**
+ * The tie-break inside one area's ladder: a treatment pitched at the level the
+ * reading found comes before one that is not, and one a rung away before one two
+ * rungs away. It never reorders areas — urgency does that first — so a gentle
+ * pigmentation option still sits with pigmentation, just after the ones that fit.
+ */
+export function levelDistance(
+  targets: SkinCategory[],
+  suits: Suits,
+  result: SkinAnalysisResult,
+): number {
+  return pitchFor(targets, suits, result)?.distance ?? NO_PITCH
 }

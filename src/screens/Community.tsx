@@ -7,7 +7,15 @@
  * composer's submit does something rather than closing politely.
  */
 import { Icon, PATHS } from '../components/Icons'
-import { Card, Display, Note, Pressable, Shell, Tag } from '../components/primitives'
+import {
+  Card,
+  Display,
+  Note,
+  Pressable,
+  Shell,
+  Tag,
+} from '../components/primitives'
+import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
 import { DISTRICTS, TREATMENTS } from '../data/catalog'
 import { LANG_LABEL } from '../data/languages'
@@ -32,9 +40,36 @@ const FILTERS = [
 export function Community() {
   const { communityFilterId, setCommunityFilter, communityFeed, openModal } = useStore()
   const posts = communityFeed()
+  const narrow = useNarrow()
+
+  // The badge's key. Under the filters on a laptop; after the feed on a phone,
+  // where above it would push the first post off the screen.
+  const verifiedNote = (
+    <div
+      style={{
+        marginTop: narrow ? 0 : 26,
+        padding: 18,
+        borderRadius: 14,
+        background: C.surfaceMuted,
+        border: `1px solid ${C.rule}`,
+      }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
+        <span style={{ display: 'flex', color: C.blue }}>
+          <Icon path={PATHS.verified} size={19} />
+        </span>
+        <div style={{ fontFamily: FONT_DISPLAY, fontSize: 13.5, fontWeight: 600, color: C.ink }}>
+          Verified Visit
+        </div>
+      </div>
+      <div style={{ marginTop: 9, fontSize: 12.5, lineHeight: 1.7, color: C.bodyMuted }}>
+        Shown on posts from users who booked that clinic through Solution.
+      </div>
+    </div>
+  )
 
   return (
-    <div style={{ flex: 1, padding: '44px 32px 80px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 44, 80) }}>
       <Shell>
         <div
           style={{
@@ -55,6 +90,8 @@ export function Community() {
             onClick={() => openModal('composer')}
             className="btn-primary"
             style={{
+              width: narrow ? '100%' : undefined,
+              justifyContent: 'center',
               height: 50,
               padding: '0 24px',
               borderRadius: 11,
@@ -76,18 +113,33 @@ export function Community() {
 
         <div
           style={{
-            marginTop: 28,
+            marginTop: narrow ? 20 : 28,
             display: 'grid',
-            gridTemplateColumns: '230px minmax(0,1fr)',
-            gap: 32,
+            gridTemplateColumns: columns(narrow, '230px minmax(0,1fr)'),
+            gap: narrow ? 18 : 32,
             alignItems: 'start',
           }}
         >
-          <div style={{ position: 'sticky', top: 92 }}>
-            <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '.1em', color: C.muted }}>
-              FILTERS
-            </div>
-            <div style={{ marginTop: 14, display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div style={{ position: narrow ? 'static' : 'sticky', top: 92, minWidth: 0 }}>
+            {narrow ? null : (
+              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '.1em', color: C.muted }}>
+                FILTERS
+              </div>
+            )}
+            {/* A phone scrolls the filters sideways as one row of chips. */}
+            <div
+              style={
+                narrow
+                  ? {
+                      display: 'flex',
+                      gap: 8,
+                      margin: '0 -16px',
+                      padding: '0 16px',
+                      overflowX: 'auto',
+                    }
+                  : { marginTop: 14, display: 'flex', flexDirection: 'column', gap: 8 }
+              }
+            >
               {FILTERS.map((f) => {
                 const on = f.id === communityFilterId
                 return (
@@ -101,7 +153,10 @@ export function Community() {
                       fontSize: 13.5,
                       fontWeight: on ? 600 : 500,
                       textAlign: 'left',
-                      background: on ? C.chip : 'transparent',
+                      flex: 'none',
+                      whiteSpace: narrow ? 'nowrap' : undefined,
+                      border: narrow ? `1px solid ${on ? C.borderBlue : C.border}` : undefined,
+                      background: on ? C.chip : narrow ? C.surface : 'transparent',
                       color: on ? C.blue : C.bodyFaint,
                     }}
                   >
@@ -111,41 +166,20 @@ export function Community() {
               })}
             </div>
 
-            <div
-              style={{
-                marginTop: 26,
-                padding: 18,
-                borderRadius: 14,
-                background: C.surfaceMuted,
-                border: `1px solid ${C.rule}`,
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
-                <span style={{ display: 'flex', color: C.blue }}>
-                  <Icon path={PATHS.verified} size={19} />
-                </span>
-                <div
-                  style={{ fontFamily: FONT_DISPLAY, fontSize: 13.5, fontWeight: 600, color: C.ink }}
-                >
-                  Verified Visit
-                </div>
-              </div>
-              <div style={{ marginTop: 9, fontSize: 12.5, lineHeight: 1.7, color: C.bodyMuted }}>
-                Shown on posts from users who booked that clinic through Solution.
-              </div>
-            </div>
+
+            {narrow ? null : verifiedNote}
           </div>
 
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))',
+              gridTemplateColumns: 'repeat(auto-fit,minmax(min(340px,100%),1fr))',
               gap: 18,
               alignItems: 'start',
             }}
           >
             {posts.map((p) => (
-              <Card key={p.id} className="card-hover" style={{ padding: 24 }}>
+              <Card key={p.id} className="card-hover" style={{ padding: narrow ? '20px 18px' : 24 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 13 }}>
                   <div
                     style={{
@@ -301,6 +335,8 @@ export function Community() {
               </div>
             ) : null}
           </div>
+
+          {narrow ? verifiedNote : null}
         </div>
       </Shell>
     </div>

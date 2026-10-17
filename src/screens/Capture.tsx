@@ -35,6 +35,7 @@ import {
   Shell,
   StepProgress,
 } from '../components/primitives'
+import { screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
 import { CAPTURE } from '../data/strings'
 import {
@@ -64,6 +65,7 @@ type Block = 'denied' | 'unavailable'
 
 export function Capture() {
   const { go, runAnalysis } = useStore()
+  const narrow = useNarrow()
 
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const streamRef = useRef<MediaStream | null>(null)
@@ -282,16 +284,16 @@ export function Capture() {
           : CAPTURE.livenessPrompt
 
   return (
-    <div style={{ flex: 1, padding: '48px 32px 80px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 48, 80) }}>
       <Shell width={980}>
         <StepProgress step={2} width={720} />
 
         <div
           style={{
-            marginTop: 32,
+            marginTop: narrow ? 22 : 32,
             display: 'flex',
             flexWrap: 'wrap',
-            gap: 20,
+            gap: narrow ? 14 : 20,
             alignItems: 'flex-end',
             justifyContent: 'space-between',
           }}
@@ -322,9 +324,9 @@ export function Capture() {
         {phase === 'blocked' ? (
           <Card
             style={{
-              marginTop: 30,
-              padding: 22,
-              borderRadius: 22,
+              marginTop: narrow ? 22 : 30,
+              padding: narrow ? 12 : 22,
+              borderRadius: narrow ? 18 : 22,
               boxShadow: '0 20px 50px rgba(20,32,58,.07)',
             }}
           >
@@ -340,7 +342,7 @@ export function Capture() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 textAlign: 'center',
-                padding: 40,
+                padding: narrow ? '28px 16px' : 40,
               }}
             >
               <div
@@ -421,9 +423,9 @@ export function Capture() {
         ) : (
           <Card
             style={{
-              marginTop: 30,
-              padding: 22,
-              borderRadius: 22,
+              marginTop: narrow ? 22 : 30,
+              padding: narrow ? 12 : 22,
+              borderRadius: narrow ? 18 : 22,
               boxShadow: '0 20px 50px rgba(20,32,58,.07)',
             }}
           >
@@ -516,12 +518,12 @@ export function Capture() {
               <div
                 style={{
                   position: 'absolute',
-                  left: 18,
-                  top: 18,
+                  left: narrow ? 10 : 18,
+                  top: narrow ? 10 : 18,
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 9,
-                  padding: '8px 13px',
+                  gap: narrow ? 7 : 9,
+                  padding: narrow ? '6px 10px' : '8px 13px',
                   borderRadius: 20,
                   background: 'rgba(11,30,61,.62)',
                   border: '1px solid rgba(143,184,232,.3)',
@@ -542,9 +544,9 @@ export function Capture() {
               <div
                 style={{
                   position: 'absolute',
-                  right: 18,
-                  top: 18,
-                  padding: '7px 11px',
+                  right: narrow ? 10 : 18,
+                  top: narrow ? 10 : 18,
+                  padding: narrow ? '6px 9px' : '7px 11px',
                   borderRadius: 8,
                   background: 'rgba(11,30,61,.55)',
                   fontSize: 10,
@@ -564,18 +566,18 @@ export function Capture() {
                   position: 'absolute',
                   left: 0,
                   right: 0,
-                  bottom: 18,
+                  bottom: narrow ? 10 : 18,
                   display: 'flex',
                   justifyContent: 'center',
                 }}
               >
                 <div
                   style={{
-                    padding: '10px 18px',
+                    padding: narrow ? '7px 12px' : '10px 18px',
                     borderRadius: 20,
                     background: 'rgba(11,30,61,.66)',
                     border: '1px solid rgba(143,184,232,.3)',
-                    fontSize: 13.5,
+                    fontSize: narrow ? 12.5 : 13.5,
                     fontWeight: 500,
                     color: 'rgba(233,240,250,.95)',
                     textAlign: 'center',
@@ -589,12 +591,13 @@ export function Capture() {
 
             <div
               style={{
-                marginTop: 20,
+                marginTop: narrow ? 14 : 20,
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: 18,
+                gap: narrow ? 14 : 18,
                 alignItems: 'center',
                 justifyContent: 'space-between',
+                padding: narrow ? '0 4px 4px' : undefined,
               }}
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, maxWidth: 520 }}>
@@ -618,8 +621,23 @@ export function Capture() {
                   Avoid a window directly behind you — backlight flattens the reading.
                 </div>
               </div>
-              <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                <GhostButton onClick={restart} height={50} fontSize={15}>
+              {/* On a phone the two buttons share the full width, the shutter the larger half. */}
+              <div
+                style={{
+                  display: narrow ? 'grid' : 'flex',
+                  gridTemplateColumns: '1fr 1.5fr',
+                  width: narrow ? '100%' : undefined,
+                  gap: narrow ? 10 : 12,
+                  alignItems: 'center',
+                }}
+              >
+                <GhostButton
+                  onClick={restart}
+                  height={50}
+                  fontSize={15}
+                  padding={narrow ? 12 : 22}
+                  full={narrow}
+                >
                   <span style={{ display: 'flex' }}>
                     <Icon path={PATHS.retake} size={18} weight={1.6} />
                   </span>
@@ -629,8 +647,9 @@ export function Capture() {
                   onClick={shoot}
                   disabled={!canShoot}
                   height={50}
-                  padding={28}
+                  padding={narrow ? 12 : 28}
                   fontSize={15.5}
+                  full={narrow}
                 >
                   <span style={{ display: 'flex' }}>
                     <Icon path={PATHS.camera} size={19} weight={1.6} />
@@ -639,11 +658,20 @@ export function Capture() {
                 </PrimaryButton>
               </div>
             </div>
-            <Note style={{ marginTop: 14, fontSize: 12.5 }}>
-              {canShoot
-                ? 'Shortcut: press Space to capture, R to restart the camera.'
-                : 'The shutter opens on a blink. Press R to restart the camera.'}
-            </Note>
+            {/* A phone has no Space or R key to press. */}
+            {narrow ? (
+              canShoot ? null : (
+                <Note style={{ marginTop: 10, padding: '0 4px', fontSize: 12.5 }}>
+                  The shutter opens on a blink.
+                </Note>
+              )
+            ) : (
+              <Note style={{ marginTop: 14, fontSize: 12.5 }}>
+                {canShoot
+                  ? 'Shortcut: press Space to capture, R to restart the camera.'
+                  : 'The shutter opens on a blink. Press R to restart the camera.'}
+              </Note>
+            )}
           </Card>
         )}
 
@@ -675,7 +703,7 @@ export function Capture() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: 32,
+            padding: narrow ? 16 : 32,
           }}
         >
           <Card
@@ -683,7 +711,7 @@ export function Capture() {
               width: '100%',
               maxWidth: 520,
               borderRadius: 22,
-              padding: 32,
+              padding: narrow ? 22 : 32,
               boxShadow: '0 40px 80px rgba(11,30,61,.28)',
               animation: 'riseIn .18s ease-out',
             }}
@@ -697,7 +725,15 @@ export function Capture() {
             {rejections >= HINT_AFTER_REJECTIONS ? (
               <Note style={{ marginTop: 12 }}>{CAPTURE.gateSkipHint}</Note>
             ) : null}
-            <div style={{ marginTop: 24, display: 'flex', gap: 12, justifyContent: 'flex-end' }}>
+            <div
+              style={{
+                marginTop: 24,
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: 12,
+                justifyContent: 'flex-end',
+              }}
+            >
               {rejections >= HINT_AFTER_REJECTIONS ? (
                 <GhostButton onClick={skip} height={48}>
                   {CAPTURE.skip}

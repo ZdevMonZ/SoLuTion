@@ -8,12 +8,21 @@
  */
 import { useState } from 'react'
 import { Icon, PATHS } from '../components/Icons'
-import { Card, Display, Note, Pressable, Shell, Tag } from '../components/primitives'
+import {
+  Card,
+  Display,
+  Note,
+  Pressable,
+  Shell,
+  Tag,
+} from '../components/primitives'
+import { screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
-import { TREATMENTS, districtByKey } from '../data/catalog'
+import { TREATMENTS, districtByKey, priceRangeIn } from '../data/catalog'
 import type { Treatment } from '../data/catalog'
 import { UI, categoryLabel } from '../data/strings'
-import { rankedCategories } from '../analysis/types'
+import { leadCategory } from '../analysis/ranking'
+import { SKIN_CATEGORIES, rankedCategories } from '../analysis/types'
 import type { SkinCategory } from '../analysis/types'
 import { useStore } from '../state/store'
 
@@ -29,6 +38,7 @@ export function Treatments() {
     toggleSavedTreatment,
     go,
   } = useStore()
+  const narrow = useNarrow()
   const [filter, setFilter] = useState<string>(ALL)
 
   const matched = recommendations.length > 0
@@ -37,11 +47,13 @@ export function Treatments() {
 
   // The chips are the two areas this reading actually flagged — not a fixed pair,
   // which would offer "Pigmentation" to someone whose pigmentation is fine.
+  // Browsing without a reading, every area gets one: with nineteen treatments, a
+  // way in by concern is most of what the list needs.
   const leads: SkinCategory[] = analysis
     ? rankedCategories(analysis)
         .slice(0, 2)
         .map((row) => row.category)
-    : []
+    : SKIN_CATEGORIES.filter((c) => TREATMENTS.some((t) => t.targets.includes(c)))
   const shown = filter === ALL ? list : list.filter((t) => t.targets.includes(filter as SkinCategory))
 
   const open = (id: string) => {
@@ -50,13 +62,13 @@ export function Treatments() {
   }
 
   return (
-    <div style={{ flex: 1, padding: '44px 32px 80px' }}>
+    <div style={{ flex: 1, padding: screenPadding(narrow, 44, 80) }}>
       <Shell>
         <div
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            gap: 24,
+            gap: narrow ? 18 : 24,
             alignItems: 'flex-end',
             justifyContent: 'space-between',
           }}
@@ -72,7 +84,17 @@ export function Treatments() {
           </div>
 
           {leads.length > 0 ? (
-            <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+            // A phone scrolls the filters sideways rather than squeezing them.
+            <div
+              style={{
+                display: 'flex',
+                gap: narrow ? 8 : 10,
+                alignItems: 'center',
+                ...(narrow
+                  ? { width: 'calc(100% + 32px)', margin: '0 -16px', padding: '0 16px', overflowX: 'auto' }
+                  : null),
+              }}
+            >
               {[ALL, ...leads].map((key) => {
                 const on = filter === key
                 return (
@@ -85,6 +107,8 @@ export function Treatments() {
                       borderRadius: 9,
                       fontSize: 13.5,
                       fontWeight: 500,
+                      flex: 'none',
+                      whiteSpace: 'nowrap',
                       background: on ? C.chip : C.surface,
                       border: `1px solid ${on ? C.blue : C.borderStrong}`,
                       color: on ? C.blue : C.bodyFaint,
@@ -100,15 +124,21 @@ export function Treatments() {
 
         <div
           style={{
-            marginTop: 30,
+            marginTop: narrow ? 22 : 30,
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit,minmax(336px,1fr))',
-            gap: 20,
+            gridTemplateColumns: 'repeat(auto-fit,minmax(min(336px,100%),1fr))',
+            gap: narrow ? 14 : 20,
           }}
         >
           {shown.map((t, i) => {
             const saved = savedTreatmentIds.includes(t.id)
             const top = matched && filter === ALL && i === 0
+            // The area that earned the card its place (or the one being filtered
+            // on), so the chip answers the question the position raises.
+            const chip =
+              filter !== ALL
+                ? (filter as SkinCategory)
+                : (leadCategory(t.targets, matched ? analysis : null) ?? t.targets[0])
             return (
               <Card
                 key={t.id}
@@ -116,7 +146,7 @@ export function Treatments() {
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
-                  padding: 26,
+                  padding: narrow ? 20 : 26,
                   border: `1px solid ${top ? C.borderBlue : C.border}`,
                 }}
               >
@@ -134,7 +164,7 @@ export function Treatments() {
                         {UI.topMatch}
                       </Tag>
                     ) : null}
-                    <Tag>{categoryLabel(t.targets[0])}</Tag>
+                    <Tag>{categoryLabel(chip)}</Tag>
                   </div>
                   <Pressable
                     onClick={() => toggleSavedTreatment(t.id)}
@@ -188,14 +218,21 @@ export function Treatments() {
                     display: 'flex',
                     alignItems: 'flex-end',
                     justifyContent: 'space-between',
+                    flexWrap: 'wrap',
                     gap: 16,
                   }}
                 >
-                  <div style={{ display: 'flex', gap: 26 }}>
-                    {[
-                      { label: UI.priceRange, value: t.priceRange },
-                      { label: UI.perSession, value: t.duration },
-                    ].map((cell) => (
+                  <div style={{ display: 'flex', gap: narrow ? 20 : 26 }}>
+                    {(
+                      [
+                        {
+                          label: UI.priceRange,
+                          value: priceRangeIn(profile.districtKey, t.id),
+                          note: t.priceBasis,
+                        },
+                        { label: UI.perSession, value: t.duration },
+                      ] as { label: string; value: string; note?: string }[]
+                    ).map((cell) => (
                       <div key={cell.label}>
                         <div
                           style={{
@@ -218,6 +255,11 @@ export function Treatments() {
                         >
                           {cell.value}
                         </div>
+                        {cell.note ? (
+                          <div style={{ marginTop: 3, fontSize: 12, color: C.muted }}>
+                            for {cell.note}
+                          </div>
+                        ) : null}
                       </div>
                     ))}
                   </div>
