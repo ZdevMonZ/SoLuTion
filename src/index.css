@@ -253,6 +253,16 @@ button {
   }
 }
 
+/* The health scan's reading line, down the photographed sheet. */
+@keyframes docScan {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
 @keyframes twinkle {
   0%,
   100% {

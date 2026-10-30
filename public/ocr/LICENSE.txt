@@ -1,0 +1,10 @@
+The files in this folder are redistributed unmodified so that text recognition runs
+from this site rather than a third-party CDN.
+
+worker.min.js        tesseract.js 7.0.0       Apache License 2.0   https://github.com/naptha/tesseract.js
+core/*.wasm.js       tesseract.js-core 6.1.2  Apache License 2.0   https://github.com/naptha/tesseract.js-core
+                     (Tesseract OCR, Apache License 2.0, https://github.com/tesseract-ocr/tesseract)
+lang/*.traineddata.gz  tessdata_best (int), via @tesseract.js-data/kor and /eng 1.0.0
+                     Apache License 2.0   https://github.com/tesseract-ocr/tessdata_best
+
+The full Apache License 2.0 text: https://www.apache.org/licenses/LICENSE-2.0

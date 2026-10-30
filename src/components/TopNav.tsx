@@ -12,7 +12,8 @@ import { C, FONT_DISPLAY } from '../theme'
 import { LANGUAGES } from '../data/languages'
 import { useCopy, useLang } from '../i18n'
 import { NAV, type NavTab } from '../i18n/nav'
-import { useStore, type Page } from '../state/store'
+import { isHealthPage, useStore, type Page } from '../state/store'
+import { useHealth } from '../state/health'
 
 interface NavItem {
   id: NavTab
@@ -86,6 +87,55 @@ export function TopNav() {
   // The language in force, in its own script: "한국어" on a Korean page, not
   // "Korean" — the word its card in the picker leads with.
   const current = LANGUAGES.find((l) => l.lang === lang)?.native ?? 'English'
+  const { report } = useHealth()
+  const health = isHealthPage(page)
+
+  // Skin check or health checkup. Switching lands on the mode's start, or on the
+  // health result if one was read this visit — the camera need not be faced twice.
+  const modeSwitch = (
+    <div
+      role="group"
+      aria-label={copy.modesLabel}
+      style={{
+        display: 'flex',
+        padding: 3,
+        gap: 2,
+        borderRadius: 11,
+        background: C.chipAlt,
+        border: `1px solid ${C.border}`,
+        flex: narrow ? 1 : 'none',
+      }}
+    >
+      {(['skin', 'health'] as const).map((mode) => {
+        const on = (mode === 'health') === health
+        return (
+          <Pressable
+            key={mode}
+            pressed={on}
+            onClick={() => {
+              if (on) return
+              go(mode === 'skin' ? 'landing' : report ? 'health-result' : 'health-form')
+            }}
+            className="nav-item"
+            style={{
+              flex: narrow ? 1 : undefined,
+              textAlign: 'center',
+              padding: narrow ? '7px 8px' : '7px 13px',
+              borderRadius: 8,
+              fontSize: narrow ? 13 : 13.5,
+              fontWeight: on ? 600 : 500,
+              whiteSpace: 'nowrap',
+              color: on ? C.blue : C.bodyFaint,
+              background: on ? C.surface : 'transparent',
+              boxShadow: on ? '0 1px 3px rgba(20,32,58,.1)' : 'none',
+            }}
+          >
+            {copy.modes[mode]}
+          </Pressable>
+        )
+      })}
+    </div>
+  )
 
   const tabs = TABS.map((item) => {
     const on = active === item.id
@@ -152,13 +202,16 @@ export function TopNav() {
           </div>
         </Pressable>
 
-        {/* On a phone the tabs take their own row below, full width. */}
+        {/* On a phone the switch and the tabs take their own rows below, full width. */}
         {narrow ? (
           <div style={{ flex: 1 }} />
         ) : (
-          <nav style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 4, minWidth: 0 }}>
-            {tabs}
-          </nav>
+          <>
+            {modeSwitch}
+            <nav style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 4, minWidth: 0 }}>
+              {tabs}
+            </nav>
+          </>
         )}
 
         <div style={{ display: 'flex', alignItems: 'center', gap: narrow ? 8 : 12, flex: 'none' }}>
@@ -236,15 +289,18 @@ export function TopNav() {
       </div>
 
       {narrow ? (
-        <nav
-          style={{
-            display: 'flex',
-            gap: 2,
-            padding: '0 12px 8px',
-          }}
-        >
-          {tabs}
-        </nav>
+        <>
+          <div style={{ display: 'flex', padding: '0 12px 8px' }}>{modeSwitch}</div>
+          <nav
+            style={{
+              display: 'flex',
+              gap: 2,
+              padding: '0 12px 8px',
+            }}
+          >
+            {tabs}
+          </nav>
+        </>
       ) : null}
     </div>
   )

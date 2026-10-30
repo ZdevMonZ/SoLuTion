@@ -33,6 +33,14 @@
   var key = (params.get('d') || 'myeongdong').toLowerCase();
   var d = DISTRICTS[key] || DISTRICTS.myeongdong;
 
+  // `pins=lat,lng;lat,lng` replaces the district's clinic pins, in list order — the
+  // health-checkup hospital list numbers its own. Anything unreadable is dropped.
+  var custom = (params.get('pins') || '').split(';').map(function (p) {
+    var ll = p.split(',').map(Number);
+    return ll.length === 2 && isFinite(ll[0]) && isFinite(ll[1]) ? ll : null;
+  }).filter(Boolean);
+  if (custom.length) d = { center: d.center, zoom: d.zoom, pins: custom };
+
   // The page's language, passed by the screen that frames this one. The zoom
   // buttons' names (tooltip and screen-reader label) are the only words drawn here;
   // the attribution stays as OpenStreetMap writes it.

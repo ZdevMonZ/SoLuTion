@@ -45,6 +45,16 @@ export type Page =
   | 'community'
   | 'rewards'
   | 'qr'
+  | 'health-form'
+  | 'health-capture'
+  | 'health-analyzing'
+  | 'health-review'
+  | 'health-result'
+  | 'health-detail'
+  | 'health-clinics'
+
+/** The health-checkup mode is every page under this prefix; the top bar's switch reads it. */
+export const isHealthPage = (page: Page) => page.startsWith('health-')
 
 export type Modal = 'lang' | 'signup' | 'composer' | null
 

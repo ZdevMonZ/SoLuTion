@@ -28,14 +28,22 @@ src/
   i18n/         index.tsx (LangProvider, useLang, useCopy) · one table per screen
                 catalog.ts (useCatalog: catalog.ko/ja/zh.ts laid over data/catalog.ts
                 by id) · josa.ts (Korean particles after names picked at runtime)
+                health.ts + healthCare.ts (the health-checkup mode's words and guides)
+  health/       the health-checkup mode: items (ranges, conditions, report) ·
+                parse (sheet text → numbers, pure) · ocr (Tesseract, in the page) ·
+                hospitals (sample listings)
   state/        store.tsx — the whole funnel, the web's DermaViewModel
+                health.tsx — the health-checkup mode, beside it
   components/   Icons · primitives · layout (phone switch) · TopNav · Modals · QrCode
-  screens/      one file per screen, numbered as in the design
+                BodyCloud (the turning point-cloud figure on the health result)
+  screens/      one file per screen, numbered as in the design; health/ H1–H7
   theme.ts      every colour and gradient, transcribed from the design
 public/
   mediapipe/    wasm runtime, served from this origin
   models/       face_landmarker.task
-  map-blue.html the clinic map (Leaflet + OpenStreetMap), one iframe per district
+  ocr/          Tesseract worker, wasm core and the Korean + English models
+  map-blue.html the clinic map (Leaflet + OpenStreetMap), one iframe per district;
+                `pins=` overrides the pins (the health hospital list uses it)
 ```
 
 The design source is `../web_design/Solution.dc.html`. Colours, spacing and copy
@@ -62,6 +70,38 @@ this origin, so detection makes no third-party request, and the only network cal
 the site makes are the map tiles (OpenStreetMap) and the web fonts. The reading is
 kept in `localStorage`, as is the language choice; the frame itself is an object URL
 that dies with the tab.
+
+The health-checkup photo is read the same way: Tesseract runs in a worker from
+`public/ocr/`, and nothing about a checkup — photo, numbers, history — is stored at
+all. It is gone when the tab closes.
+
+The page opens in **English** for everyone. The browser's language is not
+consulted; a visitor's own pick from the language picker is kept.
+
+## The health-checkup mode
+
+The switch beside the wordmark changes between the skin check and the health
+checkup. The checkup runs H1 form (age, gender, family history, medical history,
+district) → H2 scan the result sheet → H3 read it → **H4 check the numbers** → H5
+body map → H6 care guide for one area → H7 hospitals for that area's department.
+
+- **H4 is the safety net, not a formality.** A webcam photo of a table is read
+  imperfectly. Measured on test sheets: a clean, flat scan reads 13 of 15 values; a
+  tilted, small, slightly blurred webcam-style frame 8 of 15, with one wrong. Every
+  value lands in an editable field beside the photo, marked "From photo", and the
+  visitor confirms before anything is judged.
+- **What the measurements decided** (`health/ocr.ts`): automatic page layout
+  (Tesseract.js's default single-block mode read 0 of 15 off a bordered table);
+  local adaptive thresholding (a sheet surrounded by desk read 0 of 15 with a
+  global cut-off); two passes at long sides of 1600 and 2400 px, merged (text read
+  well only in a narrow band of sizes — the same sheet enlarged 1.7× read none).
+- **Ranges** are the Korean national health screening sheet's normal / borderline /
+  suspected lines (`health/items.ts`); BMI uses the Korean 23 / 25 cut-offs. The
+  result says it is not a diagnosis.
+- **The body** is drawn, not loaded: ellipsoids and tubes sampled into ~6,500
+  points with a fixed seed, projected on a 2D canvas. No 3D library, no model file.
+- **Hospitals are sample listings**, four per district, invented like the
+  dermatology clinics, and the screen says so.
 
 ## Where this departs from the design, and why
 

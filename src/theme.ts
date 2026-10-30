@@ -61,6 +61,30 @@ export const FONT_MONO = 'ui-monospace, Menlo, Consolas, var(--cjk, monospace), 
  */
 export const FONT_MONO_TEXT = `var(--mono-text, ${FONT_MONO})`
 
+/**
+ * The health-checkup mode's own three. The design has no warning colour — skin
+ * levels are all shades of blue — but a checkup value past the "disease suspected"
+ * line has to read as different in kind, not just darker. Kept muted to sit with
+ * the blues.
+ */
+export const HEALTH = {
+  attention: '#D2553F',
+  attentionBg: '#FBEDEA',
+  borderline: '#D08A1E',
+  borderlineBg: '#FBF3E4',
+  normal: '#2E7D5B',
+  normalBg: '#EAF5EF',
+  /** The body model's dots. */
+  body: '#2E5AAC',
+} as const
+
+/** A checkup level's look, by level: in range, borderline, past the suspected line. */
+export const HEALTH_LEVELS = [
+  { color: HEALTH.normal, bg: HEALTH.normalBg },
+  { color: HEALTH.borderline, bg: HEALTH.borderlineBg },
+  { color: HEALTH.attention, bg: HEALTH.attentionBg },
+] as const
+
 /** The gradient every severity/score bar is filled with. */
 export const BAR_FILL = `linear-gradient(90deg,${C.blueLight},${C.blue} 68%,${C.navy})`
 

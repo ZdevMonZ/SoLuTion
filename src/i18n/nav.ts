@@ -31,6 +31,9 @@ const en = {
    * own word for oneself, since Latin initials mean nothing on those screens.
    */
   initials: 'YO',
+  /** The two-way switch beside the wordmark: which reading the site is doing. */
+  modes: { skin: 'Skin check', health: 'Health checkup' },
+  modesLabel: 'Reading mode',
 }
 
 export type NavTab = keyof typeof en.tabs
@@ -44,6 +47,8 @@ export const NAV: Tables<typeof en> = {
     signUp: '회원가입',
     signedIn: '로그인됨',
     initials: '나',
+    modes: { skin: '피부 진단', health: '건강검진 진단' },
+    modesLabel: '진단 모드',
   },
   ja: {
     tabs: { home: 'ホーム', mylist: 'マイリスト', community: 'コミュニティ', rewards: 'リワード' },
@@ -52,6 +57,8 @@ export const NAV: Tables<typeof en> = {
     signUp: '新規登録',
     signedIn: 'ログイン中',
     initials: '私',
+    modes: { skin: '肌診断', health: '健康診断' },
+    modesLabel: '診断モード',
   },
   zh: {
     tabs: { home: '首页', mylist: '我的清单', community: '社区', rewards: '奖励' },
@@ -60,5 +67,7 @@ export const NAV: Tables<typeof en> = {
     signUp: '注册',
     signedIn: '已登录',
     initials: '我',
+    modes: { skin: '皮肤检测', health: '体检解读' },
+    modesLabel: '检测模式',
   },
 }

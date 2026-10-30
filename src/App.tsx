@@ -20,6 +20,13 @@ import { Qr } from './screens/Qr'
 import { Result } from './screens/Result'
 import { Rewards } from './screens/Rewards'
 import { Treatments } from './screens/Treatments'
+import { HealthAnalyzing } from './screens/health/HealthAnalyzing'
+import { HealthCapture } from './screens/health/HealthCapture'
+import { HealthClinics } from './screens/health/HealthClinics'
+import { HealthDetail } from './screens/health/HealthDetail'
+import { HealthForm } from './screens/health/HealthForm'
+import { HealthResult } from './screens/health/HealthResult'
+import { HealthReview } from './screens/health/HealthReview'
 import { useEffect } from 'react'
 import { ComposerModal, LanguageModal, SignupModal } from './components/Modals'
 import { TopNav } from './components/TopNav'
@@ -45,6 +52,13 @@ const SCREENS: Record<Page, () => React.JSX.Element> = {
   community: Community,
   rewards: Rewards,
   qr: Qr,
+  'health-form': HealthForm,
+  'health-capture': HealthCapture,
+  'health-analyzing': HealthAnalyzing,
+  'health-review': HealthReview,
+  'health-result': HealthResult,
+  'health-detail': HealthDetail,
+  'health-clinics': HealthClinics,
 }
 
 /** The jump rail, as in the design. Numbered to match the screen list there. */
@@ -63,6 +77,14 @@ const RAIL: [Page, string][] = [
   ['community', '14'],
   ['rewards', '16'],
   ['qr', '17'],
+  // The health-checkup mode, numbered on its own.
+  ['health-form', 'H1'],
+  ['health-capture', 'H2'],
+  ['health-analyzing', 'H3'],
+  ['health-review', 'H4'],
+  ['health-result', 'H5'],
+  ['health-detail', 'H6'],
+  ['health-clinics', 'H7'],
 ]
 
 export default function App() {

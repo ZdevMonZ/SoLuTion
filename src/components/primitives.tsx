@@ -33,6 +33,7 @@ export function Pressable({
   className,
   disabled,
   label,
+  pressed,
 }: {
   onClick?: () => void
   children: ReactNode
@@ -41,6 +42,8 @@ export function Pressable({
   disabled?: boolean
   /** Screen-reader name, for a control whose visible content is an icon. */
   label?: string
+  /** For one side of a switch: announced as pressed or not. */
+  pressed?: boolean
 }) {
   return (
     <button
@@ -48,6 +51,7 @@ export function Pressable({
       onClick={onClick}
       disabled={disabled}
       aria-label={label}
+      aria-pressed={pressed}
       className={[className, disabled ? 'is-disabled' : null].filter(Boolean).join(' ')}
       style={{ cursor: disabled ? 'not-allowed' : 'pointer', ...style }}
     >

@@ -20,22 +20,18 @@ const LANG_KEY = 'solution.lang.v1'
 /** Only a language whose translation is complete counts; a stale choice falls back. */
 const isUsable = (v: unknown): v is Lang => LANGUAGES.some((l) => l.lang === v && l.available)
 
+/**
+ * The visitor's own earlier choice, else English. The browser's language is not
+ * consulted: the page opens in English for everyone, and the picker is one tap away.
+ */
 function loadLang(): Lang {
   try {
     const v = localStorage.getItem(LANG_KEY)
     if (isUsable(v)) return v
   } catch {
-    // Storage blocked (private window): fall through to the browser's own language.
+    // Storage blocked (private window): the default it is.
   }
-  const nav = typeof navigator === 'undefined' ? '' : navigator.language.toLowerCase()
-  const guess: Lang | null = nav.startsWith('ko')
-    ? 'ko'
-    : nav.startsWith('ja')
-      ? 'ja'
-      : nav.startsWith('zh')
-        ? 'zh'
-        : null
-  return isUsable(guess) ? guess : DEFAULT_LANG
+  return DEFAULT_LANG
 }
 
 interface LangContextValue {

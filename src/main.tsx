@@ -4,12 +4,15 @@ import './index.css'
 import App from './App.tsx'
 import { LangProvider } from './i18n'
 import { StoreProvider } from './state/store'
+import { HealthProvider } from './state/health'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <LangProvider>
       <StoreProvider>
-        <App />
+        <HealthProvider>
+          <App />
+        </HealthProvider>
       </StoreProvider>
     </LangProvider>
   </StrictMode>,
