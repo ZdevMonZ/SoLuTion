@@ -7,6 +7,11 @@
  * history answers, the scan, the numbers on the review screen, and the condition
  * chosen on the body map.
  *
+ * A scan goes straight to the body map with whatever it read; the review screen is
+ * reached from there ("Edit numbers"), or used to type a sheet in by hand. A scan
+ * that read nothing stops on the analysing screen instead — an empty body map
+ * would claim everything is in range.
+ *
  * Nothing here is written to storage. A checkup is medical information, and the
  * promise on the form is that it is gone when the visitor leaves.
  */
@@ -26,7 +31,8 @@ import {
 import { readReport, type OcrProgress } from '../health/ocr'
 import { useStore } from './store'
 
-export type ScanStatus = 'idle' | 'running' | 'failed'
+/** `empty`: the reader ran but found no numbers. */
+export type ScanStatus = 'idle' | 'running' | 'failed' | 'empty'
 /** How the review screen's numbers got there — it words its heading by this. */
 export type DraftSource = 'scan' | 'sample' | 'manual'
 
@@ -71,7 +77,7 @@ interface HealthContextValue {
   scanText: string
   /** Items the reader filled, so the review screen can mark them. */
   scanned: ItemId[]
-  /** Scans the frame; moves on to review when it is done, if the visitor is still waiting. */
+  /** Scans the frame; moves on to the body map when it is done, if the visitor is still waiting. */
   startScan: (canvas: HTMLCanvasElement) => void
   startSample: () => void
   startManual: () => void
@@ -84,6 +90,8 @@ interface HealthContextValue {
   confirm: () => void
 
   report: HealthReport | null
+  /** How many items the scan read, when the report is the scan's own; null otherwise. */
+  readCount: number | null
   selected: ConditionId | null
   select: (id: ConditionId | null) => void
   openGuide: (id: ConditionId) => void
@@ -102,7 +110,12 @@ export function HealthProvider({ children }: { children: ReactNode }) {
   const [scanned, setScanned] = useState<ItemId[]>([])
   const [draft, setDraft] = useState<Draft>(EMPTY_DRAFT)
   const [draftSource, setDraftSource] = useState<DraftSource>('manual')
-  const [confirmed, setConfirmed] = useState<{ readings: Readings; sample: boolean } | null>(null)
+  const [confirmed, setConfirmed] = useState<{
+    readings: Readings
+    sample: boolean
+    /** Straight from a scan, not yet looked over on the review screen. */
+    fromScan: boolean
+  } | null>(null)
   const [selected, setSelected] = useState<ConditionId | null>(null)
 
   // Read inside the scan's continuation, which outlives the render that started it.
@@ -142,8 +155,14 @@ export function HealthProvider({ children }: { children: ReactNode }) {
           setScanned(Object.keys(readings) as ItemId[])
           setDraft(draftOf(readings))
           setDraftSource('scan')
+          if (Object.keys(readings).length === 0) {
+            setScanStatus('empty')
+            return
+          }
           setScanStatus('idle')
-          if (pageRef.current === 'health-analyzing') go('health-review')
+          setConfirmed({ readings, sample: false, fromScan: true })
+          setSelected(null)
+          if (pageRef.current === 'health-analyzing') go('health-result')
         })
         .catch((error) => {
           if (scanId.current !== id) return
@@ -166,7 +185,9 @@ export function HealthProvider({ children }: { children: ReactNode }) {
     resetScan()
     setDraft(draftOf(SAMPLE_READINGS))
     setDraftSource('sample')
-    go('health-review')
+    setConfirmed({ readings: SAMPLE_READINGS, sample: true, fromScan: false })
+    setSelected(null)
+    go('health-result')
   }, [go, resetScan])
 
   const startManual = useCallback(() => {
@@ -175,7 +196,7 @@ export function HealthProvider({ children }: { children: ReactNode }) {
       setDraft(EMPTY_DRAFT)
       setDraftSource('manual')
     }
-    if (scanStatus === 'failed') setScanStatus('idle')
+    if (scanStatus === 'failed' || scanStatus === 'empty') setScanStatus('idle')
     go('health-review')
   }, [draftSource, go, scanStatus])
 
@@ -184,7 +205,7 @@ export function HealthProvider({ children }: { children: ReactNode }) {
   const confirm = useCallback(() => {
     const readings = readingsOf(draft)
     if (Object.keys(readings).length === 0) return
-    setConfirmed({ readings, sample: draftSource === 'sample' })
+    setConfirmed({ readings, sample: draftSource === 'sample', fromScan: false })
     setSelected(null)
     go('health-result')
   }, [draft, draftSource, go])
@@ -218,6 +239,7 @@ export function HealthProvider({ children }: { children: ReactNode }) {
       canConfirm,
       confirm,
       report,
+      readCount: confirmed?.fromScan ? Object.keys(confirmed.readings).length : null,
       selected,
       select: setSelected,
       openGuide: (id) => {
@@ -241,6 +263,7 @@ export function HealthProvider({ children }: { children: ReactNode }) {
       canConfirm,
       confirm,
       report,
+      confirmed,
       selected,
       go,
     ],

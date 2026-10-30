@@ -1,5 +1,7 @@
 /**
- * H4 Checking the numbers.
+ * H4 Checking the numbers — reached from the body map's "Edit numbers", or from
+ * "Type the numbers in" when there is no photo to read. A scan no longer stops
+ * here on its way to the body map; this is where its misreads get fixed.
  *
  * The step the skin reading does not have, and the one that makes this mode
  * trustworthy: a webcam photo of a table is read imperfectly, so every value the
@@ -10,7 +12,7 @@
  * Rows are grouped by condition — the order the body map and guide will use — so
  * blood pressure's two numbers and the four lipid lines sit together.
  */
-import { BackLink, Card, Display, Note, PrimaryButton, Prose, Shell, StepProgress } from '../../components/primitives'
+import { BackLink, Card, Display, Note, PrimaryButton, Prose, Shell } from '../../components/primitives'
 import { Icon, PATHS } from '../../components/Icons'
 import { columns, screenPadding, useNarrow } from '../../components/layout'
 import { C, FONT_DISPLAY, FONT_MONO, HEALTH, HEALTH_LEVELS as LEVEL_LOOK } from '../../theme'
@@ -22,7 +24,7 @@ import { useStore } from '../../state/store'
 
 export function HealthReview() {
   const { profile, go } = useStore()
-  const { draft, draftSource, scanned, scanText, photoUrl, setDraftValue, canConfirm, confirm } = useHealth()
+  const { draft, draftSource, scanned, scanText, photoUrl, setDraftValue, canConfirm, confirm, report } = useHealth()
   const all = useCopy(HEALTH_COPY)
   const copy = all.review
   const narrow = useNarrow()
@@ -129,9 +131,12 @@ export function HealthReview() {
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 48, 80) }}>
       <Shell width={1040}>
-        <StepProgress step={3} width={720} />
-        <div style={{ marginTop: narrow ? 18 : 26 }}>
-          <BackLink onClick={() => go('health-capture')}>{copy.retake}</BackLink>
+        <div>
+          {report ? (
+            <BackLink onClick={() => go('health-result')}>{copy.back}</BackLink>
+          ) : (
+            <BackLink onClick={() => go('health-capture')}>{copy.retake}</BackLink>
+          )}
         </div>
         <Display size={34} style={{ marginTop: 14 }}>
           {copy.title}

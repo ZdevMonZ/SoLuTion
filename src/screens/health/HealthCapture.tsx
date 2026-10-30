@@ -131,7 +131,7 @@ export function HealthCapture() {
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 48, 80) }}>
       <Shell width={980}>
-        <StepProgress step={2} width={720} />
+        <StepProgress step={2} of={2} width={720} />
 
         {/* The skin camera's skip, in the same place. There is nothing to judge without
             numbers, so skipping goes on with the sample sheet's. */}

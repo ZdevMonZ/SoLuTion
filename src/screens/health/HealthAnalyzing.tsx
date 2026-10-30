@@ -4,9 +4,9 @@
  * Unlike the skin reading's analysing screen, this one waits on real work — the
  * reader's first run downloads its models and reading a full page takes seconds —
  * so the bar is the reader's own progress, not a paced sweep. The photo sits
- * behind a scan line, so the wait is visibly about the sheet. Moving on to review
- * is the store's job, done when the reading lands; this screen only shows it, or
- * the way out if the reader would not start.
+ * behind a scan line, so the wait is visibly about the sheet. Moving on to the
+ * body map is the store's job, done when the reading lands; this screen only shows
+ * it, or the way out if the reader would not start or found no numbers.
  */
 import { useEffect } from 'react'
 import { GhostButton, PrimaryButton } from '../../components/primitives'
@@ -32,7 +32,8 @@ export function HealthAnalyzing() {
   // Loading is the first third of the bar, reading the rest, so it never runs backwards.
   const ratio = progress ? (reading ? 0.3 + progress.ratio * 0.7 : progress.ratio * 0.3) : 0
   const pct = `${Math.round(ratio * 100)}%`
-  const failed = scanStatus === 'failed'
+  const empty = scanStatus === 'empty'
+  const failed = scanStatus === 'failed' || empty
 
   return (
     <div
@@ -89,13 +90,13 @@ export function HealthAnalyzing() {
         className="headline"
         style={{ marginTop: narrow ? 28 : 40, fontFamily: FONT_DISPLAY, fontSize: narrow ? 24 : 28, fontWeight: 300 }}
       >
-        {failed ? copy.failedTitle : copy.title}
+        {empty ? copy.emptyTitle : failed ? copy.failedTitle : copy.title}
       </div>
 
       {failed ? (
         <>
           <div style={{ marginTop: 14, maxWidth: 440, fontSize: 14.5, lineHeight: 1.7, color: 'rgba(212,222,238,.8)' }}>
-            {copy.failedBody}
+            {empty ? copy.emptyBody : copy.failedBody}
           </div>
           <div style={{ marginTop: 26, display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
             <PrimaryButton onClick={() => go('health-capture')} height={48}>

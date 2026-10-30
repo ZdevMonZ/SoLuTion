@@ -82,14 +82,18 @@ consulted; a visitor's own pick from the language picker is kept.
 
 The switch beside the wordmark changes between the skin check and the health
 checkup. The checkup runs H1 form (age, gender, family history, medical history,
-district) → H2 scan the result sheet → H3 read it → **H4 check the numbers** → H5
-body map → H6 care guide for one area → H7 hospitals for that area's department.
+district) → H2 scan the result sheet → H3 read it → H5 body map → H6 care guide for
+one area → H7 hospitals for that area's department.
 
-- **H4 is the safety net, not a formality.** A webcam photo of a table is read
-  imperfectly. Measured on test sheets: a clean, flat scan reads 13 of 15 values; a
-  tilted, small, slightly blurred webcam-style frame 8 of 15, with one wrong. Every
-  value lands in an editable field beside the photo, marked "From photo", and the
-  visitor confirms before anything is judged.
+- **A scan goes straight to the body map** (the user's call, 2026-10-30), with a
+  line saying how many of the 15 items were read. H4, the editable check of the
+  numbers, is reached from the body map's "Edit numbers", or from "Type the numbers
+  in" when there is no photo. A scan that read nothing stops on H3 with retake /
+  type-in, because an empty body map would claim everything is in range.
+- **Misreads reach the body map unchecked.** Measured on test sheets: a clean,
+  flat scan reads 13 of 15 values; a tilted, small, slightly blurred webcam-style
+  frame 8–9 of 15, with one wrong (γ-GTP 52 read as 163, shown as needing
+  attention). "Edit numbers" is where that gets fixed.
 - **What the measurements decided** (`health/ocr.ts`): automatic page layout
   (Tesseract.js's default single-block mode read 0 of 15 off a bordered table);
   local adaptive thresholding (a sheet surrounded by desk read 0 of 15 with a

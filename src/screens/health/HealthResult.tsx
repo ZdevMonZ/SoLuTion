@@ -13,7 +13,7 @@ import { Icon, PATHS } from '../../components/Icons'
 import { Card, Display, Eyebrow, GhostButton, Note, Pressable, Prose, Shell, Tag } from '../../components/primitives'
 import { columns, screenPadding, useNarrow } from '../../components/layout'
 import { C, FONT_DISPLAY, HEALTH, HEALTH_LEVELS as LEVEL_LOOK } from '../../theme'
-import { CONDITIONS, formatValue, type ConditionResult } from '../../health/items'
+import { CONDITIONS, ITEM_IDS, formatValue, type ConditionResult } from '../../health/items'
 import { useCopy } from '../../i18n'
 import { HEALTH_COPY } from '../../i18n/health'
 import { useHealth } from '../../state/health'
@@ -21,7 +21,7 @@ import { useStore } from '../../state/store'
 
 export function HealthResult() {
   const { go } = useStore()
-  const { report, selected, select, openGuide } = useHealth()
+  const { report, readCount, selected, select, openGuide } = useHealth()
   const all = useCopy(HEALTH_COPY)
   const copy = all.result
   const narrow = useNarrow()
@@ -203,6 +203,21 @@ export function HealthResult() {
               {copy.title(needing)}
             </Display>
             <Prose style={{ marginTop: 10, lineHeight: 1.7 }}>{copy.subtitle}</Prose>
+            {readCount !== null ? (
+              <div
+                style={{
+                  marginTop: 14,
+                  padding: '10px 14px',
+                  borderRadius: 10,
+                  background: C.chip,
+                  color: C.blueDark,
+                  fontSize: 13.5,
+                  lineHeight: 1.6,
+                }}
+              >
+                {copy.readCount(readCount, ITEM_IDS.length)}
+              </div>
+            ) : null}
 
             {narrow ? <div style={{ marginTop: 18 }}>{body}</div> : null}
 

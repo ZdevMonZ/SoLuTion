@@ -83,7 +83,7 @@ export function HealthForm() {
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 48, 80) }}>
       <Shell width={720}>
-        <StepProgress step={1} />
+        <StepProgress step={1} of={2} />
 
         <div style={{ marginTop: narrow ? 24 : 36 }}>
           <Eyebrow>{copy.eyebrow}</Eyebrow>
