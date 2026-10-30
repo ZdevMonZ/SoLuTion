@@ -152,6 +152,14 @@ button {
   color: #2e5aac;
 }
 
+/* The skin / health switch: the side not chosen lifts on hover. */
+.mode-opt {
+  background: transparent;
+}
+.mode-opt:not([aria-pressed='true']):hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
 .link-quiet:hover {
   color: #2e5aac;
 }

@@ -8,7 +8,7 @@
 import { Icon, PATHS } from './Icons'
 import { Pressable } from './primitives'
 import { useNarrow } from './layout'
-import { C, FONT_DISPLAY } from '../theme'
+import { C, FONT_DISPLAY, HEALTH } from '../theme'
 import { LANGUAGES } from '../data/languages'
 import { useCopy, useLang } from '../i18n'
 import { NAV, type NavTab } from '../i18n/nav'
@@ -101,13 +101,16 @@ export function TopNav() {
         padding: 3,
         gap: 2,
         borderRadius: 11,
-        background: C.chipAlt,
-        border: `1px solid ${C.border}`,
+        background: C.chip,
+        border: `1px solid ${C.borderBlue}`,
         flex: narrow ? 1 : 'none',
       }}
     >
       {(['skin', 'health'] as const).map((mode) => {
         const on = (mode === 'health') === health
+        // Filled in the mode's own colour, so which reading the site is doing reads
+        // from across the room: the brand blue for skin, the health mode's green.
+        const fill = mode === 'skin' ? C.blue : HEALTH.normal
         return (
           <Pressable
             key={mode}
@@ -116,18 +119,19 @@ export function TopNav() {
               if (on) return
               go(mode === 'skin' ? 'landing' : report ? 'health-result' : 'health-form')
             }}
-            className="nav-item"
+            className="mode-opt"
             style={{
               flex: narrow ? 1 : undefined,
               textAlign: 'center',
-              padding: narrow ? '7px 8px' : '7px 13px',
+              padding: narrow ? '8px 8px' : '8px 15px',
               borderRadius: 8,
-              fontSize: narrow ? 13 : 13.5,
-              fontWeight: on ? 600 : 500,
+              fontSize: narrow ? 13.5 : 14,
+              fontWeight: on ? 700 : 500,
               whiteSpace: 'nowrap',
-              color: on ? C.blue : C.bodyFaint,
-              background: on ? C.surface : 'transparent',
-              boxShadow: on ? '0 1px 3px rgba(20,32,58,.1)' : 'none',
+              color: on ? '#fff' : C.blueDark,
+              // Unset when off, so the stylesheet's hover can tint it.
+              background: on ? fill : undefined,
+              boxShadow: on ? `0 4px 12px ${fill}55` : 'none',
             }}
           >
             {copy.modes[mode]}
