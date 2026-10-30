@@ -16,31 +16,49 @@ import {
   Tag,
 } from '../components/primitives'
 import { columns, screenPadding, useNarrow } from '../components/layout'
-import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
-import { DISTRICTS, TREATMENTS } from '../data/catalog'
-import { LANG_LABEL } from '../data/languages'
+import { C, FONT_DISPLAY, FONT_MONO_TEXT } from '../theme'
+import { useCopy, useLang } from '../i18n'
+import { useCatalog } from '../i18n/catalog'
+import { COMMUNITY } from '../i18n/community'
 import {
   FILTER_ALL,
   FILTER_DISTRICT_PREFIX,
   FILTER_TREATMENT_PREFIX,
   FILTER_VERIFIED,
+  USER_POST_PREFIX,
   useStore,
 } from '../state/store'
 
-const FILTERS = [
-  { id: FILTER_ALL, label: 'All posts' },
-  { id: FILTER_VERIFIED, label: 'Verified only' },
-  ...TREATMENTS.slice(0, 3).map((t) => ({
-    id: `${FILTER_TREATMENT_PREFIX}${t.id}`,
-    label: t.shortName,
-  })),
-  ...DISTRICTS.map((d) => ({ id: `${FILTER_DISTRICT_PREFIX}${d.key}`, label: d.name })),
-]
-
 export function Community() {
   const { communityFilterId, setCommunityFilter, communityFeed, openModal } = useStore()
-  const posts = communityFeed()
+  const { lang } = useLang()
+  const copy = useCopy(COMMUNITY)
+  const cat = useCatalog()
   const narrow = useNarrow()
+
+  // Wide tracking is a Latin caps device. Hangul, kana and hanzi spread that far read
+  // as loose characters rather than a label, so they keep only a hint of it.
+  const tracking = (latin: string) => (lang === 'en' ? latin : '.04em')
+
+  const filters = [
+    { id: FILTER_ALL, label: copy.filterAll },
+    { id: FILTER_VERIFIED, label: copy.filterVerified },
+    ...cat.TREATMENTS.slice(0, 3).map((t) => ({
+      id: `${FILTER_TREATMENT_PREFIX}${t.id}`,
+      label: t.shortName,
+    })),
+    ...cat.DISTRICTS.map((d) => ({ id: `${FILTER_DISTRICT_PREFIX}${d.key}`, label: d.name })),
+  ]
+
+  // The store filters the English catalogue's posts on ids. Each seeded post is
+  // re-read here in the page's language by that id; a post written in the composer
+  // keeps its own text and tags, under a byline the page writes in its language.
+  const seedById = new Map(cat.SEED_POSTS.map((p) => [p.id, p]))
+  const posts = communityFeed().map((p) =>
+    p.id.startsWith(USER_POST_PREFIX)
+      ? { ...p, author: copy.you, initials: copy.youInitials, meta: copy.justNow }
+      : (seedById.get(p.id) ?? p),
+  )
 
   // The badge's key. Under the filters on a laptop; after the feed on a phone,
   // where above it would push the first post off the screen.
@@ -59,11 +77,11 @@ export function Community() {
           <Icon path={PATHS.verified} size={19} />
         </span>
         <div style={{ fontFamily: FONT_DISPLAY, fontSize: 13.5, fontWeight: 600, color: C.ink }}>
-          Verified Visit
+          {copy.verifiedTitle}
         </div>
       </div>
       <div style={{ marginTop: 9, fontSize: 12.5, lineHeight: 1.7, color: C.bodyMuted }}>
-        Shown on posts from users who booked that clinic through Solution.
+        {copy.verifiedBody}
       </div>
     </div>
   )
@@ -81,9 +99,9 @@ export function Community() {
           }}
         >
           <div>
-            <Display size={34}>Community</Display>
+            <Display size={34}>{copy.title}</Display>
             <Note style={{ marginTop: 10, fontSize: 15, color: C.bodyMuted }}>
-              Posts in {LANG_LABEL} · {posts.length} shown
+              {copy.subtitle(posts.length)}
             </Note>
           </div>
           <Pressable
@@ -107,7 +125,7 @@ export function Community() {
             }}
           >
             <span style={{ fontSize: 19, fontWeight: 400, lineHeight: 1 }}>+</span>
-            <span>Write a post</span>
+            <span>{copy.writePost}</span>
           </Pressable>
         </div>
 
@@ -122,8 +140,10 @@ export function Community() {
         >
           <div style={{ position: narrow ? 'static' : 'sticky', top: 92, minWidth: 0 }}>
             {narrow ? null : (
-              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '.1em', color: C.muted }}>
-                FILTERS
+              <div
+                style={{ fontSize: 12, fontWeight: 600, letterSpacing: tracking('.1em'), color: C.muted }}
+              >
+                {copy.filtersHeading}
               </div>
             )}
             {/* A phone scrolls the filters sideways as one row of chips. */}
@@ -140,7 +160,7 @@ export function Community() {
                   : { marginTop: 14, display: 'flex', flexDirection: 'column', gap: 8 }
               }
             >
-              {FILTERS.map((f) => {
+              {filters.map((f) => {
                 const on = f.id === communityFilterId
                 return (
                   <Pressable
@@ -238,7 +258,7 @@ export function Community() {
                               color: C.blue,
                             }}
                           >
-                            VERIFIED VISIT
+                            {copy.verifiedBadge}
                           </span>
                         </div>
                       ) : null}
@@ -252,7 +272,7 @@ export function Community() {
                   placeholder. A post written here gets no photo frame, because the
                   composer cannot attach one.
                 */}
-                {p.id.startsWith('post_user_') ? null : (
+                {p.id.startsWith(USER_POST_PREFIX) ? null : (
                   <div
                     style={{
                       marginTop: 18,
@@ -270,12 +290,12 @@ export function Community() {
                     <div
                       style={{
                         fontSize: 9,
-                        letterSpacing: '.1em',
+                        letterSpacing: tracking('.1em'),
                         color: 'rgba(20,32,58,.45)',
-                        fontFamily: FONT_MONO,
+                        fontFamily: FONT_MONO_TEXT,
                       }}
                     >
-                      PHOTO PLACEHOLDER
+                      {copy.photoPlaceholder}
                     </div>
                   </div>
                 )}
@@ -329,9 +349,7 @@ export function Community() {
                   textAlign: 'center',
                 }}
               >
-                <div style={{ fontSize: 14, color: C.muted }}>
-                  No posts under this filter yet. Yours would be the first.
-                </div>
+                <div style={{ fontSize: 14, color: C.muted }}>{copy.empty}</div>
               </div>
             ) : null}
           </div>

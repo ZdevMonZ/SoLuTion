@@ -19,14 +19,19 @@ import {
   Shell,
 } from '../components/primitives'
 import { columns, screenPadding, useNarrow } from '../components/layout'
-import { C, FONT_DISPLAY, FONT_MONO, houseOf } from '../theme'
-import { productById, productsFor, tieFor, won } from '../data/catalog'
+import { C, FONT_DISPLAY, FONT_MONO_TEXT, houseOf } from '../theme'
+import { won } from '../data/catalog'
+import { useCopy } from '../i18n'
+import { useCatalog } from '../i18n/catalog'
+import { PRODUCT } from '../i18n/product'
 import { useStore, useTreatment } from '../state/store'
 
 export function Product() {
   const { selectedProductId, quantity, setQuantity, go } = useStore()
-  const treatment = useTreatment()
-  const product = productById(selectedProductId) ?? productsFor(treatment)[0]
+  const cat = useCatalog()
+  const copy = useCopy(PRODUCT)
+  const treatment = cat.treatment(useTreatment())
+  const product = cat.productById(selectedProductId) ?? cat.productsFor(treatment)[0]
   const house = houseOf(product.brand)
   const [checkoutNote, setCheckoutNote] = useState(false)
   const narrow = useNarrow()
@@ -157,10 +162,10 @@ export function Product() {
                   letterSpacing: '.1em',
                   opacity: 0.7,
                   color: house.chrome,
-                  fontFamily: FONT_MONO,
+                  fontFamily: FONT_MONO_TEXT,
                 }}
               >
-                PACKSHOT PLACEHOLDER
+                {copy.packshot}
               </div>
             </div>
           </div>
@@ -196,7 +201,7 @@ export function Product() {
             >
               <Dot color={C.blue} size={7} top={7} />
               <div style={{ flex: 1, fontSize: 14, lineHeight: 1.7, color: C.inkSoft }}>
-                {tieFor(product, treatment.id)}
+                {cat.tieFor(product, treatment.id)}
               </div>
             </div>
 
@@ -246,7 +251,7 @@ export function Product() {
               }}
             >
               <div>
-                <Note style={{ fontSize: 12.5 }}>Clinic member price</Note>
+                <Note style={{ fontSize: 12.5 }}>{copy.memberPrice}</Note>
                 <div
                   style={{
                     marginTop: 6,
@@ -271,7 +276,7 @@ export function Product() {
               >
                 <Pressable
                   onClick={() => setQuantity(-1)}
-                  label="One fewer"
+                  label={copy.fewer}
                   className="btn-step"
                   style={{
                     width: 48,
@@ -300,7 +305,7 @@ export function Product() {
                 </div>
                 <Pressable
                   onClick={() => setQuantity(1)}
-                  label="One more"
+                  label={copy.more}
                   className="btn-step"
                   style={{
                     width: 48,
@@ -320,12 +325,12 @@ export function Product() {
             <div style={{ marginTop: 22, display: 'flex', gap: 12 }}>
               <div style={{ flex: 1 }}>
                 <GhostButton onClick={() => setCheckoutNote(true)} height={54} full>
-                  Add to Cart
+                  {copy.addToCart}
                 </GhostButton>
               </div>
               <div style={{ flex: 1.3 }}>
                 <PrimaryButton onClick={() => setCheckoutNote(true)} height={54} full fontSize={16}>
-                  Buy Now
+                  {copy.buyNow}
                 </PrimaryButton>
               </div>
             </div>
@@ -348,8 +353,7 @@ export function Product() {
                   color: C.inkSoft,
                 }}
               >
-                Checkout is not part of this prototype. Both lines are stocked at the partner
-                clinics — ask at the front desk on your treatment day.
+                {copy.checkoutNote}
               </div>
             ) : null}
 
@@ -365,8 +369,7 @@ export function Product() {
                 color: C.bodyMuted,
               }}
             >
-              Pick up at the clinic on your treatment day, or have it delivered to your hotel. Free
-              delivery over ₩50,000.
+              {copy.deliveryNote}
             </Card>
           </div>
         </div>

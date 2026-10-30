@@ -19,13 +19,8 @@ import { useEffect, useState } from 'react'
 import { useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
 import { SIMULATED_ANALYSIS_MILLIS, useStore } from '../state/store'
-
-const STEPS = [
-  'Mapping pore density',
-  'Reading pigment spread',
-  'Comparing texture and firmness',
-  'Checking against clinical ranges',
-]
+import { useCopy } from '../i18n'
+import { ANALYZING } from '../i18n/analyzing'
 
 const TICK_MS = 90
 /** Held back from 100 until the reading actually lands, so the bar never lies. */
@@ -43,6 +38,7 @@ const STARS = [
 export function Analyzing() {
   const { analysis, go } = useStore()
   const narrow = useNarrow()
+  const copy = useCopy(ANALYZING)
   // Whatever the store held when this screen opened — null on a first reading, the
   // previous one on a retake.
   const [before] = useState(() => analysis)
@@ -75,7 +71,8 @@ export function Analyzing() {
   // The bar only reaches the end once the reading actually has.
   const shown = fresh ? 100 : progress
   const pct = `${Math.round(shown)}%`
-  const stepIndex = Math.min(STEPS.length - 1, Math.floor(shown / (100 / STEPS.length)))
+  const steps = copy.steps
+  const stepIndex = Math.min(steps.length - 1, Math.floor(shown / (100 / steps.length)))
 
   return (
     <div
@@ -183,6 +180,7 @@ export function Analyzing() {
       </div>
 
       <div
+        className="headline"
         style={{
           marginTop: narrow ? 32 : 48,
           fontFamily: FONT_DISPLAY,
@@ -192,10 +190,10 @@ export function Analyzing() {
           color: '#F4F7FB',
         }}
       >
-        Reading your skin
+        {copy.title}
       </div>
       <div style={{ marginTop: 16, fontSize: 15, color: 'rgba(143,184,232,.95)', height: 22 }}>
-        {STEPS[stepIndex]}
+        {steps[stepIndex]}
       </div>
       <div
         style={{
@@ -227,7 +225,10 @@ export function Analyzing() {
       >
         {pct}
       </div>
+      {/* `headline` for its line breaking only: two balanced lines, which in
+          Japanese break between phrases rather than inside 破棄. */}
       <div
+        className="headline"
         style={{
           marginTop: narrow ? 32 : 48,
           fontSize: 13,
@@ -237,7 +238,7 @@ export function Analyzing() {
           maxWidth: 420,
         }}
       >
-        The captured frame is processed in your browser and discarded when the reading finishes.
+        {copy.footnote}
       </div>
     </div>
   )

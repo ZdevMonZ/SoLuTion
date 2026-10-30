@@ -14,7 +14,9 @@ import { Card, Dot, FieldLabel, Pressable, PrimaryButton } from './primitives'
 import { columns, useNarrow } from './layout'
 import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
 import { LANGUAGES } from '../data/languages'
-import { CLINICS, TREATMENTS, clinicsIn } from '../data/catalog'
+import { useCopy, useLang } from '../i18n'
+import { useCatalog } from '../i18n/catalog'
+import { MODALS } from '../i18n/modals'
 import { useStore, useTreatment } from '../state/store'
 
 const MAX_POST = 1000
@@ -71,10 +73,11 @@ function Backdrop({ onClose, children, width }: { onClose: () => void; children:
 }
 
 function CloseButton({ onClick }: { onClick: () => void }) {
+  const copy = useCopy(MODALS)
   return (
     <Pressable
       onClick={onClick}
-      label="Close"
+      label={copy.close}
       className="btn-close"
       style={{
         width: 36,
@@ -95,6 +98,8 @@ function CloseButton({ onClick }: { onClick: () => void }) {
 
 export function LanguageModal() {
   const { closeModal } = useStore()
+  const { lang, setLang } = useLang()
+  const copy = useCopy(MODALS).language
   const narrow = useNarrow()
   return (
     <Backdrop onClose={closeModal} width={560}>
@@ -109,11 +114,9 @@ export function LanguageModal() {
       >
         <div>
           <div style={{ fontFamily: FONT_DISPLAY, fontSize: 24, fontWeight: 600, color: C.ink }}>
-            Choose your language
+            {copy.title}
           </div>
-          <div style={{ marginTop: 8, fontSize: 14, color: C.bodyMuted }}>
-            The community feed is scoped to this language.
-          </div>
+          <div style={{ marginTop: 8, fontSize: 14, color: C.bodyMuted }}>{copy.subtitle}</div>
         </div>
         <CloseButton onClick={closeModal} />
       </div>
@@ -130,14 +133,24 @@ export function LanguageModal() {
             key={l.code}
             className={l.available ? 'opt' : 'is-disabled'}
             aria-disabled={!l.available}
+            aria-current={l.lang === lang}
+            onClick={
+              l.available
+                ? () => {
+                    setLang(l.lang)
+                    closeModal()
+                  }
+                : undefined
+            }
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: 14,
               padding: 18,
               borderRadius: 14,
+              cursor: l.available ? 'pointer' : undefined,
               background: l.available ? C.chip : C.surfaceMuted,
-              border: `1px solid ${l.available ? C.blue : C.rule}`,
+              border: `${l.lang === lang ? 2 : 1}px solid ${l.available ? C.blue : C.rule}`,
             }}
           >
             <div
@@ -170,7 +183,7 @@ export function LanguageModal() {
                 {l.native}
               </div>
               <div style={{ marginTop: 3, fontSize: 12.5, color: C.muted }}>
-                {l.available ? l.english : 'Not translated yet'}
+                {l.available ? copy.names[l.lang] : copy.notTranslated}
               </div>
             </div>
           </div>
@@ -182,6 +195,7 @@ export function LanguageModal() {
 
 export function SignupModal() {
   const { closeModal, completeSignup, skipSignup, analysis } = useStore()
+  const copy = useCopy(MODALS).signup
   const narrow = useNarrow()
 
   return (
@@ -237,6 +251,9 @@ export function SignupModal() {
               {analysis ? analysis.overallScore : <Mark size={30} />}
             </div>
             <div
+              // Balanced lines in CJK (index.css): at this width the Chinese heading
+              // otherwise leaves its last character alone on the second line.
+              className="headline"
               style={{
                 marginTop: narrow ? 18 : 26,
                 fontFamily: FONT_DISPLAY,
@@ -247,18 +264,13 @@ export function SignupModal() {
                 color: C.ink,
               }}
             >
-              Save your results and unlock treatment matches.
+              {copy.title}
             </div>
             <div style={{ marginTop: 14, fontSize: 14.5, lineHeight: 1.75, color: C.body }}>
-              Your reading stays available for the rest of your trip, and clinics near your district
-              get matched to it.
+              {copy.subtitle}
             </div>
             <div style={{ marginTop: 26, display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {[
-                'Keep this reading for the whole trip and compare a second one later.',
-                'See per-clinic prices for the treatments matched to you.',
-                'Earn points on visits and reviews, redeemable at partner clinics.',
-              ].map((text) => (
+              {copy.perks.map((text) => (
                 <div key={text} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   <span style={{ display: 'flex', marginTop: 2, color: C.blue }}>
                     <Icon path={PATHS.check} size={17} weight={2} />
@@ -282,13 +294,13 @@ export function SignupModal() {
             }}
           >
             <div style={{ fontFamily: FONT_DISPLAY, fontSize: 20, fontWeight: 600, color: C.ink }}>
-              Create your account
+              {copy.formTitle}
             </div>
             <CloseButton onClick={closeModal} />
           </div>
 
           <label style={{ marginTop: 24, display: 'block' }}>
-            <FieldLabel>EMAIL</FieldLabel>
+            <FieldLabel>{copy.emailLabel}</FieldLabel>
             <input
               type="email"
               placeholder="you@example.com"
@@ -308,7 +320,7 @@ export function SignupModal() {
             />
           </label>
           <label style={{ marginTop: 16, display: 'block' }}>
-            <FieldLabel>PASSWORD</FieldLabel>
+            <FieldLabel>{copy.passwordLabel}</FieldLabel>
             <input
               type="password"
               placeholder="••••••••"
@@ -330,7 +342,7 @@ export function SignupModal() {
 
           <div style={{ marginTop: 22 }}>
             <PrimaryButton onClick={completeSignup} full fontSize={16}>
-              Create account
+              {copy.createAccount}
             </PrimaryButton>
           </div>
           {/*
@@ -338,12 +350,12 @@ export function SignupModal() {
             discovering it after typing a password they use elsewhere.
           */}
           <div style={{ marginTop: 10, fontSize: 12, lineHeight: 1.6, color: C.muted }}>
-            Prototype — no account is created and nothing you type is sent or stored.
+            {copy.prototypeNote}
           </div>
 
           <div style={{ margin: '22px 0 16px', display: 'flex', alignItems: 'center', gap: 14 }}>
             <div style={{ flex: 1, height: 1, background: C.border }} />
-            <div style={{ fontSize: 12.5, color: C.muted }}>or continue with</div>
+            <div style={{ fontSize: 12.5, color: C.muted }}>{copy.orContinueWith}</div>
             <div style={{ flex: 1, height: 1, background: C.border }} />
           </div>
           <div style={{ display: 'flex', gap: 10 }}>
@@ -385,7 +397,7 @@ export function SignupModal() {
               display: 'block',
             }}
           >
-            Continue without an account
+            {copy.continueWithout}
           </Pressable>
         </div>
       </div>
@@ -395,15 +407,19 @@ export function SignupModal() {
 
 export function ComposerModal() {
   const { closeModal, submitPost, profile, selectedClinicId } = useStore()
-  const treatment = useTreatment()
+  const copy = useCopy(MODALS).composer
+  // Tags are the names as this page shows them; the store reads a caption in any
+  // language back to the ids its filters run on.
+  const cat = useCatalog()
+  const treatment = cat.treatment(useTreatment())
   const district = profile.districtKey ?? ''
-  const localClinics = clinicsIn(district)
-  const bookedClinic = CLINICS.find((c) => c.id === selectedClinicId)
+  const localClinics = cat.clinicsIn(district)
+  const bookedClinic = cat.clinicById(selectedClinicId)
 
   const [text, setText] = useState('')
   const [treatmentTag, setTreatmentTag] = useState(treatment.shortName)
   const [clinicTag, setClinicTag] = useState(
-    bookedClinic?.name ?? localClinics[0]?.name ?? CLINICS[0].name,
+    bookedClinic?.name ?? localClinics[0]?.name ?? cat.CLINICS[0].name,
   )
 
   // A post with no words is not a post; the button says so rather than failing
@@ -438,7 +454,7 @@ export function ComposerModal() {
         }}
       >
         <div style={{ fontFamily: FONT_DISPLAY, fontSize: 20, fontWeight: 600, color: C.ink }}>
-          New post
+          {copy.title}
         </div>
         <CloseButton onClick={closeModal} />
       </div>
@@ -461,7 +477,7 @@ export function ComposerModal() {
             }}
           >
             <div style={{ fontSize: 22, fontWeight: 300, color: C.faint }}>+</div>
-            <div style={{ fontSize: 12, color: C.muted }}>Add photo</div>
+            <div style={{ fontSize: 12, color: C.muted }}>{copy.addPhoto}</div>
           </div>
           <div
             style={{
@@ -475,7 +491,7 @@ export function ComposerModal() {
               color: C.muted,
             }}
           >
-            Photo upload is not wired up in this prototype — posts publish with text and tags.
+            {copy.photoHint}
           </div>
         </div>
 
@@ -483,7 +499,7 @@ export function ComposerModal() {
           value={text}
           maxLength={MAX_POST}
           onChange={(e) => setText(e.target.value)}
-          placeholder="What was the visit like? What changed, and how long did it take?"
+          placeholder={copy.bodyPlaceholder}
           style={{
             marginTop: 24,
             width: '100%',
@@ -513,15 +529,15 @@ export function ComposerModal() {
         >
           <label>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-              <FieldLabel>TREATMENT TAG</FieldLabel>
-              <div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>REQUIRED</div>
+              <FieldLabel>{copy.treatmentTag}</FieldLabel>
+              <div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>{copy.required}</div>
             </div>
             <select
               value={treatmentTag}
               onChange={(e) => setTreatmentTag(e.target.value)}
               style={selectStyle}
             >
-              {TREATMENTS.map((t) => (
+              {cat.TREATMENTS.map((t) => (
                 <option key={t.id} value={t.shortName}>
                   {t.shortName}
                 </option>
@@ -530,8 +546,8 @@ export function ComposerModal() {
           </label>
           <label>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-              <FieldLabel>CLINIC TAG</FieldLabel>
-              <div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>REQUIRED</div>
+              <FieldLabel>{copy.clinicTag}</FieldLabel>
+              <div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>{copy.required}</div>
             </div>
             <select
               value={clinicTag}
@@ -569,14 +585,14 @@ export function ComposerModal() {
               <Icon path={PATHS.verified} size={19} />
             </span>
             <div style={{ flex: 1, fontSize: 13.5, lineHeight: 1.7, color: C.inkSoft }}>
-              Because you booked this clinic through Solution, your post gets a Verified Visit badge.
+              {copy.verifiedNotice}
             </div>
           </Card>
         ) : (
           <div style={{ marginTop: 22, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
             <Dot />
             <div style={{ flex: 1, fontSize: 13, lineHeight: 1.7, color: C.muted }}>
-              Verified Visit is added to posts about a clinic you booked through Solution.
+              {copy.verifiedHint}
             </div>
           </div>
         )}
@@ -608,7 +624,7 @@ export function ComposerModal() {
             color: C.inkSoft,
           }}
         >
-          Cancel
+          {copy.cancel}
         </Pressable>
         <PrimaryButton
           onClick={() => submitPost(text.trim(), treatmentTag, clinicTag)}
@@ -617,7 +633,7 @@ export function ComposerModal() {
           padding={26}
           fontSize={15}
         >
-          Publish post
+          {copy.publish}
         </PrimaryButton>
       </div>
     </Backdrop>

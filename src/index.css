@@ -13,12 +13,71 @@
   box-sizing: border-box;
 }
 
+/*
+ * The faces a Korean, Japanese or Chinese page draws its own script with, slotted
+ * into every stack right after the Latin face (body here; FONT_DISPLAY and
+ * FONT_MONO in theme.ts). Nothing CJK is downloaded: these are the systems' own,
+ * macOS/iOS first, then Noto (Android, Linux), then Windows.
+ *
+ * Per language, because Han characters are drawn differently in each: a kanji
+ * taken from a Chinese font reads as foreign to a Japanese reader. Left to itself,
+ * the system cascade picks by the OS language, not the page's. An English page
+ * leaves the property unset, and each stack falls back to what it always was.
+ */
+:root:lang(ko) {
+  --cjk: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Noto Sans CJK KR', 'Malgun Gothic';
+}
+
+:root:lang(ja) {
+  --cjk: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Noto Sans CJK JP', Meiryo;
+}
+
+:root:lang(zh) {
+  --cjk: 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Noto Sans CJK SC', 'Microsoft YaHei';
+}
+
+/* FONT_MONO_TEXT in theme.ts: translated captions drop the mono face on a CJK page. */
+:root:lang(ko),
+:root:lang(ja),
+:root:lang(zh) {
+  --mono-text: var(--cjk), sans-serif;
+}
+
 body {
   margin: 0;
   background: #fafafa;
-  font-family: 'Karla', system-ui, sans-serif;
+  font-family: 'Karla', var(--cjk, system-ui), sans-serif;
   color: #14203a;
   -webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Line breaking. Korean is written with spaces between words, and Korean readers
+ * expect a line to break there, never inside a word — which the browser's default
+ * does. Japanese and Chinese break between any two characters by rule, which
+ * strands a lone character ("ん。") on a paragraph's last line; `pretty` evens that
+ * out where the browser supports it. A headline gets balanced lines instead, and in
+ * Japanese, breaks at phrase edges where the browser can find them.
+ */
+:root:lang(ko) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+:root:lang(ko),
+:root:lang(ja),
+:root:lang(zh) {
+  text-wrap: pretty;
+}
+
+:lang(ko) .headline,
+:lang(ja) .headline,
+:lang(zh) .headline {
+  text-wrap: balance;
+}
+
+:lang(ja) .headline {
+  word-break: auto-phrase;
 }
 
 a {

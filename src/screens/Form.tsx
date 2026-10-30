@@ -19,10 +19,12 @@ import {
 } from '../components/primitives'
 import { screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
-import { DISTRICTS } from '../data/catalog'
-import { SKIN_TONE, ageBandLabel, genderLabel } from '../data/strings'
+import { useStrings } from '../data/strings'
 import { AGE_BANDS, GENDERS } from '../analysis/types'
 import { SUN_REACTIONS } from '../data/fitzpatrick'
+import { useCopy } from '../i18n'
+import { useCatalog } from '../i18n/catalog'
+import { FORM } from '../i18n/form'
 import { useStore } from '../state/store'
 
 /** The chip's two looks. The design's `opt()`, one place for both. */
@@ -35,6 +37,9 @@ const optionStyle = (on: boolean) => ({
 
 export function Form() {
   const { profile, setAgeBand, setGender, setFitzpatrick, setDistrict, go } = useStore()
+  const { SKIN_TONE, ageBandLabel, genderLabel } = useStrings()
+  const { DISTRICTS } = useCatalog()
+  const copy = useCopy(FORM)
   const narrow = useNarrow()
 
   return (
@@ -43,15 +48,14 @@ export function Form() {
         <StepProgress step={1} />
 
         <Display size={38} style={{ marginTop: narrow ? 24 : 36, lineHeight: 1.2 }}>
-          A few details, then one photo.
+          {copy.title}
         </Display>
         <Prose size={16} style={{ marginTop: 14, maxWidth: 560, lineHeight: 1.7 }}>
-          Skin reads differently by age and history, so we ask first. Nothing is shared with a clinic
-          until you book.
+          {copy.subtitle}
         </Prose>
 
         <Card style={{ marginTop: narrow ? 28 : 40, padding: narrow ? 20 : 32 }}>
-          <FieldLabel>AGE RANGE</FieldLabel>
+          <FieldLabel>{copy.ageHeading}</FieldLabel>
           <div style={{ marginTop: 14, display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {AGE_BANDS.map((band) => (
               <Pressable
@@ -71,7 +75,7 @@ export function Form() {
           </div>
 
           <div style={{ marginTop: 32 }}>
-            <FieldLabel>GENDER</FieldLabel>
+            <FieldLabel>{copy.genderHeading}</FieldLabel>
           </div>
           <div
             style={{
@@ -139,9 +143,7 @@ export function Form() {
                 >
                   {reaction.type}
                 </span>
-                <span>
-                  {reaction.burn}. {reaction.tan}.
-                </span>
+                <span>{SKIN_TONE.option(reaction.type)}</span>
               </Pressable>
             ))}
           </div>
@@ -150,13 +152,16 @@ export function Form() {
             style={{
               marginTop: 32,
               display: 'flex',
+              // On a phone the note drops under the heading rather than squeezing it
+              // into a sliver, which a CJK heading fills a character or two a line.
+              flexWrap: 'wrap',
               alignItems: 'baseline',
               justifyContent: 'space-between',
-              gap: 16,
+              gap: '6px 16px',
             }}
           >
-            <FieldLabel>WHERE ARE YOU STAYING?</FieldLabel>
-            <Note>We match clinics within walking distance.</Note>
+            <FieldLabel>{copy.districtHeading}</FieldLabel>
+            <Note>{copy.districtNote}</Note>
           </div>
           <div
             style={{
@@ -246,11 +251,9 @@ export function Form() {
             justifyContent: 'space-between',
           }}
         >
-          <Note style={{ maxWidth: 420, lineHeight: 1.6 }}>
-            Your webcam frame stays in the browser and is discarded after the reading.
-          </Note>
+          <Note style={{ maxWidth: 420, lineHeight: 1.6 }}>{copy.privacyNote}</Note>
           <PrimaryButton onClick={() => go('capture')} fontSize={16} full={narrow}>
-            <span>Continue to camera</span>
+            <span>{copy.cta}</span>
             <span style={{ display: 'flex' }}>
               <Icon path={PATHS.arrow} size={19} weight={1.7} />
             </span>

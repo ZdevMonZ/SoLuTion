@@ -21,38 +21,47 @@ import {
 } from '../components/primitives'
 import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, SHADOW_PANEL } from '../theme'
-import { DISTRICTS, clinicById, clinicsIn, districtByKey, won } from '../data/catalog'
+import { won } from '../data/catalog'
+import { useCopy, useLang } from '../i18n'
+import { BOOKING } from '../i18n/booking'
+import { useCatalog } from '../i18n/catalog'
+import { CLINIC_LIST } from '../i18n/clinics'
 import { useStore, useTreatment } from '../state/store'
 
-const DAYS = [
-  { dow: 'MON', num: '21' },
-  { dow: 'TUE', num: '22' },
-  { dow: 'WED', num: '23' },
-  { dow: 'THU', num: '24' },
-]
+/**
+ * One mock week, Monday to Thursday. Real dates rather than "MON 21" literals, so
+ * each language names the weekday and month itself: 21 September 2026 is the
+ * Monday the design draws.
+ */
+const DAYS = [21, 22, 23, 24].map((n) => ({ num: String(n), date: new Date(2026, 8, n) }))
 
 /** The last one is drawn taken, so the grid shows what a full slot looks like. */
 const TIMES = [
-  { label: '10:30', open: true },
-  { label: '14:00', open: true },
-  { label: '16:30', open: true },
-  { label: '18:00 full', open: false },
+  { time: '10:30', open: true },
+  { time: '14:00', open: true },
+  { time: '16:30', open: true },
+  { time: '18:00', open: false },
 ]
 
 export function Booking() {
   const { profile, selectedClinicId, savedClinicIds, toggleSavedClinic, day, time, setDay, setTime, go } =
     useStore()
-  const treatment = useTreatment()
-  const district = districtByKey(profile.districtKey) ?? DISTRICTS[0]
+  const { lang } = useLang()
+  const cat = useCatalog()
+  const copy = useCopy(BOOKING)
+  // The back link is the clinic list's own headline.
+  const { title: clinicsTitle } = useCopy(CLINIC_LIST)
+  const treatment = cat.treatment(useTreatment())
+  const district = cat.districtByKey(profile.districtKey) ?? cat.DISTRICTS[0]
   // Reachable from My List, where the saved clinic may sit in another district.
-  const clinic = clinicById(selectedClinicId) ?? clinicsIn(district.key)[0]
+  const clinic = cat.clinicById(selectedClinicId) ?? cat.clinicsIn(district.key)[0]
   const chosenDay = DAYS.find((d) => d.num === day) ?? DAYS[1]
   const narrow = useNarrow()
 
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 32, 80) }}>
       <Shell width={1100}>
-        <BackLink onClick={() => go('clinics')}>Clinics in {district.name}</BackLink>
+        <BackLink onClick={() => go('clinics')}>{clinicsTitle(district.name)}</BackLink>
 
         <div
           style={{
@@ -64,10 +73,10 @@ export function Booking() {
           }}
         >
           <Card style={{ padding: narrow ? '22px 18px' : 32, borderRadius: narrow ? 18 : 22 }}>
-            <Display size={30}>Book a consultation</Display>
+            <Display size={30}>{copy.title}</Display>
 
             <div style={{ marginTop: 28 }}>
-              <FieldLabel>PREFERRED DAY</FieldLabel>
+              <FieldLabel>{copy.dayLabel}</FieldLabel>
             </div>
             <div
               style={{
@@ -105,7 +114,7 @@ export function Booking() {
                         color: on ? C.blue : C.muted,
                       }}
                     >
-                      {d.dow}
+                      {copy.weekday(d.date)}
                     </div>
                     <div
                       style={{
@@ -124,15 +133,15 @@ export function Booking() {
             </div>
 
             <div style={{ marginTop: 28 }}>
-              <FieldLabel>TIME</FieldLabel>
+              <FieldLabel>{copy.timeLabel}</FieldLabel>
             </div>
             <div style={{ marginTop: 14, display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {TIMES.map((slot) => {
-                const on = slot.open && slot.label === time
+                const on = slot.open && slot.time === time
                 return (
                   <Pressable
-                    key={slot.label}
-                    onClick={() => setTime(slot.label)}
+                    key={slot.time}
+                    onClick={() => setTime(slot.time)}
                     disabled={!slot.open}
                     className={slot.open ? 'opt' : undefined}
                     style={{
@@ -145,7 +154,7 @@ export function Booking() {
                       fontWeight: on ? 600 : 400,
                     }}
                   >
-                    {slot.label}
+                    {slot.open ? slot.time : copy.slotFull(slot.time)}
                   </Pressable>
                 )
               })}
@@ -155,18 +164,14 @@ export function Booking() {
               <div
                 style={{ fontFamily: FONT_DISPLAY, fontSize: 18, fontWeight: 600, color: C.ink }}
               >
-                Final confirmation happens with the doctor
+                {copy.doctorTitle}
               </div>
               <Prose size={14.5} color={C.body} style={{ marginTop: 10 }}>
-                The reading is a starting point. At the consultation a dermatologist reviews it with
-                you and adjusts the plan — you can also leave without booking anything.
+                {copy.doctorBody}
               </Prose>
             </Well>
 
-            <Note style={{ marginTop: 20, fontSize: 13.5, lineHeight: 1.75 }}>
-              Open weekdays 10:00–19:00, Saturday 10:00–15:00. Change or cancel until the day
-              before. Bring your passport for the tourist tax refund.
-            </Note>
+            <Note style={{ marginTop: 20, fontSize: 13.5, lineHeight: 1.75 }}>{copy.hoursNote}</Note>
           </Card>
 
           <Card
@@ -178,8 +183,9 @@ export function Booking() {
               boxShadow: SHADOW_PANEL,
             }}
           >
-            <Eyebrow size={11.5} spacing=".14em">
-              YOUR SELECTION
+            {/* Wide tracking is a Latin caps device; CJK keeps only a hint of it. */}
+            <Eyebrow size={11.5} spacing={lang === 'en' ? '.14em' : '.04em'}>
+              {copy.selectionLabel}
             </Eyebrow>
             <div
               style={{
@@ -197,7 +203,7 @@ export function Booking() {
               {clinic.address}
             </div>
             <div style={{ marginTop: 6, fontSize: 13.5, color: C.blue }}>
-              {clinic.distanceLabel} · English-speaking staff
+              {copy.staffLine(clinic.distanceLabel)}
             </div>
 
             <div
@@ -212,12 +218,12 @@ export function Booking() {
             >
               {[
                 {
-                  left: `${treatment.shortName} · per session`,
+                  left: copy.perSession(treatment.shortName),
                   right: won(clinic.priceByTreatmentId[treatment.id]),
                   strong: true,
                 },
-                { left: 'Consultation', right: 'Free', blue: true },
-                { left: 'Appointment', right: `${chosenDay.dow} ${chosenDay.num} Sep, ${time}` },
+                { left: copy.consultation, right: copy.free, blue: true },
+                { left: copy.appointment, right: copy.appointmentAt(chosenDay.date, time) },
               ].map((row) => (
                 <div
                   key={row.left}
@@ -256,11 +262,11 @@ export function Booking() {
                 full
                 fontSize={15.5}
               >
-                Request this appointment
+                {copy.request}
               </PrimaryButton>
             </div>
             <Note style={{ marginTop: 12, textAlign: 'center', fontSize: 12.5 }}>
-              No deposit. Pay at the clinic after your consultation.
+              {copy.noDeposit}
             </Note>
           </Card>
         </div>

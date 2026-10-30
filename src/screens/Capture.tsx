@@ -34,10 +34,13 @@ import {
   Prose,
   Shell,
   StepProgress,
+  useTracking,
 } from '../components/primitives'
 import { screenPadding, useNarrow } from '../components/layout'
-import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
-import { CAPTURE } from '../data/strings'
+import { C, FONT_DISPLAY, FONT_MONO_TEXT } from '../theme'
+import { useStrings } from '../data/strings'
+import { useCopy } from '../i18n'
+import { CAPTURE_SCREEN } from '../i18n/capture'
 import {
   GUIDE_OVAL_H_FRAC,
   GUIDE_OVAL_W_FRAC,
@@ -66,6 +69,9 @@ type Block = 'denied' | 'unavailable'
 export function Capture() {
   const { go, runAnalysis } = useStore()
   const narrow = useNarrow()
+  const tracking = useTracking()
+  const { CAPTURE } = useStrings()
+  const copy = useCopy(CAPTURE_SCREEN)
 
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const streamRef = useRef<MediaStream | null>(null)
@@ -299,7 +305,7 @@ export function Capture() {
           }}
         >
           <div>
-            <Display size={34}>Line your face up inside the outline.</Display>
+            <Display size={34}>{copy.title}</Display>
             <Prose style={{ marginTop: 12, maxWidth: 560, lineHeight: 1.7 }}>
               {CAPTURE.lightingTip}
             </Prose>
@@ -360,6 +366,7 @@ export function Capture() {
                 <Icon path={PATHS.cameraOff} size={28} />
               </div>
               <div
+                className="headline"
                 style={{
                   marginTop: 22,
                   fontFamily: FONT_DISPLAY,
@@ -368,12 +375,10 @@ export function Capture() {
                   color: C.ink,
                 }}
               >
-                {block === 'denied' ? 'Camera access is blocked' : 'No camera is available'}
+                {copy.blocked[block].title}
               </div>
               <Prose size={14.5} style={{ marginTop: 12, maxWidth: 460 }}>
-                {block === 'denied'
-                  ? 'Your browser is holding the camera back. Click the camera icon in the address bar, choose Allow, then try again.'
-                  : 'This browser could not open a camera. You can upload a photo instead, or carry on without a capture and look around with a sample reading.'}
+                {copy.blocked[block].body}
               </Prose>
               <div
                 style={{
@@ -385,10 +390,10 @@ export function Capture() {
                 }}
               >
                 <PrimaryButton onClick={restart} height={48} padding={24} fontSize={15}>
-                  Try again
+                  {copy.tryAgain}
                 </PrimaryButton>
                 <GhostButton onClick={() => fileRef.current?.click()} height={48} fontSize={15}>
-                  Upload a photo instead
+                  {copy.upload}
                 </GhostButton>
               </div>
             </div>
@@ -414,10 +419,7 @@ export function Capture() {
                   flex: 'none',
                 }}
               />
-              <div style={{ fontSize: 13, lineHeight: 1.7, color: C.body }}>
-                Nothing is uploaded without your click. The frame is read in the browser and
-                discarded once the reading finishes.
-              </div>
+              <div style={{ fontSize: 13, lineHeight: 1.7, color: C.body }}>{copy.privacy}</div>
             </div>
           </Card>
         ) : (
@@ -538,7 +540,7 @@ export function Capture() {
                   }}
                 />
                 <div style={{ fontSize: 12, fontWeight: 500, color: 'rgba(233,240,250,.9)' }}>
-                  {phase === 'live' ? 'Webcam live' : 'Starting the camera…'}
+                  {phase === 'live' ? copy.live : copy.starting}
                 </div>
               </div>
               <div
@@ -550,12 +552,12 @@ export function Capture() {
                   borderRadius: 8,
                   background: 'rgba(11,30,61,.55)',
                   fontSize: 10,
-                  letterSpacing: '.1em',
+                  letterSpacing: tracking('.1em'),
                   color: 'rgba(143,184,232,.9)',
-                  fontFamily: FONT_MONO,
+                  fontFamily: FONT_MONO_TEXT,
                 }}
               >
-                IN BROWSER ONLY
+                {copy.localOnly}
               </div>
 
               {/* The prompt sits over the frame, where the eyes already are. */}
@@ -617,8 +619,8 @@ export function Capture() {
                   <Icon path={PATHS.light} size={19} />
                 </div>
                 <div style={{ fontSize: 13.5, lineHeight: 1.65, color: C.body }}>
-                  <span style={{ fontWeight: 600, color: C.ink }}>Face the light. </span>
-                  Avoid a window directly behind you — backlight flattens the reading.
+                  <span style={{ fontWeight: 600, color: C.ink }}>{copy.lightLead}</span>
+                  {copy.lightBody}
                 </div>
               </div>
               {/* On a phone the two buttons share the full width, the shutter the larger half. */}
@@ -641,7 +643,7 @@ export function Capture() {
                   <span style={{ display: 'flex' }}>
                     <Icon path={PATHS.retake} size={18} weight={1.6} />
                   </span>
-                  <span>Retake</span>
+                  <span>{copy.retake}</span>
                 </GhostButton>
                 <PrimaryButton
                   onClick={shoot}
@@ -654,7 +656,7 @@ export function Capture() {
                   <span style={{ display: 'flex' }}>
                     <Icon path={PATHS.camera} size={19} weight={1.6} />
                   </span>
-                  <span>Capture</span>
+                  <span>{copy.shoot}</span>
                 </PrimaryButton>
               </div>
             </div>
@@ -662,14 +664,12 @@ export function Capture() {
             {narrow ? (
               canShoot ? null : (
                 <Note style={{ marginTop: 10, padding: '0 4px', fontSize: 12.5 }}>
-                  The shutter opens on a blink.
+                  {copy.blinkHint}
                 </Note>
               )
             ) : (
               <Note style={{ marginTop: 14, fontSize: 12.5 }}>
-                {canShoot
-                  ? 'Shortcut: press Space to capture, R to restart the camera.'
-                  : 'The shutter opens on a blink. Press R to restart the camera.'}
+                {canShoot ? copy.keysArmed : copy.keysWaiting}
               </Note>
             )}
           </Card>
@@ -716,7 +716,10 @@ export function Capture() {
               animation: 'riseIn .18s ease-out',
             }}
           >
-            <div style={{ fontFamily: FONT_DISPLAY, fontSize: 22, fontWeight: 600, color: C.ink }}>
+            <div
+              className="headline"
+              style={{ fontFamily: FONT_DISPLAY, fontSize: 22, fontWeight: 600, color: C.ink }}
+            >
               {CAPTURE.gateTitle}
             </div>
             <Prose size={14.5} style={{ marginTop: 12 }}>

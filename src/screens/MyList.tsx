@@ -16,14 +16,10 @@ import {
 } from '../components/primitives'
 import { screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
-import {
-  SEED_POSTS,
-  clinicById,
-  districtByKey,
-  priceRangeIn,
-  treatmentById,
-  won,
-} from '../data/catalog'
+import { won } from '../data/catalog'
+import { useCopy } from '../i18n'
+import { useCatalog } from '../i18n/catalog'
+import { MY_LIST } from '../i18n/mylist'
 import { FILTER_DISTRICT_PREFIX, FILTER_TREATMENT_PREFIX, useStore, useTreatment } from '../state/store'
 
 interface Row {
@@ -52,18 +48,20 @@ export function MyList() {
     go,
   } = useStore()
   const narrow = useNarrow()
-  const treatment = useTreatment()
-  const feed = [...userPosts, ...SEED_POSTS]
+  const copy = useCopy(MY_LIST)
+  const cat = useCatalog()
+  const treatment = cat.treatment(useTreatment())
+  const feed = [...userPosts, ...cat.SEED_POSTS]
 
   const treatmentRows: Row[] = savedTreatmentIds.flatMap((id) => {
-    const t = treatmentById(id)
+    const t = cat.treatmentById(id)
     if (!t) return []
     return [
       {
         key: id,
         title: t.name,
         sub: t.cardSummary,
-        meta: priceRangeIn(profile.districtKey, t.id),
+        meta: cat.priceRangeIn(profile.districtKey, t.id),
         posts: feed.filter((p) => p.treatmentId === t.id).length,
         open: () => {
           selectTreatment(t.id)
@@ -79,9 +77,9 @@ export function MyList() {
   })
 
   const clinicRows: Row[] = savedClinicIds.flatMap((id) => {
-    const clinic = clinicById(id)
+    const clinic = cat.clinicById(id)
     if (!clinic) return []
-    const district = districtByKey(clinic.districtKey)
+    const district = cat.districtByKey(clinic.districtKey)
     return [
       {
         key: id,
@@ -107,28 +105,26 @@ export function MyList() {
 
   const columns = [
     {
-      title: 'Interested treatments',
-      action: 'Browse more',
+      title: copy.treatmentsTitle,
+      action: copy.browseMore,
       onAction: () => go('treatments'),
       rows: treatmentRows,
-      empty: 'Nothing saved yet. Use the bookmark on any treatment card.',
+      empty: copy.emptyTreatments,
     },
     {
-      title: 'Interested clinics',
-      action: 'Compare prices',
+      title: copy.clinicsTitle,
+      action: copy.comparePrices,
       onAction: () => go('clinics'),
       rows: clinicRows,
-      empty: 'Nothing saved yet. Use the bookmark on any clinic card.',
+      empty: copy.emptyClinics,
     },
   ]
 
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 44, 80) }}>
       <Shell>
-        <Display size={34}>My list</Display>
-        <Note style={{ marginTop: 10, fontSize: 15, color: C.bodyMuted }}>
-          Saved on this device. Clearing your browser data clears this too.
-        </Note>
+        <Display size={34}>{copy.title}</Display>
+        <Note style={{ marginTop: 10, fontSize: 15, color: C.bodyMuted }}>{copy.subtitle}</Note>
 
         <div
           style={{
@@ -206,7 +202,7 @@ export function MyList() {
                       </Pressable>
                       <Pressable
                         onClick={row.remove}
-                        label={`Remove ${row.title}`}
+                        label={copy.remove(row.title)}
                         className="opt"
                         style={{
                           width: 38,
@@ -263,7 +259,7 @@ export function MyList() {
                           <Icon path={PATHS.comment} size={18} />
                         </span>
                         <span style={{ fontSize: 12.5, fontWeight: 600, color: C.bodyFaint }}>
-                          {row.posts} posts
+                          {copy.posts(row.posts)}
                         </span>
                       </Pressable>
                     </div>

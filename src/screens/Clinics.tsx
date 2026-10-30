@@ -18,15 +18,12 @@ import {
 } from '../components/primitives'
 import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
-import {
-  DISTRICTS,
-  cheapestPrice,
-  clinicsIn,
-  districtByKey,
-  won,
-} from '../data/catalog'
+import { cheapestPrice, won } from '../data/catalog'
 import type { ClinicBadge } from '../data/catalog'
-import { clinicBadgeLabel } from '../data/strings'
+import { useStrings } from '../data/strings'
+import { useCopy, useLang } from '../i18n'
+import { useCatalog } from '../i18n/catalog'
+import { CLINIC_LIST } from '../i18n/clinics'
 import { useStore, useTreatment } from '../state/store'
 
 /** The pin's colours, by the clinic's own position — the map uses the same table. */
@@ -45,12 +42,16 @@ const BADGE: Record<ClinicBadge, { bg: string; color: string }> = {
 
 export function Clinics() {
   const { profile, savedClinicIds, setDistrict, selectClinic, toggleSavedClinic, go } = useStore()
-  const treatment = useTreatment()
-  const district = districtByKey(profile.districtKey) ?? DISTRICTS[0]
+  const { lang } = useLang()
+  const cat = useCatalog()
+  const { clinicBadgeLabel } = useStrings()
+  const copy = useCopy(CLINIC_LIST)
+  const treatment = cat.treatment(useTreatment())
+  const district = cat.districtByKey(profile.districtKey) ?? cat.DISTRICTS[0]
   const narrow = useNarrow()
 
   const cheapest = cheapestPrice(district.key, treatment.id)
-  const clinics = clinicsIn(district.key)
+  const clinics = cat.clinicsIn(district.key)
     .map((clinic, index) => ({ clinic, index, price: clinic.priceByTreatmentId[treatment.id] }))
     .sort((a, b) => a.price - b.price)
 
@@ -69,14 +70,14 @@ export function Clinics() {
           <div>
             <BackLink onClick={() => go('detail')}>{treatment.name}</BackLink>
             <Display size={32} style={{ marginTop: 14 }}>
-              Clinics in {district.name}
+              {copy.title(district.name)}
             </Display>
             <div style={{ marginTop: 8, fontSize: 14.5, color: C.bodyMuted }}>
-              {treatment.shortName} · price per session, lowest first
+              {copy.subtitle(treatment.shortName)}
             </div>
           </div>
           <div style={{ display: 'flex', gap: narrow ? 8 : 9, width: narrow ? '100%' : undefined }}>
-            {DISTRICTS.map((d) => {
+            {cat.DISTRICTS.map((d) => {
               const on = d.key === district.key
               return (
                 <Pressable
@@ -125,13 +126,13 @@ export function Clinics() {
             }}
           >
             {/*
-              Keyed on the district so switching re-mounts the frame: the map reads
-              its district from the query string once, at load.
+              Keyed on the district and the language so switching either re-mounts
+              the frame: the map reads both from the query string once, at load.
             */}
             <iframe
-              key={district.key}
-              src={`${import.meta.env.BASE_URL}map-blue.html?d=${district.key}`}
-              title={`Clinic map — ${district.name}`}
+              key={`${district.key}:${lang}`}
+              src={`${import.meta.env.BASE_URL}map-blue.html?d=${district.key}&lang=${lang}`}
+              title={copy.mapTitle(district.name)}
               style={{ width: '100%', height: '100%', border: 0, display: 'block' }}
             />
             <div
@@ -149,7 +150,7 @@ export function Clinics() {
                 pointerEvents: 'none',
               }}
             >
-              {district.name} · 1 km radius
+              {copy.mapLabel(district.name)}
             </div>
           </div>
 
@@ -230,7 +231,7 @@ export function Clinics() {
                     >
                       <Pressable
                         onClick={() => toggleSavedClinic(clinic.id)}
-                        label={saved ? `Remove ${clinic.name} from My List` : `Save ${clinic.name} to My List`}
+                        label={saved ? copy.remove(clinic.name) : copy.save(clinic.name)}
                         className="opt"
                         style={{
                           width: 38,
@@ -248,7 +249,7 @@ export function Clinics() {
                       </Pressable>
                       {price === cheapest ? (
                         <Tag bg={C.navy} color={C.navyText} bold>
-                          LOWEST
+                          {copy.lowest}
                         </Tag>
                       ) : null}
                       <div
@@ -266,9 +267,7 @@ export function Clinics() {
                 </Card>
               )
             })}
-            <Note style={{ fontSize: 12.5 }}>
-              Clinic names and prices are sample data for this prototype.
-            </Note>
+            <Note style={{ fontSize: 12.5 }}>{copy.sampleNote}</Note>
           </div>
         </div>
       </Shell>

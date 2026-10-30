@@ -9,24 +9,25 @@ import { Icon, PATHS } from './Icons'
 import { Pressable } from './primitives'
 import { useNarrow } from './layout'
 import { C, FONT_DISPLAY } from '../theme'
-import { LANG_LABEL } from '../data/languages'
+import { LANGUAGES } from '../data/languages'
+import { useCopy, useLang } from '../i18n'
+import { NAV, type NavTab } from '../i18n/nav'
 import { useStore, type Page } from '../state/store'
 
 interface NavItem {
-  id: string
-  label: string
+  id: NavTab
   page: Page
 }
 
-const NAV: NavItem[] = [
-  { id: 'home', label: 'Home', page: 'treatments' },
-  { id: 'mylist', label: 'My List', page: 'mylist' },
-  { id: 'community', label: 'Community', page: 'community' },
-  { id: 'rewards', label: 'Rewards', page: 'rewards' },
+const TABS: NavItem[] = [
+  { id: 'home', page: 'treatments' },
+  { id: 'mylist', page: 'mylist' },
+  { id: 'community', page: 'community' },
+  { id: 'rewards', page: 'rewards' },
 ]
 
 /** Which tab a page belongs to. A page missing here highlights nothing. */
-const NAV_FOR: Partial<Record<Page, string>> = {
+const NAV_FOR: Partial<Record<Page, NavTab>> = {
   treatments: 'home',
   detail: 'home',
   clinics: 'home',
@@ -78,10 +79,15 @@ export function Mark({ size = 30 }: { size?: number }) {
 
 export function TopNav() {
   const { page, signedIn, go, openModal } = useStore()
+  const { lang } = useLang()
+  const copy = useCopy(NAV)
   const active = NAV_FOR[page]
   const narrow = useNarrow()
+  // The language in force, in its own script: "한국어" on a Korean page, not
+  // "Korean" — the word its card in the picker leads with.
+  const current = LANGUAGES.find((l) => l.lang === lang)?.native ?? 'English'
 
-  const tabs = NAV.map((item) => {
+  const tabs = TABS.map((item) => {
     const on = active === item.id
     return (
       <Pressable
@@ -100,7 +106,7 @@ export function TopNav() {
           background: on ? C.chip : 'transparent',
         }}
       >
-        {item.label}
+        {copy.tabs[item.id]}
       </Pressable>
     )
   })
@@ -130,7 +136,7 @@ export function TopNav() {
         <Pressable
           onClick={() => go('landing')}
           style={{ display: 'flex', alignItems: 'center', gap: narrow ? 9 : 11, flex: 'none' }}
-          label="Solution home"
+          label={copy.homeLink}
         >
           <Mark size={narrow ? 24 : 30} />
           <div
@@ -142,7 +148,7 @@ export function TopNav() {
               color: C.ink,
             }}
           >
-            S<span style={{ color: C.blue }}>olu</span>tion
+            S<span style={{ color: C.blue }}>oLu</span>Tion
           </div>
         </Pressable>
 
@@ -159,7 +165,7 @@ export function TopNav() {
           <Pressable
             onClick={() => openModal('lang')}
             className="btn-ghost"
-            label={narrow ? `Language: ${LANG_LABEL}` : undefined}
+            label={narrow ? copy.languageButton(current) : undefined}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -181,7 +187,7 @@ export function TopNav() {
             </span>
             {narrow ? null : (
               <>
-                <span>{LANG_LABEL}</span>
+                <span>{current}</span>
                 <span style={{ fontSize: 10, color: C.muted }}>▾</span>
               </>
             )}
@@ -203,9 +209,9 @@ export function TopNav() {
                 fontWeight: 600,
                 color: C.blue,
               }}
-              title="Signed in"
+              title={copy.signedIn}
             >
-              YO
+              {copy.initials}
             </div>
           ) : (
             <Pressable
@@ -223,7 +229,7 @@ export function TopNav() {
                 whiteSpace: 'nowrap',
               }}
             >
-              Sign up
+              {copy.signUp}
             </Pressable>
           )}
         </div>

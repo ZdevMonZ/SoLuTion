@@ -22,19 +22,31 @@ import {
 } from '../components/primitives'
 import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, SHADOW_PANEL, houseOf } from '../theme'
-import { clinicsFor, districtByKey, priceRangeIn, productsFor, tieFor, won } from '../data/catalog'
-import { FIT, UI } from '../data/strings'
+import { won } from '../data/catalog'
+import { useStrings } from '../data/strings'
+import { useCopy, useLang } from '../i18n'
+import { useCatalog } from '../i18n/catalog'
+import { TREATMENT_DETAIL } from '../i18n/detail'
+import { TREATMENT_LIST } from '../i18n/treatments'
 import { pitchFor } from '../analysis/ranking'
 import { useStore, useTreatment } from '../state/store'
 
 export function Detail() {
   const { analysis, profile, savedTreatmentIds, toggleSavedTreatment, selectProduct, go } =
     useStore()
-  const treatment = useTreatment()
-  const district = districtByKey(profile.districtKey)
-  const nearby = district ? clinicsFor(district.key, treatment.id).length : 0
+  const { lang } = useLang()
+  // Wide tracking is a Latin caps device; CJK spread that far reads as loose
+  // characters rather than a label, so it keeps only a hint of it.
+  const tracking = (latin: string) => (lang === 'en' ? latin : '.04em')
+  const cat = useCatalog()
+  const { FIT, UI } = useStrings()
+  const copy = useCopy(TREATMENT_DETAIL)
+  const { priceBasis } = useCopy(TREATMENT_LIST)
+  const treatment = cat.treatment(useTreatment())
+  const district = cat.districtByKey(profile.districtKey)
+  const nearby = district ? cat.clinicsFor(district.key, treatment.id).length : 0
   const saved = savedTreatmentIds.includes(treatment.id)
-  const products = productsFor(treatment)
+  const products = cat.productsFor(treatment)
   const narrow = useNarrow()
   // Only a reading can say whether this is the right strength; without one the
   // page says which levels it is meant for instead.
@@ -42,13 +54,13 @@ export function Detail() {
   const cells: { label: string; value: string; note?: string; long?: boolean }[] = [
     {
       label: UI.priceRange,
-      value: priceRangeIn(profile.districtKey, treatment.id),
-      note: treatment.priceBasis,
+      value: cat.priceRangeIn(profile.districtKey, treatment.id),
+      note: treatment.priceBasis ? priceBasis(treatment.priceBasis) : undefined,
     },
     { label: UI.perSession, value: treatment.duration },
     {
-      label: 'CLINICS NEARBY',
-      value: district ? `${nearby} in ${district.name}` : `${nearby}`,
+      label: copy.clinicsNearby,
+      value: district ? copy.nearbyIn(nearby, district.name) : copy.nearbyCount(nearby),
     },
     { label: UI.course, value: treatment.course, long: true },
     { label: UI.downtime, value: treatment.downtime, long: true },
@@ -58,7 +70,7 @@ export function Detail() {
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 32, 80) }}>
       <Shell>
-        <BackLink onClick={() => go('treatments')}>All treatments</BackLink>
+        <BackLink onClick={() => go('treatments')}>{copy.allTreatments}</BackLink>
 
         <div
           style={{
@@ -85,7 +97,7 @@ export function Detail() {
                     style={{
                       fontSize: 11.5,
                       fontWeight: 600,
-                      letterSpacing: '.16em',
+                      letterSpacing: tracking('.16em'),
                       color: C.blue,
                     }}
                   >
@@ -116,7 +128,7 @@ export function Detail() {
                   <span style={{ display: 'flex' }}>
                     <Icon path={PATHS.bookmark} size={18} weight={1.6} />
                   </span>
-                  <span>{saved ? 'Saved' : 'Add to Interested'}</span>
+                  <span>{saved ? copy.saved : copy.save}</span>
                 </Pressable>
               </div>
 
@@ -169,7 +181,7 @@ export function Detail() {
                     </div>
                     {cell.note ? (
                       <div style={{ marginTop: 4, fontSize: 12, color: C.muted }}>
-                        for {cell.note}
+                        {cell.note}
                       </div>
                     ) : null}
                   </div>
@@ -238,7 +250,7 @@ export function Detail() {
               <div
                 style={{ fontFamily: FONT_DISPLAY, fontSize: 21, fontWeight: 600, color: C.ink }}
               >
-                What happens on the day
+                {copy.stepsTitle}
               </div>
               <div style={{ marginTop: 22 }}>
                 {treatment.steps.map((step, i) => (
@@ -298,7 +310,7 @@ export function Detail() {
                 <div
                   style={{ fontFamily: FONT_DISPLAY, fontSize: 17, fontWeight: 600, color: C.ink }}
                 >
-                  How the days after go
+                  {copy.aftercareTitle}
                 </div>
                 <div
                   style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 12 }}
@@ -327,7 +339,7 @@ export function Detail() {
                   color: C.ink,
                 }}
               >
-                Before you book
+                {copy.cautionsTitle}
               </div>
               <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 11 }}>
                 {treatment.cautions.map((text) => (
@@ -362,16 +374,14 @@ export function Detail() {
               <div
                 style={{ fontFamily: FONT_DISPLAY, fontSize: 17, fontWeight: 600, color: C.ink }}
               >
-                Ready to compare clinics?
+                {copy.compareTitle}
               </div>
               <Prose size={14} style={{ marginTop: 10, lineHeight: 1.7 }}>
-                {district
-                  ? `See the ${nearby} clinics in ${district.name} that run this treatment, with prices side by side.`
-                  : 'See the clinics that run this treatment, with prices side by side.'}
+                {district ? copy.compareBodyIn(nearby, district.name) : copy.compareBody}
               </Prose>
               <div style={{ marginTop: 20 }}>
                 <PrimaryButton onClick={() => go('clinics')} full height={52} fontSize={15.5}>
-                  Find Recommended Clinics
+                  {copy.findClinics}
                 </PrimaryButton>
               </div>
               <Note style={{ marginTop: 14, fontSize: 12.5 }}>{UI.partnerOffer}</Note>
@@ -382,12 +392,12 @@ export function Detail() {
                 <div
                   style={{ fontFamily: FONT_DISPLAY, fontSize: 19, fontWeight: 600, color: C.ink }}
                 >
-                  Pairs well with
+                  {copy.pairedTitle}
                 </div>
-                <div style={{ fontSize: 12, color: C.muted }}>At partner clinics</div>
+                <div style={{ fontSize: 12, color: C.muted }}>{copy.pairedSource}</div>
               </div>
               <Prose size={13.5} style={{ marginTop: 8, lineHeight: 1.7 }}>
-                Protect during the day, recover at night.
+                {copy.pairedNote}
               </Prose>
 
               <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -421,7 +431,7 @@ export function Detail() {
                             fontFamily: FONT_DISPLAY,
                             fontSize: 10,
                             fontWeight: 700,
-                            letterSpacing: '.14em',
+                            letterSpacing: tracking('.14em'),
                             color: house.chipColor,
                           }}
                         >
@@ -443,7 +453,7 @@ export function Detail() {
                         style={{ marginTop: 8, fontSize: 13.5, lineHeight: 1.7, color: house.body }}
                       >
                         {/* Why it pairs with *this* treatment, when the catalogue says. */}
-                        {tieFor(p, treatment.id)}
+                        {cat.tieFor(p, treatment.id)}
                       </div>
                       <div
                         style={{
@@ -482,7 +492,7 @@ export function Detail() {
                             color: house.btnColor,
                           }}
                         >
-                          Buy Product
+                          {copy.buy}
                         </Pressable>
                       </div>
                     </div>

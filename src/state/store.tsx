@@ -20,7 +20,6 @@ import { MIN_SKIN_COVERAGE, analyse, referenceResult } from '../analysis/skinSco
 import type { FitzpatrickType } from '../analysis/phototype'
 import type { AgeBand, Gender, SkinAnalysisResult, UserProfile } from '../analysis/types'
 import {
-  CLINICS,
   DISTRICT_MYEONGDONG,
   SEED_POSTS,
   TREATMENTS,
@@ -28,6 +27,8 @@ import {
   type CommunityPost,
   type Treatment,
 } from '../data/catalog'
+import { LANGUAGES } from '../data/languages'
+import { catalogFor } from '../i18n/catalog'
 
 export type Page =
   | 'landing'
@@ -52,6 +53,14 @@ export const FILTER_ALL = 'all'
 export const FILTER_VERIFIED = 'verified'
 export const FILTER_TREATMENT_PREFIX = 'tx:'
 export const FILTER_DISTRICT_PREFIX = 'district:'
+
+/**
+ * Id prefix of a post written in the composer. Its byline — "You", "Just now" — is
+ * the page speaking rather than the writer, so the store leaves it blank and the
+ * community screen writes it in the page's language. The text and tags are kept
+ * exactly as written.
+ */
+export const USER_POST_PREFIX = 'post_user_'
 
 /** Minimum analysing dwell. Matches the design's progress sweep. */
 export const SIMULATED_ANALYSIS_MILLIS = 2400
@@ -320,16 +329,25 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         // Unlike the design, where "Publish" just closes the sheet, this actually
         // appends to the feed: a submit button that silently drops the user's text
         // would read as broken.
-        const treatment = TREATMENTS.find((t) => t.shortName === treatmentTag)
-        const clinic = CLINICS.find((c) => c.name === clinicTag)
+        //
+        // The tags arrive as the captions the composer showed, in whichever language
+        // the page was in, so they are looked up in every language's catalogue. The
+        // store stays out of the language question and the post still gets the
+        // treatment and district the filters run on.
+        const catalogues = LANGUAGES.map((l) => catalogFor(l.lang))
+        const treatment = catalogues
+          .flatMap((c) => c.TREATMENTS)
+          .find((t) => t.shortName === treatmentTag)
+        const clinic = catalogues.flatMap((c) => c.CLINICS).find((c) => c.name === clinicTag)
         patch((s) => ({
           modal: null,
           userPosts: [
             {
-              id: `post_user_${Date.now()}`,
-              author: 'You',
-              initials: 'YO',
-              meta: 'Just now',
+              id: `${USER_POST_PREFIX}${Date.now()}`,
+              // Blank on purpose: see USER_POST_PREFIX.
+              author: '',
+              initials: '',
+              meta: '',
               verified: false,
               treatmentTag,
               clinicTag,

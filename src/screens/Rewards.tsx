@@ -15,15 +15,24 @@ import {
 } from '../components/primitives'
 import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
-import { EARN_RULES, NEXT_TIER_POINTS, STARTING_POINTS, STORE_ITEMS } from '../data/catalog'
+import { NEXT_TIER_POINTS, STARTING_POINTS } from '../data/catalog'
+import { useCopy, useLang } from '../i18n'
+import { useCatalog } from '../i18n/catalog'
+import { REWARDS, REWARD_KIND } from '../i18n/rewards'
 import { useStore } from '../state/store'
-
-const KIND_LABEL = { PHYSICAL: 'PHYSICAL ITEM', COUPON: 'DIGITAL COUPON' } as const
 
 export function Rewards() {
   const { selectReward, go } = useStore()
   const toGo = Math.max(0, NEXT_TIER_POINTS - STARTING_POINTS)
   const narrow = useNarrow()
+  const { lang } = useLang()
+  const copy = useCopy(REWARDS)
+  const kindLabel = useCopy(REWARD_KIND)
+  const cat = useCatalog()
+
+  // Wide tracking is a Latin caps device. Hangul, kana and hanzi spread that far read
+  // as loose characters rather than a label, so they keep only a hint of it.
+  const tracking = (latin: string) => (lang === 'en' ? latin : '.04em')
 
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 44, 80) }}>
@@ -69,7 +78,9 @@ export function Rewards() {
             </div>
 
             <div style={{ position: 'relative' }}>
-              <Eyebrow size={11.5}>POINTS BALANCE</Eyebrow>
+              <Eyebrow size={11.5} spacing={tracking('.14em')}>
+                {copy.pointsBalance}
+              </Eyebrow>
               <div
                 style={{
                   marginTop: narrow ? 20 : 28,
@@ -85,7 +96,7 @@ export function Rewards() {
                   size={narrow ? 136 : 176}
                   thickness={0.14}
                   numeral={STARTING_POINTS.toLocaleString('en-US')}
-                  caption="POINTS"
+                  caption={copy.pointsCaption}
                   numeralSize={narrow ? 34 : 42}
                 />
                 <div style={{ flex: 1, minWidth: 180 }}>
@@ -98,10 +109,10 @@ export function Rewards() {
                       color: C.ink,
                     }}
                   >
-                    {toGo.toLocaleString('en-US')} more to reach the next tier
+                    {copy.toNextTier(toGo)}
                   </div>
                   <div style={{ marginTop: 12, fontSize: 14, lineHeight: 1.7, color: C.bodyMuted }}>
-                    Tier two adds a free product mini with every booked consultation.
+                    {copy.tierPerk}
                   </div>
                 </div>
               </div>
@@ -115,10 +126,10 @@ export function Rewards() {
                   color: C.ink,
                 }}
               >
-                Ways to earn
+                {copy.waysToEarn}
               </div>
               <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {EARN_RULES.map((rule) => (
+                {cat.EARN_RULES.map((rule) => (
                   <div
                     key={rule.id}
                     style={{
@@ -164,13 +175,22 @@ export function Rewards() {
           </Card>
 
           <div>
-            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
+            {/* Wraps rather than squeezes: on a phone the Japanese line does not fit beside the heading. */}
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '4px 16px',
+                alignItems: 'baseline',
+                justifyContent: 'space-between',
+              }}
+            >
               <div
                 style={{ fontFamily: FONT_DISPLAY, fontSize: 24, fontWeight: 600, color: C.ink }}
               >
-                Rewards store
+                {copy.rewardsStore}
               </div>
-              <Note style={{ fontSize: 13 }}>Redeemed in clinic by QR</Note>
+              <Note style={{ fontSize: 13 }}>{copy.redeemedBy}</Note>
             </div>
 
             <div
@@ -181,7 +201,7 @@ export function Rewards() {
                 gap: 16,
               }}
             >
-              {STORE_ITEMS.map((item) => (
+              {cat.STORE_ITEMS.map((item) => (
                 <Pressable
                   key={item.id}
                   disabled={!item.affordable}
@@ -213,11 +233,11 @@ export function Rewards() {
                       marginTop: 18,
                       fontSize: 10.5,
                       fontWeight: 700,
-                      letterSpacing: '.12em',
+                      letterSpacing: tracking('.12em'),
                       color: item.kind === 'COUPON' ? C.blueMid : C.muted,
                     }}
                   >
-                    {KIND_LABEL[item.kind]}
+                    {kindLabel[item.kind]}
                   </div>
                   <div
                     style={{
@@ -259,16 +279,14 @@ export function Rewards() {
                         color: item.affordable ? C.blue : C.faint,
                       }}
                     >
-                      {item.affordable ? 'Redeem →' : 'Locked'}
+                      {item.affordable ? `${copy.redeem} →` : copy.locked}
                     </div>
                   </div>
                 </Pressable>
               ))}
             </div>
 
-            <Note style={{ marginTop: 18, fontSize: 12.5 }}>
-              Points and rewards are sample data for this prototype; nothing is deducted.
-            </Note>
+            <Note style={{ marginTop: 18, fontSize: 12.5 }}>{copy.sampleNote}</Note>
           </div>
         </div>
       </Shell>

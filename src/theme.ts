@@ -41,8 +41,25 @@ export const C = {
   navyText: '#CFE0F6',
 } as const
 
-export const FONT_DISPLAY = "'Manrope', system-ui, sans-serif"
-export const FONT_MONO = 'ui-monospace, Menlo, monospace'
+/**
+ * `--cjk` is set in index.css on a Korean, Japanese or Chinese page: that language's
+ * own system faces, right after the Latin one. Unset, each stack is the design's.
+ *
+ * The mono stack names Consolas so Latin stays monospaced on Windows rather than
+ * falling through to a CJK face, which carries Latin of its own; and it puts the CJK
+ * faces ahead of the generic because on a CJK page Windows resolves `monospace` to
+ * MS Gothic, GulimChe or NSimSun.
+ */
+export const FONT_DISPLAY = "'Manrope', var(--cjk, system-ui), sans-serif"
+export const FONT_MONO = 'ui-monospace, Menlo, Consolas, var(--cjk, monospace), monospace'
+
+/**
+ * Mono for *words* — a caption or note that is translated — rather than for numbers.
+ * A mono face's word space is about twice a CJK face's, so a Korean caption set in
+ * it reads as split in two ("점수  42"); on a CJK page this resolves to the page's own
+ * face instead (`--mono-text` in index.css). English keeps the design's mono.
+ */
+export const FONT_MONO_TEXT = `var(--mono-text, ${FONT_MONO})`
 
 /** The gradient every severity/score bar is filled with. */
 export const BAR_FILL = `linear-gradient(90deg,${C.blueLight},${C.blue} 68%,${C.navy})`

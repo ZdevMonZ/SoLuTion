@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Solution clinic map</title>
+<title>SoLuTion clinic map</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
 <style>
@@ -29,8 +29,23 @@
       [37.49790, 127.02760], [37.50010, 127.02540], [37.50120, 127.03080], [37.49630, 127.03250] ] }
   };
 
-  var key = (new URLSearchParams(location.search).get('d') || 'myeongdong').toLowerCase();
+  var params = new URLSearchParams(location.search);
+  var key = (params.get('d') || 'myeongdong').toLowerCase();
   var d = DISTRICTS[key] || DISTRICTS.myeongdong;
+
+  // The page's language, passed by the screen that frames this one. The zoom
+  // buttons' names (tooltip and screen-reader label) are the only words drawn here;
+  // the attribution stays as OpenStreetMap writes it.
+  var ZOOM = {
+    en: { zoomInTitle: 'Zoom in', zoomOutTitle: 'Zoom out' },
+    ko: { zoomInTitle: '확대', zoomOutTitle: '축소' },
+    ja: { zoomInTitle: '拡大', zoomOutTitle: '縮小' },
+    zh: { zoomInTitle: '放大', zoomOutTitle: '缩小' }
+  };
+  var lang = ZOOM.hasOwnProperty(params.get('lang')) ? params.get('lang') : 'en';
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+  // Set on the class, before the map exists: every zoom control it builds reads it.
+  L.Control.Zoom.mergeOptions(ZOOM[lang]);
 
   var map = L.map('map', { center: d.center, zoom: d.zoom, zoomControl: true, scrollWheelZoom: false });
   L.control.zoom({ position: 'bottomright' }).addTo(map);

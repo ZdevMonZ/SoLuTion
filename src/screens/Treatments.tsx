@@ -18,9 +18,11 @@ import {
 } from '../components/primitives'
 import { screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
-import { TREATMENTS, districtByKey, priceRangeIn } from '../data/catalog'
 import type { Treatment } from '../data/catalog'
-import { UI, categoryLabel } from '../data/strings'
+import { useStrings } from '../data/strings'
+import { useCopy } from '../i18n'
+import { useCatalog } from '../i18n/catalog'
+import { TREATMENT_LIST } from '../i18n/treatments'
 import { leadCategory } from '../analysis/ranking'
 import { SKIN_CATEGORIES, rankedCategories } from '../analysis/types'
 import type { SkinCategory } from '../analysis/types'
@@ -38,12 +40,16 @@ export function Treatments() {
     toggleSavedTreatment,
     go,
   } = useStore()
+  const cat = useCatalog()
+  const { UI, categoryLabel } = useStrings()
+  const copy = useCopy(TREATMENT_LIST)
   const narrow = useNarrow()
   const [filter, setFilter] = useState<string>(ALL)
 
   const matched = recommendations.length > 0
-  const list: Treatment[] = matched ? recommendations : TREATMENTS
-  const district = districtByKey(profile.districtKey)
+  // The store ranks the English objects; the cards read the same ids in this language.
+  const list: Treatment[] = matched ? recommendations.map((t) => cat.treatment(t)) : cat.TREATMENTS
+  const district = cat.districtByKey(profile.districtKey)
 
   // The chips are the two areas this reading actually flagged — not a fixed pair,
   // which would offer "Pigmentation" to someone whose pigmentation is fine.
@@ -53,8 +59,11 @@ export function Treatments() {
     ? rankedCategories(analysis)
         .slice(0, 2)
         .map((row) => row.category)
-    : SKIN_CATEGORIES.filter((c) => TREATMENTS.some((t) => t.targets.includes(c)))
+    : SKIN_CATEGORIES.filter((c) => cat.TREATMENTS.some((t) => t.targets.includes(c)))
   const shown = filter === ALL ? list : list.filter((t) => t.targets.includes(filter as SkinCategory))
+  const line = matched
+    ? UI.treatmentsSubtitle(leads[0] ? categoryLabel(leads[0]) : null, list.length)
+    : copy.browseSubtitle(list.length)
 
   const open = (id: string) => {
     selectTreatment(id)
@@ -76,10 +85,7 @@ export function Treatments() {
           <div>
             <Display size={34}>{UI.treatmentsTitle}</Display>
             <div style={{ marginTop: 10, fontSize: 15, color: C.bodyMuted }}>
-              {matched
-                ? `${UI.treatmentsSubtitle(leads[0] ? categoryLabel(leads[0]) : null, list.length)}`
-                : `The full list · ${list.length} treatments`}
-              {district ? ` · staying in ${district.name}` : ''}
+              {district ? copy.inDistrict(line, district.name) : line}
             </div>
           </div>
 
@@ -114,7 +120,7 @@ export function Treatments() {
                       color: on ? C.blue : C.bodyFaint,
                     }}
                   >
-                    {key === ALL ? 'All' : categoryLabel(key as SkinCategory)}
+                    {key === ALL ? copy.all : categoryLabel(key as SkinCategory)}
                   </Pressable>
                 )
               })}
@@ -168,7 +174,7 @@ export function Treatments() {
                   </div>
                   <Pressable
                     onClick={() => toggleSavedTreatment(t.id)}
-                    label={saved ? `Remove ${t.name} from My List` : `Save ${t.name} to My List`}
+                    label={saved ? copy.remove(t.name) : copy.save(t.name)}
                     className="opt"
                     style={{
                       width: 40,
@@ -227,8 +233,8 @@ export function Treatments() {
                       [
                         {
                           label: UI.priceRange,
-                          value: priceRangeIn(profile.districtKey, t.id),
-                          note: t.priceBasis,
+                          value: cat.priceRangeIn(profile.districtKey, t.id),
+                          note: t.priceBasis ? copy.priceBasis(t.priceBasis) : undefined,
                         },
                         { label: UI.perSession, value: t.duration },
                       ] as { label: string; value: string; note?: string }[]
@@ -257,7 +263,7 @@ export function Treatments() {
                         </div>
                         {cell.note ? (
                           <div style={{ marginTop: 3, fontSize: 12, color: C.muted }}>
-                            for {cell.note}
+                            {cell.note}
                           </div>
                         ) : null}
                       </div>
@@ -267,7 +273,7 @@ export function Treatments() {
                     onClick={() => open(t.id)}
                     style={{ fontSize: 13.5, fontWeight: 600, color: C.blue, whiteSpace: 'nowrap' }}
                   >
-                    Details →
+                    {copy.details} →
                   </Pressable>
                 </div>
               </Card>

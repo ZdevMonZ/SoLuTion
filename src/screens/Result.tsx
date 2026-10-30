@@ -2,9 +2,11 @@
  * 06 Result.
  *
  * Every sentence here is derived from the stored numbers by `data/strings.ts` at
- * render time — the reading itself carries no prose. The rows are ordered by how
- * much attention each area needs, which is also the order the treatment list is
- * built from, so the two screens can never disagree about what comes first.
+ * render time, in the page's language — the reading itself carries no prose, so a
+ * language switch re-reads the same numbers. The frame around them is
+ * `i18n/result.ts`. The rows are ordered by how much attention each area needs,
+ * which is also the order the treatment list is built from, so the two screens can
+ * never disagree about what comes first.
  */
 import { CategoryIcon, Icon, PATHS } from '../components/Icons'
 import {
@@ -22,26 +24,16 @@ import {
   Shell,
 } from '../components/primitives'
 import { columns, screenPadding, useNarrow } from '../components/layout'
-import { C, FONT_DISPLAY, FONT_MONO, toneFor } from '../theme'
-import {
-  SKIN_TONE,
-  analysisComparison,
-  analysisExplanation,
-  analysisHeadline,
-  analysisNotice,
-  analysisRowNote,
-  categoryLabel,
-  levelLabel,
-  UI,
-} from '../data/strings'
+import { C, FONT_DISPLAY, FONT_MONO, FONT_MONO_TEXT, toneFor } from '../theme'
+import { useStrings } from '../data/strings'
+import { useCopy } from '../i18n'
+import { RESULT } from '../i18n/result'
 import { PHOTOTYPES } from '../analysis/phototype'
 import { SUN_REACTIONS } from '../data/fitzpatrick'
 import type { FitzpatrickType } from '../analysis/phototype'
 import type { SkinAnalysisResult } from '../analysis/types'
 import { rankedCategories, ratioOf } from '../analysis/types'
 import { useStore } from '../state/store'
-
-const COUNT_WORDS = ['no', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight']
 
 /**
  * Skin tone, shown beside the rows rather than as one of them.
@@ -70,6 +62,7 @@ function SkinToneCard({
   tookPhoto: boolean
   onAnswer: (type: FitzpatrickType) => void
 }) {
+  const { SKIN_TONE } = useStrings()
   const measured = reading && reading.lightingUsable ? reading.phototype : null
   const gap =
     measured && reported
@@ -96,13 +89,15 @@ function SkinToneCard({
               color: reported ? C.ink : C.muted,
             }}
           >
-            {reported ? `Type ${reported}` : SKIN_TONE.unanswered}
+            {reported ? SKIN_TONE.typeLabel(reported) : SKIN_TONE.unanswered}
           </div>
         </div>
         <div style={{ minWidth: 130 }}>
           <div style={{ fontSize: 11.5, color: C.faint }}>{SKIN_TONE.measured}</div>
           <div style={{ marginTop: 6, fontFamily: FONT_DISPLAY, fontSize: 21, color: C.ink }}>
-            {measured ? `Type ${measured.type} · ${measured.name}` : '—'}
+            {measured
+              ? `${SKIN_TONE.typeLabel(measured.type)} · ${SKIN_TONE.className(measured.type)}`
+              : '—'}
           </div>
           {reading ? (
             <div style={{ marginTop: 4, fontSize: 11.5, color: C.faint, fontFamily: FONT_MONO }}>
@@ -120,12 +115,12 @@ function SkinToneCard({
                 key={reaction.type}
                 onClick={() => onAnswer(reaction.type)}
                 className="opt"
-                label={`Type ${reaction.type}. ${reaction.burn}. ${reaction.tan}.`}
+                label={SKIN_TONE.optionDescription(reaction.type)}
                 style={{
                   padding: '9px 14px',
                   borderRadius: 9,
                   fontSize: 12.5,
-                  fontFamily: FONT_MONO,
+                  fontFamily: FONT_MONO_TEXT,
                   background: C.chip,
                   border: `1px solid ${C.border}`,
                   color: C.inkSoft,
@@ -136,7 +131,7 @@ function SkinToneCard({
             ))}
           </div>
           <div style={{ marginTop: 9, fontSize: 11.5, lineHeight: 1.6, color: C.faint }}>
-            {SUN_REACTIONS.map((r) => `${r.type} ${r.burn.toLowerCase()}`).join(' · ')}
+            {SKIN_TONE.burnSummary}
           </div>
         </div>
       ) : null}
@@ -160,6 +155,17 @@ export function Result() {
   const { analysis, capturedUrl, hasEnteredTabShell, profile, setFitzpatrick, go, openModal } =
     useStore()
   const narrow = useNarrow()
+  const {
+    UI,
+    analysisComparison,
+    analysisExplanation,
+    analysisHeadline,
+    analysisNotice,
+    analysisRowNote,
+    categoryLabel,
+    levelLabel,
+  } = useStrings()
+  const copy = useCopy(RESULT)
 
   // Reachable only behind a reading; the guard is here so a stray navigation lands
   // somewhere sensible rather than on a blank page.
@@ -167,10 +173,10 @@ export function Result() {
     return (
       <div style={{ flex: 1, padding: screenPadding(narrow, 80, 80) }}>
         <Shell width={620}>
-          <Display size={30}>No reading yet.</Display>
-          <Prose style={{ marginTop: 14 }}>Take one and this page fills in.</Prose>
+          <Display size={30}>{copy.emptyTitle}</Display>
+          <Prose style={{ marginTop: 14 }}>{copy.emptyBody}</Prose>
           <div style={{ marginTop: 26, width: 'fit-content' }}>
-            <PrimaryButton onClick={() => go('form')}>Start Diagnosis</PrimaryButton>
+            <PrimaryButton onClick={() => go('form')}>{copy.emptyCta}</PrimaryButton>
           </div>
         </Shell>
       </div>
@@ -179,7 +185,6 @@ export function Result() {
 
   const rows = rankedCategories(analysis)
   const notice = analysisNotice(analysis)
-  const count = COUNT_WORDS[rows.length] ?? String(rows.length)
 
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 48, 80) }}>
@@ -233,6 +238,7 @@ export function Result() {
               <div style={{ flex: 1, minWidth: 200 }}>
                 <Eyebrow>{UI.scoreLabel}</Eyebrow>
                 <div
+                  className="headline"
                   style={{
                     marginTop: 12,
                     fontFamily: FONT_DISPLAY,
@@ -261,7 +267,7 @@ export function Result() {
               >
                 <img
                   src={capturedUrl}
-                  alt="The frame this reading was taken from"
+                  alt={copy.frameAlt}
                   style={{
                     width: 64,
                     height: 82,
@@ -270,9 +276,7 @@ export function Result() {
                     border: `1px solid ${C.border}`,
                   }}
                 />
-                <Note style={{ fontSize: 12.5 }}>
-                  Read in your browser. It is never uploaded, and it goes when this tab does.
-                </Note>
+                <Note style={{ fontSize: 12.5 }}>{copy.frameNote}</Note>
               </div>
             ) : null}
 
@@ -310,13 +314,9 @@ export function Result() {
 
           <div>
             <Display size={32} style={{ lineHeight: 1.3 }}>
-              {count} readings, in order of what to look at first.
+              {copy.rowsTitle(rows.length)}
             </Display>
-            <Prose style={{ marginTop: 16, maxWidth: 540 }}>
-              A low reading is not a diagnosis. Each row scores out of 100 the same way the
-              headline does — higher is better, so a short bar is the one to look at first, and
-              nothing here is an alarm.
-            </Prose>
+            <Prose style={{ marginTop: 16, maxWidth: 540 }}>{copy.rowsIntro}</Prose>
             <div
               style={{
                 marginTop: narrow ? 22 : 28,
@@ -345,7 +345,7 @@ export function Result() {
                 <span style={{ display: 'flex' }}>
                   <Icon path={PATHS.download} size={18} weight={1.6} />
                 </span>
-                <span>Save as PDF</span>
+                <span>{copy.savePdf}</span>
               </GhostButton>
               <Pressable
                 onClick={() => go('capture')}
@@ -440,10 +440,10 @@ export function Result() {
                     justifyContent: 'space-between',
                   }}
                 >
-                  <div style={{ fontSize: 11.5, color: C.faint, fontFamily: FONT_MONO }}>
+                  <div style={{ fontSize: 11.5, color: C.faint, fontFamily: FONT_MONO_TEXT }}>
                     {UI.rowScore(Math.round(row.score))}
                   </div>
-                  <div style={{ fontSize: 11.5, color: C.faint }}>Priority {i + 1}</div>
+                  <div style={{ fontSize: 11.5, color: C.faint }}>{copy.priority(i + 1)}</div>
                 </div>
                 <Prose size={14} style={{ marginTop: 14, lineHeight: 1.7 }}>
                   {analysisExplanation(row)}

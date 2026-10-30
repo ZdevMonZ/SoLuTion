@@ -1,4 +1,4 @@
-# Solution — web
+# SoLuTion — web
 
 The desktop counterpart of the 더마체크 Android app: a visitor takes a skin reading
 from their webcam, reads it in plain language, and compares the Seoul clinics that
@@ -21,9 +21,13 @@ src/
                 skinPixelAnalysis (pure measurement) · skinScoring (0..100 + levels)
                 capture (crop, grab, decode) · faceDetector (MediaPipe)
                 faceGateRules + blinkRules (pure decisions) · ranking
-  data/         catalog.ts (treatments, products, clinics, posts, rewards)
-                strings.ts (every sentence derived from a reading)
-                languages.ts
+  data/         catalog.ts (treatments, products, clinics, posts, rewards — English,
+                and the only place ids, prices and ordering live)
+                strings.ts (every sentence derived from a reading, in four languages)
+                languages.ts (the picker's list)
+  i18n/         index.tsx (LangProvider, useLang, useCopy) · one table per screen
+                catalog.ts (useCatalog: catalog.ko/ja/zh.ts laid over data/catalog.ts
+                by id) · josa.ts (Korean particles after names picked at runtime)
   state/        store.tsx — the whole funnel, the web's DermaViewModel
   components/   Icons · primitives · layout (phone switch) · TopNav · Modals · QrCode
   screens/      one file per screen, numbered as in the design
@@ -56,7 +60,8 @@ with.
 The frame is read in the page. The MediaPipe runtime and model are served from
 this origin, so detection makes no third-party request, and the only network calls
 the site makes are the map tiles (OpenStreetMap) and the web fonts. The reading is
-kept in `localStorage`; the frame itself is an object URL that dies with the tab.
+kept in `localStorage`, as is the language choice; the frame itself is an object URL
+that dies with the tab.
 
 ## Where this departs from the design, and why
 
@@ -89,9 +94,15 @@ kept in `localStorage`; the frame itself is an object URL that dies with the tab
   Gangnam. `priceRangeIn` derives the range from the chosen district's clinics,
   so Myeongdong still shows the design's numbers — except acne care, which reads
   ₩88,000 rather than ₩85,000 because no clinic row ever went that low.
-- **The language picker offers English only.** The other three are listed in the
-  design's own disabled style and do nothing, because there is no translated copy
-  behind them. Add a strings table and flip `available` in `data/languages.ts`.
+- **Four languages: English, Korean, Japanese and Simplified Chinese.** The picker
+  in the top bar switches every screen, the catalogue, the tab title and the map's
+  buttons. The choice is kept in `localStorage` (`solution.lang.v1`); a first visit
+  follows the browser's language when it is one of the four, and English otherwise.
+  Most of the copy comes from the Android app's tables and was then checked line
+  by line against the English. Where the Android text had drifted from the English,
+  the web follows the English — the Korean cautions, for one, said 혈액응고제 (a
+  clotting agent) for "blood thinners". CJK pages use system fonts, Korean keeps
+  words whole when wrapping, and letter-spacing tightens.
 - **Buttons with nothing behind them say so.** Sign-up creates no account, the
   product page has no checkout, and the QR code is drawn rather than issued. Each
   says that where it is, rather than appearing to work.

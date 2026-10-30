@@ -1441,12 +1441,12 @@ const price = (
 export const CLINICS: Clinic[] = [
   {
     id: 'c_solution_myeongdong',
-    name: 'Solution Clinic Myeongdong',
+    name: 'SoLuTion Clinic Myeongdong',
     lat: 37.56338,
     lng: 126.98405,
     distanceLabel: '3 min walk · 240 m',
     badge: 'AVAILABLE',
-    note: 'Reads your Solution result directly',
+    note: 'Reads your SoLuTion result directly',
     address: '12 Myeongdong 8-gil, Jung-gu, 3F',
     priceByTreatmentId: {
       ...price(150000, 480000, 290000, 95000, 160000, 450000),
@@ -1643,7 +1643,7 @@ export const SEED_POSTS: CommunityPost[] = [
     meta: 'France · 2 days ago · Myeongdong',
     verified: true,
     treatmentTag: 'Laser Toning',
-    clinicTag: 'Solution Myeongdong',
+    clinicTag: 'SoLuTion Myeongdong',
     likes: 128,
     comments: 24,
     text: 'Two sessions in and the pigmentation on my cheeks is visibly lighter. Everything was explained in English before they started.',

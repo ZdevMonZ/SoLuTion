@@ -20,11 +20,14 @@ import { Qr } from './screens/Qr'
 import { Result } from './screens/Result'
 import { Rewards } from './screens/Rewards'
 import { Treatments } from './screens/Treatments'
+import { useEffect } from 'react'
 import { ComposerModal, LanguageModal, SignupModal } from './components/Modals'
 import { TopNav } from './components/TopNav'
-import { Pressable } from './components/primitives'
+import { Pressable, useTracking } from './components/primitives'
 import { useNarrow } from './components/layout'
 import { C } from './theme'
+import { useCopy } from './i18n'
+import { APP } from './i18n/app'
 import { useStore, type Page } from './state/store'
 
 const SCREENS: Record<Page, () => React.JSX.Element> = {
@@ -46,26 +49,35 @@ const SCREENS: Record<Page, () => React.JSX.Element> = {
 
 /** The jump rail, as in the design. Numbered to match the screen list there. */
 const RAIL: [Page, string][] = [
-  ['landing', '01 Landing'],
-  ['form', '03 Info form'],
-  ['capture', '04 Webcam'],
-  ['analyzing', '05 Analyzing'],
-  ['result', '06 Result'],
-  ['treatments', '08 Treatments'],
-  ['detail', '09 Detail'],
-  ['clinics', '10 Clinics'],
-  ['booking', '11 Booking'],
-  ['product', '12 Product'],
-  ['mylist', '13 My list'],
-  ['community', '14 Community'],
-  ['rewards', '16 Rewards'],
-  ['qr', '17 QR'],
+  ['landing', '01'],
+  ['form', '03'],
+  ['capture', '04'],
+  ['analyzing', '05'],
+  ['result', '06'],
+  ['treatments', '08'],
+  ['detail', '09'],
+  ['clinics', '10'],
+  ['booking', '11'],
+  ['product', '12'],
+  ['mylist', '13'],
+  ['community', '14'],
+  ['rewards', '16'],
+  ['qr', '17'],
 ]
 
 export default function App() {
   const { page, modal, go } = useStore()
+  const copy = useCopy(APP)
+  const tracking = useTracking()
   const Screen = SCREENS[page]
   const narrow = useNarrow()
+
+  // The tab title and the description a shared link previews with. index.html
+  // carries the English pair until this runs.
+  useEffect(() => {
+    document.title = copy.documentTitle
+    document.querySelector('meta[name="description"]')?.setAttribute('content', copy.description)
+  }, [copy])
 
   return (
     <div
@@ -114,14 +126,14 @@ export default function App() {
               style={{
                 fontSize: 11,
                 fontWeight: 600,
-                letterSpacing: '.1em',
+                letterSpacing: tracking('.1em'),
                 color: C.faint,
                 marginRight: 6,
               }}
             >
-              PROTOTYPE
+              {copy.prototype}
             </div>
-            {RAIL.map(([id, label]) => {
+            {RAIL.map(([id, n]) => {
               const on = id === page
               return (
                 <Pressable
@@ -137,7 +149,7 @@ export default function App() {
                     color: on ? '#fff' : C.bodyMuted,
                   }}
                 >
-                  {label}
+                  {n} {copy.rail[id]}
                 </Pressable>
               )
             })}

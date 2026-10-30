@@ -16,66 +16,43 @@ import {
   PrimaryButton,
   Prose,
   Shell,
+  useTracking,
 } from '../components/primitives'
 import { columns, useNarrow } from '../components/layout'
-import { BAR_FILL, C, FONT_DISPLAY, FONT_MONO, LUNION, SOLION } from '../theme'
+import { BAR_FILL, C, FONT_DISPLAY, FONT_MONO_TEXT, LUNION, SOLION } from '../theme'
+import type { SeverityLevel, SkinCategory } from '../analysis/types'
+import { useStrings } from '../data/strings'
+import { useCopy } from '../i18n'
+import { LANDING } from '../i18n/landing'
 import { useStore } from '../state/store'
 
-const STATS = [
-  { n: '3', label: 'Seoul districts covered' },
-  { n: '16', label: 'Partner clinics' },
-  { n: '5 min', label: 'From photo to plan' },
-]
-
 // Fills are scores, not attention: higher is better, so the row that needs the
-// most work draws the shortest bar. Same three levels the design shows.
-const HERO_BARS = [
-  { name: 'Pigmentation', level: 'Focus first', ratio: 0.14 },
-  { name: 'Pores', level: 'Needs care', ratio: 0.26 },
-  { name: 'Laxity', level: 'Steady', ratio: 0.52 },
-]
-
-const STEPS: {
-  n: string
-  title: string
-  body: string
-  phoneTitle?: string
-  phoneBody?: string
-  path: string
-}[] = [
-  {
-    n: '01',
-    title: 'Tell us the basics',
-    body: 'Age, gender, and which district you are staying in.',
-    path: PATHS.pin,
-  },
-  {
-    n: '02',
-    title: 'Use your webcam',
-    phoneTitle: 'Use your camera',
-    body: 'One frame from your laptop camera, processed in the browser.',
-    phoneBody: 'One frame from your phone camera, processed in the browser.',
-    path: PATHS.camera,
-  },
-  {
-    n: '03',
-    title: 'Read your result',
-    body: 'Seven readings in plain language, ordered by priority.',
-    path: PATHS.eye,
-  },
-  {
-    n: '04',
-    title: 'Compare and book',
-    body: 'Clinic prices side by side, then a free consultation.',
-    path: PATHS.spark,
-  },
+// most work draws the shortest bar. Same three levels the design shows, named as
+// the result screen names them.
+const HERO_BARS: { category: SkinCategory; level: SeverityLevel; ratio: number }[] = [
+  { category: 'PIGMENT', level: 'FOCUS', ratio: 0.14 },
+  { category: 'PORES', level: 'ATTENTION', ratio: 0.26 },
+  { category: 'LAXITY', level: 'NORMAL', ratio: 0.52 },
 ]
 
 export function Landing() {
   const { go, savedReport, openSavedReport, deleteSavedReport } = useStore()
+  const { categoryLabel, levelLabel } = useStrings()
+  const copy = useCopy(LANDING)
+  const tracking = useTracking()
   const narrow = useNarrow()
-  // The design says "laptop"; on a phone that is the wrong device to name.
-  const device = narrow ? 'phone camera' : 'laptop webcam'
+
+  const stats = [copy.statDistricts, copy.statClinics, copy.statTime]
+  const steps = [
+    { n: '01', path: PATHS.pin, ...copy.stepBasics },
+    { n: '02', path: PATHS.camera, ...(narrow ? copy.stepCameraPhone : copy.stepCamera) },
+    { n: '03', path: PATHS.eye, ...copy.stepResult },
+    { n: '04', path: PATHS.spark, ...copy.stepBook },
+  ]
+  const houses = [
+    { house: SOLION, name: 'SOLION', ...copy.solion },
+    { house: LUNION, name: 'LUNION', ...copy.lunion },
+  ]
 
   return (
     <div style={{ flex: 1 }}>
@@ -158,7 +135,7 @@ export function Landing() {
             >
               <div style={{ width: 6, height: 6, borderRadius: '50%', background: C.blue }} />
               <Eyebrow size={12.5} spacing=".02em">
-                Myeongdong · Hongdae · Gangnam
+                {copy.districts}
               </Eyebrow>
             </div>
 
@@ -166,15 +143,15 @@ export function Landing() {
               size={60}
               style={{ marginTop: narrow ? 20 : 26, lineHeight: 1.08, letterSpacing: '-.025em' }}
             >
-              Your first skin diagnosis, built by a dermatologist.
+              {copy.headline}
             </Display>
             <Prose
               size={narrow ? 16 : 18}
               color={C.body}
               style={{ marginTop: narrow ? 18 : 24, maxWidth: 560, lineHeight: 1.7 }}
             >
-              Solution reads your skin from your {device}, explains what it finds in plain
-              language, and shows you which Seoul clinics treat it — with prices, before you walk in.
+              {/* The design says "laptop"; on a phone that is the wrong device to name. */}
+              {narrow ? copy.bodyPhone : copy.bodyLaptop}
             </Prose>
 
             <div
@@ -187,7 +164,7 @@ export function Landing() {
               }}
             >
               <PrimaryButton onClick={() => go('form')} height={56} fontSize={16.5} full={narrow}>
-                <span>Start Diagnosis</span>
+                <span>{copy.start}</span>
                 <span style={{ display: 'flex' }}>
                   <Icon path={PATHS.arrow} size={19} weight={1.7} />
                 </span>
@@ -199,7 +176,7 @@ export function Landing() {
                 fontSize={16}
                 full={narrow}
               >
-                Browse treatments
+                {copy.browse}
               </GhostButton>
             </div>
 
@@ -224,25 +201,25 @@ export function Landing() {
                   className="link-quiet"
                   style={{ fontSize: 14, fontWeight: 600, color: C.blue }}
                 >
-                  Open your last reading →
+                  {copy.savedReport} →
                 </Pressable>
                 <Pressable
                   onClick={deleteSavedReport}
                   className="link-quiet"
                   style={{ fontSize: 13, color: C.muted }}
                 >
-                  Delete it
+                  {copy.deleteSavedReport}
                 </Pressable>
               </div>
             ) : null}
 
             <div style={{ marginTop: 34, display: 'flex', flexWrap: 'wrap', gap: narrow ? 22 : 28 }}>
-              {STATS.map((s) => (
+              {stats.map((s) => (
                 <div key={s.label}>
                   <div
                     style={{ fontFamily: FONT_DISPLAY, fontSize: 24, fontWeight: 600, color: C.ink }}
                   >
-                    {s.n}
+                    {s.value}
                   </div>
                   <div style={{ marginTop: 4, fontSize: 13, color: C.muted }}>{s.label}</div>
                 </div>
@@ -270,9 +247,9 @@ export function Landing() {
                 <div
                   style={{ fontFamily: FONT_DISPLAY, fontSize: 14.5, fontWeight: 600, color: C.ink }}
                 >
-                  Sample reading
+                  {copy.sampleTitle}
                 </div>
-                <div style={{ fontSize: 12, color: C.muted }}>Preview</div>
+                <div style={{ fontSize: 12, color: C.muted }}>{copy.samplePreview}</div>
               </div>
               <div style={{ padding: '26px 24px 8px', display: 'flex', alignItems: 'center', gap: 22 }}>
                 <div
@@ -309,8 +286,15 @@ export function Landing() {
                     >
                       72
                     </div>
-                    <div style={{ marginTop: 3, fontSize: 10, letterSpacing: '.14em', color: C.muted }}>
-                      SCORE
+                    <div
+                      style={{
+                        marginTop: 3,
+                        fontSize: 10,
+                        letterSpacing: tracking('.14em'),
+                        color: C.muted,
+                      }}
+                    >
+                      {copy.sampleScore}
                     </div>
                   </div>
                 </div>
@@ -324,7 +308,7 @@ export function Landing() {
                   }}
                 >
                   {HERO_BARS.map((b) => (
-                    <div key={b.name}>
+                    <div key={b.category}>
                       <div
                         style={{
                           display: 'flex',
@@ -333,8 +317,10 @@ export function Landing() {
                           gap: 10,
                         }}
                       >
-                        <div style={{ fontSize: 13, fontWeight: 500, color: C.inkSoft }}>{b.name}</div>
-                        <div style={{ fontSize: 12, color: C.muted }}>{b.level}</div>
+                        <div style={{ fontSize: 13, fontWeight: 500, color: C.inkSoft }}>
+                          {categoryLabel(b.category)}
+                        </div>
+                        <div style={{ fontSize: 12, color: C.muted }}>{levelLabel(b.level)}</div>
                       </div>
                       <div
                         style={{
@@ -370,8 +356,7 @@ export function Landing() {
                   color: C.body,
                 }}
               >
-                Pigmentation is the first thing to look at. Three clinics in Myeongdong treat it from
-                ₩135,000.
+                {copy.sampleNote}
               </div>
             </Card>
           </div>
@@ -380,9 +365,9 @@ export function Landing() {
 
       <Shell style={{ padding: narrow ? '48px 16px' : '88px 32px' }}>
         <div style={{ maxWidth: 620 }}>
-          <Eyebrow size={12.5}>HOW IT WORKS</Eyebrow>
+          <Eyebrow size={12.5}>{copy.howEyebrow}</Eyebrow>
           <Display size={38} style={{ marginTop: 16, lineHeight: 1.2 }}>
-            Four steps, about five minutes.
+            {copy.howTitle}
           </Display>
         </div>
         <div
@@ -393,7 +378,7 @@ export function Landing() {
             gap: 20,
           }}
         >
-          {STEPS.map((s) => (
+          {steps.map((s) => (
             <Card key={s.n} className="card-hover" style={{ padding: '28px 24px', borderRadius: 18 }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div
@@ -425,10 +410,10 @@ export function Landing() {
                   color: C.ink,
                 }}
               >
-                {(narrow && s.phoneTitle) || s.title}
+                {s.title}
               </div>
               <Prose size={14} style={{ marginTop: 9, lineHeight: 1.7 }}>
-                {(narrow && s.phoneBody) || s.body}
+                {s.body}
               </Prose>
             </Card>
           ))}
@@ -446,21 +431,16 @@ export function Landing() {
           }}
         >
           <div>
-            <Eyebrow size={12.5}>PARTNER SKINCARE</Eyebrow>
+            <Eyebrow size={12.5}>{copy.partnerEyebrow}</Eyebrow>
             <Display size={34} style={{ marginTop: 16 }}>
-              SOLION by day, LUNION by night.
+              {copy.partnerTitle}
             </Display>
             <Prose size={16} color={C.body} style={{ marginTop: 18, maxWidth: 520 }}>
-              Every treatment page recommends the two products that matter after it — sun protection
-              for the day, recovery for the night. Both lines are sold at the partner clinics you book
-              through Solution.
+              {copy.partnerBody}
             </Prose>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: narrow ? 12 : 18 }}>
-            {[
-              { house: SOLION, name: 'SOLION', when: 'Daytime', body: 'Sun protection that keeps treated pigmentation from returning.' },
-              { house: LUNION, name: 'LUNION', when: 'Nighttime', body: 'Recovery for the nights right after a session.' },
-            ].map((h) => (
+            {houses.map((h) => (
               <div
                 key={h.name}
                 style={{
@@ -502,16 +482,16 @@ export function Landing() {
       </section>
 
       <Shell style={{ padding: narrow ? '52px 16px 60px' : '88px 32px 96px', textAlign: 'center' }}>
-        <Display size={36}>Start with the reading. Decide later.</Display>
+        <Display size={36}>{copy.closingTitle}</Display>
         <Prose
           size={16}
           style={{ marginTop: 16, maxWidth: 560, marginLeft: 'auto', marginRight: 'auto' }}
         >
-          No account needed to see your result. Nothing is sent to a clinic until you book.
+          {copy.closingBody}
         </Prose>
         <div style={{ margin: '32px auto 0', width: narrow ? '100%' : 'fit-content' }}>
           <PrimaryButton onClick={() => go('form')} height={56} fontSize={16.5} full={narrow}>
-            <span>Start Diagnosis</span>
+            <span>{copy.start}</span>
             <span style={{ display: 'flex' }}>
               <Icon path={PATHS.arrow} size={19} weight={1.7} />
             </span>
@@ -531,16 +511,16 @@ export function Landing() {
           }}
         >
           <div style={{ fontFamily: FONT_DISPLAY, fontSize: 18, fontWeight: 600, color: '#F4F7FB' }}>
-            Solution
+            SoLuTion
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 26, fontSize: 13.5 }}>
-            <span>About</span>
-            <span>Partner clinics</span>
-            <span>Privacy</span>
-            <span>Contact</span>
+            <span>{copy.about}</span>
+            <span>{copy.partnerClinics}</span>
+            <span>{copy.privacy}</span>
+            <span>{copy.contact}</span>
           </div>
-          <Note style={{ fontSize: 12.5, color: 'rgba(212,222,238,.55)', fontFamily: FONT_MONO }}>
-            Prototype · Sample clinic and price data
+          <Note style={{ fontSize: 12.5, color: 'rgba(212,222,238,.55)', fontFamily: FONT_MONO_TEXT }}>
+            {copy.footerNote}
           </Note>
         </Shell>
       </footer>

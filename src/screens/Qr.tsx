@@ -19,26 +19,25 @@ import {
 } from '../components/primitives'
 import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
-import { STORE_ITEMS } from '../data/catalog'
+import { useCopy, useLang } from '../i18n'
+import { useCatalog } from '../i18n/catalog'
+import { QR } from '../i18n/qr'
+import { REWARD_KIND } from '../i18n/rewards'
 import { useStore } from '../state/store'
-
-const KIND_LABEL = { PHYSICAL: 'PHYSICAL ITEM', COUPON: 'DIGITAL COUPON' } as const
-
-const STEPS = [
-  'Open this page at the front desk before your consultation starts.',
-  'Staff scan the code once; it stops working straight after.',
-  'Points are deducted only when the scan succeeds.',
-]
 
 export function Qr() {
   const { redeemedRewardId, go } = useStore()
-  const reward = STORE_ITEMS.find((item) => item.id === redeemedRewardId) ?? STORE_ITEMS[0]
+  const cat = useCatalog()
+  const reward = cat.STORE_ITEMS.find((item) => item.id === redeemedRewardId) ?? cat.STORE_ITEMS[0]
   const narrow = useNarrow()
+  const { lang } = useLang()
+  const copy = useCopy(QR)
+  const kindLabel = useCopy(REWARD_KIND)
 
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 44, 80) }}>
       <Shell width={1000}>
-        <BackLink onClick={() => go('rewards')}>Rewards</BackLink>
+        <BackLink onClick={() => go('rewards')}>{copy.back}</BackLink>
 
         <Card
           style={{
@@ -86,8 +85,9 @@ export function Qr() {
           </div>
 
           <div>
-            <Eyebrow size={11.5} spacing=".16em">
-              {KIND_LABEL[reward.kind]}
+            {/* Wide tracking is a Latin caps device; CJK keeps only a hint of it. */}
+            <Eyebrow size={11.5} spacing={lang === 'en' ? '.16em' : '.04em'}>
+              {kindLabel[reward.kind]}
             </Eyebrow>
             <Display size={32} weight={400} style={{ marginTop: 14, lineHeight: 1.25 }}>
               {reward.name}
@@ -108,7 +108,7 @@ export function Qr() {
             >
               <div style={{ width: 7, height: 7, borderRadius: '50%', background: C.blue }} />
               <div style={{ fontSize: 13.5, fontWeight: 600, color: C.blue }}>
-                Expires in {reward.expiry}
+                {copy.expiresIn(reward.expiry)}
               </div>
             </div>
 
@@ -116,10 +116,10 @@ export function Qr() {
               <div
                 style={{ fontFamily: FONT_DISPLAY, fontSize: 16, fontWeight: 600, color: C.ink }}
               >
-                Show this to clinic staff
+                {copy.howToTitle}
               </div>
               <div style={{ marginTop: 14, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {STEPS.map((text) => (
+                {copy.howToSteps.map((text) => (
                   <div key={text} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                     <Dot />
                     <Prose size={14} style={{ flex: 1, lineHeight: 1.7 }}>
@@ -130,9 +130,7 @@ export function Qr() {
               </div>
             </Well>
 
-            <Note style={{ marginTop: 18 }}>
-              Prototype — this code is drawn, not issued, so no scanner will read it.
-            </Note>
+            <Note style={{ marginTop: 18 }}>{copy.drawnNote}</Note>
           </div>
         </Card>
       </Shell>

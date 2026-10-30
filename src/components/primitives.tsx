@@ -9,7 +9,9 @@
  */
 import type { CSSProperties, ReactNode } from 'react'
 import { useNarrow } from './layout'
-import { BAR_FILL, C, FONT_DISPLAY, FONT_MONO, SHADOW_CTA } from '../theme'
+import { BAR_FILL, C, FONT_DISPLAY, FONT_MONO_TEXT, SHADOW_CTA } from '../theme'
+import { useCopy, useLang } from '../i18n'
+import { PRIMITIVES } from '../i18n/primitives'
 
 /** The page's content column. Every screen in the design sits in this box. */
 export function Shell({
@@ -139,6 +141,18 @@ export function GhostButton({
   )
 }
 
+/**
+ * Letter-spacing for a caps label, given the design's Latin value.
+ *
+ * Wide tracking is a device for Latin capitals. Hangul, kana and hanzi spread that
+ * far read as loose characters rather than a label — and in Korean it blurs the
+ * spaces between words — so on those pages a label keeps only a hint of it.
+ */
+export function useTracking(): (latin: string) => string {
+  const { lang } = useLang()
+  return (latin) => (lang === 'en' || parseFloat(latin) <= 0.04 ? latin : '.04em')
+}
+
 /** The letter-spaced blue label above a heading. */
 export function Eyebrow({
   children,
@@ -151,15 +165,19 @@ export function Eyebrow({
   spacing?: string
   size?: number
 }) {
+  const tracking = useTracking()
   return (
-    <div style={{ fontSize: size, fontWeight: 600, letterSpacing: spacing, color }}>{children}</div>
+    <div style={{ fontSize: size, fontWeight: 600, letterSpacing: tracking(spacing), color }}>
+      {children}
+    </div>
   )
 }
 
 /** The small grey caps label over a field. */
 export function FieldLabel({ children }: { children: ReactNode }) {
+  const tracking = useTracking()
   return (
-    <div style={{ fontSize: 12.5, fontWeight: 600, letterSpacing: '.1em', color: C.muted }}>
+    <div style={{ fontSize: 12.5, fontWeight: 600, letterSpacing: tracking('.1em'), color: C.muted }}>
       {children}
     </div>
   )
@@ -181,6 +199,8 @@ export function Display({
   const narrow = useNarrow()
   return (
     <div
+      // Hooks the CJK line-breaking rules in index.css.
+      className="headline"
       style={{
         fontFamily: FONT_DISPLAY,
         // A laptop headline set at 60px breaks one word per line on a phone.
@@ -284,6 +304,7 @@ export function ScoreRing({
   numeralSize?: number
   numeralWeight?: number
 }) {
+  const tracking = useTracking()
   const filled = Math.min(1, Math.max(0, value / max)) * 100
   const inner = (100 - thickness * 100).toFixed(0)
   // `closest-side`, not the design's bare `circle`: that one measures to the box's
@@ -328,9 +349,9 @@ export function ScoreRing({
           style={{
             marginTop: 6,
             fontSize: 10.5,
-            letterSpacing: '.2em',
+            letterSpacing: tracking('.2em'),
             color: C.muted,
-            fontFamily: FONT_MONO,
+            fontFamily: FONT_MONO_TEXT,
           }}
         >
           {caption}
@@ -342,6 +363,7 @@ export function ScoreRing({
 
 /** "Step 1 of 3" and its rule. */
 export function StepProgress({ step, of = 3, width }: { step: number; of?: number; width?: number }) {
+  const copy = useCopy(PRIMITIVES)
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 14, maxWidth: width }}>
       <div style={{ flex: 1, height: 3, borderRadius: 2, background: C.border }}>
@@ -355,7 +377,7 @@ export function StepProgress({ step, of = 3, width }: { step: number; of?: numbe
         />
       </div>
       <div style={{ fontSize: 13, color: C.muted, whiteSpace: 'nowrap' }}>
-        Step {step} of {of}
+        {copy.stepOf(step, of)}
       </div>
     </div>
   )
@@ -393,6 +415,7 @@ export function Tag({
   bold?: boolean
   border?: string
 }) {
+  const tracking = useTracking()
   return (
     <div
       style={{
@@ -402,7 +425,7 @@ export function Tag({
         border: border ? `1px solid ${border}` : undefined,
         fontSize: bold ? 10.5 : 11.5,
         fontWeight: bold ? 700 : 600,
-        letterSpacing: bold ? '.08em' : undefined,
+        letterSpacing: bold ? tracking('.08em') : undefined,
         color,
         whiteSpace: 'nowrap',
       }}

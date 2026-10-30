@@ -8,6 +8,8 @@
  * page a clinic could act on, and it would resolve to nothing.
  */
 import { C } from '../theme'
+import { useCopy } from '../i18n'
+import { QR } from '../i18n/qr'
 
 const N = 21
 const FINDERS: [number, number][] = [
@@ -49,11 +51,12 @@ function cells(): boolean[] {
 const CELLS = cells()
 
 export function QrCode({ module = 12 }: { module?: number }) {
+  const { codeDescription } = useCopy(QR)
   const side = N * module
   return (
     <div
       role="img"
-      aria-label="Redemption code, for the clinic front desk"
+      aria-label={codeDescription}
       style={{ display: 'flex', flexWrap: 'wrap', width: side, height: side }}
     >
       {CELLS.map((dark, i) => (
