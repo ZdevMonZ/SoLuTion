@@ -133,9 +133,40 @@ export function HealthCapture() {
       <Shell width={980}>
         <StepProgress step={2} width={720} />
 
-        <div style={{ marginTop: narrow ? 22 : 32 }}>
-          <Display size={34}>{copy.title}</Display>
-          <Prose style={{ marginTop: 12, maxWidth: 620, lineHeight: 1.7 }}>{copy.subtitle}</Prose>
+        {/* The skin camera's skip, in the same place. There is nothing to judge without
+            numbers, so skipping goes on with the sample sheet's. */}
+        <div
+          style={{
+            marginTop: narrow ? 22 : 32,
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: narrow ? 14 : 20,
+            alignItems: 'flex-end',
+            justifyContent: 'space-between',
+          }}
+        >
+          <div>
+            <Display size={34}>{copy.title}</Display>
+            <Prose style={{ marginTop: 12, maxWidth: 620, lineHeight: 1.7 }}>{copy.subtitle}</Prose>
+          </div>
+          <Pressable
+            onClick={() => {
+              stop()
+              startSample()
+            }}
+            className="btn-ghost"
+            style={{
+              padding: '10px 16px',
+              borderRadius: 9,
+              border: `1px solid ${C.border}`,
+              background: C.surface,
+              fontSize: 13,
+              color: C.bodyMuted,
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {copy.skip}
+          </Pressable>
         </div>
 
         <Card
