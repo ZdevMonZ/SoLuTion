@@ -148,3 +148,28 @@ export async function readReport(
     sink = null
   }
 }
+
+/**
+ * Demo mode: any photo "reads" as the sample sheet. The analyzing screen still
+ * fills its bar over a couple of seconds, then the result opens as if the scan had
+ * found every item. Turn off to put the real reader back.
+ */
+export const DEMO_SCAN = true
+
+const DEMO_MS = 2200
+
+export function demoReport(
+  readings: Readings,
+  onProgress: (p: OcrProgress) => void,
+): Promise<ScanResult> {
+  return new Promise((resolve) => {
+    const start = performance.now()
+    const tick = () => {
+      const t = Math.min(1, (performance.now() - start) / DEMO_MS)
+      onProgress(t < 0.25 ? { stage: 'loading', ratio: t / 0.25 } : { stage: 'reading', ratio: (t - 0.25) / 0.75 })
+      if (t < 1) setTimeout(tick, 50)
+      else resolve({ text: '', readings: { ...readings } })
+    }
+    tick()
+  })
+}

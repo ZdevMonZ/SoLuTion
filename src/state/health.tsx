@@ -28,7 +28,7 @@ import {
   type ItemId,
   type Readings,
 } from '../health/items'
-import { readReport, type OcrProgress } from '../health/ocr'
+import { DEMO_SCAN, demoReport, readReport, type OcrProgress } from '../health/ocr'
 import { useStore } from './store'
 
 /** `empty`: the reader ran but found no numbers. */
@@ -145,9 +145,10 @@ export function HealthProvider({ children }: { children: ReactNode }) {
         if (scanId.current === id) replacePhoto(blob ? URL.createObjectURL(blob) : null)
       }, 'image/jpeg', 0.85)
       go('health-analyzing')
-      readReport(canvas, (p) => {
+      const onProgress = (p: OcrProgress) => {
         if (scanId.current === id) setProgress(p)
-      })
+      }
+      ;(DEMO_SCAN ? demoReport(SAMPLE_READINGS, onProgress) : readReport(canvas, onProgress))
         .then(({ text, readings }) => {
           if (scanId.current !== id) return
           console.debug('[health] read', readings)
