@@ -28,6 +28,7 @@ import { C, FONT_DISPLAY } from '../../theme'
 import { useCopy } from '../../i18n'
 import { HEALTH_COPY } from '../../i18n/health'
 import { useHealth } from '../../state/health'
+import { DEMO_SCAN } from '../../health/ocr'
 
 type Phase = 'starting' | 'live' | 'blocked'
 
@@ -40,6 +41,40 @@ function canvasOf(source: HTMLVideoElement | HTMLImageElement, w: number, h: num
   canvas.width = Math.max(1, Math.round(w * scale))
   canvas.height = Math.max(1, Math.round(h * scale))
   canvas.getContext('2d')?.drawImage(source, 0, 0, canvas.width, canvas.height)
+  return canvas
+}
+
+const isPdf = (file: File) => file.type === 'application/pdf' || /\.pdf$/i.test(file.name)
+
+/**
+ * What the analyzing screen shows for an uploaded PDF: a plain page with the file's
+ * name, since there is no PDF renderer to draw its first page.
+ */
+function pdfCard(name: string): HTMLCanvasElement {
+  const canvas = document.createElement('canvas')
+  canvas.width = 900
+  canvas.height = 1270
+  const ctx = canvas.getContext('2d')
+  if (!ctx) return canvas
+  ctx.fillStyle = '#FFFFFF'
+  ctx.fillRect(0, 0, 900, 1270)
+  ctx.fillStyle = '#D93A3A'
+  ctx.beginPath()
+  ctx.roundRect(70, 70, 150, 64, 12)
+  ctx.fill()
+  ctx.fillStyle = '#FFFFFF'
+  ctx.font = 'bold 36px system-ui, sans-serif'
+  ctx.textBaseline = 'middle'
+  ctx.fillText('PDF', 108, 103)
+  ctx.fillStyle = '#1B2A41'
+  ctx.font = '600 34px system-ui, sans-serif'
+  const label = name.length > 34 ? `${name.slice(0, 31)}…` : name
+  ctx.fillText(label, 70, 200)
+  ctx.fillStyle = '#E3E8F0'
+  for (let i = 0; i < 16; i++) {
+    const y = 290 + i * 56
+    ctx.fillRect(70, y, i % 4 === 3 ? 420 : 760, 18)
+  }
   return canvas
 }
 
@@ -114,6 +149,13 @@ export function HealthCapture() {
   }
 
   const onFile = async (file: File) => {
+    if (isPdf(file)) {
+      // No PDF reader is bundled; in the demo the sample reading stands in for it.
+      if (!DEMO_SCAN) return console.warn('[health] PDFs can only be read in the demo')
+      stop()
+      startScan(pdfCard(file.name))
+      return
+    }
     const url = URL.createObjectURL(file)
     try {
       const image = new Image()
@@ -304,8 +346,7 @@ export function HealthCapture() {
           <input
             ref={fileRef}
             type="file"
-            accept="image/*"
-            capture="environment"
+            accept="image/*,application/pdf,.pdf"
             hidden
             onChange={(e) => {
               const file = e.target.files?.[0]
