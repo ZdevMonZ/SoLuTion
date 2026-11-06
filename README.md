@@ -36,7 +36,9 @@ src/
                 health.tsx — the health-checkup mode, beside it
   components/   Icons · primitives · layout (phone switch) · TopNav · Modals · QrCode
                 BodyCloud (the turning point-cloud figure on the health result)
-  screens/      one file per screen, numbered as in the design; health/ H1–H7
+                landing (the frame both front pages share: hero, sample card,
+                steps, band, closing call, footer)
+  screens/      one file per screen, numbered as in the design; health/ H0–H7
   theme.ts      every colour and gradient, transcribed from the design
 public/
   mediapipe/    wasm runtime, served from this origin
@@ -81,9 +83,19 @@ consulted; a visitor's own pick from the language picker is kept.
 ## The health-checkup mode
 
 The switch beside the wordmark changes between the skin check and the health
-checkup. The checkup runs H1 form (age, gender, family history, medical history,
-district) → H2 scan the result sheet → H3 read it → H5 body map → H6 care guide for
-one area → H7 hospitals for that area's department.
+checkup, and lands on that mode's front page: 01 Landing, or H0 for the checkup.
+The wordmark leads back to the front page of the mode you are in. The checkup runs
+H0 front page → H1 form (age, gender, family history, medical history, district) →
+H2 scan the result sheet → H3 read it → H5 body map → H6 care guide for one area →
+H7 hospitals for that area's department.
+
+- **H0 is 01 Landing's frame with the checkup in it** (the user's call, 2026-11-06,
+  from `main.png`). Both are built from `components/landing.tsx`, so a change to the
+  frame lands on both. Its sample card is the sample sheet's own reading, judged
+  with the profile's gender exactly as "Try with a sample sheet" judges it, so the
+  preview shows what that button opens. A checkup is never stored, so its "open the
+  reading" link is this visit's only — the switch used to jump straight to that
+  result; now the front page offers it.
 
 - **A scan goes straight to the body map** (the user's call, 2026-10-30), with a
   line saying how many of the 15 items were read. H4, the editable check of the
@@ -152,12 +164,14 @@ one area → H7 hospitals for that area's department.
   says that where it is, rather than appearing to work.
 - **"Save as PDF" opens the browser's print dialog**, which is a real way to save
   one.
+- **No prototype jump rail.** The design runs a bar of numbered screen buttons
+  along the bottom. It was hidden on phones from the start and removed everywhere
+  on 2026-11-06 (the user's call): the nav, the mode switch and each screen's own
+  buttons reach every screen, and a visitor has no use for the numbering.
 - **Phones get one column.** The design is drawn for a laptop only. Below 760 px
   (`components/layout.ts`) every two-column screen stacks, the gutter drops to
-  16 px, headlines scale to about three quarters, the nav tabs take a second header
-  row, and the prototype jump rail is hidden — on a phone it covered a third of the
-  screen, and the nav and the funnel's own buttons reach every screen without it.
-  Copy that names the laptop says "phone camera" there. The camera viewfinder
+  16 px, headlines scale to about three quarters, and the nav tabs take a second
+  header row. Copy that names the laptop says "phone camera" there. The camera viewfinder
   keeps its 16:10 shape on purpose: the guide oval and the analysed crop are one
   geometry (`analysis/capture.ts`), so a portrait viewfinder means re-deriving that
   geometry, not restyling a box.

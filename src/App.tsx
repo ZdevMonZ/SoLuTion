@@ -25,13 +25,12 @@ import { HealthCapture } from './screens/health/HealthCapture'
 import { HealthClinics } from './screens/health/HealthClinics'
 import { HealthDetail } from './screens/health/HealthDetail'
 import { HealthForm } from './screens/health/HealthForm'
+import { HealthLanding } from './screens/health/HealthLanding'
 import { HealthResult } from './screens/health/HealthResult'
 import { HealthReview } from './screens/health/HealthReview'
 import { useEffect } from 'react'
 import { ComposerModal, LanguageModal, SignupModal } from './components/Modals'
 import { TopNav } from './components/TopNav'
-import { Pressable, useTracking } from './components/primitives'
-import { useNarrow } from './components/layout'
 import { C } from './theme'
 import { useCopy } from './i18n'
 import { APP } from './i18n/app'
@@ -52,6 +51,7 @@ const SCREENS: Record<Page, () => React.JSX.Element> = {
   community: Community,
   rewards: Rewards,
   qr: Qr,
+  'health-landing': HealthLanding,
   'health-form': HealthForm,
   'health-capture': HealthCapture,
   'health-analyzing': HealthAnalyzing,
@@ -61,38 +61,10 @@ const SCREENS: Record<Page, () => React.JSX.Element> = {
   'health-clinics': HealthClinics,
 }
 
-/** The jump rail, as in the design. Numbered to match the screen list there. */
-const RAIL: [Page, string][] = [
-  ['landing', '01'],
-  ['form', '03'],
-  ['capture', '04'],
-  ['analyzing', '05'],
-  ['result', '06'],
-  ['treatments', '08'],
-  ['detail', '09'],
-  ['clinics', '10'],
-  ['booking', '11'],
-  ['product', '12'],
-  ['mylist', '13'],
-  ['community', '14'],
-  ['rewards', '16'],
-  ['qr', '17'],
-  // The health-checkup mode, numbered on its own.
-  ['health-form', 'H1'],
-  ['health-capture', 'H2'],
-  ['health-analyzing', 'H3'],
-  ['health-review', 'H4'],
-  ['health-result', 'H5'],
-  ['health-detail', 'H6'],
-  ['health-clinics', 'H7'],
-]
-
 export default function App() {
-  const { page, modal, go } = useStore()
+  const { page, modal } = useStore()
   const copy = useCopy(APP)
-  const tracking = useTracking()
   const Screen = SCREENS[page]
-  const narrow = useNarrow()
 
   // The tab title and the description a shared link previews with. index.html
   // carries the English pair until this runs.
@@ -116,68 +88,6 @@ export default function App() {
       {modal === 'lang' ? <LanguageModal /> : null}
       {modal === 'signup' ? <SignupModal /> : null}
       {modal === 'composer' ? <ComposerModal /> : null}
-
-      {/*
-        A jump rail for walking the prototype on a laptop. On a phone it filled a
-        third of the screen with links a visitor has no use for, and the nav and
-        the funnel's own buttons already reach every screen.
-      */}
-      {narrow ? null : (
-        <div
-          style={{
-            position: 'sticky',
-            bottom: 0,
-            zIndex: 50,
-            background: 'rgba(255,255,255,.95)',
-            backdropFilter: 'blur(10px)',
-            borderTop: `1px solid ${C.border}`,
-          }}
-        >
-          <div
-            style={{
-              maxWidth: 1320,
-              margin: '0 auto',
-              padding: '12px 32px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: 7,
-              alignItems: 'center',
-            }}
-          >
-            <div
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                letterSpacing: tracking('.1em'),
-                color: C.faint,
-                marginRight: 6,
-              }}
-            >
-              {copy.prototype}
-            </div>
-            {RAIL.map(([id, n]) => {
-              const on = id === page
-              return (
-                <Pressable
-                  key={id}
-                  onClick={() => go(id)}
-                  className="opt"
-                  style={{
-                    padding: '6px 11px',
-                    borderRadius: 8,
-                    fontSize: 11.5,
-                    background: on ? C.ink : C.surface,
-                    border: `1px solid ${on ? C.ink : C.border}`,
-                    color: on ? '#fff' : C.bodyMuted,
-                  }}
-                >
-                  {n} {copy.rail[id]}
-                </Pressable>
-              )
-            })}
-          </div>
-        </div>
-      )}
     </div>
   )
 }

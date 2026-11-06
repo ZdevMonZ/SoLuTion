@@ -45,6 +45,7 @@ export type Page =
   | 'community'
   | 'rewards'
   | 'qr'
+  | 'health-landing'
   | 'health-form'
   | 'health-capture'
   | 'health-analyzing'

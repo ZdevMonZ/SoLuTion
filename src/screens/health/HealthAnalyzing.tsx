@@ -23,7 +23,7 @@ export function HealthAnalyzing() {
   const copy = useCopy(HEALTH_COPY).analyzing
   const narrow = useNarrow()
 
-  // Arriving here with nothing running (the rail, a reload of state) goes back to the camera.
+  // Arriving here with nothing running goes back to the camera rather than a bar that never fills.
   useEffect(() => {
     if (scanStatus === 'idle') go('health-capture')
   }, [scanStatus, go])

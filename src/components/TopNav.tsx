@@ -13,7 +13,6 @@ import { LANGUAGES } from '../data/languages'
 import { useCopy, useLang } from '../i18n'
 import { NAV, type NavTab } from '../i18n/nav'
 import { isHealthPage, useStore, type Page } from '../state/store'
-import { useHealth } from '../state/health'
 
 interface NavItem {
   id: NavTab
@@ -87,11 +86,11 @@ export function TopNav() {
   // The language in force, in its own script: "한국어" on a Korean page, not
   // "Korean" — the word its card in the picker leads with.
   const current = LANGUAGES.find((l) => l.lang === lang)?.native ?? 'English'
-  const { report } = useHealth()
   const health = isHealthPage(page)
 
-  // Skin check or health checkup. Switching lands on the mode's start, or on the
-  // health result if one was read this visit — the camera need not be faced twice.
+  // Skin check or health checkup. Switching lands on the mode's front page; the
+  // health one links back to a result read earlier this visit, so the camera need
+  // not be faced twice.
   const modeSwitch = (
     <div
       role="group"
@@ -117,7 +116,7 @@ export function TopNav() {
             pressed={on}
             onClick={() => {
               if (on) return
-              go(mode === 'skin' ? 'landing' : report ? 'health-result' : 'health-form')
+              go(mode === 'skin' ? 'landing' : 'health-landing')
             }}
             className="mode-opt"
             style={{
@@ -188,7 +187,8 @@ export function TopNav() {
         }}
       >
         <Pressable
-          onClick={() => go('landing')}
+          // The front page of the mode the visitor is in.
+          onClick={() => go(health ? 'health-landing' : 'landing')}
           style={{ display: 'flex', alignItems: 'center', gap: narrow ? 9 : 11, flex: 'none' }}
           label={copy.homeLink}
         >
