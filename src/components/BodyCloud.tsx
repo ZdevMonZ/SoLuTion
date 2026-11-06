@@ -178,6 +178,15 @@ const GLOW_RADIUS = 0.08
 const ALPHA_STEPS = 5
 const DISTANCE = 4
 const MID_Y = 0.88
+/** The default turn, radians a second: about 20 s a revolution. */
+const SPIN = 0.32
+/**
+ * With reduced motion asked for, the figure still turns — it is the default look of
+ * the body map — but at half speed, and the glows stop pulsing.
+ */
+const SPIN_REDUCED = 0.16
+/** How long the figure rests on a selected organ before it turns on again. */
+const HOLD_MS = 3000
 
 const rgba = (hex: string, a: number) => {
   const n = parseInt(hex.slice(1), 16)
@@ -275,8 +284,8 @@ export function BodyCloud({
       const { flags: list, selected: sel, selectedLabel: selLabel } = live.current
       retag(list)
 
-      // Turning: toward the selected organ when the selection changes, otherwise a
-      // slow spin — or, with a selection, a slow sway around its best view.
+      // Turning: always a slow spin by default. A new selection turns the figure to
+      // that organ's best view and holds it there a moment so the label can be read.
       if (sel !== lastSelected) {
         lastSelected = sel
         const organ = list.find((f) => f.id === sel)?.organ
@@ -289,18 +298,11 @@ export function BodyCloud({
       if (!drag && now > idleUntil) {
         if (target !== null) {
           angle += (target - angle) * Math.min(1, dt * 4)
-          if (Math.abs(target - angle) < 0.002 && !reduced) {
+          if (Math.abs(target - angle) < 0.002) {
             target = null
-            idleUntil = now
+            idleUntil = now + HOLD_MS
           }
-        } else if (!reduced) {
-          const organ = list.find((f) => f.id === sel)?.organ
-          if (organ) {
-            const base = FACING[organ] ?? 0
-            const centre = base + Math.round((angle - base) / (2 * Math.PI)) * 2 * Math.PI
-            angle = centre + Math.sin(now / 2400) * 0.35
-          } else angle += dt * 0.32
-        }
+        } else angle += dt * (reduced ? SPIN_REDUCED : SPIN)
       }
 
       const w = canvas.width
