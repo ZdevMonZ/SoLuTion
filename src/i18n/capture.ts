@@ -29,6 +29,7 @@ const en = {
       body: 'This browser could not open a camera. You can upload a photo instead, or carry on without a capture and look around with a sample reading.',
     },
   },
+  playPreview: 'Tap to start the camera preview',
   tryAgain: 'Try again',
   upload: 'Upload a photo instead',
   privacy:
@@ -67,6 +68,7 @@ export const CAPTURE_SCREEN: Tables<typeof en> = {
         body: '이 브라우저에서 카메라를 열지 못했어요. 대신 사진을 업로드하거나, 촬영 없이 예시 결과로 둘러볼 수 있어요.',
       },
     },
+    playPreview: '눌러서 카메라 화면 켜기',
     tryAgain: '다시 시도',
     upload: '대신 사진 업로드하기',
     privacy:
@@ -94,6 +96,7 @@ export const CAPTURE_SCREEN: Tables<typeof en> = {
         body: 'このブラウザではカメラを起動できませんでした。代わりに写真をアップロードするか、撮影せずにサンプルの結果で見てみることもできます。',
       },
     },
+    playPreview: 'タップしてカメラ映像を開始',
     tryAgain: 'もう一度試す',
     upload: '代わりに写真をアップロード',
     privacy:
@@ -121,6 +124,7 @@ export const CAPTURE_SCREEN: Tables<typeof en> = {
         body: '此浏览器无法打开摄像头。您可以改为上传照片，或者不拍照，先用示例结果看看。',
       },
     },
+    playPreview: '点击开启摄像头预览',
     tryAgain: '重试',
     upload: '改为上传照片',
     privacy: '除非您点击，否则不会上传任何内容。画面在浏览器中读取，分析结束后即被丢弃。',

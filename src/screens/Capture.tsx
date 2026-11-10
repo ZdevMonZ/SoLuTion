@@ -54,6 +54,7 @@ import { faceLost, next } from '../analysis/blinkRules'
 import type { LivenessState } from '../analysis/blinkRules'
 import type { CaptureRejection } from '../analysis/types'
 import { useStore } from '../state/store'
+import { startCameraPreview, type CameraBlock } from '../analysis/cameraPreview'
 
 /** How often a preview frame is handed to the detector. */
 const FRAME_MS = 120
@@ -64,8 +65,7 @@ const FALLBACK_MS = 12_000
 /** After this many rejections, the screen starts pointing at the way out. */
 const HINT_AFTER_REJECTIONS = 2
 
-type Phase = 'starting' | 'live' | 'blocked'
-type Block = 'denied' | 'unavailable'
+type Phase = 'starting' | 'live' | 'paused' | 'blocked'
 
 export function Capture() {
   const { go, runAnalysis, profile } = useStore()
@@ -76,23 +76,15 @@ export function Capture() {
   const flow = useCopy(TREATMENT_FLOW)
 
   const videoRef = useRef<HTMLVideoElement | null>(null)
-  const streamRef = useRef<MediaStream | null>(null)
+  const cameraRef = useRef<ReturnType<typeof startCameraPreview> | null>(null)
   const livenessRef = useRef<LivenessState>('NO_FACE')
   /** Held so the detector loop and the key handler cannot both fire the shutter. */
   const busyRef = useRef(false)
-  /**
-   * Bumped every time the camera is stopped or reopened.
-   *
-   * `getUserMedia` resolves long after it is called, and React's development
-   * double-mount stops the first stream before the second has arrived. Without
-   * this, the late arrival would install a stream nothing holds a reference to —
-   * the camera light stays on for the rest of the session.
-   */
-  const sessionRef = useRef(0)
   const fileRef = useRef<HTMLInputElement | null>(null)
 
+  const [attempt, setAttempt] = useState(0)
   const [phase, setPhase] = useState<Phase>('starting')
-  const [block, setBlock] = useState<Block>('denied')
+  const [block, setBlock] = useState<CameraBlock>('denied')
   const [liveness, setLiveness] = useState<LivenessState>('NO_FACE')
   const [trouble, setTrouble] = useState(false)
   const [armed, setArmed] = useState(false)
@@ -100,67 +92,50 @@ export function Capture() {
   const [rejections, setRejections] = useState(0)
 
   const stop = useCallback(() => {
-    sessionRef.current += 1
-    streamRef.current?.getTracks().forEach((track) => track.stop())
-    streamRef.current = null
+    cameraRef.current?.stop()
+    cameraRef.current = null
   }, [])
 
-  /** Opens the camera. The phase is already 'starting' whenever this is called. */
-  const open = useCallback(async () => {
-    const session = sessionRef.current
-    try {
-      if (!navigator.mediaDevices?.getUserMedia) {
-        setBlock('unavailable')
-        setPhase('blocked')
-        return
-      }
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 800 } },
-        audio: false,
-      })
-      // Stopped or reopened while the browser was asking: this stream belongs to
-      // nobody, so it is closed rather than installed.
-      if (sessionRef.current !== session) {
-        stream.getTracks().forEach((track) => track.stop())
-        return
-      }
-      streamRef.current = stream
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream
-        await videoRef.current.play().catch(() => {
-          // Autoplay refusal is not fatal: the element is muted and inline, and the
-          // frames keep arriving whether or not the promise resolved.
-        })
-      }
-      setPhase('live')
-      // Warming the detector here rather than on the first frame keeps the first
-      // few seconds of the viewfinder from silently doing nothing.
-      void loadVideoDetector().catch((error) => {
-        console.warn('[capture] the face detector did not start', error)
-      })
-    } catch (error) {
-      if (sessionRef.current !== session) return
-      const name = error instanceof DOMException ? error.name : ''
-      setBlock(name === 'NotAllowedError' || name === 'SecurityError' ? 'denied' : 'unavailable')
-      setPhase('blocked')
-    }
-  }, [])
-
-  /** Back to the top: used by Retake, by "Try again", and by the R key. */
+  /** Commit the viewfinder first; the effect then opens its mounted video element. */
   const restart = useCallback(() => {
     stop()
     setPhase('starting')
     livenessRef.current = 'NO_FACE'
+    busyRef.current = false
     setLiveness('NO_FACE')
     setRejection(null)
     setTrouble(false)
-    void open()
-  }, [open, stop])
+    setArmed(false)
+    setAttempt((value) => value + 1)
+  }, [stop])
 
   useEffect(() => {
-    void open()
-    return stop
-  }, [open, stop])
+    const video = videoRef.current
+    if (!video || !navigator.mediaDevices?.getUserMedia) {
+      setBlock('unavailable')
+      setPhase('blocked')
+      return
+    }
+    const camera = startCameraPreview(video, {
+      getUserMedia: (constraints) => navigator.mediaDevices.getUserMedia(constraints),
+      onLive: () => {
+        setPhase('live')
+        void loadVideoDetector().catch((error) => {
+          console.warn('[capture] the face detector did not start', error)
+        })
+      },
+      onPlaybackBlocked: () => setPhase('paused'),
+      onError: (reason) => {
+        setBlock(reason)
+        setPhase('blocked')
+      },
+    })
+    cameraRef.current = camera
+    return () => {
+      camera.stop()
+      if (cameraRef.current === camera) cameraRef.current = null
+    }
+  }, [attempt])
 
   /** Everything a frame goes through once it has been grabbed. */
   const submit = useCallback(
@@ -546,7 +521,7 @@ export function Capture() {
                   }}
                 />
                 <div style={{ fontSize: 12, fontWeight: 500, color: 'rgba(233,240,250,.9)' }}>
-                  {phase === 'live' ? copy.live : copy.starting}
+                  {phase === 'live' ? copy.live : phase === 'paused' ? copy.playPreview : copy.starting}
                 </div>
               </div>
               <div
@@ -565,6 +540,14 @@ export function Capture() {
               >
                 {copy.localOnly}
               </div>
+
+              {phase === 'paused' && (
+                <div style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', background: 'rgba(11,30,61,.55)', zIndex: 1 }}>
+                  <PrimaryButton onClick={() => { void cameraRef.current?.play() }}>
+                    {copy.playPreview}
+                  </PrimaryButton>
+                </div>
+              )}
 
               {/* The prompt sits over the frame, where the eyes already are. */}
               <div
