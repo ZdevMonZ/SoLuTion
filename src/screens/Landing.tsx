@@ -1,3 +1,4 @@
+import { TREATMENT_FLOW } from '../i18n/treatmentFlow'
 /**
  * 01 Landing.
  *
@@ -21,7 +22,7 @@ import {
 } from '../components/landing'
 import { GhostButton, Pressable, useTracking } from '../components/primitives'
 import { useNarrow } from '../components/layout'
-import { BAR_FILL, C, FONT_DISPLAY, LUNION, SOLION } from '../theme'
+import { BAR_FILL, C, FONT_DISPLAY } from '../theme'
 import type { SeverityLevel, SkinCategory } from '../analysis/types'
 import { useStrings } from '../data/strings'
 import { useCopy } from '../i18n'
@@ -41,19 +42,16 @@ export function Landing() {
   const { go, savedReport, openSavedReport, deleteSavedReport } = useStore()
   const { categoryLabel, levelLabel } = useStrings()
   const copy = useCopy(LANDING)
+  const flow = useCopy(TREATMENT_FLOW)
   const tracking = useTracking()
   const narrow = useNarrow()
 
   const stats = [copy.statDistricts, copy.statClinics, copy.statTime]
   const steps = [
-    { n: '01', path: PATHS.pin, ...copy.stepBasics },
-    { n: '02', path: PATHS.camera, ...(narrow ? copy.stepCameraPhone : copy.stepCamera) },
-    { n: '03', path: PATHS.eye, ...copy.stepResult },
-    { n: '04', path: PATHS.spark, ...copy.stepBook },
-  ]
-  const houses = [
-    { house: SOLION, name: 'SOLION', ...copy.solion },
-    { house: LUNION, name: 'LUNION', ...copy.lunion },
+    { n: '01', path: PATHS.camera, ...(narrow ? copy.stepCameraPhone : copy.stepCamera) },
+    { n: '02', path: PATHS.eye, ...copy.stepResult },
+    { n: '03', path: PATHS.spark, ...flow.stepTreatments },
+    { n: '04', path: PATHS.pin, ...flow.stepBooking },
   ]
 
   const hero = (
@@ -62,7 +60,7 @@ export function Landing() {
       {/* The design says "laptop"; on a phone that is the wrong device to name. */}
       <HeroHeadline headline={copy.headline} body={narrow ? copy.bodyPhone : copy.bodyLaptop} />
       <HeroActions>
-        <StartButton label={copy.start} onClick={() => go('form')} />
+        <StartButton label={copy.start} onClick={() => go('capture')} />
         <GhostButton onClick={() => go('treatments')} height={56} padding={26} fontSize={16} full={narrow}>
           {copy.browse}
         </GhostButton>
@@ -195,36 +193,12 @@ export function Landing() {
     <div style={{ flex: 1 }}>
       <Hero copy={hero} card={card} />
       <StepGrid eyebrow={copy.howEyebrow} title={copy.howTitle} steps={steps} />
-      <FeatureBand eyebrow={copy.partnerEyebrow} title={copy.partnerTitle} body={copy.partnerBody}>
-        {houses.map((h) => (
-          <div
-            key={h.name}
-            style={{
-              padding: narrow ? '20px 16px' : '26px 22px',
-              borderRadius: 18,
-              background: h.house.bg,
-              border: `1px solid ${h.house.bg === C.surface ? C.border : h.house.border}`,
-            }}
-          >
-            <div
-              style={{
-                fontFamily: FONT_DISPLAY,
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: '.22em',
-                color: h.house.label,
-              }}
-            >
-              {h.name}
-            </div>
-            <div style={{ marginTop: 14, fontFamily: FONT_DISPLAY, fontSize: 17, fontWeight: 600, color: h.house.name }}>
-              {h.when}
-            </div>
-            <div style={{ marginTop: 8, fontSize: 13.5, lineHeight: 1.65, color: h.house.body }}>{h.body}</div>
-          </div>
-        ))}
+      <FeatureBand eyebrow="COMMUNITY" title={flow.reviewTitle} body={flow.reviewBody}>
+        <div style={{ gridColumn: '1 / -1' }}>
+          <GhostButton onClick={() => go('community')} full>{flow.reviews}</GhostButton>
+        </div>
       </FeatureBand>
-      <Closing title={copy.closingTitle} body={copy.closingBody} start={copy.start} onStart={() => go('form')} />
+      <Closing title={copy.closingTitle} body={copy.closingBody} start={copy.start} onStart={() => go('capture')} />
       <SiteFooter links={[copy.about, copy.partnerClinics, copy.privacy, copy.contact]} note={copy.footerNote} />
     </div>
   )

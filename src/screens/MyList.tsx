@@ -16,7 +16,7 @@ import {
 } from '../components/primitives'
 import { screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY } from '../theme'
-import { won } from '../data/catalog'
+import { TREATMENT_FLOW } from '../i18n/treatmentFlow'
 import { useCopy } from '../i18n'
 import { useCatalog } from '../i18n/catalog'
 import { MY_LIST } from '../i18n/mylist'
@@ -34,6 +34,7 @@ interface Row {
 }
 
 export function MyList() {
+  const flow = useCopy(TREATMENT_FLOW)
   const {
     profile,
     savedTreatmentIds,
@@ -85,7 +86,7 @@ export function MyList() {
         key: id,
         title: clinic.name,
         sub: `${district ? `${district.name} · ` : ''}${clinic.distanceLabel}`,
-        meta: `${won(clinic.priceByTreatmentId[treatment.id])} · ${treatment.shortName}`,
+        meta: `${flow.onConsultation} · ${treatment.shortName}`,
         posts: clinic.posts,
         open: () => {
           // The saved clinic may be in another district than the one being browsed;

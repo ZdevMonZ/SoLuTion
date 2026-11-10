@@ -1,19 +1,7 @@
 /**
- * The catalogue, read in the page's language.
- *
- * `data/catalog.ts` stays the English source and the only place ids, prices,
- * targets and ordering live. The store keeps holding those English objects — its
- * logic runs on ids — and every screen reads the words through `useCatalog()`,
- * which swaps in the chosen language's text for the same ids.
- *
- * Each language's words are a `CatalogText` (`catalog.text.ts`) in `catalog.<lang>.ts`,
- * laid over the English objects by id. Every lookup below runs the English one and
- * swaps in the result's words, so ordering, filters and fallbacks cannot differ by
- * language.
- *
- * This is the public surface the screens depend on. Language-independent helpers
- * (`won`, `cheapestPrice`, the `TX_*` / `PD_*` ids) are still imported from
- * `data/catalog` directly.
+ * Localized catalog access. CSV-backed treatment copy stays in the supplied
+ * Korean; legacy translation tables only localize clinics, products and posts.
+ * IDs, prices and ranking metadata are shared across every UI language.
  */
 import { useMemo } from 'react'
 import {
@@ -132,7 +120,7 @@ function walkLabel(english: string, walk: CatalogText['walk']): string {
 }
 
 function withWords(en: Treatment, words: TreatmentText | undefined): Treatment {
-  if (!words) return en
+  if (en.source || !words) return en
   const { steps, priceBasis, ...rest } = words
   return {
     ...en,
@@ -233,6 +221,7 @@ function reportGaps(lang: Lang, words: CatalogText): void {
   const gaps: string[] = []
   const missing = (what: string, id: string) => gaps.push(`${what} ${id}: no words`)
   for (const t of TREATMENTS) {
+    if (t.source) continue
     const w = entry(words.treatments, t.id)
     if (!w) {
       missing('treatment', t.id)

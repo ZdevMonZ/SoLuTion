@@ -1,3 +1,4 @@
+import { TREATMENT_FLOW } from '../i18n/treatmentFlow'
 /**
  * 14 Community.
  *
@@ -33,6 +34,7 @@ export function Community() {
   const { communityFilterId, setCommunityFilter, communityFeed, openModal } = useStore()
   const { lang } = useLang()
   const copy = useCopy(COMMUNITY)
+  const flow = useCopy(TREATMENT_FLOW)
   const cat = useCatalog()
   const narrow = useNarrow()
 
@@ -43,7 +45,7 @@ export function Community() {
   const filters = [
     { id: FILTER_ALL, label: copy.filterAll },
     { id: FILTER_VERIFIED, label: copy.filterVerified },
-    ...cat.TREATMENTS.slice(0, 3).map((t) => ({
+    ...cat.TREATMENTS.filter((t, i) => i < 3 || communityFilterId === `${FILTER_TREATMENT_PREFIX}${t.id}`).map((t) => ({
       id: `${FILTER_TREATMENT_PREFIX}${t.id}`,
       label: t.shortName,
     })),
@@ -101,7 +103,7 @@ export function Community() {
           <div>
             <Display size={34}>{copy.title}</Display>
             <Note style={{ marginTop: 10, fontSize: 15, color: C.bodyMuted }}>
-              {copy.subtitle(posts.length)}
+              {copy.subtitle(posts.length)}<br />{flow.sampleReviews}
             </Note>
           </div>
           <Pressable
@@ -350,6 +352,7 @@ export function Community() {
                 }}
               >
                 <div style={{ fontSize: 14, color: C.muted }}>{copy.empty}</div>
+                {communityFilterId !== FILTER_ALL && <Pressable onClick={() => setCommunityFilter(FILTER_ALL)} style={{ color: C.blue, marginTop: 16 }}>{copy.filterAll} →</Pressable>}
               </div>
             ) : null}
           </div>

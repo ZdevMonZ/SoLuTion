@@ -152,7 +152,7 @@ function SkinToneCard({
 }
 
 export function Result() {
-  const { analysis, capturedUrl, hasEnteredTabShell, profile, setFitzpatrick, go, openModal } =
+  const { analysis, capturedUrl, profile, setFitzpatrick, go } =
     useStore()
   const narrow = useNarrow()
   const {
@@ -326,7 +326,7 @@ export function Result() {
               }}
             >
               <PrimaryButton
-                onClick={() => (hasEnteredTabShell ? go('treatments') : openModal('signup'))}
+                onClick={() => go('treatments')}
                 height={52}
                 padding={26}
                 fontSize={15.5}

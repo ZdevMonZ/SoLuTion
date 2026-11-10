@@ -12,9 +12,18 @@
   .leaflet-container { font-family:'Karla', system-ui, sans-serif; background:#EEF1F5; }
   .leaflet-control-attribution { font-size:10px; background:rgba(255,255,255,.72); }
   .leaflet-tile-pane { filter:saturate(.3) brightness(1.04) contrast(.92) hue-rotate(178deg); }
-  .pin { display:flex; flex-direction:column; align-items:center; }
+  .pin { position:relative; display:flex; flex-direction:column; align-items:center; }
   .pin .dot { border-radius:50%; border:2px solid #fff; display:flex; align-items:center; justify-content:center;
     font-weight:700; color:#fff; box-shadow:0 6px 16px rgba(11,30,61,.35); font-family:'Karla',system-ui,sans-serif; }
+  .live-viewers { position:absolute; bottom:calc(100% + 7px); left:50%; transform:translateX(-50%);
+    padding:5px 8px; border-radius:5px; background:#45434F; color:#fff; white-space:nowrap;
+    font-size:12px; line-height:1.3; font-weight:500; box-shadow:0 2px 6px rgba(20,32,58,.18); pointer-events:none; }
+  .live-viewers::after { content:''; position:absolute; top:100%; left:50%; margin-left:-4px;
+    border:4px solid transparent; border-top-color:#45434F; }
+  @media (max-width:480px) {
+    .live-viewers--first { bottom:auto; top:calc(100% + 7px); }
+    .live-viewers--first::after { top:auto; bottom:100%; border-top-color:transparent; border-bottom-color:#45434F; }
+  }
 </style>
 </head>
 <body>
@@ -51,6 +60,16 @@
     zh: { zoomInTitle: '放大', zoomOutTitle: '缩小' }
   };
   var lang = ZOOM.hasOwnProperty(params.get('lang')) ? params.get('lang') : 'en';
+  // Fixed prototype counts are supplied only by the skin-clinic screen.
+  var viewers = (params.get('viewers') || '').split(',').map(function (count) {
+    return /^\d{1,6}$/.test(count) ? Number(count) : null;
+  });
+  var viewerLabel = {
+    en: function (count) { return count + ' viewing now'; },
+    ko: function (count) { return count + '명 보는 중'; },
+    ja: function (count) { return count + '人が閲覧中'; },
+    zh: function (count) { return count + '人正在浏览'; }
+  };
   document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
   // Set on the class, before the map exists: every zoom control it builds reads it.
   L.Control.Zoom.mergeOptions(ZOOM[lang]);
@@ -61,6 +80,15 @@
     attribution: '© OpenStreetMap contributors', maxZoom: 19
   }).addTo(map);
 
+  if (viewers.some(function (count) { return count !== null; })) {
+    // Leave room around the pins for the labels, including on a phone.
+    var fitViewerPins = function () {
+      map.fitBounds(d.pins, { paddingTopLeft: [68, 75], paddingBottomRight: [68, 55], maxZoom: d.zoom });
+    };
+    fitViewerPins();
+    map.on('resize', fitViewerPins);
+  }
+
   var STYLES = [
     { size: 38, fs: 14, bg: 'linear-gradient(150deg,#3F6DC4,#2E5AAC)', stem: '#2E5AAC' },
     { size: 32, fs: 12, bg: 'linear-gradient(150deg,#7FAEE4,#5B8FD4)', stem: '#5B8FD4' },
@@ -70,7 +98,9 @@
 
   d.pins.forEach(function (ll, i) {
     var s = STYLES[i] || STYLES[3];
-    var html = '<div class="pin"><div class="dot" style="width:' + s.size + 'px;height:' + s.size +
+    var count = viewers[i];
+    var label = count != null ? '<span class="live-viewers' + (i === 0 ? ' live-viewers--first' : '') + '">' + viewerLabel[lang](count) + '</span>' : '';
+    var html = '<div class="pin">' + label + '<div class="dot" style="width:' + s.size + 'px;height:' + s.size +
       'px;font-size:' + s.fs + 'px;background:' + s.bg + '">' + (i + 1) +
       '</div><div style="width:2px;height:9px;background:' + s.stem + '"></div></div>';
     L.marker(ll, { icon: L.divIcon({ className: '', html: html, iconSize: [s.size, s.size + 9], iconAnchor: [s.size / 2, s.size + 9] }) }).addTo(map);

@@ -1,3 +1,4 @@
+import { useSyncExternalStore } from 'react'
 /**
  * The bar every screen sits under.
  *
@@ -7,12 +8,11 @@
  */
 import { Icon, PATHS } from './Icons'
 import { Pressable } from './primitives'
-import { useNarrow } from './layout'
-import { C, FONT_DISPLAY, HEALTH } from '../theme'
+import { C, FONT_DISPLAY } from '../theme'
 import { LANGUAGES } from '../data/languages'
 import { useCopy, useLang } from '../i18n'
 import { NAV, type NavTab } from '../i18n/nav'
-import { isHealthPage, useStore, type Page } from '../state/store'
+import { useStore, type Page } from '../state/store'
 
 interface NavItem {
   id: NavTab
@@ -20,23 +20,15 @@ interface NavItem {
 }
 
 const TABS: NavItem[] = [
-  { id: 'home', page: 'treatments' },
-  { id: 'mylist', page: 'mylist' },
+  { id: 'home', page: 'landing' },
+  { id: 'skin', page: 'capture' },
+  { id: 'browse', page: 'treatments' },
   { id: 'community', page: 'community' },
-  { id: 'rewards', page: 'rewards' },
 ]
-
-/** Which tab a page belongs to. A page missing here highlights nothing. */
 const NAV_FOR: Partial<Record<Page, NavTab>> = {
-  treatments: 'home',
-  detail: 'home',
-  clinics: 'home',
-  booking: 'home',
-  product: 'home',
-  mylist: 'mylist',
+  landing: 'home', form: 'skin', capture: 'skin', analyzing: 'skin', result: 'skin',
+  treatments: 'browse', detail: 'browse', clinics: 'browse', booking: 'browse',
   community: 'community',
-  rewards: 'rewards',
-  qr: 'rewards',
 }
 
 /** The concentric mark. Also the favicon, and the analysing screen's core. */
@@ -77,69 +69,22 @@ export function Mark({ size = 30 }: { size?: number }) {
   )
 }
 
+const COMPACT_NAV = '(max-width: 1040px)'
+function subscribeNav(onChange: () => void) {
+  const query = window.matchMedia(COMPACT_NAV)
+  query.addEventListener('change', onChange)
+  return () => query.removeEventListener('change', onChange)
+}
+
 export function TopNav() {
   const { page, signedIn, go, openModal } = useStore()
   const { lang } = useLang()
   const copy = useCopy(NAV)
   const active = NAV_FOR[page]
-  const narrow = useNarrow()
+  const narrow = useSyncExternalStore(subscribeNav, () => window.matchMedia(COMPACT_NAV).matches, () => false)
   // The language in force, in its own script: "한국어" on a Korean page, not
   // "Korean" — the word its card in the picker leads with.
   const current = LANGUAGES.find((l) => l.lang === lang)?.native ?? 'English'
-  const health = isHealthPage(page)
-
-  // Skin check or health checkup. Switching lands on the mode's front page; the
-  // health one links back to a result read earlier this visit, so the camera need
-  // not be faced twice.
-  const modeSwitch = (
-    <div
-      role="group"
-      aria-label={copy.modesLabel}
-      style={{
-        display: 'flex',
-        padding: 3,
-        gap: 2,
-        borderRadius: 11,
-        background: C.chip,
-        border: `1px solid ${C.borderBlue}`,
-        flex: narrow ? 1 : 'none',
-      }}
-    >
-      {(['skin', 'health'] as const).map((mode) => {
-        const on = (mode === 'health') === health
-        // Filled in the mode's own colour, so which reading the site is doing reads
-        // from across the room: the brand blue for skin, the health mode's green.
-        const fill = mode === 'skin' ? C.blue : HEALTH.normal
-        return (
-          <Pressable
-            key={mode}
-            pressed={on}
-            onClick={() => {
-              if (on) return
-              go(mode === 'skin' ? 'landing' : 'health-landing')
-            }}
-            className="mode-opt"
-            style={{
-              flex: narrow ? 1 : undefined,
-              textAlign: 'center',
-              padding: narrow ? '8px 8px' : '8px 15px',
-              borderRadius: 8,
-              fontSize: narrow ? 13.5 : 14,
-              fontWeight: on ? 700 : 500,
-              whiteSpace: 'nowrap',
-              color: on ? '#fff' : C.blueDark,
-              // Unset when off, so the stylesheet's hover can tint it.
-              background: on ? fill : undefined,
-              boxShadow: on ? `0 4px 12px ${fill}55` : 'none',
-            }}
-          >
-            {copy.modes[mode]}
-          </Pressable>
-        )
-      })}
-    </div>
-  )
-
   const tabs = TABS.map((item) => {
     const on = active === item.id
     return (
@@ -187,8 +132,8 @@ export function TopNav() {
         }}
       >
         <Pressable
-          // The front page of the mode the visitor is in.
-          onClick={() => go(health ? 'health-landing' : 'landing')}
+          // Return to the site home.
+          onClick={() => go('landing')}
           style={{ display: 'flex', alignItems: 'center', gap: narrow ? 9 : 11, flex: 'none' }}
           label={copy.homeLink}
         >
@@ -206,12 +151,11 @@ export function TopNav() {
           </div>
         </Pressable>
 
-        {/* On a phone the switch and the tabs take their own rows below, full width. */}
+        {/* On compact screens the tabs take a full-width row below. */}
         {narrow ? (
           <div style={{ flex: 1 }} />
         ) : (
           <>
-            {modeSwitch}
             <nav style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 4, minWidth: 0 }}>
               {tabs}
             </nav>
@@ -294,7 +238,6 @@ export function TopNav() {
 
       {narrow ? (
         <>
-          <div style={{ display: 'flex', padding: '0 12px 8px' }}>{modeSwitch}</div>
           <nav
             style={{
               display: 'flex',

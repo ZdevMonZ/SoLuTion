@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { TREATMENT_FLOW } from '../i18n/treatmentFlow'
 /**
  * 11 Booking.
  *
@@ -21,19 +23,19 @@ import {
 } from '../components/primitives'
 import { columns, screenPadding, useNarrow } from '../components/layout'
 import { C, FONT_DISPLAY, SHADOW_PANEL } from '../theme'
-import { won } from '../data/catalog'
 import { useCopy, useLang } from '../i18n'
 import { BOOKING } from '../i18n/booking'
 import { useCatalog } from '../i18n/catalog'
 import { CLINIC_LIST } from '../i18n/clinics'
-import { useStore, useTreatment } from '../state/store'
+import { FILTER_TREATMENT_PREFIX, useStore, useTreatment } from '../state/store'
 
-/**
- * One mock week, Monday to Thursday. Real dates rather than "MON 21" literals, so
- * each language names the weekday and month itself: 21 September 2026 is the
- * Monday the design draws.
- */
-const DAYS = [21, 22, 23, 24].map((n) => ({ num: String(n), date: new Date(2026, 8, n) }))
+// Future dates for the consultation preview; these are not live availability.
+const DAYS = Array.from({ length: 7 }, (_, index) => {
+  const date = new Date()
+  date.setDate(date.getDate() + index + 1)
+  date.setHours(12, 0, 0, 0)
+  return { num: String(date.getDate()), key: String(date.getTime()), date }
+})
 
 /** The last one is drawn taken, so the grid shows what a full slot looks like. */
 const TIMES = [
@@ -44,18 +46,20 @@ const TIMES = [
 ]
 
 export function Booking() {
-  const { profile, selectedClinicId, savedClinicIds, toggleSavedClinic, day, time, setDay, setTime, go } =
+  const { profile, selectedClinicId, savedClinicIds, toggleSavedClinic, day, time, setDay, setTime, go, setCommunityFilter } =
     useStore()
   const { lang } = useLang()
   const cat = useCatalog()
   const copy = useCopy(BOOKING)
+  const flow = useCopy(TREATMENT_FLOW)
+  const [submitted, setSubmitted] = useState(false)
   // The back link is the clinic list's own headline.
   const { title: clinicsTitle } = useCopy(CLINIC_LIST)
   const treatment = cat.treatment(useTreatment())
   const district = cat.districtByKey(profile.districtKey) ?? cat.DISTRICTS[0]
   // Reachable from My List, where the saved clinic may sit in another district.
   const clinic = cat.clinicById(selectedClinicId) ?? cat.clinicsIn(district.key)[0]
-  const chosenDay = DAYS.find((d) => d.num === day) ?? DAYS[1]
+  const chosenDay = DAYS.find((d) => d.key === day) ?? DAYS[0]
   const narrow = useNarrow()
 
   return (
@@ -94,7 +98,7 @@ export function Booking() {
                 return (
                   <Pressable
                     key={d.num}
-                    onClick={() => setDay(d.num)}
+                    onClick={() => { setDay(d.key); setSubmitted(false) }}
                     className="opt"
                     style={{
                       padding: '16px 0',
@@ -141,7 +145,7 @@ export function Booking() {
                 return (
                   <Pressable
                     key={slot.time}
-                    onClick={() => setTime(slot.time)}
+                    onClick={() => { setTime(slot.time); setSubmitted(false) }}
                     disabled={!slot.open}
                     className={slot.open ? 'opt' : undefined}
                     style={{
@@ -199,6 +203,10 @@ export function Booking() {
             >
               {clinic.name}
             </div>
+            <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 600, color: '#6654E8' }}>
+              <span aria-hidden="true" style={{ width: 5, height: 5, flex: 'none', borderRadius: '50%', background: 'currentColor' }} />
+              {copy.liveViewers(289)}
+            </div>
             <div style={{ marginTop: 8, fontSize: 13.5, lineHeight: 1.65, color: C.bodyMuted }}>
               {clinic.address}
             </div>
@@ -218,11 +226,11 @@ export function Booking() {
             >
               {[
                 {
-                  left: copy.perSession(treatment.shortName),
-                  right: won(clinic.priceByTreatmentId[treatment.id]),
+                  left: flow.referencePrice,
+                  right: cat.priceRangeIn(profile.districtKey, treatment.id),
                   strong: true,
                 },
-                { left: copy.consultation, right: copy.free, blue: true },
+                { left: copy.consultation, right: flow.onConsultation, blue: true },
                 { left: copy.appointment, right: copy.appointmentAt(chosenDay.date, time) },
               ].map((row) => (
                 <div
@@ -249,24 +257,28 @@ export function Booking() {
               ))}
             </div>
 
+            <Note style={{ marginTop: 18 }}>{flow.priceNote}</Note>
             <div style={{ marginTop: 24 }}>
               <PrimaryButton
                 onClick={() => {
-                  // The request has nowhere to go — there is no clinic on the other
-                  // end of it — so it lands where the design sends the user next, on
-                  // My List. Keeping the clinic there is the honest half of that: an
-                  // empty list after asking for an appointment reads as a lost click.
                   if (!savedClinicIds.includes(clinic.id)) toggleSavedClinic(clinic.id)
-                  go('mylist')
+                  setSubmitted(true)
                 }}
                 full
+                disabled={submitted}
                 fontSize={15.5}
               >
-                {copy.request}
+                {submitted ? flow.bookingSaved : copy.request}
               </PrimaryButton>
             </div>
+            {submitted && (
+              <div role="status" style={{ marginTop: 20 }}>
+                <PrimaryButton full onClick={() => { setCommunityFilter(`${FILTER_TREATMENT_PREFIX}${treatment.id}`); go('community') }}>{flow.reviews}</PrimaryButton>
+                <Pressable onClick={() => go('treatments')} style={{ marginTop: 16, color: C.blue, width: '100%', textAlign: 'center' }}>{flow.browseMore}</Pressable>
+              </div>
+            )}
             <Note style={{ marginTop: 12, textAlign: 'center', fontSize: 12.5 }}>
-              {copy.noDeposit}
+              {flow.bookingNote}
             </Note>
           </Card>
         </div>

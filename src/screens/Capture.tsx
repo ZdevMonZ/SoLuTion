@@ -1,3 +1,4 @@
+import { TREATMENT_FLOW } from '../i18n/treatmentFlow'
 /**
  * 04 Webcam capture.
  *
@@ -67,11 +68,12 @@ type Phase = 'starting' | 'live' | 'blocked'
 type Block = 'denied' | 'unavailable'
 
 export function Capture() {
-  const { go, runAnalysis } = useStore()
+  const { go, runAnalysis, profile } = useStore()
   const narrow = useNarrow()
   const tracking = useTracking()
-  const { CAPTURE } = useStrings()
+  const { CAPTURE, ageBandLabel, genderLabel } = useStrings()
   const copy = useCopy(CAPTURE_SCREEN)
+  const flow = useCopy(TREATMENT_FLOW)
 
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const streamRef = useRef<MediaStream | null>(null)
@@ -292,7 +294,11 @@ export function Capture() {
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 48, 80) }}>
       <Shell width={980}>
-        <StepProgress step={2} width={720} />
+        <StepProgress step={1} of={2} width={720} />
+        <div style={{ marginTop: 16, display: 'flex', gap: 12, flexWrap: 'wrap', fontSize: 13, color: C.bodyMuted }}>
+          <span>{profile.ageBand ? ageBandLabel(profile.ageBand) : '—'} · {profile.gender ? genderLabel(profile.gender) : '—'}</span>
+          <Pressable onClick={() => go('form')} style={{ color: C.blue }}>{flow.profile}</Pressable>
+        </div>
 
         <div
           style={{

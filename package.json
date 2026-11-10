@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --import ./scripts/test-register.mjs --test tests/*.test.mjs",
+    "data:import": "python3 scripts/import_treatments.py"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "^1.0.1",

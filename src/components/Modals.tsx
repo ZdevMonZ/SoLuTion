@@ -9,13 +9,13 @@
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import { Icon, PATHS } from './Icons'
-import { Mark } from './TopNav'
 import { Card, Dot, FieldLabel, Pressable, PrimaryButton } from './primitives'
 import { columns, useNarrow } from './layout'
 import { C, FONT_DISPLAY, FONT_MONO } from '../theme'
 import { LANGUAGES } from '../data/languages'
 import { useCopy, useLang } from '../i18n'
 import { useCatalog } from '../i18n/catalog'
+import { TREATMENT_FLOW } from '../i18n/treatmentFlow'
 import { MODALS } from '../i18n/modals'
 import { useStore, useTreatment } from '../state/store'
 
@@ -194,213 +194,34 @@ export function LanguageModal() {
 }
 
 export function SignupModal() {
-  const { closeModal, completeSignup, skipSignup, analysis } = useStore()
+  const { closeModal, completeSignup, pendingPage } = useStore()
   const copy = useCopy(MODALS).signup
+  const flow = useCopy(TREATMENT_FLOW)
   const narrow = useNarrow()
-
   return (
-    <Backdrop onClose={closeModal} width={920}>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: columns(narrow, 'minmax(0,1fr) minmax(0,1fr)'),
-        }}
-      >
-        <div
-          style={{
-            position: 'relative',
-            padding: narrow ? '24px 20px' : 40,
-            background: 'linear-gradient(170deg,#F7F9FC,#EFF4FB)',
-            borderRight: narrow ? undefined : `1px solid ${C.rule}`,
-            borderTop: narrow ? `1px solid ${C.rule}` : undefined,
-            // Stacked on a phone, the form (and its close button) comes first.
-            order: narrow ? 1 : undefined,
-            overflow: 'hidden',
-          }}
-        >
-          <div
-            style={{
-              position: 'absolute',
-              left: -40,
-              bottom: -60,
-              width: 300,
-              height: 300,
-              borderRadius: '50%',
-              background:
-                'radial-gradient(circle at 50% 50%, rgba(46,90,172,.14) 0%, rgba(143,184,232,.1) 45%, rgba(143,184,232,0) 72%)',
-              animation: 'glowPulse 9s ease-in-out infinite',
-            }}
-          />
-          <div style={{ position: 'relative' }}>
-            <div
-              style={{
-                width: narrow ? 56 : 74,
-                height: narrow ? 56 : 74,
-                borderRadius: '50%',
-                background: C.surface,
-                border: `1px solid ${C.borderBlue}`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontFamily: FONT_DISPLAY,
-                fontSize: 24,
-                fontWeight: 400,
-                color: C.ink,
-              }}
-            >
-              {analysis ? analysis.overallScore : <Mark size={30} />}
-            </div>
-            <div
-              // Balanced lines in CJK (index.css): at this width the Chinese heading
-              // otherwise leaves its last character alone on the second line.
-              className="headline"
-              style={{
-                marginTop: narrow ? 18 : 26,
-                fontFamily: FONT_DISPLAY,
-                fontSize: narrow ? 22 : 27,
-                fontWeight: 400,
-                lineHeight: 1.3,
-                letterSpacing: '-.02em',
-                color: C.ink,
-              }}
-            >
-              {copy.title}
-            </div>
-            <div style={{ marginTop: 14, fontSize: 14.5, lineHeight: 1.75, color: C.body }}>
-              {copy.subtitle}
-            </div>
-            <div style={{ marginTop: 26, display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {copy.perks.map((text) => (
-                <div key={text} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <span style={{ display: 'flex', marginTop: 2, color: C.blue }}>
-                    <Icon path={PATHS.check} size={17} weight={2} />
-                  </span>
-                  <div style={{ flex: 1, fontSize: 14, lineHeight: 1.65, color: C.bodyFaint }}>
-                    {text}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+    <Backdrop onClose={closeModal} width={480}>
+      <form style={{ padding: narrow ? 24 : 36 }} onSubmit={(event) => { event.preventDefault(); completeSignup() }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', gap: 12 }}>
+          <h2 style={{ margin: 0, fontSize: 25, lineHeight: 1.4, color: C.ink }}>
+            {pendingPage === 'community' ? flow.reviewTitle : flow.joinTitle}
+          </h2>
+          <CloseButton onClick={closeModal} />
         </div>
-
-        <div style={{ padding: narrow ? '22px 20px' : 40, display: 'flex', flexDirection: 'column' }}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'flex-start',
-              justifyContent: 'space-between',
-              gap: 16,
-            }}
-          >
-            <div style={{ fontFamily: FONT_DISPLAY, fontSize: 20, fontWeight: 600, color: C.ink }}>
-              {copy.formTitle}
-            </div>
-            <CloseButton onClick={closeModal} />
-          </div>
-
-          <label style={{ marginTop: 24, display: 'block' }}>
-            <FieldLabel>{copy.emailLabel}</FieldLabel>
-            <input
-              type="email"
-              placeholder="you@example.com"
-              autoComplete="off"
-              style={{
-                marginTop: 9,
-                width: '100%',
-                height: 52,
-                borderRadius: 11,
-                border: `1px solid ${C.borderStrong}`,
-                background: C.surface,
-                padding: '0 16px',
-                fontFamily: 'inherit',
-                fontSize: 15,
-                color: C.ink,
-              }}
-            />
-          </label>
-          <label style={{ marginTop: 16, display: 'block' }}>
-            <FieldLabel>{copy.passwordLabel}</FieldLabel>
-            <input
-              type="password"
-              placeholder="••••••••"
-              autoComplete="new-password"
-              style={{
-                marginTop: 9,
-                width: '100%',
-                height: 52,
-                borderRadius: 11,
-                border: `1px solid ${C.borderStrong}`,
-                background: C.surface,
-                padding: '0 16px',
-                fontFamily: 'inherit',
-                fontSize: 15,
-                color: C.ink,
-              }}
-            />
-          </label>
-
-          <div style={{ marginTop: 22 }}>
-            <PrimaryButton onClick={completeSignup} full fontSize={16}>
-              {copy.createAccount}
-            </PrimaryButton>
-          </div>
-          {/*
-            The prototype has no server. Saying so here is cheaper than a person
-            discovering it after typing a password they use elsewhere.
-          */}
-          <div style={{ marginTop: 10, fontSize: 12, lineHeight: 1.6, color: C.muted }}>
-            {copy.prototypeNote}
-          </div>
-
-          <div style={{ margin: '22px 0 16px', display: 'flex', alignItems: 'center', gap: 14 }}>
-            <div style={{ flex: 1, height: 1, background: C.border }} />
-            <div style={{ fontSize: 12.5, color: C.muted }}>{copy.orContinueWith}</div>
-            <div style={{ flex: 1, height: 1, background: C.border }} />
-          </div>
-          <div style={{ display: 'flex', gap: 10 }}>
-            {['Google', 'Apple'].map((name) => (
-              <Pressable
-                key={name}
-                onClick={completeSignup}
-                className="btn-ghost"
-                style={{
-                  flex: 1,
-                  height: 50,
-                  borderRadius: 11,
-                  border: `1px solid ${C.borderStrong}`,
-                  background: C.surface,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontFamily: FONT_DISPLAY,
-                  fontSize: 14.5,
-                  fontWeight: 600,
-                  color: C.inkSoft,
-                }}
-              >
-                {name}
-              </Pressable>
-            ))}
-          </div>
-
-          <div style={{ flex: 1 }} />
-          <Pressable
-            onClick={skipSignup}
-            className="link-quiet"
-            style={{
-              marginTop: 24,
-              width: '100%',
-              textAlign: 'center',
-              fontSize: 13.5,
-              color: C.muted,
-              display: 'block',
-            }}
-          >
-            {copy.continueWithout}
-          </Pressable>
-        </div>
-      </div>
+        {pendingPage === 'community' && <p style={{ color: C.bodyMuted, lineHeight: 1.7 }}>{flow.reviewBody}</p>}
+        <label style={{ display: 'block', marginTop: 24 }}>
+          <FieldLabel>{copy.emailLabel}</FieldLabel>
+          <input autoFocus required type="email" autoComplete="email" name="email" placeholder="you@example.com"
+            style={{ marginTop: 9, width: '100%', height: 50, borderRadius: 10, border: `1px solid ${C.borderStrong}`, padding: '0 14px', font: 'inherit' }} />
+        </label>
+        <label style={{ display: 'block', marginTop: 18 }}>
+          <FieldLabel>{copy.passwordLabel}</FieldLabel>
+          <input required type="password" minLength={8} autoComplete="new-password" name="password" placeholder={flow.passwordHint}
+            style={{ marginTop: 9, width: '100%', height: 50, borderRadius: 10, border: `1px solid ${C.borderStrong}`, padding: '0 14px', font: 'inherit' }} />
+        </label>
+        <p style={{ fontSize: 12, lineHeight: 1.6, color: C.bodyMuted }}>{flow.demo}</p>
+        <button type="submit" className="btn-primary" style={{ width: '100%', minHeight: 50, padding: 12, border: 0, borderRadius: 10, background: C.blue, color: '#fff', font: 'inherit', fontWeight: 600, cursor: 'pointer' }}>{flow.join}</button>
+        <Pressable onClick={closeModal} style={{ width: '100%', textAlign: 'center', padding: '18px 0 0', color: C.bodyMuted }}>{flow.later}</Pressable>
+      </form>
     </Backdrop>
   )
 }

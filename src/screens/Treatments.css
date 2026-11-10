@@ -1,0 +1,66 @@
+.treatment-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+}
+
+.treatment-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.treatment-card .treatment-photo {
+  position: relative;
+  aspect-ratio: 1;
+  flex: none;
+}
+
+.treatment-card .treatment-photo-open {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 19px 19px 0 0;
+}
+
+.treatment-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.treatment-card .treatment-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 22px;
+}
+
+.treatment-card .treatment-title {
+  font-size: 21px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.treatment-card .treatment-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+}
+
+@media (min-width: 640px) {
+  .treatment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1000px) {
+  .treatment-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1280px) {
+  .treatment-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .treatment-card .treatment-body { padding: 20px; }
+  .treatment-card .treatment-title { font-size: 20px; }
+}

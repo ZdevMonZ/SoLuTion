@@ -11,9 +11,9 @@ const en = {
   /** By the nav's own tab ids. */
   tabs: {
     home: 'Home',
-    mylist: 'My List',
+    skin: 'Skin check',
     community: 'Community',
-    rewards: 'Rewards',
+    browse: 'Treatments',
   },
   /** Spoken name of the wordmark, which leads back to the landing page. */
   homeLink: 'SoLuTion home',
@@ -41,7 +41,7 @@ export type NavTab = keyof typeof en.tabs
 export const NAV: Tables<typeof en> = {
   en,
   ko: {
-    tabs: { home: '홈', mylist: '내 목록', community: '커뮤니티', rewards: '리워드' },
+    tabs: { home: '홈', skin: '피부 진단하기', community: '커뮤니티', browse: '시술 둘러보기' },
     homeLink: 'SoLuTion 홈',
     languageButton: (current) => `언어: ${current}`,
     signUp: '회원가입',
@@ -51,7 +51,7 @@ export const NAV: Tables<typeof en> = {
     modesLabel: '진단 모드',
   },
   ja: {
-    tabs: { home: 'ホーム', mylist: 'マイリスト', community: 'コミュニティ', rewards: 'リワード' },
+    tabs: { home: 'ホーム', skin: '肌診断', community: 'コミュニティ', browse: '施術を見る' },
     homeLink: 'SoLuTion ホーム',
     languageButton: (current) => `言語：${current}`,
     signUp: '新規登録',
@@ -61,7 +61,7 @@ export const NAV: Tables<typeof en> = {
     modesLabel: '診断モード',
   },
   zh: {
-    tabs: { home: '首页', mylist: '我的清单', community: '社区', rewards: '奖励' },
+    tabs: { home: '首页', skin: '皮肤检测', community: '社区', browse: '浏览项目' },
     homeLink: 'SoLuTion 首页',
     languageButton: (current) => `语言：${current}`,
     signUp: '注册',

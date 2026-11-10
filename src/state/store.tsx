@@ -1,3 +1,4 @@
+import { navigate, finishSignup, dismissSignup } from './navigation'
 /**
  * One store for the whole funnel — the web counterpart of `DermaViewModel` plus
  * the parts of `DermaRepository` that are not content lookups.
@@ -87,6 +88,7 @@ interface State {
   page: Page
   modal: Modal
   signedIn: boolean
+  pendingPage: Page | null
   profile: UserProfile
   /** Object URL of the captured frame, for the thumbnail on the result screen. */
   capturedUrl: string | null
@@ -103,12 +105,6 @@ interface State {
   communityFilterId: string
   userPosts: CommunityPost[]
   redeemedRewardId: string | null
-  /**
-   * True once the sign-up gate has been passed. A second reading must not ask for
-   * an account again, so the result screen reads this to decide whether its CTA is
-   * the gate or the matched list.
-   */
-  hasEnteredTabShell: boolean
 }
 
 function loadSavedReport(): SkinAnalysisResult | null {
@@ -132,6 +128,7 @@ const initialState: State = {
   page: 'landing',
   modal: null,
   signedIn: false,
+  pendingPage: null,
   profile: {
     ageBand: 'THIRTIES',
     gender: 'FEMALE',
@@ -154,7 +151,6 @@ const initialState: State = {
   communityFilterId: FILTER_ALL,
   userPosts: [],
   redeemedRewardId: null,
-  hasEnteredTabShell: false,
 }
 
 /**
@@ -204,8 +200,6 @@ export interface Store extends State {
   submitPost: (text: string, treatmentTag: string, clinicTag: string) => void
   selectReward: (id: string) => void
   completeSignup: () => void
-  skipSignup: () => void
-  enterTabShell: () => void
   communityFeed: () => CommunityPost[]
 }
 
@@ -231,7 +225,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   const go = useCallback(
     (page: Page) => {
-      patch({ page, modal: null })
+      patch((state) => navigate(state, page))
       window.scrollTo(0, 0)
     },
     [patch],
@@ -303,8 +297,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       ...state,
       savedReport,
       go,
-      openModal: (modal) => patch({ modal }),
-      closeModal: () => patch({ modal: null }),
+      openModal: (modal) => patch((s) => modal === 'composer' && !s.signedIn
+        ? { modal: 'signup', pendingPage: 'community' } : { modal, pendingPage: null }),
+      closeModal: () => patch(dismissSignup()),
       setAgeBand: (ageBand) => patch((s) => ({ profile: { ...s.profile, ageBand } })),
       setGender: (gender) => patch((s) => ({ profile: { ...s.profile, gender } })),
       setFitzpatrick: (fitzpatrick) => patch((s) => ({ profile: { ...s.profile, fitzpatrick } })),
@@ -325,7 +320,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         }
         setSavedReport(null)
       },
-      selectTreatment: (selectedTreatmentId) => patch({ selectedTreatmentId }),
+      selectTreatment: (selectedTreatmentId) => patch({ selectedTreatmentId, selectedClinicId: null }),
       selectClinic: (selectedClinicId) => patch({ selectedClinicId }),
       selectProduct: (selectedProductId) => patch({ selectedProductId, quantity: 1 }),
       setQuantity: (delta) =>
@@ -374,15 +369,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       },
       selectReward: (redeemedRewardId) => patch({ redeemedRewardId }),
       completeSignup: () => {
-        patch({ signedIn: true, hasEnteredTabShell: true, modal: null, page: 'treatments' })
+        patch((s) => finishSignup(s))
         window.scrollTo(0, 0)
       },
-      skipSignup: () => {
-        patch({ hasEnteredTabShell: true, modal: null, page: 'treatments' })
-        window.scrollTo(0, 0)
-      },
-      enterTabShell: () => patch({ hasEnteredTabShell: true }),
       communityFeed: () => {
+        if (!state.signedIn) return []
         const all = [...state.userPosts, ...SEED_POSTS]
         const id = state.communityFilterId
         if (id === FILTER_VERIFIED) return all.filter((p) => p.verified)

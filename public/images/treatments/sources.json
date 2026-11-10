@@ -1,0 +1,152 @@
+[
+  {
+    "id": "tx_thermage",
+    "source": "data/쎄마지_eng.png",
+    "output": "thermage.jpg"
+  },
+  {
+    "id": "tx_ulthera",
+    "source": "data/울쎄라_eng.png",
+    "output": "ulthera.jpg"
+  },
+  {
+    "id": "tx_emface",
+    "source": "data/엠페이스_eng.png",
+    "output": "emface.jpg"
+  },
+  {
+    "id": "tx_oltight",
+    "source": "data/올타이트_eng.png",
+    "output": "oltight.jpg"
+  },
+  {
+    "id": "tx_density",
+    "source": "data/덴서티_eng.png",
+    "output": "density.jpg"
+  },
+  {
+    "id": "tx_shurink",
+    "source": "data/슈링크유니버스_eng.png",
+    "output": "shurink.jpg"
+  },
+  {
+    "id": "tx_inmode",
+    "source": "data/인모드_eng.png",
+    "output": "inmode.jpg"
+  },
+  {
+    "id": "tx_pore_lift",
+    "source": "data/포텐자_eng.png",
+    "output": "pore_lift.jpg"
+  },
+  {
+    "id": "tx_curejet",
+    "source": "data/큐어젯_eng.png",
+    "output": "curejet.jpg"
+  },
+  {
+    "id": "tx_secret_rf",
+    "source": "data/시크릿레이저_eng.png",
+    "output": "secret_rf.jpg"
+  },
+  {
+    "id": "tx_delivery",
+    "source": "data/약물전달기기_eng.png",
+    "output": "delivery.jpg"
+  },
+  {
+    "id": "tx_mts",
+    "source": "data/MTS_eng.png",
+    "output": "mts.jpg"
+  },
+  {
+    "id": "tx_cellredm",
+    "source": "data/셀르디엠_eng.png",
+    "output": "cellredm.jpg"
+  },
+  {
+    "id": "tx_elravie",
+    "source": "data/엘라비에_eng.png",
+    "output": "elravie.jpg"
+  },
+  {
+    "id": "tx_rejuran",
+    "source": "data/리쥬란_eng.png",
+    "output": "rejuran.jpg"
+  },
+  {
+    "id": "tx_skinvive",
+    "source": "data/스킨바이브_eng.png",
+    "output": "skinvive.jpg"
+  },
+  {
+    "id": "tx_olidia",
+    "source": "data/올리디아_eng.png",
+    "output": "olidia.jpg"
+  },
+  {
+    "id": "tx_juvelook",
+    "source": "data/쥬베룩_eng.png",
+    "output": "juvelook.jpg"
+  },
+  {
+    "id": "tx_salmon",
+    "source": "data/연어주사_eng.png",
+    "output": "salmon.jpg"
+  },
+  {
+    "id": "tx_lilied",
+    "source": "data/릴리아드_eng.png",
+    "output": "lilied.jpg"
+  },
+  {
+    "id": "tx_skin_botox",
+    "source": "data/더모톡신_eng.png",
+    "output": "skin_botox.jpg"
+  },
+  {
+    "id": "tx_jaw_botox",
+    "source": "data/턱보톡스_eng.png",
+    "output": "jaw_botox.jpg"
+  },
+  {
+    "id": "tx_wrinkle_botox",
+    "source": "data/주름보톡스_eng.png",
+    "output": "wrinkle_botox.jpg"
+  },
+  {
+    "id": "tx_mouth_botox",
+    "source": "data/입꼬리보톡스_eng.png",
+    "output": "mouth_botox.jpg"
+  },
+  {
+    "id": "tx_temporal_botox",
+    "source": "data/측두근보톡스_eng.png",
+    "output": "temporal_botox.jpg"
+  },
+  {
+    "id": "tx_parotid_botox",
+    "source": "data/귀밑샘보톡스_eng.png",
+    "output": "parotid_botox.jpg"
+  },
+  {
+    "id": "tx_tightening",
+    "source": "data/타이트닝_eng.png",
+    "output": "tightening.jpg"
+  },
+  {
+    "id": "tx_contour",
+    "source": "data/윤곽주사_eng.png",
+    "output": "contour.jpg"
+  },
+  {
+    "id": "tx_toning",
+    "source": "data/피코레이저_eng.png",
+    "output": "toning.jpg"
+  },
+  {
+    "id": "tx_capri",
+    "source": "data/카프리레이저_eng.png",
+    "output": "capri.jpg"
+  }
+]

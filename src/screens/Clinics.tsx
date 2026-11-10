@@ -23,6 +23,7 @@ import type { ClinicBadge } from '../data/catalog'
 import { useStrings } from '../data/strings'
 import { useCopy, useLang } from '../i18n'
 import { useCatalog } from '../i18n/catalog'
+import { TREATMENT_FLOW } from '../i18n/treatmentFlow'
 import { CLINIC_LIST } from '../i18n/clinics'
 import { useStore, useTreatment } from '../state/store'
 
@@ -46,14 +47,15 @@ export function Clinics() {
   const cat = useCatalog()
   const { clinicBadgeLabel } = useStrings()
   const copy = useCopy(CLINIC_LIST)
+  const flow = useCopy(TREATMENT_FLOW)
   const treatment = cat.treatment(useTreatment())
   const district = cat.districtByKey(profile.districtKey) ?? cat.DISTRICTS[0]
   const narrow = useNarrow()
 
   const cheapest = cheapestPrice(district.key, treatment.id)
   const clinics = cat.clinicsIn(district.key)
-    .map((clinic, index) => ({ clinic, index, price: clinic.priceByTreatmentId[treatment.id] }))
-    .sort((a, b) => a.price - b.price)
+    .map((clinic, index) => ({ clinic, index, price: treatment.source ? undefined : clinic.priceByTreatmentId[treatment.id] }))
+    .sort((a, b) => (a.price ?? Infinity) - (b.price ?? Infinity))
 
   return (
     <div style={{ flex: 1, padding: screenPadding(narrow, 32, 60) }}>
@@ -131,7 +133,7 @@ export function Clinics() {
             */}
             <iframe
               key={`${district.key}:${lang}`}
-              src={`${import.meta.env.BASE_URL}map-blue.html?d=${district.key}&lang=${lang}`}
+              src={`${import.meta.env.BASE_URL}map-blue.html?d=${district.key}&lang=${lang}&viewers=289,155`}
               title={copy.mapTitle(district.name)}
               style={{ width: '100%', height: '100%', border: 0, display: 'block' }}
             />
@@ -247,7 +249,7 @@ export function Clinics() {
                       >
                         <Icon path={PATHS.bookmark} size={19} weight={saved ? 1.6 : 1.5} />
                       </Pressable>
-                      {price === cheapest ? (
+                      {price !== undefined && price === cheapest ? (
                         <Tag bg={C.navy} color={C.navyText} bold>
                           {copy.lowest}
                         </Tag>
@@ -260,14 +262,14 @@ export function Clinics() {
                           color: C.blue,
                         }}
                       >
-                        {won(price)}
+                        {price === undefined ? flow.onConsultation : won(price)}
                       </div>
                     </div>
                   </div>
                 </Card>
               )
             })}
-            <Note style={{ fontSize: 12.5 }}>{copy.sampleNote}</Note>
+            <Note style={{ fontSize: 12.5 }}>{flow.clinicNote}</Note>
           </div>
         </div>
       </Shell>

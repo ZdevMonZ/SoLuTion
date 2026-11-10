@@ -62,9 +62,9 @@ const SCREENS: Record<Page, () => React.JSX.Element> = {
 }
 
 export default function App() {
-  const { page, modal } = useStore()
+  const { page, modal, signedIn } = useStore()
   const copy = useCopy(APP)
-  const Screen = SCREENS[page]
+  const Screen = page === 'community' && !signedIn ? Landing : SCREENS[page]
 
   // The tab title and the description a shared link previews with. index.html
   // carries the English pair until this runs.

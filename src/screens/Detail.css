@@ -1,0 +1,20 @@
+.treatment-detail-layout { display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:48px; align-items:start; margin-top:24px; }
+.treatment-detail-layout article { min-width:0; }
+.treatment-detail-banner { width:100%; height:auto; display:block; border-radius:22px; background:#f7f9fc; }
+.treatment-section { margin-top:36px; color:#4c566e; }
+.treatment-section h2 { font-size:22px; color:#14203a; margin:0 0 16px; }
+.treatment-section h3 { font-size:17px; color:#14203a; margin:0; }
+.treatment-section p { white-space:pre-line; line-height:1.85; margin:12px 0 0; overflow-wrap:anywhere; }
+.treatment-points { padding-left:22px; line-height:1.85; margin:0; }
+.treatment-points li + li { margin-top:10px; }
+.treatment-packages { display:grid; gap:14px; }
+.package-price { display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; margin-top:20px; }
+.package-price del { font-size:13px; color:#737d90; }
+.package-price strong { font-size:23px; color:#2e5aac; }
+.package-price span { font-size:12px; }
+.treatment-faq { border-bottom:1px solid #e4e8ef; padding:18px 0; }
+.treatment-faq summary { cursor:pointer; color:#14203a; line-height:1.6; font-weight:600; }
+.treatment-faq p { padding:0 12px; }
+.treatment-next { position:sticky; top:100px; }
+.treatment-reference-price { font-size:25px; font-weight:600; color:#14203a; margin-top:8px; overflow-wrap:anywhere; }
+@media (max-width:900px) { .treatment-detail-layout { grid-template-columns:minmax(0,1fr); gap:28px; } .treatment-next { position:static; grid-row:2; } }

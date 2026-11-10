@@ -41,6 +41,7 @@ const en = {
     'Open weekdays 10:00–19:00, Saturday 10:00–15:00. Change or cancel until the day before. Bring your passport for the tourist tax refund.',
   /** Eyebrow over the summary panel. */
   selectionLabel: 'YOUR SELECTION',
+  liveViewers: (count: number) => `${count} people viewing now`,
   /** "3 min walk · 240 m · English-speaking staff". */
   staffLine: (distance: string) => `${distance} · English-speaking staff`,
   /** The summary's price row: "Pico Fraxel · per session". */
@@ -71,6 +72,7 @@ export const BOOKING: Tables<typeof en> = {
     hoursNote:
       '평일 10:00–19:00, 토요일 10:00–15:00 진료합니다. 예약 변경과 취소는 전날까지 가능합니다. 외국인 관광객 부가세 환급을 받으시려면 여권을 지참해 주세요.',
     selectionLabel: '선택 내역',
+    liveViewers: (count) => `현재 ${count}명 보는중`,
     staffLine: (distance) => `${distance} · 영어 응대 가능`,
     perSession: (shortName) => `${shortName} · 1회`,
     consultation: '상담',
@@ -92,6 +94,7 @@ export const BOOKING: Tables<typeof en> = {
     hoursNote:
       '平日10:00–19:00、土曜10:00–15:00に診療しています。変更・キャンセルは前日まで可能です。観光客の税金還付にはパスポートをお持ちください。',
     selectionLabel: '選択内容',
+    liveViewers: (count) => `現在${count}人が閲覧中`,
     staffLine: (distance) => `${distance} · 英語対応スタッフ在籍`,
     perSession: (shortName) => `${shortName} · 1回`,
     consultation: 'カウンセリング',
@@ -113,6 +116,7 @@ export const BOOKING: Tables<typeof en> = {
     hoursNote:
       '工作日 10:00–19:00，周六 10:00–15:00 接诊。最晚可在预约前一天更改或取消。办理游客退税请携带护照。',
     selectionLabel: '已选内容',
+    liveViewers: (count) => `当前${count}人正在浏览`,
     staffLine: (distance) => `${distance} · 提供英语服务`,
     perSession: (shortName) => `${shortName} · 单次`,
     consultation: '面诊',
