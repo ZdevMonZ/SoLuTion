@@ -22,12 +22,13 @@ import type { Treatment } from '../data/catalog'
 import { TREATMENT_FLOW } from '../i18n/treatmentFlow'
 import { treatmentImage } from '../data/treatmentImages'
 import { useStrings } from '../data/strings'
-import { useCopy } from '../i18n'
+import { useCopy, useLang } from '../i18n'
 import { useCatalog } from '../i18n/catalog'
 import { TREATMENT_LIST } from '../i18n/treatments'
-import { leadCategory } from '../analysis/ranking'
-import { SKIN_CATEGORIES, rankedCategories } from '../analysis/types'
-import type { SkinCategory } from '../analysis/types'
+import { matchesLeadingConcern } from '../analysis/treatmentRecommendations'
+import { TREATMENT_CONCERN_COPY } from '../i18n/treatmentConcerns'
+import { classificationFor, concernTier, filterTreatments, TREATMENT_CONCERNS, CLASSIFICATION_REVIEWED_AT, CLASSIFICATION_SOURCES, type ConcernFilter } from '../data/treatmentConcerns'
+import { rankedCategories } from '../analysis/types'
 import { useStore } from '../state/store'
 import './Treatments.css'
 
@@ -44,30 +45,22 @@ export function Treatments() {
     go,
   } = useStore()
   const cat = useCatalog()
-  const { UI, categoryLabel } = useStrings()
+  const { UI } = useStrings()
+  const { lang } = useLang()
+  const concerns = useCopy(TREATMENT_CONCERN_COPY)
   const flow = useCopy(TREATMENT_FLOW)
   const copy = useCopy(TREATMENT_LIST)
   const narrow = useNarrow()
-  const [filter, setFilter] = useState<string>(ALL)
+  const [filter, setFilter] = useState<ConcernFilter>(ALL)
 
   const matched = recommendations.length > 0
   // The store ranks the English objects; the cards read the same ids in this language.
   const list: Treatment[] = matched ? recommendations.map((t) => cat.treatment(t)) : cat.TREATMENTS
-  const district = cat.districtByKey(profile.districtKey)
-
-  // The chips are the two areas this reading actually flagged — not a fixed pair,
-  // which would offer "Pigmentation" to someone whose pigmentation is fine.
-  // Browsing without a reading, every area gets one: with thirty treatments, a
-  // way in by concern is most of what the list needs.
-  const leads: SkinCategory[] = analysis
-    ? rankedCategories(analysis)
-        .slice(0, 2)
-        .map((row) => row.category)
-    : SKIN_CATEGORIES.filter((c) => cat.TREATMENTS.some((t) => t.targets.includes(c)))
-  const shown = filter === ALL ? list : list.filter((t) => t.targets.includes(filter as SkinCategory))
-  const line = matched
-    ? UI.treatmentsSubtitle(leads[0] ? categoryLabel(leads[0]) : null, list.length)
-    : copy.browseSubtitle(list.length)
+  const priority = analysis ? rankedCategories(analysis).slice(0, 2).map((row) => row.category) : []
+  const filters = [...new Set([...priority, ...TREATMENT_CONCERNS])]
+  const shown = filterTreatments(list, filter)
+  const related = matched ? list.find((t) => matchesLeadingConcern(t.id, analysis))?.id : undefined
+  const sourceIds = [...new Set(shown.flatMap((t) => classificationFor(t.id).sourceIds))]
 
   const open = (id: string) => {
     selectTreatment(id)
@@ -89,51 +82,38 @@ export function Treatments() {
           <div>
             <Display size={34}>{matched ? UI.treatmentsTitle : flow.browse}</Display>
             <div style={{ marginTop: 10, fontSize: 15, color: C.bodyMuted }}>
-              {district ? copy.inDistrict(line, district.name) : line}
+              {concerns.intro}
             </div>
           </div>
 
-          {leads.length > 0 ? (
-            // A phone scrolls the filters sideways rather than squeezing them.
-            <div
-              style={{
-                display: 'flex',
-                gap: narrow ? 8 : 10,
-                alignItems: 'center',
-                maxWidth: '100%',
-                overflowX: 'auto',
-                ...(narrow
-                  ? { width: 'calc(100% + 32px)', margin: '0 -16px', padding: '0 16px', overflowX: 'auto' }
-                  : null),
-              }}
-            >
-              {[ALL, ...leads].map((key) => {
-                const on = filter === key
-                return (
-                  <Pressable
-                    key={key}
-                    onClick={() => setFilter(key)}
-                    pressed={on}
-                    className="opt"
-                    style={{
-                      padding: '10px 16px',
-                      borderRadius: 24,
-                      fontSize: 13.5,
-                      fontWeight: 500,
-                      flex: 'none',
-                      whiteSpace: 'nowrap',
-                      background: on ? C.chip : C.surface,
-                      border: `1px solid ${on ? C.blue : C.borderStrong}`,
-                      color: on ? C.blue : C.bodyFaint,
-                    }}
-                  >
-                    {key === ALL ? copy.all : categoryLabel(key as SkinCategory)}
-                  </Pressable>
-                )
-              })}
-            </div>
-          ) : null}
         </div>
+
+        <section className="treatment-concerns" aria-label={concerns.heading}>
+          <h2>{concerns.heading}</h2>
+          <div className="treatment-concern-filters">
+            {([ALL, ...filters] as ConcernFilter[]).map((key) => {
+              const on = filter === key
+              const count = filterTreatments(list, key).length
+              return (
+                <Pressable key={key} onClick={() => setFilter(key)} pressed={on} className="treatment-concern-filter opt"
+                  style={{ background: on ? C.blue : C.surface, borderColor: on ? C.blue : C.border, color: on ? '#fff' : C.body }}>
+                  <span>{key === ALL ? copy.all : concerns.labels[key]}</span>
+                  <span className="concern-count">{count}</span>
+                  {key !== ALL && priority.some((p) => p === key) && <span className="concern-priority">{concerns.priority}</span>}
+                </Pressable>
+              )
+            })}
+          </div>
+          <div className="treatment-concern-description" aria-live="polite">
+            <strong>{filter === ALL ? copy.all : concerns.labels[filter]} · {concerns.count(shown.length)}</strong>
+            <p>{filter === ALL ? concerns.allDescription : concerns.descriptions[filter]}</p>
+            {filter === ALL && matched && !related && <p>{concerns.topNeedsConsultation}</p>}
+          </div>
+        </section>
+        {shown.length === 0 && <Card style={{ marginTop: 24, padding: 28 }}>
+          <h3 style={{ margin: '0 0 12px', color: C.ink }}>{concerns.noMatch}</h3>
+          <Pressable onClick={() => setFilter(ALL)} style={{ color: C.blue }}>{concerns.browseAll} →</Pressable>
+        </Card>}
 
         <div
           className="treatment-grid"
@@ -143,14 +123,11 @@ export function Treatments() {
         >
           {shown.map((t, i) => {
             const saved = savedTreatmentIds.includes(t.id)
-            const top = matched && filter === ALL && i === 0
+            const top = filter === ALL && t.id === related
             const image = treatmentImage(t.id)
-            // The area that earned the card its place (or the one being filtered
-            // on), so the chip answers the question the position raises.
-            const chip =
-              filter !== ALL
-                ? (filter as SkinCategory)
-                : (leadCategory(t.targets, matched ? analysis : null) ?? t.targets[0])
+            const rule = classificationFor(t.id)
+            const conditional = rule.manualOnly || (filter !== ALL && concernTier(t.id, filter) === 2)
+            const tags = [...new Set([...(filter !== ALL ? [filter] : []), ...rule.primary])].slice(0, 2)
             return (
               <Card
                 key={t.id}
@@ -183,7 +160,7 @@ export function Treatments() {
                   {top ? (
                     <div style={{ position: 'absolute', top: 14, left: 14, maxWidth: 'calc(100% - 82px)', pointerEvents: 'none' }}>
                       <Tag bg={C.blue} color="#fff" bold>
-                        {UI.topMatch}
+                        {concerns.related}
                       </Tag>
                     </div>
                   ) : null}
@@ -212,7 +189,11 @@ export function Treatments() {
                 </div>
 
                 <div className="treatment-body">
-                  <div style={{ marginBottom: 12 }}><Tag>{t.source?.category ?? categoryLabel(chip)}</Tag></div>
+                  <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 12 }}>
+                    {tags.map((tag) => <Tag key={tag}>{concerns.labels[tag]}</Tag>)}
+                    {conditional && <Tag bg="#FFF5E5" color="#875B19">{concerns.conditional}</Tag>}
+                  </div>
+                  <div lang="ko" style={{ marginBottom: 8, fontSize: 12, color: C.bodyMuted }}>{t.source?.category}</div>
                   <Pressable
                     onClick={() => open(t.id)}
                     style={{ display: 'block', textAlign: 'left', flex: 1 }}
@@ -234,6 +215,11 @@ export function Treatments() {
                     </div>
                   </Pressable>
 
+                  <details className="treatment-classification-note">
+                    <summary>{concerns.sources}</summary>
+                    <p lang="ko">{rule.note}</p>
+                    {rule.sourceIds.map((id) => <a key={id} href={CLASSIFICATION_SOURCES[id].url} target="_blank" rel="noreferrer">{CLASSIFICATION_SOURCES[id].title} ↗</a>)}
+                  </details>
                   <div
                     style={{
                       marginTop: 20,
@@ -298,6 +284,12 @@ export function Treatments() {
           })}
         </div>
 
+        <details className="treatment-source-list">
+          <summary>{concerns.sources} · {concerns.reviewed(CLASSIFICATION_REVIEWED_AT)}</summary>
+          <p>{concerns.sourcesNote}</p>
+          {lang !== 'ko' && <p>{concerns.languageNote}</p>}
+          <ul>{sourceIds.map((id) => <li key={id}><a href={CLASSIFICATION_SOURCES[id].url} target="_blank" rel="noreferrer">{CLASSIFICATION_SOURCES[id].title} ↗</a></li>)}</ul>
+        </details>
         <Note style={{ marginTop: 26, maxWidth: 720 }}>{flow.priceNote}</Note>
       </Shell>
     </div>

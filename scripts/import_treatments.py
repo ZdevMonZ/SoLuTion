@@ -11,37 +11,37 @@ import unicodedata
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT.parent / 'data'
-# source name | stable id | artwork stem | concerns | artwork focal point
-MAPPING = '''써마지|tx_thermage|쎄마지|LAXITY,WRINKLES|0%
-울쎄라 프라임|tx_ulthera|울쎄라|LAXITY|100%
-엠페이스|tx_emface|엠페이스|LAXITY,WRINKLES|100%
-올타이트|tx_oltight|올타이트|LAXITY|100%
-덴서티|tx_density|덴서티|LAXITY,WRINKLES|100%
-슈링크|tx_shurink|슈링크유니버스|LAXITY|100%
-인모드|tx_inmode|인모드|LAXITY|100%
-포텐자|tx_pore_lift|포텐자|PORES,ACNE,LAXITY,REDNESS|100%
-큐어젯|tx_curejet|큐어젯|PORES,LAXITY|100%
-시크릿 레이저|tx_secret_rf|시크릿레이저|PORES,ACNE|0%
-약물 전달기기|tx_delivery|약물전달기기|LAXITY,WRINKLES|100%
-MTS|tx_mts|MTS|PORES,LAXITY|100%
-셀르디엠|tx_cellredm|셀르디엠|LAXITY|100%
-엘라비에 리투오|tx_elravie|엘라비에|LAXITY,WRINKLES|100%
-리쥬란|tx_rejuran|리쥬란|LAXITY,WRINKLES|0%
-스킨바이브|tx_skinvive|스킨바이브|WRINKLES|100%
-올리디아 스킨|tx_olidia|올리디아|LAXITY,WRINKLES,PORES|100%
-쥬베룩|tx_juvelook|쥬베룩|LAXITY,WRINKLES|100%
-연어주사|tx_salmon|연어주사|LAXITY|100%
-릴리이드M|tx_lilied|릴리아드|WRINKLES|100%
-더모톡신|tx_skin_botox|더모톡신|PORES,WRINKLES|100%
-턱보톡스|tx_jaw_botox|턱보톡스|BALANCE|0%
-주름보톡스|tx_wrinkle_botox|주름보톡스|WRINKLES|0%
-입꼬리보톡스|tx_mouth_botox|입꼬리보톡스|BALANCE|100%
-측두근보톡스|tx_temporal_botox|측두근보톡스|BALANCE|100%
-귀밑샘보톡스|tx_parotid_botox|귀밑샘보톡스|BALANCE|100%
-타이트닝|tx_tightening|타이트닝|LAXITY|100%
-윤곽주사|tx_contour|윤곽주사|BALANCE|100%
-피코 레이저|tx_toning|피코레이저|PIGMENT|80%
-카프리 레이저|tx_capri|카프리레이저|ACNE,PORES|100%'''
+# source name | stable id | artwork stem | artwork focal point
+MAPPING = '''써마지|tx_thermage|쎄마지|0%
+울쎄라 프라임|tx_ulthera|울쎄라|100%
+엠페이스|tx_emface|엠페이스|100%
+올타이트|tx_oltight|올타이트|100%
+덴서티|tx_density|덴서티|100%
+슈링크|tx_shurink|슈링크유니버스|100%
+인모드|tx_inmode|인모드|100%
+포텐자|tx_pore_lift|포텐자|100%
+큐어젯|tx_curejet|큐어젯|100%
+시크릿 레이저|tx_secret_rf|시크릿레이저|0%
+약물 전달기기|tx_delivery|약물전달기기|100%
+MTS|tx_mts|MTS|100%
+셀르디엠|tx_cellredm|셀르디엠|100%
+엘라비에 리투오|tx_elravie|엘라비에|100%
+리쥬란|tx_rejuran|리쥬란|0%
+스킨바이브|tx_skinvive|스킨바이브|100%
+올리디아 스킨|tx_olidia|올리디아|100%
+쥬베룩|tx_juvelook|쥬베룩|100%
+연어주사|tx_salmon|연어주사|100%
+릴리이드M|tx_lilied|릴리아드|100%
+더모톡신|tx_skin_botox|더모톡신|100%
+턱보톡스|tx_jaw_botox|턱보톡스|0%
+주름보톡스|tx_wrinkle_botox|주름보톡스|0%
+입꼬리보톡스|tx_mouth_botox|입꼬리보톡스|100%
+측두근보톡스|tx_temporal_botox|측두근보톡스|100%
+귀밑샘보톡스|tx_parotid_botox|귀밑샘보톡스|100%
+타이트닝|tx_tightening|타이트닝|100%
+윤곽주사|tx_contour|윤곽주사|100%
+피코 레이저|tx_toning|피코레이저|80%
+카프리 레이저|tx_capri|카프리레이저|100%'''
 
 # Focal points checked against the artwork. Keep headline-only artwork intact.
 FOCAL = {
@@ -86,13 +86,14 @@ def main():
     rows = list(csv.DictReader(source.open(encoding='utf-8-sig')))
     metadata = {row.split('|')[0]: row.split('|')[1:] for row in MAPPING.splitlines()}
     images = {unicodedata.normalize('NFC', p.stem): p for p in DATA.glob('*_eng.png')}
+    research = json.loads((ROOT/'src/data/treatmentClassification.json').read_text())['treatments']
     output = []
     provenance = []
     image_dir = ROOT / 'public/images/treatments'
     image_dir.mkdir(parents=True, exist_ok=True)
     for row in rows:
         name = row['장비(시술)'].strip()
-        id, stem, concerns, position = metadata[name]
+        id, stem, position = metadata[name]
         image = images[stem + '_eng']
         file = id.removeprefix('tx_') + '.jpg'
         target = image_dir / file
@@ -102,7 +103,7 @@ def main():
             effects=row['효과'].strip(), overview=row['시술 안내'].strip(),
             advantages=lines(row['장점']), recommendedFor=lines(row['이런 분께 추천']),
             packages=packages(row['가격']), faqs=faqs(row['FAQ']), cautions=lines(row['주의사항']),
-            targets=concerns.split(','), image=file, position=FOCAL.get(id, (position+' 50%', 1))[0],
+            targets=research[id]['matchTargets'], image=file, position=FOCAL.get(id, (position+' 50%', 1))[0],
             scale=FOCAL.get(id, ('', 1))[1], fit='contain' if id == 'tx_mouth_botox' else 'cover', raw=row))
         provenance.append(dict(id=id, source=str(image.relative_to(ROOT.parent)), output=file))
     assert len(output)==30 and len({r['id'] for r in output})==30

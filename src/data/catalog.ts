@@ -1,3 +1,4 @@
+import { classificationFor } from './treatmentConcerns'
 import source from './treatments.generated.json'
 
 export type TreatmentSource = (typeof source.treatments)[number]
@@ -239,14 +240,15 @@ const addedPricesAt = (clinicId: string): Record<string, number> => {
   return Object.fromEntries(Object.entries(ADDED_PRICES).map(([id, row]) => [id, row[column]]))
 }
 
-// CSV is authoritative. Empty legacy fields mean “not supplied”, never inferred.
+// CSV supplies the detail and prices; reviewed concern metadata supplies card copy and ranking.
+// Empty legacy fields mean “not supplied”, never inferred.
 export const TREATMENTS: Treatment[] = source.treatments.map((row) => ({
   id: row.id, name: row.name, shortName: row.name, tag: row.category,
-  summary: row.overview, cardSummary: row.effects,
+  summary: row.overview, cardSummary: classificationFor(row.id).summary,
   duration: '', course: '', downtime: '', results: '',
   steps: [], aftercare: [], pairedProductIds: [],
   goodFor: row.recommendedFor, cautions: row.cautions,
-  targets: row.targets as SkinCategory[], suits: {}, source: row,
+  targets: classificationFor(row.id).matchTargets, suits: {}, source: row,
 }))
 
 export const PRODUCTS: Product[] = [

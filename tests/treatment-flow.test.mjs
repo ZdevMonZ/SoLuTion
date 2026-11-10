@@ -7,6 +7,7 @@ import { navigate, finishSignup, dismissSignup } from '../src/state/navigation.t
 import { StoreProvider } from '../src/state/store.tsx'
 import { LangProvider } from '../src/i18n/index.tsx'
 import { catalogFor } from '../src/i18n/catalog.ts'
+import { classificationFor } from '../src/data/treatmentConcerns.ts'
 import { treatmentImage } from '../src/data/treatmentImages.ts'
 import { TREATMENTS, SEED_POSTS, priceRangeIn, cheapestPrice } from '../src/data/catalog.ts'
 import { Treatments } from '../src/screens/Treatments.tsx'
@@ -55,7 +56,7 @@ test('30 source records keep their content in every UI language and have unique 
     const cat = catalogFor(lang)
     for (const t of cat.TREATMENTS) {
       assert.equal(t.summary, t.source.raw['시술 안내'].trim())
-      assert.equal(t.cardSummary, t.source.raw['효과'].trim())
+      assert.equal(t.cardSummary, classificationFor(t.id).summary)
       assert.equal(t.name, t.source.raw['장비(시술)'].trim())
       assert.ok(t.source.faqs.length > 0)
       assert.ok(t.source.cautions.length > 0)

@@ -1,0 +1,692 @@
+{
+  "reviewedAt": "2026-11-10",
+  "sources": {
+    "aad_needling": {
+      "title": "AAD · Microneedling",
+      "url": "https://www.aad.org/public/cosmetic/scars-stretch-marks/microneedling-fade-scars",
+      "kind": "medical-society"
+    },
+    "aad_scars": {
+      "title": "AAD · Acne scars",
+      "url": "https://www.aad.org/public/diseases/acne/derm-treat/scars/treatment",
+      "kind": "medical-society"
+    },
+    "aad_redness": {
+      "title": "AAD · Rosacea treatment",
+      "url": "https://www.aad.org/public/diseases/rosacea/treatment",
+      "kind": "medical-society"
+    },
+    "aad_melasma": {
+      "title": "AAD · Melasma treatment",
+      "url": "https://www.aad.org/public/diseases/a-z/melasma-treatment",
+      "kind": "medical-society"
+    },
+    "aad_wrinkles": {
+      "title": "AAD · Wrinkles",
+      "url": "https://www.aad.org/public/cosmetic/wrinkles",
+      "kind": "medical-society"
+    },
+    "thermage": {
+      "title": "Solta · Thermage FLX",
+      "url": "https://www.thermage.com/",
+      "kind": "manufacturer"
+    },
+    "ultherapy": {
+      "title": "Merz · Ultherapy PRIME",
+      "url": "https://ultherapy.com/",
+      "kind": "manufacturer"
+    },
+    "emface": {
+      "title": "BTL · EMFACE",
+      "url": "https://emface.btl-aesthetics.co.uk/",
+      "kind": "manufacturer"
+    },
+    "alltite": {
+      "title": "INNOXUS · ALLTITE",
+      "url": "https://www.innoxus.co.kr/",
+      "kind": "manufacturer"
+    },
+    "density": {
+      "title": "Jeisys · DENSITY",
+      "url": "https://www.jeisys-us.com/density",
+      "kind": "manufacturer"
+    },
+    "shurink": {
+      "title": "CLASSYS · 슈링크 유니버스",
+      "url": "https://classys.co.kr/product/shurink-universe/",
+      "kind": "manufacturer"
+    },
+    "inmode": {
+      "title": "InMode · Forma",
+      "url": "https://inmodemd.fr/technologie/forma/",
+      "kind": "manufacturer"
+    },
+    "potenza": {
+      "title": "Jeisys · POTENZA",
+      "url": "https://www.jeisys-us.com/potenza",
+      "kind": "manufacturer"
+    },
+    "potenza_ir": {
+      "title": "Jeisys · POTENZA product profile",
+      "url": "https://www.jeisys.com/uploaded/board/ir_data/_acd0b13bbf8390ba7aa5ecb6b70607151.pdf",
+      "kind": "manufacturer"
+    },
+    "potenza_clinic": {
+      "title": "4.4의원 · 포텐자 모공·흉터",
+      "url": "https://www.4-4clinic.com/en/skin/potenza/",
+      "kind": "clinic"
+    },
+    "curejet": {
+      "title": "BAZ BIOMEDIC · 큐어젯 기술",
+      "url": "https://curejet.co.kr/CUREJET_TECH",
+      "kind": "manufacturer"
+    },
+    "secret": {
+      "title": "Cutera · Secret RF",
+      "url": "https://cutera.com/us-en/products/secret-rf/index.html",
+      "kind": "manufacturer"
+    },
+    "cellredm": {
+      "title": "Hans Biomed · CellREDM",
+      "url": "https://www.hansbiomed.com/m/product/product_view?cat=all&idx=130&ptype=productKRTissue&subCat=all&type=tissue",
+      "kind": "manufacturer"
+    },
+    "elravie": {
+      "title": "엘레브의원 · 리투오 ECM",
+      "url": "https://www.elevclinic.co.kr/skin-booster/collagen-booster/lituo",
+      "kind": "clinic"
+    },
+    "rejuran": {
+      "title": "PharmaResearch · 리쥬란 PN",
+      "url": "https://www.pharmaresearch.com/sub/press/view.html?curpage=18&idx=277",
+      "kind": "manufacturer"
+    },
+    "skinvive": {
+      "title": "Allergan · SKINVIVE patient information",
+      "url": "https://www.rxabbvie.com/pdf/skinvive_pt_lb.pdf",
+      "kind": "manufacturer"
+    },
+    "olidia": {
+      "title": "PRP Science · 올리디아 PLLA",
+      "url": "https://www.olidia.co.kr/",
+      "kind": "manufacturer"
+    },
+    "juvelook": {
+      "title": "VAIM · JUVELOOK",
+      "url": "https://www.juvelook.co.kr/index.php",
+      "kind": "manufacturer"
+    },
+    "juvelook_clinic": {
+      "title": "에피소드의원 · 쥬베룩 스킨",
+      "url": "https://en.episode.clinic/juvelookskin",
+      "kind": "clinic"
+    },
+    "lilied": {
+      "title": "BMI Korea · Lilied M",
+      "url": "https://bmiaesthetics.co.kr/product/lilied_m.php",
+      "kind": "manufacturer"
+    },
+    "lilied_clinic": {
+      "title": "엘리온의원 · 릴리이드 M",
+      "url": "https://elionmedi.com/product-lilied-m",
+      "kind": "clinic"
+    },
+    "dermotoxin": {
+      "title": "리뉴미피부과 · 더모톡신",
+      "url": "https://rnmeskin.com/clinic/injection/dermotoxin.php",
+      "kind": "clinic"
+    },
+    "jaw": {
+      "title": "Cleveland Clinic · Botox for jaw muscles",
+      "url": "https://health.clevelandclinic.org/beyond-wrinkles-why-botox-works-for-jaw-pain-and-tmj",
+      "kind": "medical-center"
+    },
+    "special_botox": {
+      "title": "프리마피부과 · 부위별 보톡스",
+      "url": "https://www.primaderma.co.kr/clinicInfoPrima/wellAging/injectable.php",
+      "kind": "clinic"
+    },
+    "pico": {
+      "title": "Cynosure · PicoSure",
+      "url": "https://www.cynosure.com/product/picosure/",
+      "kind": "manufacturer"
+    },
+    "capri": {
+      "title": "셀런스의원 · 카프리 레이저",
+      "url": "https://www.cellenceclinic.com/treatments/capri-laser",
+      "kind": "clinic"
+    },
+    "generic_injections": {
+      "title": "대한임상피부치료연구회 · NECA 미용주사 검토 소개",
+      "url": "https://laserpro.or.kr/bbs/board.php?bo_table=new&page=38&wr_id=1913",
+      "kind": "medical-society"
+    }
+  },
+  "treatments": {
+    "tx_thermage": {
+      "primary": [
+        "LAXITY"
+      ],
+      "secondary": [
+        "WRINKLES"
+      ],
+      "conditional": [],
+      "matchTargets": [
+        "LAXITY",
+        "WRINKLES"
+      ],
+      "summary": "고주파를 이용해 피부 탄력 저하와 주름을 다루는 시술입니다.",
+      "note": "처짐·탄력을 주된 목적으로, 주름을 함께 분류했습니다.",
+      "sourceIds": [
+        "thermage"
+      ],
+      "manualOnly": false
+    },
+    "tx_ulthera": {
+      "primary": [
+        "LAXITY"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [
+        "LAXITY"
+      ],
+      "summary": "미세집속초음파로 피부 처짐과 리프팅을 다루는 시술입니다.",
+      "note": "피부 탄력과 처짐을 기준으로 분류하며 모공·여드름 치료로 연결하지 않습니다.",
+      "sourceIds": [
+        "ultherapy"
+      ],
+      "manualOnly": false
+    },
+    "tx_emface": {
+      "primary": [
+        "LAXITY"
+      ],
+      "secondary": [
+        "WRINKLES"
+      ],
+      "conditional": [],
+      "matchTargets": [
+        "LAXITY",
+        "WRINKLES"
+      ],
+      "summary": "고주파와 근육 자극을 조합해 얼굴의 리프팅과 주름을 다룹니다.",
+      "note": "얼굴 근육 자극이 좌우 비대칭의 원인을 진단하거나 교정한다는 뜻은 아닙니다.",
+      "sourceIds": [
+        "emface"
+      ],
+      "manualOnly": false
+    },
+    "tx_oltight": {
+      "primary": [
+        "LAXITY"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [
+        "LAXITY"
+      ],
+      "summary": "DLTD 기술을 사용하는 피부 타이트닝·리프팅 시술입니다.",
+      "note": "장비의 주된 목적에 따라 탄력·처짐으로 분류했습니다.",
+      "sourceIds": [
+        "alltite"
+      ],
+      "manualOnly": false
+    },
+    "tx_density": {
+      "primary": [
+        "LAXITY"
+      ],
+      "secondary": [
+        "WRINKLES"
+      ],
+      "conditional": [],
+      "matchTargets": [
+        "LAXITY"
+      ],
+      "summary": "고주파로 피부의 탄력과 타이트닝을 다루는 시술입니다.",
+      "note": "탄력·처짐을 우선 분류하고 주름은 함께 상담할 수 있는 목적으로 표시합니다.",
+      "sourceIds": [
+        "density"
+      ],
+      "manualOnly": false
+    },
+    "tx_shurink": {
+      "primary": [
+        "LAXITY"
+      ],
+      "secondary": [
+        "WRINKLES"
+      ],
+      "conditional": [],
+      "matchTargets": [
+        "LAXITY",
+        "WRINKLES"
+      ],
+      "summary": "집속초음파로 리프팅과 부위별 주름 개선을 다룹니다.",
+      "note": "눈가·입가·목 등 목적과 부위에 따라 사용하는 카트리지가 다릅니다.",
+      "sourceIds": [
+        "shurink"
+      ],
+      "manualOnly": false
+    },
+    "tx_inmode": {
+      "primary": [
+        "LAXITY"
+      ],
+      "secondary": [],
+      "conditional": [
+        "CONTOUR"
+      ],
+      "matchTargets": [
+        "LAXITY"
+      ],
+      "summary": "핸드피스에 따라 피부 타이트닝이나 윤곽 관리에 사용하는 장비입니다.",
+      "note": "Forma와 FX 등 세부 장비의 목적이 달라 윤곽 관리는 핸드피스 확인 후 선택합니다.",
+      "sourceIds": [
+        "inmode"
+      ],
+      "manualOnly": false
+    },
+    "tx_pore_lift": {
+      "primary": [
+        "PORES",
+        "SCARS"
+      ],
+      "secondary": [
+        "WRINKLES",
+        "LAXITY"
+      ],
+      "conditional": [
+        "ACNE",
+        "REDNESS"
+      ],
+      "matchTargets": [
+        "PORES",
+        "WRINKLES",
+        "LAXITY"
+      ],
+      "summary": "RF 마이크로니들로 모공·피부결과 패인 흉터를 다루는 시술입니다.",
+      "note": "여드름·홍조는 일반 모공 시술과 같지 않습니다. 병변 진단과 전용 팁·모드 확인이 필요합니다.",
+      "sourceIds": [
+        "potenza",
+        "potenza_clinic",
+        "potenza_ir",
+        "aad_redness"
+      ],
+      "manualOnly": false
+    },
+    "tx_curejet": {
+      "primary": [
+        "CONSULT"
+      ],
+      "secondary": [],
+      "conditional": [
+        "SCARS",
+        "HYDRATION"
+      ],
+      "matchTargets": [],
+      "summary": "바늘 없이 약물을 전달하는 장비로, 목적은 주입 약물과 방식에 따라 달라집니다.",
+      "note": "장비 이름만으로 보습·흉터 효과를 확정하지 않고 약물과 시술 방식을 확인합니다.",
+      "sourceIds": [
+        "curejet"
+      ],
+      "manualOnly": true
+    },
+    "tx_secret_rf": {
+      "primary": [
+        "PORES",
+        "SCARS"
+      ],
+      "secondary": [
+        "WRINKLES"
+      ],
+      "conditional": [],
+      "matchTargets": [
+        "PORES",
+        "WRINKLES"
+      ],
+      "summary": "RF 마이크로니들로 넓은 모공, 피부결, 여드름 흉터를 다룹니다.",
+      "note": "활동성 여드름과 여드름 흉터를 구분합니다. 일반 흉터 모드를 여드름 치료로 자동 연결하지 않습니다.",
+      "sourceIds": [
+        "secret",
+        "aad_scars"
+      ],
+      "manualOnly": false
+    },
+    "tx_delivery": {
+      "primary": [
+        "CONSULT"
+      ],
+      "secondary": [],
+      "conditional": [
+        "HYDRATION"
+      ],
+      "matchTargets": [],
+      "summary": "약물을 피부에 전달하는 방식이며 독립적인 치료 성분이나 효능을 뜻하지 않습니다.",
+      "note": "제품명·성분·주입 경로가 확인되어야 목적별 분류가 가능합니다.",
+      "sourceIds": [
+        "curejet"
+      ],
+      "manualOnly": true
+    },
+    "tx_mts": {
+      "primary": [
+        "SCARS",
+        "PORES"
+      ],
+      "secondary": [
+        "WRINKLES",
+        "HYDRATION"
+      ],
+      "conditional": [],
+      "matchTargets": [
+        "PORES",
+        "WRINKLES"
+      ],
+      "summary": "마이크로니들로 피부결, 모공과 패인 흉터를 다루는 시술입니다.",
+      "note": "염증성 여드름이 있는 상태의 시술과 흉터 관리는 구분해야 합니다. 함께 사용하는 약물의 효과는 별도입니다.",
+      "sourceIds": [
+        "aad_needling",
+        "aad_scars"
+      ],
+      "manualOnly": false
+    },
+    "tx_cellredm": {
+      "primary": [
+        "HYDRATION"
+      ],
+      "secondary": [],
+      "conditional": [
+        "LAXITY",
+        "WRINKLES"
+      ],
+      "matchTargets": [],
+      "summary": "인체 유래 무세포동종진피(hADM) 기반의 피부 조직 보강 제품입니다.",
+      "note": "줄기세포 배양액으로 분류하지 않습니다. 피부결·조직 상태 평가 후 선택하며 사진 점수로 자동 추천하지 않습니다.",
+      "sourceIds": [
+        "cellredm"
+      ],
+      "manualOnly": true
+    },
+    "tx_elravie": {
+      "primary": [
+        "HYDRATION"
+      ],
+      "secondary": [],
+      "conditional": [
+        "LAXITY",
+        "WRINKLES"
+      ],
+      "matchTargets": [],
+      "summary": "무세포동종진피(hADM) 기반 ECM을 이용하는 피부결·조직 보강 시술입니다.",
+      "note": "피부결 관련 탐색에 배치하며 리프팅 장비나 수분 주사와 동일한 시술로 취급하지 않습니다.",
+      "sourceIds": [
+        "elravie"
+      ],
+      "manualOnly": true
+    },
+    "tx_rejuran": {
+      "primary": [
+        "WRINKLES"
+      ],
+      "secondary": [
+        "HYDRATION"
+      ],
+      "conditional": [],
+      "matchTargets": [
+        "WRINKLES"
+      ],
+      "summary": "PN(폴리뉴클레오티드) 기반으로 안면부 주름을 다루는 시술입니다.",
+      "note": "일반 PDRN 연어주사와 구분합니다. 세부 제품에 따라 성분과 사용 부위가 달라집니다.",
+      "sourceIds": [
+        "rejuran"
+      ],
+      "manualOnly": false
+    },
+    "tx_skinvive": {
+      "primary": [
+        "HYDRATION"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [],
+      "summary": "히알루론산 미세 주입으로 볼 피부의 수분 유지와 매끄러움을 다룹니다.",
+      "note": "주된 목적은 볼의 피부결·수분입니다. 표정주름 보톡스나 처짐 리프팅으로 분류하지 않습니다.",
+      "sourceIds": [
+        "skinvive"
+      ],
+      "manualOnly": false
+    },
+    "tx_olidia": {
+      "primary": [
+        "WRINKLES"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [],
+      "summary": "PLLA 기반 제품으로 주름을 다루며 세부 제품과 사용 목적을 확인해야 합니다.",
+      "note": "공식 제품은 PLLA 기반입니다. 원문에 혼재한 HA 설명을 근거로 수분 시술로 분류하지 않습니다.",
+      "sourceIds": [
+        "olidia"
+      ],
+      "manualOnly": true
+    },
+    "tx_juvelook": {
+      "primary": [
+        "WRINKLES"
+      ],
+      "secondary": [
+        "HYDRATION"
+      ],
+      "conditional": [
+        "PORES",
+        "SCARS"
+      ],
+      "matchTargets": [
+        "WRINKLES"
+      ],
+      "summary": "PDLLA와 히알루론산을 조합한 안면부 주름 관련 시술입니다.",
+      "note": "모공·흉터 활용은 세부 제품과 주입 방식에 따라 달라 별도 상담 대상으로 표시합니다.",
+      "sourceIds": [
+        "juvelook",
+        "juvelook_clinic"
+      ],
+      "manualOnly": false
+    },
+    "tx_salmon": {
+      "primary": [
+        "CONSULT"
+      ],
+      "secondary": [],
+      "conditional": [
+        "HYDRATION"
+      ],
+      "matchTargets": [],
+      "summary": "통칭으로 쓰이는 주사 이름이므로 제품명과 실제 성분부터 확인해야 합니다.",
+      "note": "리쥬란과 같은 제품으로 가정하거나 보습·재생 효과를 일괄 적용하지 않습니다.",
+      "sourceIds": [
+        "generic_injections",
+        "rejuran"
+      ],
+      "manualOnly": true
+    },
+    "tx_lilied": {
+      "primary": [
+        "CONSULT"
+      ],
+      "secondary": [],
+      "conditional": [
+        "HYDRATION"
+      ],
+      "matchTargets": [],
+      "summary": "릴리이드와 릴리이드 M을 구분하고 정확한 제품·사용 목적을 확인해야 합니다.",
+      "note": "제조사는 두 제품을 별도로 안내합니다. 이름만으로 미용 목적 효능을 자동 연결하지 않습니다.",
+      "sourceIds": [
+        "lilied",
+        "lilied_clinic"
+      ],
+      "manualOnly": true
+    },
+    "tx_skin_botox": {
+      "primary": [
+        "WRINKLES"
+      ],
+      "secondary": [
+        "PORES",
+        "HYDRATION"
+      ],
+      "conditional": [],
+      "matchTargets": [
+        "WRINKLES"
+      ],
+      "summary": "보툴리눔 톡신을 피부층에 사용하는 잔주름·피부결 관련 시술입니다.",
+      "note": "모공 활용은 일반 표정주름 시술과 주입 방식이 다릅니다. 활동성 여드름 치료와 구분합니다.",
+      "sourceIds": [
+        "dermotoxin"
+      ],
+      "manualOnly": false
+    },
+    "tx_jaw_botox": {
+      "primary": [
+        "CONTOUR"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [],
+      "summary": "턱 근육의 발달과 기능을 확인한 뒤 선택하는 부위별 보톡스입니다.",
+      "note": "사진의 좌우 균형 수치만으로 근육 비대 여부나 시술 필요성을 판단하지 않습니다.",
+      "sourceIds": [
+        "jaw"
+      ],
+      "manualOnly": true
+    },
+    "tx_wrinkle_botox": {
+      "primary": [
+        "WRINKLES"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [
+        "WRINKLES"
+      ],
+      "summary": "표정근의 움직임과 관련된 주름을 다루는 보툴리눔 톡신 시술입니다.",
+      "note": "표정주름과 피부 처짐·볼륨 부족은 구분해야 합니다.",
+      "sourceIds": [
+        "aad_wrinkles"
+      ],
+      "manualOnly": false
+    },
+    "tx_mouth_botox": {
+      "primary": [
+        "CONTOUR"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [],
+      "summary": "입꼬리 주변의 근육 작용을 확인한 뒤 선택하는 부위별 보톡스입니다.",
+      "note": "피부 점수나 좌우 균형을 근거로 자동 추천하지 않습니다.",
+      "sourceIds": [
+        "special_botox"
+      ],
+      "manualOnly": true
+    },
+    "tx_temporal_botox": {
+      "primary": [
+        "CONTOUR"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [],
+      "summary": "측두근의 발달과 기능을 평가한 뒤 선택하는 부위별 보톡스입니다.",
+      "note": "턱 근육·측두근의 기능과 증상은 사진 분석만으로 확인할 수 없습니다.",
+      "sourceIds": [
+        "special_botox",
+        "jaw"
+      ],
+      "manualOnly": true
+    },
+    "tx_parotid_botox": {
+      "primary": [
+        "CONTOUR"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [],
+      "summary": "귀밑샘 부위의 원인을 진찰한 뒤 선택하는 시술입니다.",
+      "note": "귀밑샘은 근육이 아닙니다. 지방·근육·침샘 문제를 구분해야 하므로 자동 추천에서 제외합니다.",
+      "sourceIds": [
+        "special_botox"
+      ],
+      "manualOnly": true
+    },
+    "tx_tightening": {
+      "primary": [
+        "CONTOUR"
+      ],
+      "secondary": [],
+      "conditional": [
+        "LAXITY"
+      ],
+      "matchTargets": [],
+      "summary": "원문의 타이트닝 보톡스 옵션으로, 장비 리프팅과 구분한 상담 항목입니다.",
+      "note": "타이트닝은 일반 명칭입니다. 주입 부위와 약제·방법 확인 후 탄력 관리 가능 여부를 판단합니다.",
+      "sourceIds": [
+        "dermotoxin",
+        "special_botox"
+      ],
+      "manualOnly": true
+    },
+    "tx_contour": {
+      "primary": [
+        "CONTOUR",
+        "CONSULT"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [],
+      "summary": "윤곽주사는 통칭이므로 성분과 대상 부위를 먼저 확인해야 합니다.",
+      "note": "얼굴 지방·근육·침샘 문제나 좌우 비대칭에 동일한 효과를 가정하지 않습니다.",
+      "sourceIds": [
+        "generic_injections"
+      ],
+      "manualOnly": true
+    },
+    "tx_toning": {
+      "primary": [
+        "PIGMENT"
+      ],
+      "secondary": [],
+      "conditional": [
+        "PORES",
+        "SCARS"
+      ],
+      "matchTargets": [
+        "PIGMENT"
+      ],
+      "summary": "피코초 레이저를 사용하는 색소 관련 시술입니다.",
+      "note": "기미는 색소의 원인과 피부 상태 평가가 먼저입니다. 흉터·모공은 장비와 프락셔널 모드 확인이 필요합니다.",
+      "sourceIds": [
+        "pico",
+        "aad_melasma"
+      ],
+      "manualOnly": false
+    },
+    "tx_capri": {
+      "primary": [
+        "ACNE"
+      ],
+      "secondary": [],
+      "conditional": [],
+      "matchTargets": [
+        "ACNE"
+      ],
+      "summary": "피지선에 작용하는 1450nm 레이저를 이용한 여드름 관련 시술입니다.",
+      "note": "피부과 진료 안내를 근거로 여드름·피지에 분류했습니다. 여드름의 원인과 치료 단계를 확인한 뒤 선택합니다.",
+      "sourceIds": [
+        "capri"
+      ],
+      "manualOnly": false
+    }
+  }
+}
