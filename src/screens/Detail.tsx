@@ -14,7 +14,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
   return <section className="treatment-section"><h2>{title}</h2>{children}</section>
 }
 function Points({ items }: { items: string[] }) {
-  return <ul className="treatment-points" lang="ko">{items.map((text, i) => <li key={i}>{text}</li>)}</ul>
+  return <ul className="treatment-points">{items.map((text, i) => <li key={i}>{text}</li>)}</ul>
 }
 
 export function Detail() {
@@ -31,21 +31,20 @@ export function Detail() {
       <Shell>
         <BackLink onClick={() => go('treatments')}>{copy.back}</BackLink>
         <div className="treatment-detail-layout">
-          <article>
+          <article lang={lang}>
             <img className="treatment-detail-banner" src={image.src} alt={treatment.name} />
             <div style={{ marginTop: 28 }}><Tag>{source.category}</Tag></div>
             <div style={{ marginTop: 12 }}><Display size={narrow ? 32 : 42}>{treatment.name}</Display></div>
-            {lang !== 'ko' && <Note style={{ marginTop: 10 }}>{copy.sourceNote}</Note>}
-            <Section title={copy.effects}><p lang="ko">{source.effects}</p></Section>
-            <Section title={copy.overview}><p lang="ko">{source.overview}</p></Section>
+            <Section title={copy.effects}><p>{source.effects}</p></Section>
+            <Section title={copy.overview}><p>{source.overview}</p></Section>
             <Section title={copy.advantages}><Points items={source.advantages} /></Section>
             <Section title={copy.recommended}><Points items={source.recommendedFor} /></Section>
             <Section title={copy.packages}>
               <div className="treatment-packages">
                 {source.packages.map((item, i) => (
                   <Card key={i} style={{ padding: narrow ? 20 : 24 }}>
-                    <h3 lang="ko">{item.name}</h3>
-                    <p lang="ko" style={{ fontSize: 14 }}>{item.description}</p>
+                    <h3>{item.name}</h3>
+                    <p style={{ fontSize: 14 }}>{item.description}</p>
                     <div className="package-price">
                       {item.originalPrice !== null && <del>{won(item.originalPrice)}</del>}
                       <strong>{won(item.price)}</strong>
@@ -58,7 +57,7 @@ export function Detail() {
             </Section>
             <Section title={copy.faq}>
               {source.faqs.map((faq, i) => (
-                <details key={i} className="treatment-faq" lang="ko">
+                <details key={i} className="treatment-faq">
                   <summary>{faq.question}</summary><p>{faq.answer}</p>
                 </details>
               ))}

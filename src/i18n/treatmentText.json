@@ -1,0 +1,4705 @@
+{
+  "translations": {
+    "써마지": [
+      "Thermage",
+      "サーマクール",
+      "热玛吉"
+    ],
+    "리프팅": [
+      "Lifting",
+      "リフトアップ",
+      "提拉"
+    ],
+    "고주파(RF) 리프팅. 피부 처짐, 탄력 저하, 잔주름 개선": [
+      "Radiofrequency (RF) lifting for sagging skin, reduced firmness and fine lines.",
+      "高周波（RF）によるリフトアップ。たるみ、ハリ低下、小じわの改善。",
+      "射频（RF）提拉，改善皮肤松弛、弹性下降及细纹。"
+    ],
+    "써마지 FLX는 고주파(RF) 에너지를 진피층까지 전달하여 콜라겐 수축과 재생을 유도하는 비수술 리프팅 시술입니다. 매 샷마다 피부 저항값을 자동으로 측정하여 최적의 에너지를 전달합니다.": [
+      "Thermage FLX is a nonsurgical lifting treatment that delivers RF energy to the dermis to stimulate collagen contraction and renewal. It automatically measures skin impedance with each pulse to adjust energy delivery.",
+      "サーマクールFLXは高周波を真皮に届け、コラーゲンの収縮と再生を促す切らないリフトアップ施術です。照射ごとに皮膚の抵抗値を測定し、エネルギーを自動調整します。",
+      "热玛吉FLX将射频能量传递至真皮层，促进胶原蛋白收缩与再生，实现非手术提拉。每次发射时自动测量皮肤阻抗，调整能量输出。"
+    ],
+    "4세대 FLX 자동 튜닝으로 부위별 최적 에너지 전달": [
+      "Fourth-generation FLX automatic tuning adjusts energy to each area.",
+      "第4世代FLXの自動調整で部位に合ったエネルギーを照射。",
+      "第四代FLX自动调节技术，按部位优化能量。"
+    ],
+    "1회 시술로 6개월~1년 탄력 유지 기대": [
+      "One session may maintain firmness for 6–12 months.",
+      "1回の施術で6か月〜1年のハリ維持が期待できます。",
+      "一次治疗可望维持紧致效果6个月至1年。"
+    ],
+    "시술 후 일상 즉시 복귀 가능": [
+      "Return to daily activities immediately after treatment.",
+      "施術後すぐに日常生活へ復帰できます。",
+      "治疗后可立即恢复日常活动。"
+    ],
+    "얼굴, 눈가, 목 등 다양한 부위에 적용 가능": [
+      "Suitable for areas including the face, eye area and neck.",
+      "顔、目元、首など幅広い部位に対応。",
+      "可用于面部、眼周、颈部等部位。"
+    ],
+    "정품 FLX 팁 사용으로 안전성 확보": [
+      "Genuine FLX tips are used for safety.",
+      "安全性に配慮し、正規品のFLXチップを使用。",
+      "使用原装FLX探头，注重安全性。"
+    ],
+    "피부 탄력 저하와 잔주름이 고민이신 분": [
+      "People concerned about reduced firmness and fine lines.",
+      "ハリの低下や小じわが気になる方。",
+      "在意皮肤弹性下降及细纹的人群。"
+    ],
+    "자연스러운 안티에이징 관리를 시작하고 싶은 분": [
+      "People starting a natural-looking anti-aging routine.",
+      "自然なエイジングケアを始めたい方。",
+      "希望开始自然抗衰护理的人群。"
+    ],
+    "다운타임 없이 일상에 지장 없는 시술을 원하시는 분": [
+      "People seeking treatment with no downtime or disruption to daily life.",
+      "ダウンタイムなく日常生活を続けたい方。",
+      "希望无需恢复期、不影响日常生活的人群。"
+    ],
+    "얼굴 전체 볼륨감과 탄력을 회복하고 싶은 분": [
+      "People seeking to restore overall facial fullness and firmness.",
+      "顔全体のふっくら感とハリを取り戻したい方。",
+      "希望恢复面部整体饱满度及紧致度的人群。"
+    ],
+    "정품 장비 사용 여부가 중요하신 분": [
+      "People who prioritize the use of genuine equipment.",
+      "正規品の機器を重視する方。",
+      "重视使用正品设备的人群。"
+    ],
+    "써마지 FLX 300샷": [
+      "Thermage FLX · 300 shots",
+      "サーマクールFLX 300ショット",
+      "热玛吉FLX 300发"
+    ],
+    "고주파 에너지로 콜라겐의 재생 및 수축을 통해 주름개선 및 스킨타이트닝, 리프팅 효과\n*정품 팁 박스 눈앞 개봉": [
+      "RF energy stimulates collagen renewal and contraction for wrinkle improvement, skin tightening and lifting.\n*The genuine tip box is opened in front of you.",
+      "高周波でコラーゲンの再生と収縮を促し、しわ改善、引き締め、リフトアップを目指します。\n※正規品チップの箱を目の前で開封します。",
+      "通过射频能量促进胶原再生与收缩，改善皱纹、紧致及提拉肌肤。\n*原装探头包装当面拆封。"
+    ],
+    "써마지 FLX 600샷": [
+      "Thermage FLX · 600 shots",
+      "サーマクールFLX 600ショット",
+      "热玛吉FLX 600发"
+    ],
+    "써마지 FLX 900샷": [
+      "Thermage FLX · 900 shots",
+      "サーマクールFLX 900ショット",
+      "热玛吉FLX 900发"
+    ],
+    "아이 써마지 FLX 225샷": [
+      "Eye Thermage FLX · 225 shots",
+      "アイサーマクールFLX 225ショット",
+      "眼部热玛吉FLX 225发"
+    ],
+    "아이 써마지 FLX 450샷": [
+      "Eye Thermage FLX · 450 shots",
+      "アイサーマクールFLX 450ショット",
+      "眼部热玛吉FLX 450发"
+    ],
+    "써마지 시술 시 통증이 심한가요?": [
+      "Is Thermage painful?",
+      "サーマクールは痛いですか？",
+      "热玛吉治疗疼吗？"
+    ],
+    "4세대 FLX는 기존 대비 통증이 크게 줄었습니다. 시술 중 따뜻한 열감이 느껴지며, 개인차는 있지만 대부분 마취 없이도 편안하게 받으실 수 있습니다.": [
+      "Fourth-generation FLX reduces discomfort compared with earlier models. You may feel warmth; experiences vary, but most people can undergo treatment comfortably without anesthesia.",
+      "第4世代FLXでは従来より痛みが軽減されています。温かさを感じることがあり、個人差はありますが、多くの方は麻酔なしで受けられます。",
+      "第四代FLX较以往机型减轻了疼痛。治疗时可能有温热感，感受因人而异，多数人无需麻醉即可舒适接受治疗。"
+    ],
+    "써마지 효과는 언제부터 느낄 수 있나요?": [
+      "When will I notice Thermage results?",
+      "サーマクールの効果はいつ感じられますか？",
+      "热玛吉多久能看到效果？"
+    ],
+    "시술 직후 약간의 타이트닝 효과를 느끼실 수 있으며, 1~2개월에 걸쳐 콜라겐이 재생되면서 본격적인 탄력 개선이 나타납니다. 최대 효과는 약 6개월 후에 발현됩니다.": [
+      "You may notice slight tightening immediately. Firmness improves as collagen renews over 1–2 months, with peak results at about 6 months.",
+      "直後に軽い引き締まりを感じる場合があります。1〜2か月かけてコラーゲンが再生し、ハリの改善が進み、約6か月後に最大の効果が現れます。",
+      "术后可能立即感觉轻微紧致。随着1至2个月内胶原再生，弹性逐步改善，约6个月后达到较明显效果。"
+    ],
+    "써마지 시술 주기는 어떻게 되나요?": [
+      "How often should I have Thermage?",
+      "サーマクールの施術間隔は？",
+      "热玛吉多久做一次？"
+    ],
+    "일반적으로 6개월~1년 간격으로 시술을 받으시면 탄력을 꾸준히 유지하는 데 도움이 됩니다. 피부 상태에 따라 전문 의료진이 적절한 주기를 안내해 드립니다.": [
+      "Sessions every 6–12 months generally help maintain firmness. A clinician will recommend an interval based on your skin.",
+      "一般的には6か月〜1年ごとの施術がハリの維持に役立ちます。肌の状態に応じて医師が間隔をご案内します。",
+      "一般每6个月至1年治疗一次有助于维持紧致，具体间隔由医生根据皮肤情况建议。"
+    ],
+    "아이 써마지는 일반 써마지와 무엇이 다른가요?": [
+      "How does Eye Thermage differ from regular Thermage?",
+      "アイサーマクールと通常の施術は何が違いますか？",
+      "眼部热玛吉与普通热玛吉有什么区别？"
+    ],
+    "아이 써마지는 눈가 전용 팁을 사용하여 눈 주변의 잔주름, 눈밑 처짐, 눈꺼풀 탄력 저하를 집중 케어합니다. 눈가 피부는 얇고 민감하여 전용 팁으로 정밀하게 시술합니다.": [
+      "Eye Thermage uses a dedicated tip for fine lines, under-eye sagging and reduced eyelid firmness. It precisely treats the thin, sensitive skin around the eyes.",
+      "目元専用チップで小じわ、目の下のたるみ、まぶたのハリ低下を集中的にケアします。薄く敏感な目元の皮膚に合わせて細かく照射します。",
+      "眼部热玛吉采用专用探头，针对眼周细纹、眼下松弛及眼睑弹性下降，精细处理薄而敏感的眼周皮肤。"
+    ],
+    "시술 후 주의사항이 있나요?": [
+      "What aftercare is needed?",
+      "施術後の注意点は？",
+      "术后需要注意什么？"
+    ],
+    "시술 당일 가벼운 붉은 기가 있을 수 있으나 자연스럽게 사라집니다. 시술 후 충분한 보습과 자외선 차단제 사용을 권장하며, 사우나나 찜질방은 1주일 정도 피해 주세요.": [
+      "Mild redness on the day of treatment usually fades naturally. Moisturize well, use sunscreen, and avoid saunas or heated bathhouses for about a week.",
+      "当日に軽い赤みが出ることがありますが、自然に落ち着きます。十分な保湿と日焼け止めを心がけ、サウナや高温浴施設は約1週間控えてください。",
+      "治疗当天可能出现轻微泛红，通常会自然消退。建议充分保湿及防晒，约1周内避免桑拿、汗蒸。"
+    ],
+    "시술 부위에 염증이나 상처가 있는 경우 시술이 어려울 수 있습니다": [
+      "Inflammation or wounds in the treatment area may prevent treatment.",
+      "施術部位に炎症や傷がある場合、施術できないことがあります。",
+      "治疗部位存在炎症或伤口时，可能无法进行治疗。"
+    ],
+    "시술 후 1주일간 사우나, 찜질방, 과도한 음주는 피해 주세요": [
+      "Avoid saunas, heated bathhouses and excessive alcohol for one week after treatment.",
+      "施術後1週間はサウナ、高温浴施設、過度の飲酒を控えてください。",
+      "术后1周内避免桑拿、汗蒸及过量饮酒。"
+    ],
+    "시술 후 충분한 보습과 자외선 차단제 사용을 권장합니다": [
+      "Moisturize well and use sunscreen after treatment.",
+      "施術後は十分な保湿と日焼け止めの使用をおすすめします。",
+      "术后建议充分保湿并使用防晒霜。"
+    ],
+    "임산부, 체내 금속 삽입물이 있는 분은 사전에 의료진과 상담해 주세요": [
+      "Consult a clinician beforehand if you are pregnant or have metal implants.",
+      "妊娠中の方や体内に金属がある方は、事前に医師へご相談ください。",
+      "孕妇或体内有金属植入物者，请事先咨询医生。"
+    ],
+    "개인의 피부 상태에 따라 효과와 경과는 차이가 있을 수 있습니다": [
+      "Results and recovery vary with individual skin conditions.",
+      "効果や経過には肌の状態による個人差があります。",
+      "效果及恢复过程因个人皮肤状况而异。"
+    ],
+    "고주파를 이용해 피부 탄력 저하와 주름을 다루는 시술입니다.": [
+      "RF treatment addressing reduced skin firmness and wrinkles.",
+      "高周波で肌のハリ低下としわにアプローチする施術です。",
+      "利用射频改善皮肤弹性下降及皱纹。"
+    ],
+    "처짐·탄력을 주된 목적으로, 주름을 함께 분류했습니다.": [
+      "Primarily classified for sagging and firmness, with wrinkles as a related concern.",
+      "たるみ・ハリを主な目的とし、しわも関連する悩みに分類しています。",
+      "主要归类为松弛与紧致，同时归入皱纹相关项目。"
+    ],
+    "울쎄라 프라임": [
+      "Ultherapy PRIME",
+      "ウルセラ・プライム",
+      "Ultherapy PRIME 超声提拉"
+    ],
+    "초음파(HIFU) 리프팅. 턱선·볼 처짐, 이중턱, 탄력 저하 개선": [
+      "HIFU lifting for sagging jawlines and cheeks, double chins and reduced firmness.",
+      "HIFUによるリフトアップ。フェイスライン・頬のたるみ、二重あご、ハリ低下を改善。",
+      "HIFU提拉，改善下颌线与面颊松弛、双下巴及弹性下降。"
+    ],
+    "울쎄라 프라임은 고강도 집속 초음파(HIFU) 에너지를 SMAS 근막층까지 전달하여 피부 근본부터 리프팅하는 프리미엄 시술입니다. 실시간 3D 피부 시각화 기술로 개인별 맞춤 시술이 가능합니다.": [
+      "Ultherapy PRIME delivers high-intensity focused ultrasound (HIFU) to the SMAS fascial layer for deep, nonsurgical lifting. Real-time 3D skin visualization enables personalized treatment.",
+      "高密度焦点式超音波（HIFU）をSMAS筋膜層まで届け、深部から引き上げる施術です。リアルタイム3D画像で個別に調整します。",
+      "Ultherapy PRIME将高强度聚焦超声（HIFU）传至SMAS筋膜层，从深层提拉。实时3D皮肤成像支持个性化治疗。"
+    ],
+    "최대 8mm 깊이까지 초음파 에너지 전달": [
+      "Ultrasound energy delivery to depths of up to 8 mm.",
+      "最大8mmの深さまで超音波エネルギーを伝達。",
+      "超声能量传递深度可达8mm。"
+    ],
+    "실시간 3D 피부 시각화로 정밀 맞춤 시술": [
+      "Precise, personalized treatment with real-time 3D skin visualization.",
+      "リアルタイム3D画像で精密な個別施術。",
+      "实时3D皮肤成像，精准定制治疗。"
+    ],
+    "SMAS 근막층 직접 자극으로 근본적 리프팅": [
+      "Deep lifting by directly stimulating the SMAS fascial layer.",
+      "SMAS筋膜層への直接刺激による深部リフト。",
+      "直接刺激SMAS筋膜层，进行深层提拉。"
+    ],
+    "터치프라임 NFC 정품 인증 시스템": [
+      "Touch PRIME NFC authenticity verification.",
+      "Touch PRIME NFCによる正規品認証。",
+      "Touch PRIME NFC正品认证系统。"
+    ],
+    "턱선 처짐과 팔자주름이 뚜렷하게 고민이신 분": [
+      "People with noticeable jawline sagging or nasolabial folds.",
+      "フェイスラインのたるみやほうれい線が気になる方。",
+      "下颌线松弛或法令纹明显的人群。"
+    ],
+    "한 번의 시술로 눈에 띄는 리프팅 효과를 원하시는 분": [
+      "People seeking noticeable lifting from one session.",
+      "1回で目に見えるリフトアップを希望する方。",
+      "希望一次治疗获得明显提拉效果的人群。"
+    ],
+    "기존 울쎄라 대비 더 정밀한 시술을 경험하고 싶은 분": [
+      "People seeking more precise treatment than earlier Ultherapy models.",
+      "従来のウルセラより精密な施術を希望する方。",
+      "希望体验比以往Ultherapy更精准治疗的人群。"
+    ],
+    "비수술로 SMAS층까지 깊은 리프팅을 원하시는 분": [
+      "People seeking nonsurgical lifting down to the SMAS layer.",
+      "手術せずSMAS層までの深いリフトを希望する方。",
+      "希望无需手术、深入SMAS层提拉的人群。"
+    ],
+    "정품 인증된 안전한 시술을 중요시하시는 분": [
+      "People who prioritize authenticated equipment and treatment safety.",
+      "正規品の確認と施術の安全性を重視する方。",
+      "重视正品认证及治疗安全的人群。"
+    ],
+    "울쎄라 프라임 100샷": [
+      "Ultherapy PRIME · 100 shots",
+      "ウルセラ・プライム 100ショット",
+      "Ultherapy PRIME 100发"
+    ],
+    "피부 표면은 그대로, 근막층(SMAS)에 직접 작용하는 초음파(HIFU) 리프팅 시스템입니다.\n*10년 만의 획기적 업그레이드로 최대 8mm 깊이까지 정밀 관찰이 가능해져 두꺼운 피부와 노화된 피부에도 효과적인 리프팅을 기대할 수 있습니다.": [
+      "HIFU lifting acts directly on the SMAS layer while leaving the skin surface intact.\n*An upgrade after 10 years enables precise visualization to 8 mm, with lifting benefits expected for thicker and aging skin.",
+      "皮膚表面を保ちながらSMAS層に直接働くHIFUリフトです。\n※10年ぶりの改良で最大8mmまで観察でき、厚い肌や年齢を重ねた肌へのリフト効果が期待できます。",
+      "HIFU提拉直接作用于SMAS层，保持皮肤表面完整。\n*时隔10年的升级可精细观察至8mm深度，厚皮肤及老化肌肤也可期待提拉效果。"
+    ],
+    "울쎄라 프라임 300샷": [
+      "Ultherapy PRIME · 300 shots",
+      "ウルセラ・プライム 300ショット",
+      "Ultherapy PRIME 300发"
+    ],
+    "울쎄라 프라임 600샷": [
+      "Ultherapy PRIME · 600 shots",
+      "ウルセラ・プライム 600ショット",
+      "Ultherapy PRIME 600发"
+    ],
+    "울쎄라 프라임 900샷": [
+      "Ultherapy PRIME · 900 shots",
+      "ウルセラ・プライム 900ショット",
+      "Ultherapy PRIME 900发"
+    ],
+    "아이 울쎄라 프라임 100샷": [
+      "Eye Ultherapy PRIME · 100 shots",
+      "アイ・ウルセラ・プライム 100ショット",
+      "眼部Ultherapy PRIME 100发"
+    ],
+    "울쎄라 프라임은 기존 울쎄라와 무엇이 다른가요?": [
+      "How does PRIME differ from earlier Ultherapy?",
+      "従来のウルセラとの違いは？",
+      "PRIME与以往Ultherapy有何不同？"
+    ],
+    "울쎄라 프라임은 약 10년 만에 업그레이드된 차세대 모델입니다. 기존 대비 최대 8mm 깊이까지 관찰 가능하며, 3D 실시간 피부 시각화 기술로 더 정밀한 맞춤 시술이 가능해졌습니다.": [
+      "This next-generation model is the first major upgrade in about 10 years. Visualization to 8 mm and real-time 3D imaging enable more precise personalization.",
+      "約10年ぶりに改良された次世代モデルです。最大8mmの観察とリアルタイム3D画像で、より精密に個別調整できます。",
+      "这是约10年来升级的新一代机型，可观察至8mm深度，实时3D成像使定制治疗更精准。"
+    ],
+    "시술 시 통증은 어떤 정도인가요?": [
+      "How much discomfort should I expect?",
+      "痛みはどの程度ですか？",
+      "治疗时疼痛程度如何？"
+    ],
+    "초음파가 깊은 층까지 전달되면서 찌릿한 느낌이 있을 수 있습니다. 필요 시 마취 크림을 도포하여 통증을 줄여드리며, 개인 상태에 맞게 에너지를 조절합니다.": [
+      "Deep ultrasound delivery can cause a tingling sensation. Numbing cream may be used, and energy is adjusted to your condition.",
+      "深部への超音波でチクチクする場合があります。必要に応じて麻酔クリームを使い、状態に合わせて出力を調整します。",
+      "超声传入深层时可能有刺痛感。必要时使用麻醉膏，并根据个人情况调节能量。"
+    ],
+    "효과는 언제부터 나타나나요?": [
+      "When do results appear?",
+      "効果はいつ現れますか？",
+      "多久能看到效果？"
+    ],
+    "시술 직후 약간의 타이트닝을 느끼실 수 있으며, 1~2개월에 걸쳐 콜라겐이 재생되면서 리프팅 효과가 점진적으로 나타납니다. 6~12개월 유지를 기대할 수 있습니다.": [
+      "Slight tightening may be felt immediately. Lifting develops as collagen renews over 1–2 months and may last 6–12 months.",
+      "直後に軽い引き締まりを感じる場合があります。1〜2か月のコラーゲン再生に伴ってリフト効果が進み、6〜12か月の持続が期待できます。",
+      "术后可能立即感觉轻微紧致，1至2个月内随着胶原再生逐步呈现提拉效果，可望维持6至12个月。"
+    ],
+    "울쎄라 프라임과 써마지는 어떤 차이가 있나요?": [
+      "How does Ultherapy PRIME differ from Thermage?",
+      "サーマクールとの違いは？",
+      "Ultherapy PRIME与热玛吉有何不同？"
+    ],
+    "울쎄라 프라임은 초음파(HIFU)로 SMAS 근막층까지 깊이 전달하여 리프팅에 특화되어 있고, 써마지는 고주파(RF)로 진피층 콜라겐 재생을 유도하여 전체적인 타이트닝에 효과적입니다. 피부 상태와 고민에 따라 전문 의료진이 맞춤 안내해 드립니다.": [
+      "Ultherapy PRIME uses HIFU to reach the SMAS layer for lifting. Thermage uses RF to stimulate dermal collagen for overall tightening. A clinician will advise based on your skin and concerns.",
+      "ウルセラ・プライムはHIFUでSMAS層に働きかけリフトを目指し、サーマクールはRFで真皮のコラーゲン再生を促し全体を引き締めます。肌と悩みに応じて医師がご案内します。",
+      "Ultherapy PRIME以HIFU深入SMAS层，侧重提拉；热玛吉以射频促进真皮胶原再生，侧重整体紧致。医生会根据皮肤状况及诉求建议。"
+    ],
+    "시술 샷 수는 어떻게 결정되나요?": [
+      "How is the number of shots decided?",
+      "ショット数はどう決まりますか？",
+      "如何确定发数？"
+    ],
+    "시술 부위, 피부 상태, 처짐 정도에 따라 적정 샷 수가 달라집니다. 상담 시 전문 의료진이 개인별 피부 상태를 진단하여 최적의 샷 수를 안내해 드립니다.": [
+      "The area, skin condition and degree of sagging determine the appropriate number. A clinician assesses your skin during consultation.",
+      "部位、肌状態、たるみの程度によって異なります。診察時に医師が適切なショット数を提案します。",
+      "合适发数取决于部位、皮肤状况及松弛程度，面诊时由医生评估确定。"
+    ],
+    "시술 부위에 염증이나 피부 질환이 있는 경우 시술이 어려울 수 있습니다": [
+      "Inflammation or skin disease in the area may prevent treatment.",
+      "施術部位に炎症や皮膚疾患がある場合、施術できないことがあります。",
+      "治疗部位存在炎症或皮肤病时，可能无法治疗。"
+    ],
+    "시술 후 일시적인 붓기나 붉은 기가 나타날 수 있으며, 자연스럽게 회복됩니다": [
+      "Temporary swelling or redness may occur and usually resolves naturally.",
+      "一時的な腫れや赤みが出る場合がありますが、自然に回復します。",
+      "可能暂时出现肿胀或泛红，通常会自然恢复。"
+    ],
+    "미세집속초음파로 피부 처짐과 리프팅을 다루는 시술입니다.": [
+      "Microfocused ultrasound treatment for skin sagging and lifting.",
+      "微小焦点式超音波でたるみとリフトアップに対応する施術です。",
+      "利用微聚焦超声改善皮肤松弛、进行提拉。"
+    ],
+    "피부 탄력과 처짐을 기준으로 분류하며 모공·여드름 치료로 연결하지 않습니다.": [
+      "Classified for firmness and sagging; not linked to pore or acne treatment.",
+      "ハリ・たるみで分類し、毛穴・ニキビ治療には結び付けません。",
+      "归类为紧致与松弛项目，不关联毛孔或痘痘治疗。"
+    ],
+    "엠페이스": [
+      "EMFACE",
+      "エムフェイス",
+      "EMFACE"
+    ],
+    "고주파 + 근육 전기자극(HIFES). 피부 탄력과 표정 근육 동시 강화": [
+      "RF plus HIFES electrical muscle stimulation for skin firmness and facial muscles.",
+      "RFとHIFES筋肉電気刺激で肌のハリと表情筋を同時に強化。",
+      "射频结合HIFES电刺激，同时增强皮肤弹性与表情肌。"
+    ],
+    "엠페이스는 고주파(RF)로 진피층 콜라겐을 재생하고, 고강도 전기자극(HIFES)으로 안면 근육을 강화하는 이중 리프팅 시술입니다. 피부와 근육을 동시에 케어하여 자연스러운 동안 효과를 기대할 수 있습니다.": [
+      "EMFACE combines RF stimulation of dermal collagen with HIFES facial muscle stimulation. Treating skin and muscles together aims for a naturally youthful appearance.",
+      "RFで真皮のコラーゲン再生を促し、HIFESで表情筋を鍛える複合リフトです。肌と筋肉を同時にケアし、自然な若々しさを目指します。",
+      "EMFACE通过射频促进真皮胶原再生，以HIFES强化面部肌肉。双重护理皮肤与肌肉，追求自然年轻效果。"
+    ],
+    "RF + HIFES 이중 에너지로 피부와 근육 동시 케어": [
+      "RF + HIFES treats skin and muscles together.",
+      "RF＋HIFESで肌と筋肉を同時ケア。",
+      "RF＋HIFES同时护理皮肤与肌肉。"
+    ],
+    "마취 없이 20분, 통증 부담이 적은 편안한 시술": [
+      "A comfortable 20-minute treatment without anesthesia and with limited discomfort.",
+      "麻酔不要で20分、痛みの負担が少ない施術。",
+      "无需麻醉，20分钟完成，疼痛负担较小。"
+    ],
+    "시술 직후 일상 복귀 가능, 다운타임 제로": [
+      "Immediate return to daily life with no downtime.",
+      "ダウンタイムなく直後から日常生活へ。",
+      "无需恢复期，术后可立即恢复日常生活。"
+    ],
+    "중안면부 처짐, 팔자주름, 눈썹 비대칭 개선": [
+      "Improvement of midface sagging, nasolabial folds and eyebrow asymmetry.",
+      "中顔面のたるみ、ほうれい線、眉の左右差を改善。",
+      "改善中面部松弛、法令纹及眉部不对称。"
+    ],
+    "글로벌 100만 건 이상 시술로 다수의 시술 실적": [
+      "More than one million treatments performed worldwide.",
+      "世界で100万件以上の施術実績。",
+      "全球已开展超过100万次治疗。"
+    ],
+    "표정이 어두워 보이거나 피곤해 보인다는 말을 자주 듣는 분": [
+      "People often told they look tired or downcast.",
+      "疲れている、表情が暗いと言われる方。",
+      "经常被认为面容疲惫或显得低落的人群。"
+    ],
+    "팔자주름, 눈썹 처짐 등 중안면부 노화가 고민이신 분": [
+      "People concerned about midface aging, nasolabial folds or brow sagging.",
+      "ほうれい線や眉の下がりなど中顔面の老化が気になる方。",
+      "在意法令纹、眉部下垂等中面部老化的人群。"
+    ],
+    "통증 없이 편안하게 리프팅을 받고 싶은 분": [
+      "People seeking comfortable lifting without pain.",
+      "痛みなく快適にリフトを受けたい方。",
+      "希望舒适无痛提拉的人群。"
+    ],
+    "바쁜 일상 중 짧은 시간에 관리를 원하시는 분": [
+      "People wanting a brief treatment within a busy schedule.",
+      "忙しい日常の中で短時間のケアを希望する方。",
+      "希望在忙碌生活中快速护理的人群。"
+    ],
+    "자연스러운 동안 효과를 원하시는 분": [
+      "People seeking a naturally youthful appearance.",
+      "自然な若々しさを求める方。",
+      "追求自然年轻效果的人群。"
+    ],
+    "엠페이스 1회": [
+      "EMFACE · 1 session",
+      "エムフェイス 1回",
+      "EMFACE 1次"
+    ],
+    "엠페이스(EMFACE)는 진피층 타깃 고주파(RF)와 근육층 타깃 하이페스(HIFES)를 동시에 적용하여 피부 표면부터 근육층까지 작용하는 혁신적인 안티에이징 솔루션입니다.\n*토탈 리바이탈™ 시스템으로 노화의 피부와 근육에 복합적으로 작용합니다.": [
+      "EMFACE combines dermis-targeting RF with muscle-targeting HIFES, acting from the skin surface to the muscle layer.\n*The Total Revital™ system addresses aging skin and muscles together.",
+      "真皮を狙うRFと筋肉を狙うHIFESを同時に使い、肌表面から筋層まで働きかけます。\n※Total Revital™システムで肌と筋肉の老化に複合的に対応。",
+      "EMFACE同时应用针对真皮的射频与针对肌层的HIFES，作用范围从皮肤表面延伸至肌肉层。\n*Total Revital™系统综合改善皮肤与肌肉老化。"
+    ],
+    "엠페이스 2회": [
+      "EMFACE · 2 sessions",
+      "エムフェイス 2回",
+      "EMFACE 2次"
+    ],
+    "엠페이스 3회": [
+      "EMFACE · 3 sessions",
+      "エムフェイス 3回",
+      "EMFACE 3次"
+    ],
+    "엠페이스 1회 옵션": [
+      "EMFACE · 1-session add-on",
+      "エムフェイス 1回オプション",
+      "EMFACE 1次加购选项"
+    ],
+    "본 옵션은 울쎄라, 써마지, 덴서티 등 고가 리프팅 시술과 함께 진행 시에만 선택 가능합니다": [
+      "Available only with premium lifting treatments such as Ultherapy, Thermage or Density.",
+      "ウルセラ、サーマクール、デンシティなどの高価格帯リフト施術と併用する場合のみ選べます。",
+      "仅可与Ultherapy、热玛吉、Density等高价提拉项目同时选择。"
+    ],
+    "엠페이스 3회 옵션": [
+      "EMFACE · 3-session add-on",
+      "エムフェイス 3回オプション",
+      "EMFACE 3次加购选项"
+    ],
+    "엠페이스는 기존 리프팅과 어떻게 다른가요?": [
+      "How does EMFACE differ from conventional lifting?",
+      "従来のリフトとの違いは？",
+      "EMFACE与传统提拉有何不同？"
+    ],
+    "기존 리프팅 시술은 주로 피부층(진피, 근막)에만 작용하지만, 엠페이스는 피부 탄력 개선과 함께 안면 근육까지 강화합니다. 근육층에 작용하는 HIFES 기술이 적용된 비침습 리프팅 시술입니다.": [
+      "Conventional lifting mainly targets skin structures such as the dermis and fascia. EMFACE also strengthens facial muscles using noninvasive HIFES stimulation.",
+      "従来の施術が主に真皮や筋膜に働くのに対し、エムフェイスはHIFESによる非侵襲的な刺激で表情筋も強化します。",
+      "传统提拉主要作用于真皮、筋膜等结构，EMFACE还通过无创HIFES刺激强化面部肌肉。"
+    ],
+    "정말 통증이 없나요?": [
+      "Is it really painless?",
+      "本当に痛みはありませんか？",
+      "真的不疼吗？"
+    ],
+    "엠페이스는 마취 없이도 편안하게 받으실 수 있습니다. 시술 중 근육이 수축하는 느낌이 있을 수 있지만, 통증이라기보다는 근육 운동 시와 비슷한 자극감 정도입니다.": [
+      "Treatment can be comfortable without anesthesia. Muscle contractions feel more like exercise stimulation than pain.",
+      "麻酔なしでも受けやすく、筋肉の収縮は痛みというより運動時に近い刺激感です。",
+      "无需麻醉也可舒适接受治疗。肌肉收缩的感觉更像运动刺激，而非疼痛。"
+    ],
+    "몇 회 시술을 받아야 효과를 느낄 수 있나요?": [
+      "How many sessions are needed?",
+      "何回で効果を感じられますか？",
+      "需要治疗几次？"
+    ],
+    "일반적으로 1~2주 간격으로 4회 시술을 기본 코스로 권장합니다. 시술 횟수가 누적될수록 효과가 강화되며, 이후 유지 관리 시술을 통해 효과를 지속할 수 있습니다.": [
+      "A basic course generally consists of 4 sessions, 1–2 weeks apart. Results build with repeated sessions and may be sustained with maintenance treatments.",
+      "通常は1〜2週間おきに4回が基本です。回数を重ねると効果が高まり、その後の維持施術で持続を目指します。",
+      "通常建议基础疗程为4次，间隔1至2周。效果随治疗累积增强，后续可通过维护治疗延续。"
+    ],
+    "다른 리프팅 시술과 병행할 수 있나요?": [
+      "Can it be combined with other lifting treatments?",
+      "ほかのリフトと併用できますか？",
+      "可以与其他提拉项目结合吗？"
+    ],
+    "네, 엠페이스는 다른 리프팅 시술과 병행하여 시너지 효과를 기대할 수 있습니다. 써마지, 울쎄라 등과 조합하여 피부+근육을 종합적으로 관리하는 것도 가능하며, 전문 의료진과 상담 후 맞춤 플랜을 구성할 수 있습니다.": [
+      "Yes. Combining EMFACE with Thermage or Ultherapy may complement skin and muscle care. A clinician can design a personalized plan.",
+      "はい。サーマクールやウルセラとの併用で肌と筋肉を総合的にケアできます。医師と相談して計画を立てます。",
+      "可以。与热玛吉或Ultherapy搭配可综合护理皮肤和肌肉，具体方案由医生面诊制定。"
+    ],
+    "특별한 주의사항은 없으며, 시술 직후 바로 일상생활이 가능합니다. 다만, 충분한 수분 섭취와 보습 관리를 해주시면 더 좋은 결과를 기대할 수 있습니다.": [
+      "No special aftercare is described; daily activities can resume immediately. Adequate fluid intake and moisturizing may support results.",
+      "特別なケアはなく、直後から日常生活へ戻れます。十分な水分補給と保湿がより良い結果につながります。",
+      "一般无需特殊护理，术后可立即恢复日常活动。充足饮水和保湿有助于获得更好效果。"
+    ],
+    "심장 질환이 있거나 체내에 전자 장치(심박 조율기 등)가 있는 분은 시술이 어렵습니다": [
+      "Treatment is unsuitable for people with heart disease or implanted electronic devices such as pacemakers.",
+      "心疾患やペースメーカーなどの体内電子機器がある方は受けられません。",
+      "有心脏病或体内植入心脏起搏器等电子装置者不适合治疗。"
+    ],
+    "시술 부위에 금속 임플란트가 있는 경우 사전에 의료진과 상담이 필요합니다": [
+      "Consult a clinician beforehand about metal implants in the treatment area.",
+      "施術部位に金属インプラントがある場合は事前相談が必要です。",
+      "治疗部位存在金属植入物时，需事先咨询医生。"
+    ],
+    "임산부는 시술을 받으실 수 없습니다": [
+      "Treatment is not available during pregnancy.",
+      "妊娠中は施術を受けられません。",
+      "孕期不可接受治疗。"
+    ],
+    "개인의 피부 및 근육 상태에 따라 효과와 경과는 차이가 있을 수 있습니다": [
+      "Results and recovery vary with individual skin and muscle conditions.",
+      "効果や経過は肌と筋肉の状態により異なります。",
+      "效果及恢复过程因个人皮肤和肌肉状况而异。"
+    ],
+    "고주파와 근육 자극을 조합해 얼굴의 리프팅과 주름을 다룹니다.": [
+      "Combines RF and muscle stimulation to address facial lifting and wrinkles.",
+      "RFと筋肉刺激を組み合わせ、顔のリフトとしわに対応します。",
+      "结合射频与肌肉刺激，改善面部提拉及皱纹问题。"
+    ],
+    "얼굴 근육 자극이 좌우 비대칭의 원인을 진단하거나 교정한다는 뜻은 아닙니다.": [
+      "Facial muscle stimulation does not diagnose or correct the underlying cause of asymmetry.",
+      "筋肉刺激は左右差の原因を診断・矯正することを意味しません。",
+      "面部肌肉刺激不代表能诊断或矫正不对称的根本原因。"
+    ],
+    "올타이트": [
+      "ALLTITE",
+      "オルタイト",
+      "ALLTITE"
+    ],
+    "진피~근막층 에너지 리프팅. 처짐, 탄력 저하 개선": [
+      "Energy-based lifting from the dermis to fascia for sagging and reduced firmness.",
+      "真皮から筋膜層へのエネルギーでたるみ・ハリ低下を改善。",
+      "能量作用于真皮至筋膜层，改善松弛及弹性下降。"
+    ],
+    "DLTD(Deep Layer Thermal Diffusion) 기술이 표피를 자극하지 않고 진피 하부~근막층에 직접 에너지를 집중 전달하여, 즉각적인 피부 수축과 장기적인 콜라겐 재생을 유도합니다.": [
+      "DLTD (Deep Layer Thermal Diffusion) concentrates energy in the lower dermis and fascia without irritating the epidermis, inducing immediate contraction and longer-term collagen renewal.",
+      "DLTD（深層熱拡散）は表皮を刺激せず真皮下部〜筋膜層に集中して熱を届け、直後の収縮と長期的なコラーゲン再生を促します。",
+      "DLTD深层热扩散技术不刺激表皮，将能量集中传至真皮下部至筋膜层，促使即时收缩和长期胶原再生。"
+    ],
+    "DLTD 특허 기술로 표피 손상 없이 목표층에 정밀 에너지 전달": [
+      "Patented DLTD precisely targets deeper layers without epidermal damage.",
+      "特許DLTD技術で表皮を傷つけず狙った層に照射。",
+      "专利DLTD精准传能至目标层，不损伤表皮。"
+    ],
+    "시술 직후부터 체감할 수 있는 즉각적 타이트닝 효과": [
+      "Tightening may be noticeable immediately.",
+      "直後から引き締まりを実感できます。",
+      "术后即可感受紧致。"
+    ],
+    "볼패임 우려가 낮아 다양한 얼굴형에 적용 가능": [
+      "Low concern for cheek hollowing; suitable for various face shapes.",
+      "頬こけの懸念が少なく、さまざまな輪郭に対応。",
+      "面颊凹陷顾虑较小，适合多种脸型。"
+    ],
+    "따뜻한 열감 수준의 낮은 통증으로 편안한 시술": [
+      "Comfortable treatment with mild warmth and limited pain.",
+      "温かさ程度の少ない痛みで受けやすい施術。",
+      "疼痛较轻，主要为温热感，治疗较舒适。"
+    ],
+    "피부 탄력이 저하되어 자연스러운 리프팅을 원하시는 분": [
+      "People seeking natural lifting for reduced skin firmness.",
+      "ハリ低下に自然なリフトを希望する方。",
+      "弹性下降、希望自然提拉的人群。"
+    ],
+    "통증에 민감하여 편안한 시술을 선호하시는 분": [
+      "People sensitive to pain who prefer comfortable treatment.",
+      "痛みに敏感で快適な施術を希望する方。",
+      "对疼痛敏感、偏好舒适治疗的人群。"
+    ],
+    "볼패임 걱정 없이 타이트닝을 받고 싶으신 분": [
+      "People seeking tightening without concern about cheek hollowing.",
+      "頬こけを心配せず引き締めたい方。",
+      "希望紧致又担心面颊凹陷的人群。"
+    ],
+    "시술 후 바로 일상에 복귀하고 싶으신 분": [
+      "People wanting an immediate return to daily life.",
+      "施術後すぐ日常生活に戻りたい方。",
+      "希望术后立即恢复日常活动的人群。"
+    ],
+    "기존 고주파 리프팅의 효과를 더 정밀하게 경험하고 싶으신 분": [
+      "People seeking more precise RF lifting effects.",
+      "より精密な高周波リフトを希望する方。",
+      "希望体验更精准射频提拉的人群。"
+    ],
+    "올타이트 400샷": [
+      "ALLTITE · 400 shots",
+      "オルタイト 400ショット",
+      "ALLTITE 400发"
+    ],
+    "DLTD 기술을 적용한 고정밀 리프팅 시술.\n*진피층부터 SMAS층까지 에너지를 정확하고 깊게 전달. 통증은 최소화, 리프팅 효과를 기대할 수 있습니다.": [
+      "Precise DLTD lifting.\n*Delivers energy accurately from the dermis to the SMAS layer, aiming for lifting with minimal discomfort.",
+      "DLTDによる精密リフト。\n※真皮〜SMAS層へ深く正確に伝え、痛みを抑えてリフトを目指します。",
+      "采用DLTD技术精准提拉。\n*能量准确深入真皮至SMAS层，在减轻疼痛的同时追求提拉效果。"
+    ],
+    "올타이트 800샷": [
+      "ALLTITE · 800 shots",
+      "オルタイト 800ショット",
+      "ALLTITE 800发"
+    ],
+    "올타이트 시술은 얼마나 아픈가요?": [
+      "How painful is ALLTITE?",
+      "オルタイトの痛みは？",
+      "ALLTITE疼吗？"
+    ],
+    "따뜻한 열감이 느껴지는 정도로, 대부분의 고객분이 편안하게 시술을 받으십니다. 마취 없이 진행 가능하며, 통증에 민감하신 분도 부담 없이 받으실 수 있습니다.": [
+      "Most people feel only warmth and find treatment comfortable. Anesthesia is not required, including for many people sensitive to pain.",
+      "温かさ程度で、多くの方が快適に受けられます。麻酔なしで行え、痛みに敏感な方にも受けやすい施術です。",
+      "多数人仅感到温热，治疗舒适。可无需麻醉进行，对疼痛敏感者也较易接受。"
+    ],
+    "시술 후 효과는 언제부터 나타나나요?": [
+      "When will I see results after treatment?",
+      "施術後いつ効果が現れますか？",
+      "术后多久能看到效果？"
+    ],
+    "시술 직후 즉각적인 타이트닝 효과를 체감하실 수 있으며, 이후 2~3개월에 걸쳐 콜라겐 재생이 진행되면서 더욱 탄탄한 피부로 개선됩니다.": [
+      "Tightening may be felt immediately, with further firmness developing as collagen renews over 2–3 months.",
+      "直後に引き締まりを感じ、その後2〜3か月のコラーゲン再生でハリが高まります。",
+      "术后可即时感受紧致，随后2至3个月胶原再生，皮肤逐步更紧实。"
+    ],
+    "볼패임이 생기지는 않나요?": [
+      "Can it cause cheek hollowing?",
+      "頬こけは起こりませんか？",
+      "会导致面颊凹陷吗？"
+    ],
+    "올타이트는 DLTD 기술로 에너지를 목표 깊이에 정밀하게 전달하기 때문에 볼패임 위험이 낮은 것이 특징입니다. 시술 전 전문 의료진이 피부 상태를 꼼꼼히 진단하여 맞춤 시술을 진행합니다.": [
+      "Precise DLTD delivery to the target depth is associated with a low risk of cheek hollowing. A clinician assesses your skin beforehand to tailor treatment.",
+      "DLTDで狙った深さへ精密に伝えるため、頬こけのリスクが低いとされています。事前に医師が肌を確認して調整します。",
+      "DLTD精准传能至目标深度，面颊凹陷风险较低。医生会事先仔细评估皮肤并定制治疗。"
+    ],
+    "써마지나 슈링크와 어떤 차이가 있나요?": [
+      "How does it differ from Thermage or Shurink?",
+      "サーマクールやシュリンクとの違いは？",
+      "与热玛吉或Shurink有何不同？"
+    ],
+    "올타이트는 DLTD 기술로 표피 자극 없이 원하는 깊이에 에너지를 집중하는 것이 특징입니다. 써마지(고주파)와 슈링크(초음파)와는 에너지 전달 방식이 달라, 피부 상태에 따라 적합한 시술이 다를 수 있습니다. 전문가 상담을 통해 최적의 시술을 선택하시길 권장합니다.": [
+      "DLTD focuses energy at the desired depth without epidermal irritation. Its delivery differs from Thermage RF and Shurink ultrasound; suitability depends on your skin and clinical consultation.",
+      "DLTDは表皮を刺激せず希望の深さに集中させます。サーマクールのRF、シュリンクの超音波とは伝達方式が異なり、適応は肌状態と診察で判断します。",
+      "DLTD不刺激表皮，将能量集中到目标深度，与热玛吉射频、Shurink超声的传能方式不同。适合项目需根据皮肤状况面诊选择。"
+    ],
+    "시술 부위에 일시적인 홍조나 열감이 나타날 수 있으며, 대부분 수 시간 내 자연스럽게 사라집니다.": [
+      "Temporary redness or warmth usually fades within hours.",
+      "一時的な赤みや熱感は通常数時間で落ち着きます。",
+      "暂时的泛红或热感通常数小时内消退。"
+    ],
+    "시술 당일에는 사우나, 찜질방, 격렬한 운동 등 과도한 열자극을 피해 주세요.": [
+      "Avoid excessive heat, including saunas, heated bathhouses and strenuous exercise, on treatment day.",
+      "当日はサウナ、高温浴施設、激しい運動などの強い熱刺激を避けてください。",
+      "治疗当天避免桑拿、汗蒸、剧烈运动等过度热刺激。"
+    ],
+    "시술 후에는 충분한 보습과 자외선 차단제 사용을 권장합니다.": [
+      "After treatment, keep skin well moisturized and use sunscreen.",
+      "施術後は十分に保湿し、日焼け止めを使用してください。",
+      "术后请充分保湿并使用防晒霜。"
+    ],
+    "시술 전후 레티놀, AHA/BHA 등 자극성 화장품 사용을 잠시 중단해 주세요.": [
+      "Temporarily stop irritating cosmetics such as retinol and AHA/BHA around treatment.",
+      "前後はレチノール、AHA/BHAなど刺激のある化粧品を一時休止してください。",
+      "治疗前后暂时停用视黄醇、AHA/BHA等刺激性护肤品。"
+    ],
+    "DLTD 기술을 사용하는 피부 타이트닝·리프팅 시술입니다.": [
+      "Skin tightening and lifting using DLTD technology.",
+      "DLTD技術による肌の引き締め・リフト施術です。",
+      "使用DLTD技术紧致及提拉肌肤。"
+    ],
+    "장비의 주된 목적에 따라 탄력·처짐으로 분류했습니다.": [
+      "Classified for firmness and sagging based on the device's primary purpose.",
+      "機器の主な目的に合わせ、ハリ・たるみに分類しています。",
+      "根据设备主要用途归入紧致与松弛分类。"
+    ],
+    "덴서티": [
+      "Density",
+      "デンシティ",
+      "Density"
+    ],
+    "이중 고주파 리프팅. 피부 밀도·탄력 저하, 잔주름 개선": [
+      "Dual-RF lifting for reduced skin density, firmness and fine lines.",
+      "二重RFで肌密度・ハリの低下と小じわを改善。",
+      "双重射频提拉，改善皮肤密度、弹性下降及细纹。"
+    ],
+    "모노폴라와 바이폴라 고주파를 동시에 적용하여 진피층부터 근막층까지 넓은 범위의 피부 밀도를 강화하고, 콜라겐과 엘라스틴 재생을 촉진하는 차세대 리프팅입니다.": [
+      "Combines monopolar and bipolar RF to strengthen skin density from the dermis to the fascia and promote collagen and elastin renewal.",
+      "モノポーラとバイポーラRFを併用し、真皮〜筋膜層の密度を高め、コラーゲンとエラスチンの再生を促します。",
+      "同时应用单极与双极射频，增强真皮至筋膜层的皮肤密度，促进胶原及弹性蛋白再生。"
+    ],
+    "모노폴라+바이폴라 이중 고주파로 넓은 범위의 피부 밀도 강화": [
+      "Monopolar + bipolar RF strengthens skin density over a broad area.",
+      "モノポーラ＋バイポーラRFで広範囲の肌密度を強化。",
+      "单极＋双极射频增强大范围皮肤密度。"
+    ],
+    "5단계 쿨링 시스템으로 피부 타입에 맞춘 편안한 시술": [
+      "Five-level cooling for comfortable treatment tailored to skin type.",
+      "5段階冷却で肌質に合わせた快適な施術。",
+      "5级冷却系统，按肤质提供舒适治疗。"
+    ],
+    "단순 리프팅을 넘어 피부 밀도 자체를 높이는 근본적 접근": [
+      "An approach that increases skin density beyond lifting alone.",
+      "リフトだけでなく肌密度そのものを高めるアプローチ。",
+      "不仅提拉，更着重提升皮肤自身密度。"
+    ],
+    "시술 후 다운타임이 거의 없어 일상 복귀가 빠름": [
+      "Minimal downtime allows a quick return to daily life.",
+      "ダウンタイムがほぼなく、日常生活へ早く復帰。",
+      "恢复期短，可快速恢复日常生活。"
+    ],
+    "피부가 얇아지고 밀도가 떨어져 탄력이 저하된 분": [
+      "People with thinning skin, reduced density and loss of firmness.",
+      "肌が薄くなり、密度やハリが低下した方。",
+      "皮肤变薄、密度及弹性下降的人群。"
+    ],
+    "안에서부터 차오르는 자연스러운 볼륨감을 원하시는 분": [
+      "People seeking natural fullness from within.",
+      "内側からの自然なふっくら感を求める方。",
+      "希望获得由内而外自然饱满感的人群。"
+    ],
+    "기존 리프팅 시술과 다른 새로운 접근을 찾고 계신 분": [
+      "People seeking an alternative to conventional lifting.",
+      "従来とは異なるリフト方法を探している方。",
+      "希望尝试不同于传统提拉方式的人群。"
+    ],
+    "통증에 민감하여 편안한 시술을 원하시는 분": [
+      "People who are sensitive to pain and want comfortable treatment.",
+      "痛みに敏感で、快適な施術を求める方。",
+      "对疼痛敏感、希望舒适治疗的人群。"
+    ],
+    "모공 축소와 피부결 개선을 함께 기대하시는 분": [
+      "People also hoping to improve pores and skin texture.",
+      "毛穴と肌のキメの改善も期待する方。",
+      "同时希望改善毛孔及肤质的人群。"
+    ],
+    "덴서티 (클래식) 300샷": [
+      "Density Classic · 300 shots",
+      "デンシティ・クラシック 300ショット",
+      "Density Classic 300发"
+    ],
+    "덴서티는 첨단 고주파 시술 시스템입니다. HIGH TIP은 모노폴라 및 바이폴라 고주파 에너지를 모두 전달하며, CLASSIC TIP은 모노폴라 방식만 제공합니다.\n*개인별 피부 저항값 차이를 임피던스 피드백 시스템으로 보정하여 일관된 효과를 기대할 수 있습니다.": [
+      "Density is an advanced RF system. HIGH TIP delivers monopolar and bipolar energy; CLASSIC TIP delivers monopolar energy only.\n*Impedance feedback compensates for skin resistance differences to support consistent results.",
+      "HIGH TIPはモノポーラとバイポーラ、CLASSIC TIPはモノポーラのみのRFを届けます。\n※抵抗値の個人差をインピーダンスフィードバックで補正し、安定した効果を目指します。",
+      "Density为先进射频系统。HIGH TIP传递单极及双极能量，CLASSIC TIP仅提供单极能量。\n*阻抗反馈系统补偿个体皮肤电阻差异，以获得稳定效果。"
+    ],
+    "덴서티 (클래식) 600샷": [
+      "Density Classic · 600 shots",
+      "デンシティ・クラシック 600ショット",
+      "Density Classic 600发"
+    ],
+    "덴서티는 써마지와 어떤 차이가 있나요?": [
+      "How does Density differ from Thermage?",
+      "デンシティとサーマクールの違いは？",
+      "Density与热玛吉有何区别？"
+    ],
+    "덴서티는 모노폴라와 바이폴라 두 가지 고주파를 동시에 사용하여 피부 밀도 자체를 높이는 데 초점을 맞춘 시술입니다. 써마지가 전체적인 콜라겐 리모델링에 강점이 있다면, 덴서티는 진피층의 구조적 밀도를 강화하는 차별화된 접근입니다.": [
+      "Density combines two RF modes to focus on skin density. While Thermage emphasizes overall collagen remodeling, Density targets structural density in the dermis.",
+      "デンシティは2種類のRFで肌密度に重点を置きます。サーマクールが全体的なコラーゲン再構築を得意とするのに対し、真皮の構造的密度を強化します。",
+      "Density结合两种射频，侧重皮肤密度。热玛吉擅长整体胶原重塑，而Density着重强化真皮结构密度。"
+    ],
+    "시술은 아프지 않나요?": [
+      "Is the treatment painful?",
+      "施術は痛いですか？",
+      "治疗疼吗？"
+    ],
+    "5단계 쿨링 시스템이 적용되어 시술 중 통증이 크게 줄어듭니다. 대부분의 고객분이 따뜻한 열감 정도만 느끼시며, 마취 없이도 편안하게 시술을 받으실 수 있습니다.": [
+      "Five-level cooling reduces discomfort. Most people feel warmth and can undergo treatment comfortably without anesthesia.",
+      "5段階冷却で痛みを軽減します。多くの方は温かさ程度で、麻酔なしでも受けられます。",
+      "5级冷却减轻疼痛，多数人仅有温热感，无需麻醉也可舒适治疗。"
+    ],
+    "시술 후 점진적으로 콜라겐과 엘라스틴이 재생되면서 2~3개월 후 본격적인 효과가 나타납니다. 피부 밀도가 높아지면서 6개월~1년간 탄탄한 피부를 유지하실 수 있습니다.": [
+      "Results develop over 2–3 months as collagen and elastin renew. Increased density may help maintain firmness for 6–12 months.",
+      "コラーゲンとエラスチンの再生に伴い2〜3か月で効果が現れ、密度向上により6か月〜1年のハリ維持が期待できます。",
+      "胶原及弹性蛋白逐步再生，2至3个月后效果更明显，密度增加有助于维持6个月至1年的紧致。"
+    ],
+    "300샷과 600샷은 어떤 차이가 있나요?": [
+      "What is the difference between 300 and 600 shots?",
+      "300と600ショットの違いは？",
+      "300发与600发有何区别？"
+    ],
+    "샷 수에 따라 시술 범위와 에너지 전달량이 달라집니다. 피부 상태와 개선하고 싶은 부위에 따라 적정 샷 수가 달라지므로, 전문 의료진 상담을 통해 본인에게 맞는 프로그램을 선택하시는 것을 권장합니다.": [
+      "Shot count affects coverage and delivered energy. A clinician can recommend a plan for your skin and target areas.",
+      "範囲とエネルギー量が変わります。肌状態と希望部位に応じて医師とプランを選んでください。",
+      "发数影响治疗范围及能量总量，请由医生根据肤况及目标部位选择方案。"
+    ],
+    "시술 후 다운타임은 어떻게 되나요?": [
+      "What is the downtime?",
+      "ダウンタイムは？",
+      "恢复期多久？"
+    ],
+    "다운타임이 거의 없어 시술 직후 일상생활에 복귀하실 수 있습니다. 일시적으로 약간의 홍조가 나타날 수 있으나, 대부분 수 시간 내 자연스럽게 가라앉습니다.": [
+      "Downtime is minimal, so normal activities can resume immediately. Mild temporary redness usually settles within hours.",
+      "ほぼなく、直後から日常生活へ戻れます。軽い赤みは通常数時間で落ち着きます。",
+      "恢复期很短，可立即恢复日常活动。轻微暂时泛红通常数小时内消退。"
+    ],
+    "시술 부위에 일시적인 홍조나 열감이 나타날 수 있으며, 대부분 당일 내 소실됩니다.": [
+      "Temporary redness or warmth usually resolves the same day.",
+      "一時的な赤みや熱感は通常当日中に落ち着きます。",
+      "暂时的泛红或热感通常当天消退。"
+    ],
+    "시술 당일에는 사우나, 찜질방, 뜨거운 물 사용 등 과도한 열자극을 피해 주세요.": [
+      "Avoid saunas, heated bathhouses, hot water and excessive heat on treatment day.",
+      "当日はサウナ、高温浴施設、熱いお湯などを避けてください。",
+      "当天避免桑拿、汗蒸、热水等过度热刺激。"
+    ],
+    "시술 후 충분한 보습 관리와 자외선 차단제 사용을 권장합니다.": [
+      "Moisturize thoroughly and apply sunscreen after treatment.",
+      "施術後は十分な保湿と日焼け止めを心がけてください。",
+      "术后请充分保湿并使用防晒霜。"
+    ],
+    "시술 전후 레티놀, 필링제 등 자극성 제품 사용을 일시적으로 중단해 주세요.": [
+      "Temporarily stop retinol, peels and other irritating products around treatment.",
+      "前後はレチノールやピーリング剤など刺激物を休止してください。",
+      "治疗前后暂时停用视黄醇、去角质等刺激性产品。"
+    ],
+    "피부 상태에 따라 시술 간격 및 횟수가 달라질 수 있으므로 전문 의료진과 상담해 주세요.": [
+      "Consult a clinician about session frequency and number, which depend on skin condition.",
+      "肌状態で間隔・回数が異なるため、医師とご相談ください。",
+      "治疗间隔及次数因肤况而异，请咨询医生。"
+    ],
+    "고주파로 피부의 탄력과 타이트닝을 다루는 시술입니다.": [
+      "RF treatment addressing skin firmness and tightening.",
+      "RFで肌のハリと引き締めに対応する施術です。",
+      "以射频改善皮肤弹性及紧致度。"
+    ],
+    "탄력·처짐을 우선 분류하고 주름은 함께 상담할 수 있는 목적으로 표시합니다.": [
+      "Firmness and sagging are primary; wrinkles are a related purpose to discuss.",
+      "ハリ・たるみを優先し、しわは併せて相談できる目的としています。",
+      "主要归入紧致与松弛，皱纹列为可共同咨询的相关用途。"
+    ],
+    "슈링크": [
+      "Shurink",
+      "シュリンク",
+      "Shurink"
+    ],
+    "집속 초음파(HIFU) 리프팅. 턱선·볼·이마 등 부위별 처짐 개선": [
+      "HIFU lifting for sagging in the jawline, cheeks and forehead.",
+      "HIFUでフェイスライン・頬・額などのたるみを改善。",
+      "HIFU提拉，改善下颌线、面颊、额部等松弛。"
+    ],
+    "슈링크 유니버스는 고강도 집속 초음파(HIFU) 에너지를 SMAS 근막층까지 전달하여 콜라겐 재생과 피부 타이트닝을 유도하며, 7가지 카트리지와 펜타입 핸드피스로 부위별 정밀한 맞춤 시술이 가능합니다.": [
+      "Shurink Universe delivers HIFU to the SMAS layer to promote collagen renewal and tightening. Seven cartridges and a pen-type handpiece allow precise treatment by area.",
+      "シュリンク・ユニバースはHIFUをSMAS層へ届け、コラーゲン再生と引き締めを促します。7種のカートリッジとペン型ハンドピースで部位別に調整できます。",
+      "Shurink Universe将HIFU能量传至SMAS层，促进胶原再生及紧致。7种治疗头与笔式手柄可按部位精准定制。"
+    ],
+    "HIFU 에너지가 SMAS 근막층까지 도달하여 근본적인 리프팅 효과": [
+      "HIFU reaches the SMAS layer for deep lifting.",
+      "HIFUがSMAS層まで届き、深部からリフト。",
+      "HIFU深入SMAS层进行提拉。"
+    ],
+    "7가지 카트리지로 얼굴 부위와 피부 깊이에 맞춘 정밀 시술": [
+      "Seven cartridges match facial areas and skin depth.",
+      "7種のカートリッジで部位と深さに対応。",
+      "7种治疗头适应不同面部部位及皮肤深度。"
+    ],
+    "펜타입 핸드피스로 눈가, 입가 등 굴곡 부위까지 섬세하게 시술 가능": [
+      "A pen-type handpiece precisely treats curved areas around the eyes and mouth.",
+      "ペン型で目元・口元などの曲面も細かく施術。",
+      "笔式手柄精细处理眼周、口周等曲面部位。"
+    ],
+    "합리적인 가격으로 시작할 수 있는 리프팅 입문 시술": [
+      "An accessible, reasonably priced introduction to lifting.",
+      "手頃な価格で始められるリフト施術。",
+      "价格合理，适合初次体验提拉。"
+    ],
+    "리프팅 시술을 처음 시도해보고 싶으신 분": [
+      "People trying lifting for the first time.",
+      "初めてリフト施術を試したい方。",
+      "首次尝试提拉的人群。"
+    ],
+    "합리적인 가격으로 탄력 관리를 시작하고 싶으신 분": [
+      "People starting affordable firmness care.",
+      "手頃な価格でハリケアを始めたい方。",
+      "希望以合理价格开始紧致护理的人群。"
+    ],
+    "얼굴 전체 또는 특정 부위의 처짐이 신경 쓰이시는 분": [
+      "People concerned about whole-face or localized sagging.",
+      "顔全体や一部のたるみが気になる方。",
+      "在意全面部或局部松弛的人群。"
+    ],
+    "정기적인 리프팅 관리 루틴을 만들고 싶으신 분": [
+      "People establishing a regular lifting routine.",
+      "定期的なリフトケアを続けたい方。",
+      "希望建立定期提拉护理计划的人群。"
+    ],
+    "다운타임 없이 빠르게 일상에 복귀하고 싶으신 분": [
+      "People seeking a quick return to daily life without downtime.",
+      "ダウンタイムなく早く日常へ戻りたい方。",
+      "希望无需恢复期、快速回归日常的人群。"
+    ],
+    "내맘대로 슈링크 1000 패키지": [
+      "Custom Shurink 1000 package",
+      "選べるシュリンク1000プラン",
+      "自选Shurink 1000套餐"
+    ],
+    "슈링크 얼굴 전체 42 패키지": [
+      "Shurink full-face 42 package",
+      "シュリンク全顔42プラン",
+      "Shurink全面部42套餐"
+    ],
+    "울트라-F 400샷 + 부스터 200샷 + 오로라 앰플": [
+      "Ultra-F 400 shots + Booster 200 shots + Aurora ampoule",
+      "ウルトラF 400ショット＋ブースター200ショット＋オーロラアンプル",
+      "Ultra-F 400发＋Booster 200发＋Aurora安瓶"
+    ],
+    "슈링크 얼굴 전체 33 패키지": [
+      "Shurink full-face 33 package",
+      "シュリンク全顔33プラン",
+      "Shurink全面部33套餐"
+    ],
+    "울트라-F 300샷 + 부스터 300샷 + 오로라 앰플": [
+      "Ultra-F 300 shots + Booster 300 shots + Aurora ampoule",
+      "ウルトラF 300ショット＋ブースター300ショット＋オーロラアンプル",
+      "Ultra-F 300发＋Booster 300发＋Aurora安瓶"
+    ],
+    "슈링크 유니버스 F 100샷": [
+      "Shurink Universe F · 100 shots",
+      "シュリンク・ユニバースF 100ショット",
+      "Shurink Universe F 100发"
+    ],
+    "고강도 집속 초음파(HIFU)로 열응고점 생성\n*콜라겐 재생, 피부의 탄력과 라인 개선": [
+      "HIFU creates thermal coagulation points.\n*Promotes collagen renewal, firmness and improved contours.",
+      "HIFUで熱凝固点を形成。\n※コラーゲン再生、ハリ、輪郭の改善を促します。",
+      "HIFU形成热凝固点。\n*促进胶原再生，改善皮肤弹性及轮廓。"
+    ],
+    "슈링크 유니버스 F 300샷": [
+      "Shurink Universe F · 300 shots",
+      "シュリンク・ユニバースF 300ショット",
+      "Shurink Universe F 300发"
+    ],
+    "더마 슈링크 유니버스 300샷": [
+      "Derma Shurink Universe · 300 shots",
+      "ダーマ・シュリンク・ユニバース 300ショット",
+      "Derma Shurink Universe 300发"
+    ],
+    "슈링크 유니버스 부스터 100샷": [
+      "Shurink Universe Booster · 100 shots",
+      "シュリンク・ユニバース・ブースター 100ショット",
+      "Shurink Universe Booster 100发"
+    ],
+    "슈링크와 울쎄라는 어떤 차이가 있나요?": [
+      "How does Shurink differ from Ultherapy?",
+      "シュリンクとウルセラの違いは？",
+      "Shurink与Ultherapy有何不同？"
+    ],
+    "슈링크와 울쎄라는 모두 초음파(HIFU) 기반 리프팅이지만, 에너지 전달 깊이와 강도에 차이가 있습니다. 울쎄라 프라임이 더 깊은 층까지 강력한 에너지를 전달하는 데 반해, 슈링크 유니버스는 합리적인 가격으로 꾸준한 관리에 적합합니다. 개인 피부 상태에 따라 적합한 시술이 다르므로 전문 상담을 권장합니다.": [
+      "Both use HIFU but differ in energy depth and intensity. Ultherapy PRIME delivers strong energy deeper, while Shurink Universe offers affordable ongoing care. A clinician can assess suitability for your skin.",
+      "どちらもHIFUですが深さと強さが異なります。ウルセラ・プライムは深部への強い照射、シュリンクは手頃な継続ケアが特徴です。適応は医師にご相談ください。",
+      "两者均使用HIFU，但能量深度和强度不同。Ultherapy PRIME向更深层传递较强能量，Shurink Universe适合价格合理的持续护理。请面诊选择适合项目。"
+    ],
+    "시술 시간은 얼마나 걸리나요?": [
+      "How long does a session take?",
+      "施術時間は？",
+      "每次治疗需要多久？"
+    ],
+    "시술 부위와 샷 수에 따라 다르지만, 일반적으로 30분~1시간 내외로 진행됩니다. 기존 대비 약 2.5배 빠른 시술 속도로 바쁜 일상 중에도 부담 없이 받으실 수 있습니다.": [
+      "Usually 30–60 minutes, depending on area and shot count. Treatment is about 2.5 times faster than the earlier model.",
+      "部位とショット数によりますが通常30分〜1時間です。従来の約2.5倍の速さで施術できます。",
+      "通常约30分钟至1小时，取决于部位及发数，治疗速度约为旧款的2.5倍。"
+    ],
+    "효과는 얼마나 오래 지속되나요?": [
+      "How long do results last?",
+      "効果はどのくらい持続しますか？",
+      "效果能维持多久？"
+    ],
+    "시술 후 2~3주부터 점진적으로 효과가 나타나며, 3~6개월 사이 최대 효과를 기대할 수 있습니다. 개인차가 있지만 6개월~1년간 효과가 유지되며, 정기적인 관리를 통해 지속적인 탄력 유지가 가능합니다.": [
+      "Results develop from 2–3 weeks and may peak at 3–6 months. They can last 6–12 months, with individual variation; regular care supports maintenance.",
+      "2〜3週間から徐々に現れ、3〜6か月に最大の効果が期待できます。個人差はありますが6か月〜1年続き、定期ケアで維持を目指します。",
+      "术后2至3周逐步显效，3至6个月可望达到较明显效果。因人而异，可维持6个月至1年，定期护理有助于保持。"
+    ],
+    "시술 후 다운타임은 거의 없어 바로 일상에 복귀하실 수 있습니다. 다만 시술 당일은 음주, 사우나, 격렬한 운동을 피하시고, 충분한 보습과 자외선 차단을 해주시면 됩니다.": [
+      "Minimal downtime allows immediate daily activity. Avoid alcohol, saunas and strenuous exercise that day, and moisturize and protect against UV.",
+      "ほぼダウンタイムなく日常へ戻れます。当日は飲酒・サウナ・激しい運動を控え、保湿と紫外線対策をしてください。",
+      "恢复期很短，可立即恢复日常活动。当天避免饮酒、桑拿及剧烈运动，并做好保湿与防晒。"
+    ],
+    "시술 후 일시적인 붉은 기나 부기가 나타날 수 있으며, 대부분 수 시간 내 자연스럽게 소실됩니다.": [
+      "Temporary redness or swelling usually fades within hours.",
+      "一時的な赤みや腫れは通常数時間で落ち着きます。",
+      "暂时的泛红或肿胀通常数小时内消退。"
+    ],
+    "시술 당일에는 음주, 사우나, 찜질방, 격렬한 운동을 삼가 주세요.": [
+      "Avoid alcohol, saunas, heated bathhouses and strenuous exercise on treatment day.",
+      "当日は飲酒、サウナ、高温浴施設、激しい運動を控えてください。",
+      "当天避免饮酒、桑拿、汗蒸及剧烈运动。"
+    ],
+    "시술 후에는 자외선 차단제를 꼼꼼히 발라 주시고, 충분한 보습 관리를 해 주세요.": [
+      "Apply sunscreen carefully and keep skin well moisturized afterward.",
+      "施術後は丁寧な日焼け止めと十分な保湿をしてください。",
+      "术后认真防晒，充分保湿。"
+    ],
+    "시술 전후 레티놀, AHA/BHA 등 자극성 성분이 포함된 제품 사용을 잠시 중단해 주세요.": [
+      "Pause products containing irritating ingredients such as retinol and AHA/BHA around treatment.",
+      "前後はレチノールやAHA/BHAなど刺激成分のある製品を休止してください。",
+      "治疗前后暂时停用含视黄醇、AHA/BHA等刺激成分的产品。"
+    ],
+    "피부 상태와 시술 목적에 따라 적정 샷 수와 시술 주기가 달라질 수 있으므로 전문 의료진과 상담해 주세요.": [
+      "Consult a clinician about shot count and intervals according to your skin and goals.",
+      "肌状態と目的によってショット数・間隔が異なるため医師にご相談ください。",
+      "发数和治疗间隔取决于肤况与目的，请咨询医生。"
+    ],
+    "집속초음파로 리프팅과 부위별 주름 개선을 다룹니다.": [
+      "Focused ultrasound for lifting and localized wrinkle improvement.",
+      "集束超音波でリフトと部位別のしわ改善に対応します。",
+      "以聚焦超声进行提拉并改善局部皱纹。"
+    ],
+    "눈가·입가·목 등 목적과 부위에 따라 사용하는 카트리지가 다릅니다.": [
+      "Cartridge choice depends on the purpose and area, including eyes, mouth and neck.",
+      "目元・口元・首など、目的と部位によってカートリッジが異なります。",
+      "按目的及眼周、口周、颈部等部位选择不同治疗头。"
+    ],
+    "인모드": [
+      "InMode",
+      "インモード",
+      "InMode"
+    ],
+    "고주파 + 전기자극. 이중턱·볼살 지방 감소와 탄력 개선": [
+      "RF and electrical stimulation for double-chin and cheek fat reduction and improved firmness.",
+      "RFと電気刺激で二重あご・頬の脂肪とハリに対応。",
+      "射频结合电刺激，改善双下巴、面颊脂肪及弹性。"
+    ],
+    "인모드는 고주파(RF)와 고전압 전기자극을 동시에 적용하여 진피층의 콜라겐 재생을 촉진하면서 피하지방층의 지방세포까지 관리하는 복합 리프팅 시술입니다.": [
+      "InMode combines RF with high-voltage electrical stimulation to promote dermal collagen renewal while addressing subcutaneous fat cells.",
+      "RFと高電圧電気刺激を併用し、真皮のコラーゲン再生と皮下脂肪細胞に同時に働きかけます。",
+      "InMode结合射频与高压电刺激，促进真皮胶原再生，同时作用于皮下脂肪细胞。"
+    ],
+    "지방 분해와 콜라겐 재생을 동시에 — 리프팅과 윤곽 개선의 이중 효과": [
+      "Simultaneous fat reduction and collagen renewal for lifting and contouring.",
+      "脂肪とコラーゲンに同時に働き、リフトと輪郭を改善。",
+      "同时减少脂肪、促进胶原再生，兼顾提拉与轮廓。"
+    ],
+    "미국 FDA 인증(해외 인증) 장비로 안전성이 검증된 시술": [
+      "Equipment with US FDA authorization (overseas certification) for safety.",
+      "米国FDA認証（海外認証）機器による安全性に配慮した施術。",
+      "采用美国FDA认证（海外认证）设备，注重治疗安全。"
+    ],
+    "초당 1,000회 실시간 온도 모니터링으로 안전하고 정밀한 에너지 전달": [
+      "Temperature monitoring 1,000 times per second supports safe, precise energy delivery.",
+      "毎秒1,000回の温度監視で安全かつ精密に照射。",
+      "每秒1,000次温度监测，支持安全精准传能。"
+    ],
+    "얼굴은 물론 바디 부위까지 다양하게 활용 가능": [
+      "Usable on both face and body.",
+      "顔にもボディにも幅広く対応。",
+      "可用于面部及身体多个部位。"
+    ],
+    "이중턱이나 턱라인 개선을 원하시는 분": [
+      "People seeking improvement of a double chin or jawline.",
+      "二重あごやフェイスラインを改善したい方。",
+      "希望改善双下巴或下颌线的人群。"
+    ],
+    "볼살이나 심부볼 지방이 신경 쓰이시는 분": [
+      "People concerned about cheek or deep cheek fat.",
+      "頬や深部の頬脂肪が気になる方。",
+      "在意面颊或深层颊部脂肪的人群。"
+    ],
+    "지방 감소와 피부 탄력 개선을 동시에 원하시는 분": [
+      "People seeking both fat reduction and greater skin firmness.",
+      "脂肪減少とハリ改善を同時に希望する方。",
+      "希望同时减脂及改善弹性的人群。"
+    ],
+    "수술 없이 자연스러운 V라인을 만들고 싶으신 분": [
+      "People seeking a natural V-shaped contour without surgery.",
+      "手術せず自然なVラインを希望する方。",
+      "希望不手术打造自然V形轮廓的人群。"
+    ],
+    "다운타임 없이 편안하게 윤곽 관리를 받고 싶으신 분": [
+      "People seeking comfortable contour care without downtime.",
+      "ダウンタイムなく快適に輪郭ケアしたい方。",
+      "希望舒适塑形、无需恢复期的人群。"
+    ],
+    "인모드 FORMA": [
+      "InMode FORMA",
+      "インモードFORMA",
+      "InMode FORMA"
+    ],
+    "하관 집중관리 지방감소 없이 탄력UP": [
+      "Focused lower-face care: improved firmness without fat reduction.",
+      "下顔面を集中ケア。脂肪を減らさずハリを向上。",
+      "集中护理下面部，不减脂、提升紧致度。"
+    ],
+    "인모드 FORMA+FX 풀페이스": [
+      "InMode FORMA + FX · full face",
+      "インモードFORMA＋FX 全顔",
+      "InMode FORMA＋FX 全面部"
+    ],
+    "RF 리프팅 + 탄력 강화 + 페이스라인 정리\n*고주파 에너지로 얼굴 전체를 탄력 개선 및 지방파괴": [
+      "RF lifting, firmness and facial contouring.\n*RF energy treats full-face firmness and fat reduction.",
+      "RFリフト・ハリ強化・輪郭ケア。\n※高周波で全顔のハリと脂肪に働きかけます。",
+      "射频提拉、增强弹性、改善面部轮廓。\n*以射频能量改善全面部弹性并减少脂肪。"
+    ],
+    "인모드 FX 1부위": [
+      "InMode FX · 1 area",
+      "インモードFX 1部位",
+      "InMode FX 1个部位"
+    ],
+    "국소부위 지방감소\n*원하는 부위만 쏙쏙": [
+      "Localized fat reduction.\n*Target only your chosen area.",
+      "局所の脂肪を減らします。\n※希望部位だけを集中ケア。",
+      "局部减脂。\n*针对自选部位集中处理。"
+    ],
+    "인모드는 다른 리프팅과 어떻게 다른가요?": [
+      "How does InMode differ from other lifting treatments?",
+      "ほかのリフトとの違いは？",
+      "InMode与其他提拉有何不同？"
+    ],
+    "대부분의 리프팅 시술이 피부 탄력 개선에 집중하는 반면, 인모드는 지방 분해와 콜라겐 재생을 동시에 진행합니다. 피하지방층까지 에너지가 도달하여 이중턱, 볼살 등 윤곽 고민과 피부 처짐을 함께 관리할 수 있는 것이 차별점입니다.": [
+      "While many treatments focus on firmness, InMode combines fat reduction and collagen renewal. Energy reaches subcutaneous fat to address double chins, cheeks and sagging together.",
+      "ハリに重点を置く施術と異なり、脂肪とコラーゲンに同時に働きます。皮下脂肪まで届き、二重あご・頬・たるみを合わせてケアします。",
+      "许多提拉侧重弹性，InMode同时减少脂肪并促进胶原再生，能量可达皮下脂肪，兼顾双下巴、面颊轮廓及松弛。"
+    ],
+    "시술은 몇 회 정도 받아야 하나요?": [
+      "How many sessions are recommended?",
+      "何回くらい必要ですか？",
+      "建议治疗几次？"
+    ],
+    "일반적으로 3~5회 시술을 권장하며, 피부 상태와 개선 목표에 따라 횟수가 달라질 수 있습니다. 전문 의료진과의 상담을 통해 본인에게 적합한 시술 계획을 세우시는 것을 권장합니다.": [
+      "Usually 3–5 sessions, depending on skin and goals. Plan the course with a clinician.",
+      "一般に3〜5回ですが、肌と目的で異なります。医師と計画をご相談ください。",
+      "通常建议3至5次，按肤况及目标调整，请与医生制定计划。"
+    ],
+    "시술 후 효과는 언제 나타나나요?": [
+      "When will results appear after treatment?",
+      "施術後いつ効果を感じますか？",
+      "术后何时见效？"
+    ],
+    "시술 직후 피부가 타이트해지는 느낌을 받으실 수 있으며, 2~3주 후 점진적으로 리프팅 효과가 강화됩니다. 지방 감소 효과는 2~3개월에 걸쳐 극대화되므로, 시술 횟수를 거듭할수록 더욱 뚜렷한 변화를 기대할 수 있습니다.": [
+      "Tightening may be felt immediately, with lifting increasing over 2–3 weeks. Fat reduction develops over 2–3 months, becoming more noticeable with repeated sessions.",
+      "直後に引き締まりを感じ、2〜3週間でリフト効果が増します。脂肪減少は2〜3か月かけて進み、継続で変化が明確になります。",
+      "术后可能立即感到紧致，2至3周提拉效果逐渐增强。减脂效果在2至3个月内逐步明显，多次治疗后变化更清晰。"
+    ],
+    "시술이 아프지는 않나요?": [
+      "Will the procedure hurt?",
+      "施術に痛みはありますか？",
+      "治疗会痛吗？"
+    ],
+    "인모드는 마취 없이 진행 가능할 정도로 통증이 적습니다. 초당 1,000회 실시간 온도 체크로 피부에 가해지는 에너지를 정밀하게 제어하여, 안전하고 편안한 시술이 가능합니다.": [
+      "Discomfort is low enough for treatment without anesthesia. Temperature checks 1,000 times per second precisely control energy for comfort and safety.",
+      "麻酔なしで行える程度の痛みです。毎秒1,000回の温度確認でエネルギーを精密に制御します。",
+      "疼痛较轻，可无需麻醉。每秒1,000次温度监测精确控制能量，兼顾舒适与安全。"
+    ],
+    "시술 후 시술 부위에 일시적인 홍조나 열감이 나타날 수 있으며, 대부분 수 시간 내 자연스럽게 사라집니다.": [
+      "Temporary redness or warmth at the treated area usually fades within hours.",
+      "部位の一時的な赤み・熱感は通常数時間で消えます。",
+      "治疗部位暂时泛红或发热，通常数小时内消退。"
+    ],
+    "시술 당일에는 음주, 사우나, 찜질방 등 과도한 열자극을 피해 주세요.": [
+      "Avoid alcohol, saunas, heated bathhouses and excess heat on treatment day.",
+      "当日は飲酒、サウナ、高温浴施設などを避けてください。",
+      "当天避免饮酒、桑拿、汗蒸等过度热刺激。"
+    ],
+    "시술 후에는 충분한 보습 관리와 자외선 차단제 사용을 권장합니다.": [
+      "Keep skin moisturized and use sunscreen after treatment.",
+      "施術後は十分に保湿し、日焼け止めを使ってください。",
+      "术后请充分保湿及防晒。"
+    ],
+    "시술 전후 자극성 화장품(레티놀, 필링제 등) 사용을 일시적으로 중단해 주세요.": [
+      "Pause irritating cosmetics such as retinol and peels around treatment.",
+      "前後はレチノールやピーリングなど刺激のある化粧品を休止してください。",
+      "治疗前后暂时停用视黄醇、去角质等刺激性护肤品。"
+    ],
+    "심박 조율기 착용자, 임산부 등 특수한 건강 상태의 경우 시술이 제한될 수 있으므로 반드시 사전에 의료진과 상담해 주세요.": [
+      "Pacemakers, pregnancy and other health conditions may restrict treatment; consult a clinician beforehand.",
+      "ペースメーカー、妊娠などで制限される場合があるため、必ず事前に医師へ相談してください。",
+      "心脏起搏器、孕期等情况可能限制治疗，务必事先咨询医生。"
+    ],
+    "핸드피스에 따라 피부 타이트닝이나 윤곽 관리에 사용하는 장비입니다.": [
+      "A device used for tightening or contouring depending on the handpiece.",
+      "ハンドピースによって引き締めや輪郭ケアに使う機器です。",
+      "根据手柄类型用于紧致或轮廓护理的设备。"
+    ],
+    "Forma와 FX 등 세부 장비의 목적이 달라 윤곽 관리는 핸드피스 확인 후 선택합니다.": [
+      "Forma and FX serve different purposes; confirm the handpiece before selecting contour treatment.",
+      "FormaとFXなどは目的が異なるため、輪郭ケアはハンドピースを確認して選びます。",
+      "Forma与FX等用途不同，选择轮廓护理前需确认具体手柄。"
+    ],
+    "포텐자": [
+      "Potenza",
+      "ポテンツァ",
+      "Potenza"
+    ],
+    "마이크로니들링": [
+      "Microneedling",
+      "マイクロニードリング",
+      "微针"
+    ],
+    "고주파 마이크로니들. 모공, 여드름흉터, 탄력 저하, 홍조 개선": [
+      "RF microneedling for pores, acne scars, reduced firmness and redness.",
+      "RFマイクロニードルで毛穴、ニキビ跡、ハリ低下、赤みに対応。",
+      "射频微针改善毛孔、痘疤、弹性下降及泛红。"
+    ],
+    "RF 에너지로 진피층을 자극하고, 펌핑팁을 통해 선택한 약물을 피부 깊숙이 전달하는 복합 시술입니다.": [
+      "RF stimulates the dermis while a pumping tip delivers a selected product deeper into the skin.",
+      "RFで真皮を刺激し、ポンピングチップで選んだ薬剤を深く届ける複合施術です。",
+      "以射频刺激真皮，同时通过泵送探头将所选制剂传入皮肤深层。"
+    ],
+    "RF + 약물전달을 한 번의 시술로 동시에 진행": [
+      "RF and product delivery in one session.",
+      "RFと薬剤導入を1回で同時に実施。",
+      "一次治疗结合射频及制剂导入。"
+    ],
+    "9가지 약물 조합으로 피부 상태에 맞는 맞춤 케어": [
+      "Nine product combinations for personalized skin care.",
+      "9種類の薬剤の組み合わせで個別ケア。",
+      "9种制剂组合，按肤况定制。"
+    ],
+    "모공, 흉터, 탄력, 피부결 등 복합 고민 동시 관리": [
+      "Addresses pores, scars, firmness and texture together.",
+      "毛穴・瘢痕・ハリ・キメを同時ケア。",
+      "同时护理毛孔、疤痕、弹性及肤质。"
+    ],
+    "펌핑팁이 약물을 진피층까지 균일하게 전달": [
+      "The pumping tip distributes product evenly into the dermis.",
+      "ポンピングチップで真皮まで均一に薬剤を導入。",
+      "泵送探头将制剂均匀传至真皮层。"
+    ],
+    "모공과 탄력 저하가 함께 고민되는 30~40대": [
+      "People in their 30s–40s concerned about pores and reduced firmness.",
+      "毛穴とハリ低下が気になる30〜40代の方。",
+      "同时在意毛孔及弹性下降的30至40多岁人群。"
+    ],
+    "여드름 흉터나 넓은 모공이 오래 지속되고 있는 분": [
+      "People with persistent acne scars or enlarged pores.",
+      "長く続くニキビ跡や開いた毛穴がある方。",
+      "长期有痘疤或毛孔粗大的人群。"
+    ],
+    "콜라겐 재생과 피부 탄력을 동시에 관리하고 싶은 분": [
+      "People seeking collagen renewal and firmer skin together.",
+      "コラーゲン再生とハリを同時にケアしたい方。",
+      "希望同时促进胶原再生及改善弹性的人群。"
+    ],
+    "봄철 피부 리셋으로 여름 전 집중 관리를 시작하려는 분": [
+      "People planning intensive spring skin care before summer.",
+      "春に肌を整え、夏前の集中ケアを始めたい方。",
+      "希望春季焕肤、在夏季前集中护理的人群。"
+    ],
+    "프리미엄 포텐자 패키지": [
+      "Premium Potenza package",
+      "プレミアム・ポテンツァプラン",
+      "高端Potenza套餐"
+    ],
+    "포텐자 펌핑팁 + 쥬베룩 4cc + 리쥬란 2cc + 크라이오\n*리쥬란 HB로 변경(2cc기준) +110,000원\n*리쥬란 2cc 추가 +150,000원": [
+      "Potenza pumping tip + Juvelook 4 cc + Rejuran 2 cc + cryotherapy.\n*Upgrade to Rejuran HB (2 cc): +₩110,000.\n*Add Rejuran 2 cc: +₩150,000.",
+      "ポテンツァ・ポンピングチップ＋ジュベルック4cc＋リジュラン2cc＋クライオ。\n※リジュランHBへ変更（2cc）：＋₩110,000。\n※リジュラン2cc追加：＋₩150,000。",
+      "Potenza泵送探头＋Juvelook 4cc＋Rejuran 2cc＋冷疗。\n*改为Rejuran HB（2cc）：加₩110,000。\n*追加Rejuran 2cc：加₩150,000。"
+    ],
+    "포텐자 펌핑팁 + 올리디아 스킨 4cc + 크라이오 1회": [
+      "Potenza pumping tip + Olidia Skin 4 cc + cryotherapy · 1 session",
+      "ポテンツァ・ポンピングチップ＋オリディア・スキン4cc＋クライオ 1回",
+      "Potenza泵送探头＋Olidia Skin 4cc＋冷疗 1次"
+    ],
+    "PLLA 성분으로 탄력, 주름, 모공 세 가지 고민을 동시에 개선.\n*피부 속 콜라겐 생성을 촉진해 탄탄하고 매끄러운 피부 완성.": [
+      "PLLA addresses firmness, wrinkles and pores.\n*Promotes collagen production for firmer, smoother skin.",
+      "PLLAでハリ・しわ・毛穴に対応。\n※コラーゲン生成を促し、なめらかでハリのある肌へ。",
+      "PLLA改善弹性、皱纹与毛孔。\n*促进胶原生成，使肌肤紧致平滑。"
+    ],
+    "포텐자 펌핑팁 + 아기주사 2cc + 크라이오 1회": [
+      "Potenza pumping tip + Baby Injection 2 cc + cryotherapy · 1 session",
+      "ポテンツァ・ポンピングチップ＋ベビー注射2cc＋クライオ 1回",
+      "Potenza泵送探头＋婴儿针2cc＋冷疗 1次"
+    ],
+    "피부 진피층에 마이크로 니들을 삽입하여 RF(고주파) 에너지로 콜라겐 재생 촉진.\n*회복기간은 줄이면서 스킨부스터 효과 및 흡수 극대화": [
+      "Microneedles deliver RF into the dermis to stimulate collagen renewal.\n*Aims to shorten recovery and maximize skin-booster delivery and effect.",
+      "微細針で真皮にRFを届け、コラーゲン再生を促します。\n※回復期間を抑え、スキンブースターの導入と効果を高めます。",
+      "微针进入真皮，以射频促进胶原再生。\n*旨在缩短恢复期，提高水光制剂吸收与效果。"
+    ],
+    "포텐자 펌핑팁 + 물광 2.5cc(히야론) + 크라이오 1회": [
+      "Potenza pumping tip + hydrating injection 2.5 cc (Hyaron) + cryotherapy · 1 session",
+      "ポテンツァ・ポンピングチップ＋水光2.5cc（ハイアロン）＋クライオ 1回",
+      "Potenza泵送探头＋水光2.5cc（Hyaron）＋冷疗 1次"
+    ],
+    "히알루론산 기반 수분 공급 집중\n*케어 미세 니들 자극 후 고농축 히알루론산(뉴아티)로 피부 속부터 수분을 충전.\n*즉각적인 촉촉함과 광채 효과, 건조∙거친 피부 탄력 개선.": [
+      "Hyaluronic-acid hydration care.\n*After microneedling, concentrated hyaluronic acid (Newarti) hydrates from within.\n*Immediate moisture and glow, with improved firmness for dry, rough skin.",
+      "ヒアルロン酸で集中保湿。\n※微細針刺激後、高濃度ヒアルロン酸（Newarti）で内側から潤します。\n※直後の潤い・ツヤと、乾燥した粗い肌のハリ改善を目指します。",
+      "以透明质酸集中补水。\n*微针刺激后，通过高浓度透明质酸（Newarti）从内补水。\n*即时保湿提亮，改善干燥粗糙肌肤弹性。"
+    ],
+    "포텐자 펌핑팁 + 쥬베룩 4cc + 크라이오 1회": [
+      "Potenza pumping tip + Juvelook 4 cc + cryotherapy · 1 session",
+      "ポテンツァ・ポンピングチップ＋ジュベルック4cc＋クライオ 1回",
+      "Potenza泵送探头＋Juvelook 4cc＋冷疗 1次"
+    ],
+    "포텐자 펌핑팁 + 필메드 3cc + 크라이오 1회": [
+      "Potenza pumping tip + FILLMED 3 cc + cryotherapy · 1 session",
+      "ポテンツァ・ポンピングチップ＋FILLMED 3cc＋クライオ 1回",
+      "Potenza泵送探头＋FILLMED 3cc＋冷疗 1次"
+    ],
+    "포텐자 펌핑팁 + 엑소좀 ASCE+ 5cc + 크라이오 1회": [
+      "Potenza pumping tip + ASCE+ exosomes 5 cc + cryotherapy · 1 session",
+      "ポテンツァ・ポンピングチップ＋ASCE+エクソソーム5cc＋クライオ 1回",
+      "Potenza泵送探头＋ASCE+外泌体5cc＋冷疗 1次"
+    ],
+    "포텐자 펌핑팁 + 리쥬란힐러 2cc + 크라이오 1회": [
+      "Potenza pumping tip + Rejuran Healer 2 cc + cryotherapy · 1 session",
+      "ポテンツァ・ポンピングチップ＋リジュラン・ヒーラー2cc＋クライオ 1回",
+      "Potenza泵送探头＋Rejuran Healer 2cc＋冷疗 1次"
+    ],
+    "포텐자 시술은 어떤 원리인가요?": [
+      "How does Potenza work?",
+      "ポテンツァの仕組みは？",
+      "Potenza的原理是什么？"
+    ],
+    "RF(고주파) 에너지가 진피층에 열을 전달하여 콜라겐 생성을 촉진하고, 펌핑팁이 동시에 약물을 피부 깊숙이 주입합니다. 두 가지 효과를 한 번의 시술로 얻을 수 있습니다.": [
+      "RF heats the dermis to promote collagen while the pumping tip delivers product deep into the skin, combining both effects in one session.",
+      "RFの熱でコラーゲン生成を促し、同時にチップで薬剤を深く導入。1回で両方に働きかけます。",
+      "射频加热真皮促进胶原生成，泵送探头同时导入制剂，一次治疗兼顾两种作用。"
+    ],
+    "약물은 어떤 종류를 선택할 수 있나요?": [
+      "Which products can I choose?",
+      "どの薬剤を選べますか？",
+      "可以选择哪些制剂？"
+    ],
+    "쥬베룩, 리쥬란, 엑소좀, 필메드, 아기주사, 올리디아 스킨, 리즈네, 물광(뉴아티) 등 9가지 약물 중 피부 상태와 고민에 따라 전문의가 맞춤 추천해 드립니다.": [
+      "A specialist selects from nine options, including Juvelook, Rejuran, exosomes, FILLMED, Baby Injection, Olidia Skin, Lizne and hydrating Newarti, based on your skin and concerns.",
+      "ジュベルック、リジュラン、エクソソーム、FILLMED、ベビー注射、オリディア・スキン、リズネ、水光（Newarti）など9種類から医師が選びます。",
+      "医生会根据肤况，从Juvelook、Rejuran、外泌体、FILLMED、婴儿针、Olidia Skin、Lizne、水光（Newarti）等9种选项中推荐。"
+    ],
+    "시술 후 다운타임은 얼마나 되나요?": [
+      "How much downtime is there?",
+      "ダウンタイムはどのくらいですか？",
+      "恢复期有多长？"
+    ],
+    "시술 직후 약간의 붉은기와 열감이 있을 수 있으며, 보통 2~3일 내에 자연스럽게 가라앉습니다. 개인 피부 상태에 따라 차이가 있을 수 있습니다.": [
+      "Mild redness and warmth usually settle within 2–3 days, depending on your skin.",
+      "軽い赤みと熱感は通常2〜3日で落ち着きますが、肌により異なります。",
+      "轻微泛红及热感通常2至3天内消退，具体因肤况而异。"
+    ],
+    "몇 회 정도 받아야 효과를 느낄 수 있나요?": [
+      "How many sessions before I notice results?",
+      "何回で変化を感じますか？",
+      "几次后能感到效果？"
+    ],
+    "1회 시술 후에도 피부결 개선을 느끼실 수 있으며, 모공이나 흉터 등 복합 고민의 경우 3~5회 반복 시술을 권장합니다. 시술 간격은 약 3~4주가 적당합니다.": [
+      "Texture may improve after one session. For pores or scars, 3–5 sessions about 3–4 weeks apart are recommended.",
+      "1回でもキメの変化を感じる場合があります。毛穴や瘢痕には3〜4週間おきに3〜5回をおすすめします。",
+      "一次后可能感到肤质改善，毛孔或疤痕问题通常建议3至5次，间隔约3至4周。"
+    ],
+    "시술 당일은 세안과 메이크업을 삼가고, 자극적인 화장품 사용을 피해 주세요.": [
+      "Avoid washing your face, makeup and irritating cosmetics on treatment day.",
+      "当日は洗顔・メイク・刺激のある化粧品を控えてください。",
+      "当天避免洗脸、化妆及刺激性护肤品。"
+    ],
+    "시술 후 2~3일간 사우나, 찜질방, 격렬한 운동은 자제해 주세요.": [
+      "Avoid saunas, heated bathhouses and strenuous exercise for 2–3 days.",
+      "2〜3日はサウナ、高温浴施設、激しい運動を控えてください。",
+      "术后2至3天避免桑拿、汗蒸及剧烈运动。"
+    ],
+    "시술 후 자외선 차단제를 꼼꼼히 발라 주시고, 직사광선 노출을 최소화해 주세요.": [
+      "Apply sunscreen carefully and minimize direct sunlight afterward.",
+      "日焼け止めを丁寧に塗り、直射日光を避けてください。",
+      "认真防晒，尽量避免阳光直射。"
+    ],
+    "시술 부위에 딱지가 생길 수 있으며, 억지로 떼지 마시고 자연 탈락을 기다려 주세요.": [
+      "Crusts may form; let them fall off naturally without picking.",
+      "かさぶたは無理にはがさず自然に取れるのを待ってください。",
+      "可能结痂，请勿抠掉，等待自然脱落。"
+    ],
+    "피부 상태에 따라 전문의 상담 후 시술 여부를 결정합니다.": [
+      "A specialist determines suitability after assessing your skin.",
+      "肌状態を診察し、医師が施術の可否を判断します。",
+      "由医生评估肤况后确定是否适合治疗。"
+    ],
+    "RF 마이크로니들로 모공·피부결과 패인 흉터를 다루는 시술입니다.": [
+      "RF microneedling for pores, texture and depressed scars.",
+      "RFマイクロニードルで毛穴・キメ・陥凹性瘢痕に対応します。",
+      "射频微针改善毛孔、肤质及凹陷疤痕。"
+    ],
+    "여드름·홍조는 일반 모공 시술과 같지 않습니다. 병변 진단과 전용 팁·모드 확인이 필요합니다.": [
+      "Acne and redness require different care from routine pore treatment. Confirm the diagnosis and dedicated tip or mode.",
+      "ニキビ・赤みは一般的な毛穴ケアとは異なり、診断と専用チップ・モードの確認が必要です。",
+      "痘痘及泛红不同于常规毛孔治疗，需诊断病灶并确认专用探头及模式。"
+    ],
+    "큐어젯": [
+      "CureJet",
+      "キュアジェット",
+      "CureJet"
+    ],
+    "니들프리 약물 전달. 모공, 피부결, 탄력 개선": [
+      "Needle-free delivery for pores, texture and firmness.",
+      "針を使わない導入で毛穴・キメ・ハリを改善。",
+      "无针导入，改善毛孔、肤质及弹性。"
+    ],
+    "고압 에어젯 기술로 바늘 없이 PDRN, 더모톡신, 쥬베룩 등의 약물을 진피층까지 전달하는 니들프리 스킨부스터입니다.": [
+      "A needle-free skin booster using high-pressure air jets to deliver PDRN, dermotoxin or Juvelook into the dermis.",
+      "高圧エアジェットでPDRN、ダーマトキシン、ジュベルックなどを真皮へ届ける針なし施術です。",
+      "以高压气流将PDRN、微滴肉毒或Juvelook等制剂传至真皮的无针水光护理。"
+    ],
+    "바늘 없이 시술하여 통증 부담을 크게 줄인 다운타임 최소화": [
+      "Needle-free delivery reduces discomfort and downtime.",
+      "針を使わず痛みとダウンタイムを軽減。",
+      "无针导入减轻疼痛与恢复负担。"
+    ],
+    "PDRN, 더모톡신, 쥬베룩 3종 약물 중 선택 가능": [
+      "Choose from PDRN, dermotoxin or Juvelook.",
+      "PDRN・ダーマトキシン・ジュベルックから選択。",
+      "可选择PDRN、微滴肉毒或Juvelook。"
+    ],
+    "시술 직후 일상생활 복귀가 가능한 점심시간 시술": [
+      "A lunchtime procedure with an immediate return to daily life.",
+      "直後に日常へ戻れるランチタイム施術。",
+      "可利用午休治疗，术后立即恢复日常活动。"
+    ],
+    "통증에 민감하여 바늘 시술이 부담스러운 분": [
+      "People sensitive to pain or uncomfortable with needles.",
+      "痛みに敏感、針が苦手な方。",
+      "对疼痛敏感或畏针的人群。"
+    ],
+    "바쁜 일정 속 다운타임 없는 피부 관리가 필요한 직장인": [
+      "Busy professionals seeking care without downtime.",
+      "忙しく、ダウンタイムを取れない方。",
+      "日程繁忙、需要无恢复期护理的上班族。"
+    ],
+    "피부 재생과 수분 공급을 동시에 원하는 25~35세": [
+      "People aged 25–35 seeking skin renewal and hydration.",
+      "再生と保湿を同時に求める25〜35歳の方。",
+      "希望同时焕肤与补水的25至35岁人群。"
+    ],
+    "주기적인 스킨부스터로 피부 컨디션을 유지하고 싶은 분": [
+      "People maintaining skin condition with regular skin boosters.",
+      "定期的なスキンブースターで肌状態を保ちたい方。",
+      "希望定期水光护理维持肤况的人群。"
+    ],
+    "큐어젯 + 올리디아 4cc + 크라이오": [
+      "CureJet + Olidia 4 cc + cryotherapy",
+      "キュアジェット＋オリディア4cc＋クライオ",
+      "CureJet＋Olidia 4cc＋冷疗"
+    ],
+    "무바늘 주사 × 고압 분사 × 즉각 흡수\n*니들 없이 고압으로 스킨부스터를 피부 깊숙이 전달": [
+      "Needle-free injection × high-pressure jet × immediate absorption.\n*Delivers skin boosters deep into the skin without needles.",
+      "針なし注入×高圧噴射×すばやい吸収。\n※針を使わずスキンブースターを深く導入。",
+      "无针注射×高压喷射×即时吸收。\n*无需针头，以高压将制剂送入皮肤深层。"
+    ],
+    "큐어젯 + PDRN 4cc + 크라이오": [
+      "CureJet + PDRN 4 cc + cryotherapy",
+      "キュアジェット＋PDRN 4cc＋クライオ",
+      "CureJet＋PDRN 4cc＋冷疗"
+    ],
+    "큐어젯 + 더모톡신 + 크라이오": [
+      "CureJet + dermotoxin + cryotherapy",
+      "キュアジェット＋ダーマトキシン＋クライオ",
+      "CureJet＋微滴肉毒＋冷疗"
+    ],
+    "큐어젯 + 쥬베룩 4cc + 크라이오": [
+      "CureJet + Juvelook 4 cc + cryotherapy",
+      "キュアジェット＋ジュベルック4cc＋クライオ",
+      "CureJet＋Juvelook 4cc＋冷疗"
+    ],
+    "큐어젯은 어떤 원리로 약물을 전달하나요?": [
+      "How does CureJet deliver products?",
+      "薬剤をどう届けますか？",
+      "CureJet如何导入制剂？"
+    ],
+    "고압의 에어젯이 피부 표면에 미세한 경로를 만들면서 약물을 진피층까지 빠르게 밀어 넣습니다. 바늘을 사용하지 않아 통증이 거의 없고 시술 자국도 남지 않습니다.": [
+      "High-pressure air jets create tiny channels and rapidly push product into the dermis. No needles are used, with little pain and no needle marks.",
+      "高圧ジェットが微細な経路を作り、真皮へ素早く導入します。針を使わず、痛みや針跡がほぼありません。",
+      "高压气流形成微细通道，快速将制剂推入真皮。无需针头，疼痛很轻且无针眼痕迹。"
+    ],
+    "PDRN, 더모톡신, 쥬베룩의 차이가 무엇인가요?": [
+      "How do PDRN, dermotoxin and Juvelook differ?",
+      "3種類の薬剤の違いは？",
+      "PDRN、微滴肉毒和Juvelook有何区别？"
+    ],
+    "PDRN은 피부 재생과 수분 공급에, 더모톡신은 모공 축소와 피지 조절에, 쥬베룩은 콜라겐 생성 촉진과 탄력 개선에 각각 강점이 있습니다. 피부 고민에 따라 전문의가 적합한 약물을 추천해 드립니다.": [
+      "PDRN focuses on renewal and hydration, dermotoxin on pores and oil control, and Juvelook on collagen and firmness. A specialist recommends the appropriate product.",
+      "PDRNは再生・保湿、ダーマトキシンは毛穴・皮脂、ジュベルックはコラーゲン・ハリに重点を置き、医師が選びます。",
+      "PDRN侧重修护与补水，微滴肉毒侧重毛孔及控油，Juvelook侧重胶原生成与弹性，由医生按需推荐。"
+    ],
+    "마취 시간을 포함하여 약 30~40분 소요됩니다. 시술 후 바로 메이크업이 가능하여 점심시간을 활용한 시술도 가능합니다.": [
+      "About 30–40 minutes including numbing time. Makeup can be applied afterward, allowing lunchtime treatment.",
+      "麻酔時間を含め約30〜40分。直後にメイクでき、昼休みでも受けられます。",
+      "含麻醉时间约30至40分钟，术后可化妆，适合午休治疗。"
+    ],
+    "포텐자와 큐어젯 중 어떤 시술이 적합한가요?": [
+      "Should I choose Potenza or CureJet?",
+      "ポテンツァとどちらが合いますか？",
+      "Potenza与CureJet如何选择？"
+    ],
+    "모공, 흉터 등 복합 고민에는 RF 에너지를 함께 전달하는 포텐자가, 통증이나 다운타임이 부담스럽고 피부 톤과 수분감 개선이 주 목적이라면 큐어젯이 적합합니다.": [
+      "Potenza adds RF for combined concerns such as pores and scars. CureJet suits those prioritizing tone and hydration with less discomfort or downtime.",
+      "毛穴・瘢痕など複合的な悩みにはRFを使うポテンツァ、痛みや回復負担を抑えトーン・保湿を重視する場合はキュアジェットが向いています。",
+      "毛孔、疤痕等综合问题可考虑结合射频的Potenza；重视肤色、补水且顾虑疼痛或恢复期时可考虑CureJet。"
+    ],
+    "시술 직후 약간의 붉은기가 나타날 수 있으나, 대부분 수 시간 내에 사라집니다.": [
+      "Mild redness immediately afterward usually fades within hours.",
+      "直後の軽い赤みは通常数時間で消えます。",
+      "术后轻微泛红通常数小时内消退。"
+    ],
+    "시술 당일은 강한 자외선 노출과 음주를 피해 주세요.": [
+      "Avoid strong UV exposure and alcohol on treatment day.",
+      "当日は強い紫外線と飲酒を避けてください。",
+      "当天避免强紫外线照射及饮酒。"
+    ],
+    "시술 후 충분한 보습과 자외선 차단제 사용을 권장합니다.": [
+      "Moisturizing and sunscreen are recommended after treatment.",
+      "施術後は十分な保湿と日焼け止めをおすすめします。",
+      "术后建议充分保湿及防晒。"
+    ],
+    "피부 상태에 따라 시술 주기와 약물 선택이 달라질 수 있으니 전문의 상담을 받아 주세요.": [
+      "Consult a specialist about intervals and product selection for your skin.",
+      "間隔や薬剤は肌状態で異なるため医師にご相談ください。",
+      "间隔及制剂选择随肤况不同，请咨询医生。"
+    ],
+    "바늘 없이 약물을 전달하는 장비로, 목적은 주입 약물과 방식에 따라 달라집니다.": [
+      "A needle-free delivery device; its purpose depends on the product and technique.",
+      "針なし導入機器で、目的は薬剤と方法によって異なります。",
+      "无针导入设备，用途取决于导入制剂及方式。"
+    ],
+    "장비 이름만으로 보습·흉터 효과를 확정하지 않고 약물과 시술 방식을 확인합니다.": [
+      "Confirm the product and technique; the device name alone does not establish hydration or scar benefits.",
+      "機器名だけで保湿・瘢痕効果を断定せず、薬剤と方法を確認します。",
+      "不能仅凭设备名称确定补水或疤痕效果，需确认制剂及操作方式。"
+    ],
+    "시크릿 레이저": [
+      "Secret RF",
+      "シークレットRF",
+      "Secret RF"
+    ],
+    "고주파 마이크로니들 + 레이저. 여드름, 여드름흉터, 모공 치료": [
+      "RF microneedling + laser for acne, acne scars and pores.",
+      "RFマイクロニードル＋レーザーでニキビ・ニキビ跡・毛穴をケア。",
+      "射频微针＋激光，护理痘痘、痘疤及毛孔。"
+    ],
+    "미세 니들을 통해 진피층에 RF 에너지를 전달하여 여드름 피지선을 관리하고, 흉터 부위의 콜라겐 재생을 촉진하는 시술입니다.": [
+      "Microneedles deliver RF into the dermis to address sebaceous glands and stimulate collagen renewal in scars.",
+      "微細針で真皮へRFを届け、皮脂腺のケアと瘢痕のコラーゲン再生を促します。",
+      "微针将射频传入真皮，护理皮脂腺并促进疤痕部位胶原再生。"
+    ],
+    "여드름 원인(피지선)과 흉터를 한 번의 시술로 동시에 관리": [
+      "Addresses sebaceous glands and scars in one treatment.",
+      "皮脂腺と瘢痕を1回で同時にケア。",
+      "一次治疗同时护理皮脂腺与疤痕。"
+    ],
+    "109,000원부터 시작하는 합리적인 RF 마이크로니들 시술": [
+      "RF microneedling from ₩109,000.",
+      "₩109,000からのRFマイクロニードル施術。",
+      "射频微针₩109,000起。"
+    ],
+    "약물 조합(아기주사, 필메드, 엑소좀)으로 재생 효과 강화": [
+      "Combines with Baby Injection, FILLMED or exosomes to support renewal.",
+      "ベビー注射、FILLMED、エクソソームと併用して再生をサポート。",
+      "可搭配婴儿针、FILLMED或外泌体促进修护。"
+    ],
+    "표피 손상을 최소화하여 다운타임이 비교적 짧은 시술": [
+      "Minimized epidermal damage and relatively short downtime.",
+      "表皮への損傷を抑え、比較的短いダウンタイム。",
+      "减少表皮损伤，恢复期相对较短。"
+    ],
+    "반복되는 여드름과 흉터가 함께 고민인 20후반~30대": [
+      "People in their late 20s–30s with recurring acne and scars.",
+      "ニキビの再発と跡が気になる20代後半〜30代の方。",
+      "反复长痘且有痘疤的20多岁后期至30多岁人群。"
+    ],
+    "RF 마이크로니들링을 합리적인 가격으로 시작하고 싶은 분": [
+      "People seeking affordable RF microneedling.",
+      "手頃にRFマイクロニードルを始めたい方。",
+      "希望以合理价格尝试射频微针的人群。"
+    ],
+    "모공과 피부결 개선을 위해 꾸준한 관리를 계획 중인 분": [
+      "People planning ongoing pore and texture care.",
+      "毛穴・キメの継続ケアを計画している方。",
+      "计划持续改善毛孔及肤质的人群。"
+    ],
+    "봄철 피부 컨디션 회복과 여름 대비 모공 관리가 필요한 분": [
+      "People seeking spring skin recovery and pore care before summer.",
+      "春の肌回復と夏前の毛穴ケアが必要な方。",
+      "需要春季修护及夏季前毛孔护理的人群。"
+    ],
+    "시크릿 레이저 +시트팩": [
+      "Secret RF + sheet mask",
+      "シークレットRF＋シートマスク",
+      "Secret RF＋面膜"
+    ],
+    "피부 진피층에 마이크로 니들을 삽입하여 RF(고주파) 에너지로 콜라겐 재생 촉진.": [
+      "Microneedles deliver RF into the dermis to stimulate collagen renewal.",
+      "微細針で真皮へRFを届け、コラーゲン再生を促します。",
+      "微针进入真皮，以射频促进胶原再生。"
+    ],
+    "시크릿 레이저_아기주사 2cc + 크라이오 1회": [
+      "Secret RF + Baby Injection 2 cc + cryotherapy · 1 session",
+      "シークレットRF＋ベビー注射2cc＋クライオ 1回",
+      "Secret RF＋婴儿针2cc＋冷疗 1次"
+    ],
+    "피부 진피층에 마이크로 니들을 삽입하여 RF(고주파) 에너지로 콜라겐 재생 촉진.\n*회복기간은 줄이면서 스킨부스터 효과 극대화": [
+      "Microneedles deliver RF into the dermis to promote collagen renewal.\n*Aims to shorten recovery and maximize skin-booster effects.",
+      "真皮へのRFでコラーゲン再生を促します。\n※回復期間を抑え、スキンブースターの効果を高めます。",
+      "微针将射频传入真皮，促进胶原再生。\n*旨在缩短恢复期并增强水光制剂效果。"
+    ],
+    "시크릿 레이저_필메드 NCTF3cc + 크라이오 1회": [
+      "Secret RF + FILLMED NCTF 3 cc + cryotherapy · 1 session",
+      "シークレットRF＋FILLMED NCTF 3cc＋クライオ 1回",
+      "Secret RF＋FILLMED NCTF 3cc＋冷疗 1次"
+    ],
+    "시크릿 레이저_엑소좀 ASCE+ 5cc + 크라이오 1회": [
+      "Secret RF + ASCE+ exosomes 5 cc + cryotherapy · 1 session",
+      "シークレットRF＋ASCE+エクソソーム5cc＋クライオ 1回",
+      "Secret RF＋ASCE+外泌体5cc＋冷疗 1次"
+    ],
+    "시크릿 레이저와 포텐자의 차이는 무엇인가요?": [
+      "How does Secret RF differ from Potenza?",
+      "ポテンツァとの違いは？",
+      "Secret RF与Potenza有何区别？"
+    ],
+    "둘 다 RF 마이크로니들 시술이지만, 시크릿 레이저는 여드름과 흉터 집중 관리에 특화되어 있고, 포텐자는 펌핑팁을 이용한 약물전달 기능이 추가된 프리미엄 시술입니다. 고민과 예산에 따라 선택하시면 됩니다.": [
+      "Both use RF microneedles. Secret RF focuses on acne and scars, while Potenza adds pumping-tip delivery as a premium option. Choose based on concerns and budget.",
+      "どちらもRF微細針ですが、シークレットRFはニキビ・瘢痕、ポテンツァはポンピング導入を加えた上位プランです。悩みと予算で選びます。",
+      "两者均为射频微针。Secret RF侧重痘痘与疤痕，Potenza增加泵送导入功能，属于较高端选项，可按诉求及预算选择。"
+    ],
+    "여드름이 활발한 상태에서도 시술이 가능한가요?": [
+      "Can I have treatment with active acne?",
+      "活動性ニキビがあっても受けられますか？",
+      "正在长痘可以治疗吗？"
+    ],
+    "경미한 여드름 상태에서는 시술이 가능하나, 염증이 심한 경우 먼저 염증 치료 후 진행하는 것이 좋습니다. 정확한 판단은 내원 시 전문의 상담을 통해 결정됩니다.": [
+      "Mild acne may be treatable, but significant inflammation should be treated first. A specialist decides at consultation.",
+      "軽いニキビなら可能な場合がありますが、強い炎症は先に治療します。可否は診察で判断します。",
+      "轻度痘痘可能可以治疗，炎症严重时宜先控制炎症，最终由医生面诊判断。"
+    ],
+    "시술 후 다운타임은 어느 정도인가요?": [
+      "What downtime should I expect?",
+      "回復期間の目安は？",
+      "恢复期大约多久？"
+    ],
+    "시술 후 1~2일간 붉은기와 가벼운 열감이 있을 수 있으며, 대부분 3일 내 일상생활에 지장이 없는 수준으로 회복됩니다.": [
+      "Redness and mild warmth may last 1–2 days. Most people recover enough for normal daily life within 3 days.",
+      "赤みや軽い熱感が1〜2日続くことがあり、通常3日以内に日常生活に支障のない程度へ回復します。",
+      "泛红及轻微热感可能持续1至2天，多数人在3天内恢复至不影响日常生活。"
+    ],
+    "함께 사용하는 약물은 어떤 것이 있나요?": [
+      "Which products can be combined with it?",
+      "併用できる薬剤は？",
+      "可搭配哪些制剂？"
+    ],
+    "아기주사, 필메드 NCTF, 엑소좀 ASCE+ 등의 약물을 시크릿 레이저와 병행하여 피부 재생 효과를 높일 수 있습니다. 피부 상태에 따라 전문의가 적합한 조합을 추천해 드립니다.": [
+      "Baby Injection, FILLMED NCTF and ASCE+ exosomes may support renewal. A specialist recommends a combination for your skin.",
+      "ベビー注射、FILLMED NCTF、ASCE+エクソソームなどで再生を補助し、医師が肌に合う組み合わせを提案します。",
+      "婴儿针、FILLMED NCTF及ASCE+外泌体等可配合促进修护，由医生按肤况推荐组合。"
+    ],
+    "시술 당일은 세안과 화장을 삼가고, 자극적인 스킨케어 제품 사용을 피해 주세요.": [
+      "Avoid face washing, makeup and irritating skincare on treatment day.",
+      "当日は洗顔・化粧・刺激の強いケアを避けてください。",
+      "当天避免洗脸、化妆及刺激性护肤品。"
+    ],
+    "시술 후 2~3일간 사우나, 찜질방, 격렬한 운동을 자제해 주세요.": [
+      "Avoid saunas, heated bathhouses and strenuous exercise for 2–3 days afterward.",
+      "術後2〜3日はサウナ、高温浴施設、激しい運動を控えてください。",
+      "术后2至3天避免桑拿、汗蒸及剧烈运动。"
+    ],
+    "자외선 차단제를 꼼꼼히 바르고, 직사광선 노출을 최소화해 주세요.": [
+      "Use sunscreen carefully and minimize direct sun exposure.",
+      "日焼け止めを塗り、直射日光を最小限にしてください。",
+      "认真防晒，尽量避免阳光直射。"
+    ],
+    "시술 후 딱지가 생기면 손으로 뜯지 마시고 자연스럽게 떨어지도록 해 주세요.": [
+      "Let crusts fall away naturally; do not pick them.",
+      "かさぶたは触らず、自然に取れるのを待ってください。",
+      "结痂请勿抠掉，等待自然脱落。"
+    ],
+    "피부 상태에 따라 전문의 상담 후 시술 간격과 횟수를 조정합니다.": [
+      "A specialist adjusts intervals and session count to your skin.",
+      "肌状態に応じて医師が間隔と回数を調整します。",
+      "医生根据肤况调整间隔及次数。"
+    ],
+    "RF 마이크로니들로 넓은 모공, 피부결, 여드름 흉터를 다룹니다.": [
+      "RF microneedling for enlarged pores, texture and acne scars.",
+      "RF微細針で毛穴・キメ・ニキビ跡に対応します。",
+      "射频微针改善毛孔粗大、肤质及痘疤。"
+    ],
+    "활동성 여드름과 여드름 흉터를 구분합니다. 일반 흉터 모드를 여드름 치료로 자동 연결하지 않습니다.": [
+      "Active acne and acne scars are distinct. Standard scar modes are not automatically matched to acne treatment.",
+      "活動性ニキビとニキビ跡を区別し、通常の瘢痕モードをニキビ治療に自動適用しません。",
+      "区分活动性痘痘与痘疤，不将常规疤痕模式自动匹配为痘痘治疗。"
+    ],
+    "약물 전달기기": [
+      "Product delivery devices",
+      "薬剤導入機器",
+      "制剂导入设备"
+    ],
+    "리쥬란·리즈네·릴리이드 등 약물 선택 후 장비로 전달. 피부 재생·보습": [
+      "Device-assisted delivery of Rejuran, Lizne, Lilied or other selected products for renewal and hydration.",
+      "リジュラン・リズネ・リリードなどを選んで機器で導入し、再生・保湿をケア。",
+      "选择Rejuran、Lizne、Lilied等制剂后，通过设备导入，护理修护与保湿。"
+    ],
+    "피부 고민에 맞는 약물을 전문 장비로 정밀하게 전달하여 흡수율을 높이는 시술입니다.": [
+      "Specialized equipment precisely delivers products selected for your skin concerns to enhance absorption.",
+      "悩みに合った薬剤を専用機器で正確に導入し、吸収を高めます。",
+      "使用专用设备精准导入适合肤况的制剂，提高吸收。"
+    ],
+    "55,000원부터 시작하는 합리적인 맞춤 약물 관리": [
+      "Personalized product care from ₩55,000.",
+      "₩55,000からの個別薬剤ケア。",
+      "定制制剂护理₩55,000起。"
+    ],
+    "리쥬란, 리즈네, 릴리이드 등 약물 자유 선택": [
+      "Choose products such as Rejuran, Lizne or Lilied.",
+      "リジュラン、リズネ、リリードなどから選択。",
+      "可选择Rejuran、Lizne、Lilied等制剂。"
+    ],
+    "전문 장비를 통한 균일한 약물 전달과 높은 흡수율": [
+      "Uniform delivery and enhanced absorption with specialized equipment.",
+      "専用機器で均一に導入し、吸収を高めます。",
+      "专用设备均匀导入，提高吸收。"
+    ],
+    "다른 시술과 병합하여 시너지 효과 극대화": [
+      "Can be combined with other procedures for complementary effects.",
+      "ほかの施術と組み合わせて相乗効果を目指します。",
+      "可联合其他项目，发挥协同作用。"
+    ],
+    "정기적인 피부 관리로 건강한 피부를 유지하고 싶은 분": [
+      "People maintaining healthy skin with regular care.",
+      "定期ケアで健やかな肌を保ちたい方。",
+      "希望通过定期护理维持健康肌肤的人群。"
+    ],
+    "피부 톤과 탄력을 동시에 개선하고 싶은 분": [
+      "People seeking improved tone and firmness together.",
+      "トーンとハリを同時に改善したい方。",
+      "希望同时改善肤色与弹性的人群。"
+    ],
+    "합리적인 비용으로 전문 약물 관리를 받고 싶은 분": [
+      "People seeking affordable professional product delivery.",
+      "手頃に専門的な薬剤ケアを受けたい方。",
+      "希望以合理费用接受专业制剂护理的人群。"
+    ],
+    "봄철 환절기 피부 컨디션을 회복하고 싶은 분": [
+      "People restoring skin condition during the spring seasonal transition.",
+      "春の季節の変わり目に肌を整えたい方。",
+      "希望春季换季时恢复肤况的人群。"
+    ],
+    "아이젝 자동주입기": [
+      "I-JECT automatic injector",
+      "アイジェクト自動注入器",
+      "I-JECT自动注射器"
+    ],
+    "디지털 자동 제어로 압력을 조절하여 통증 없는 마취 효과\n*아이젝 디지털마취 - 주사 공포 해소 - 안심 케어": [
+      "Digital pressure control for comfortable anesthesia.\n*I-JECT digital anesthesia helps ease needle anxiety.",
+      "デジタル圧力制御で痛みを抑えた麻酔。\n※アイジェクトのデジタル麻酔で注射への不安を軽減。",
+      "数字自动控压，减轻麻醉疼痛。\n*I-JECT数字麻醉，缓解注射恐惧。"
+    ],
+    "하이쿡스 + 리쥬란 힐러 2cc": [
+      "Hycoox + Rejuran Healer 2 cc",
+      "ハイコックス＋リジュラン・ヒーラー2cc",
+      "Hycoox＋Rejuran Healer 2cc"
+    ],
+    "통증 Down! 약물 손실 Down! 시술 효과 UP!\n*진피층에 균일하게 주입하여 스킨부스터 효과 극대화": [
+      "Less discomfort and product loss, improved treatment effect.\n*Uniform dermal delivery maximizes skin-booster effects.",
+      "痛みと薬剤ロスを減らし効果を向上。\n※真皮へ均一に注入し、スキンブースターの効果を高めます。",
+      "减少疼痛及制剂损失，提高效果。\n*均匀注入真皮，增强水光制剂效果。"
+    ],
+    "하이쿡스 + 리쥬란 HB Plus 1cc": [
+      "Hycoox + Rejuran HB Plus 1 cc",
+      "ハイコックス＋リジュランHB Plus 1cc",
+      "Hycoox＋Rejuran HB Plus 1cc"
+    ],
+    "하이쿡스 + 릴리이드M 물광주사 5cc": [
+      "Hycoox + Lilied M hydrating injection 5 cc",
+      "ハイコックス＋リリードM水光注射5cc",
+      "Hycoox＋Lilied M水光5cc"
+    ],
+    "하이쿡스 + 릴리이드M 물광톡신 5.5cc": [
+      "Hycoox + Lilied M hydrating toxin 5.5 cc",
+      "ハイコックス＋リリードM水光トキシン5.5cc",
+      "Hycoox＋Lilied M水光肉毒5.5cc"
+    ],
+    "약물 전달기기 시술은 어떤 원리인가요?": [
+      "How does device-assisted delivery work?",
+      "機器による導入の仕組みは？",
+      "设备导入的原理是什么？"
+    ],
+    "아이젝, 하이쿡스 등 전문 장비를 이용하여 리쥬란, 리즈네 같은 피부 재생 약물을 피부 깊숙이 균일하게 전달합니다. 손으로 바르는 것보다 흡수율이 높아 효과를 기대할 수 있습니다.": [
+      "Devices such as I-JECT and Hycoox uniformly deliver products such as Rejuran or Lizne into deeper skin, improving absorption compared with manual topical application.",
+      "アイジェクトやハイコックスでリジュラン・リズネなどを深く均一に届け、手で塗布するより吸収を高めます。",
+      "I-JECT、Hycoox等设备将Rejuran、Lizne等制剂均匀导入深层，相较手工涂抹可提高吸收。"
+    ],
+    "시술 후 일상생활이 바로 가능한가요?": [
+      "Can I resume daily life immediately?",
+      "すぐ日常生活に戻れますか？",
+      "能立即恢复日常活动吗？"
+    ],
+    "시술 직후 가벼운 붉은기가 있을 수 있으나, 대부분 당일 내 가라앉습니다. 일상생활에 큰 지장 없이 복귀가 가능합니다.": [
+      "Mild redness usually settles the same day, allowing a return to most daily activities.",
+      "軽い赤みは通常当日中に治まり、日常生活に大きな支障なく戻れます。",
+      "轻微泛红通常当天消退，一般不影响恢复日常活动。"
+    ],
+    "어떤 약물을 선택하면 좋을까요?": [
+      "Which product should I choose?",
+      "どの薬剤が合いますか？",
+      "应选择哪种制剂？"
+    ],
+    "피부 상태와 고민에 따라 달라집니다. 피부 재생과 탄력에는 리쥬란, 보습과 톤 개선에는 리즈네, 전체적인 수분 충전에는 릴리이드 물광주사를 추천드립니다. 상담을 통해 맞춤 약물을 안내해 드립니다.": [
+      "Selection depends on your skin: Rejuran for renewal and firmness, Lizne for moisture and tone, and Lilied hydration injections for overall hydration. Consultation guides the choice.",
+      "再生・ハリにはリジュラン、保湿・トーンにはリズネ、全体の潤いにはリリード水光など、肌状態を診察して選びます。",
+      "按肤况选择：Rejuran侧重修护与弹性，Lizne侧重保湿与肤色，Lilied水光侧重整体补水，具体由面诊推荐。"
+    ],
+    "다른 시술과 함께 받을 수 있나요?": [
+      "Can it be combined with other procedures?",
+      "ほかの施術と併用できますか？",
+      "可以与其他项目同时做吗？"
+    ],
+    "네, 약물 전달기기는 레이저, RF 시술 등과 병합하여 받으시면 시너지 효과를 기대할 수 있습니다. 피부 상태에 따라 전문의가 최적의 병합 조합을 안내해 드립니다.": [
+      "Yes. Combining with laser or RF may provide complementary benefits. A specialist selects an appropriate combination for your skin.",
+      "はい。レーザーやRFとの併用で相乗効果が期待でき、医師が肌に合う組み合わせを提案します。",
+      "可以。与激光、射频结合可能产生协同作用，由医生按肤况选择组合。"
+    ],
+    "시술 당일 음주 및 사우나는 피해 주세요.": [
+      "Avoid alcohol and saunas on treatment day.",
+      "当日は飲酒とサウナを避けてください。",
+      "治疗当天避免饮酒及桑拿。"
+    ],
+    "시술 후 자외선 차단제를 꼼꼼히 발라 주세요.": [
+      "Apply sunscreen carefully afterward.",
+      "施術後は丁寧に日焼け止めを塗ってください。",
+      "术后认真涂抹防晒霜。"
+    ],
+    "시술 부위에 자극적인 화장품 사용은 2~3일간 피해 주세요.": [
+      "Avoid irritating cosmetics on the treated area for 2–3 days.",
+      "部位への刺激性化粧品は2〜3日避けてください。",
+      "治疗部位2至3天内避免刺激性护肤品。"
+    ],
+    "피부 상태에 따라 시술 간격과 횟수가 달라질 수 있으며, 상담 시 안내드립니다.": [
+      "Intervals and session counts vary by skin condition and are discussed at consultation.",
+      "間隔と回数は肌状態により異なり、診察時にご案内します。",
+      "治疗间隔及次数因肤况而异，面诊时确定。"
+    ],
+    "약물을 피부에 전달하는 방식이며 독립적인 치료 성분이나 효능을 뜻하지 않습니다.": [
+      "A delivery method, not an independent active ingredient or treatment benefit.",
+      "導入の方法であり、独立した治療成分や効能ではありません。",
+      "这是制剂导入方式，不代表独立的治疗成分或功效。"
+    ],
+    "제품명·성분·주입 경로가 확인되어야 목적별 분류가 가능합니다.": [
+      "Purpose-based classification requires confirmation of the product, ingredients and delivery route.",
+      "製品名・成分・注入経路を確認して目的別に分類します。",
+      "须确认产品、成分及导入途径后，才能按用途分类。"
+    ],
+    "MTS": [
+      "MTS",
+      "MTS",
+      "MTS"
+    ],
+    "마이크로니들 + 크라이오. 피부 재생, 약물 흡수, 피부결 개선": [
+      "Microneedling plus cryotherapy for renewal, product absorption and texture.",
+      "微細針＋クライオで再生・吸収・キメをケア。",
+      "微针结合冷疗，护理修护、吸收及肤质。"
+    ],
+    "미세한 바늘로 피부에 미세 채널을 만들어 약물 흡수율을 높이고, 자연스러운 콜라겐 재생을 유도하는 시술입니다.": [
+      "Fine needles create microchannels to improve product absorption and stimulate natural collagen renewal.",
+      "微細針で通り道を作り、薬剤吸収と自然なコラーゲン再生を促します。",
+      "细针形成微通道，提高制剂吸收并促进自然胶原再生。"
+    ],
+    "73,000원부터 시작하는 합리적인 전문 MTS 관리": [
+      "Professional MTS care from ₩73,000.",
+      "専門MTSケアは₩73,000から。",
+      "专业MTS护理₩73,000起。"
+    ],
+    "시술 후 크라이오 테라피로 진정과 흡수력 향상": [
+      "Cryotherapy afterward soothes skin and supports absorption.",
+      "クライオで鎮静し、吸収をサポート。",
+      "术后冷疗舒缓肌肤并促进吸收。"
+    ],
+    "엑소좀, 아기주사 등 목적에 맞는 약물 선택 가능": [
+      "Choose products such as exosomes or Baby Injection according to your goal.",
+      "エクソソームやベビー注射など目的別に選択。",
+      "可按目的选择外泌体、婴儿针等制剂。"
+    ],
+    "합리적인 비용으로 피부 재생 관리를 시작하고 싶은 분": [
+      "People seeking affordable skin-renewal care.",
+      "手頃に肌再生ケアを始めたい方。",
+      "希望以合理费用开始修护护理的人群。"
+    ],
+    "모공, 잔주름 등 피부결 개선이 필요한 분": [
+      "People seeking improvement of pores, fine lines and texture.",
+      "毛穴・小じわ・キメを改善したい方。",
+      "希望改善毛孔、细纹及肤质的人群。"
+    ],
+    "홈케어 MTS 대신 전문적인 관리를 받고 싶은 분": [
+      "People wanting professional care instead of at-home MTS.",
+      "家庭用MTSではなく専門ケアを受けたい方。",
+      "希望以专业护理代替居家MTS的人群。"
+    ],
+    "봄철 겨울 동안 거칠어진 피부를 회복하고 싶은 분": [
+      "People restoring winter-roughened skin in spring.",
+      "冬に荒れた肌を春に整えたい方。",
+      "希望春季修护冬季粗糙肌肤的人群。"
+    ],
+    "MTS_필메드 NCTF 135 3cc + 크라이오 1회": [
+      "MTS + FILLMED NCTF 135 3 cc + cryotherapy · 1 session",
+      "MTS＋FILLMED NCTF 135 3cc＋クライオ 1回",
+      "MTS＋FILLMED NCTF 135 3cc＋冷疗 1次"
+    ],
+    "마이크로 니들 + 53가지 영양 + 쿨링 마무리\n*피부 재생 채널을 열어 영양분 흡수율 극대화": [
+      "Microneedles + 53 nutrients + cooling finish.\n*Creates skin channels to maximize nutrient absorption.",
+      "微細針＋53種の栄養＋冷却仕上げ。\n※肌の経路を開き、栄養の吸収を高めます。",
+      "微针＋53种营养成分＋冷却收尾。\n*打开皮肤通道，提高营养吸收。"
+    ],
+    "MTS_아기주사 2cc + 크라이오 1회": [
+      "MTS + Baby Injection 2 cc + cryotherapy · 1 session",
+      "MTS＋ベビー注射2cc＋クライオ 1回",
+      "MTS＋婴儿针2cc＋冷疗 1次"
+    ],
+    "마이크로 니들 × 섬유세포 재생 ×진정관리\n*피부 진피조직의 손상된 피부 재생": [
+      "Microneedles × fibroblast renewal × soothing care.\n*Supports repair of damaged dermal tissue.",
+      "微細針×線維芽細胞の再生×鎮静。\n※傷んだ真皮組織の再生をサポート。",
+      "微针×成纤维细胞再生×舒缓护理。\n*促进受损真皮组织修护。"
+    ],
+    "MTS_엑소좀 ASCE+ 5cc + 크라이오 1회": [
+      "MTS + ASCE+ exosomes 5 cc + cryotherapy · 1 session",
+      "MTS＋ASCE+エクソソーム5cc＋クライオ 1回",
+      "MTS＋ASCE+外泌体5cc＋冷疗 1次"
+    ],
+    "마이크로 니들 × 줄기세포 엑소좀 × 재생 부스팅\n*마이크로 니들과 엑소좀의 만남으로 항염 및 재생 효과": [
+      "Microneedles × stem-cell exosomes × renewal boost.\n*Combines microneedles and exosomes for anti-inflammatory and regenerative effects.",
+      "微細針×幹細胞エクソソーム×再生補助。\n※組み合わせで抗炎症・再生効果を目指します。",
+      "微针×干细胞外泌体×修护增强。\n*结合微针与外泌体，发挥抗炎及修护作用。"
+    ],
+    "MTS 시술은 많이 아픈가요?": [
+      "Is MTS very painful?",
+      "MTSはかなり痛いですか？",
+      "MTS很疼吗？"
+    ],
+    "시술 전 마취 크림을 도포하여 통증을 최소화합니다. 개인차가 있지만 대부분 가벼운 따끔거림 정도로 느끼시며, 시술 후 크라이오 테라피로 즉시 진정됩니다.": [
+      "Numbing cream reduces discomfort. Most feel mild stinging, with individual variation; cryotherapy soothes immediately afterward.",
+      "麻酔クリームで痛みを抑えます。個人差はありますが軽い刺激程度で、直後にクライオで鎮静します。",
+      "术前麻醉膏减轻疼痛，多数人仅轻微刺痛，感受因人而异，术后立即冷疗舒缓。"
+    ],
+    "홈케어 MTS와 병원 MTS는 어떻게 다른가요?": [
+      "How does clinical MTS differ from home MTS?",
+      "家庭用と医療機関のMTSの違いは？",
+      "医院MTS与居家MTS有何不同？"
+    ],
+    "병원 MTS는 전문 장비로 바늘 깊이와 속도를 정밀하게 조절하여 균일한 효과를 기대할 수 있습니다. 또한 의료용 약물을 함께 사용하고, 크라이오 테라피까지 포함되어 있어 안전성과 효과 면에서 차이가 있습니다.": [
+      "Clinical equipment precisely controls depth and speed for uniform treatment, combines medical products and includes cryotherapy, affecting both safety and results.",
+      "専門機器で深さと速度を細かく調整し、医療用薬剤とクライオも併用するため、安全性・効果に違いがあります。",
+      "专业设备精确控制针深和速度，搭配医用制剂及冷疗，在安全性与效果上有所不同。"
+    ],
+    "시술 후 하루 이틀 정도 붉은기와 약간의 각질이 생길 수 있습니다. 대부분 2~3일 이내 자연스럽게 회복되며, 가벼운 화장은 다음 날부터 가능합니다.": [
+      "Redness and light flaking may last a day or two, usually resolving within 2–3 days. Light makeup is possible from the next day.",
+      "赤みや軽い皮むけが1〜2日続く場合があり、通常2〜3日で回復します。軽いメイクは翌日から可能です。",
+      "可能泛红、轻微脱屑1至2天，通常2至3天内恢复，次日起可淡妆。"
+    ],
+    "어떤 약물 조합을 추천하시나요?": [
+      "Which product combinations are recommended?",
+      "おすすめの薬剤の組み合わせは？",
+      "推荐哪些制剂组合？"
+    ],
+    "피부 재생과 탄력에는 엑소좀 ASCE+, 수분과 윤기에는 아기주사, 콜라겐 부스팅에는 필메드 135를 추천드립니다. 피부 상태에 따라 상담 시 맞춤 안내해 드립니다.": [
+      "ASCE+ exosomes for renewal and firmness, Baby Injection for moisture and glow, and FILLMED 135 for collagen support; consultation tailors the choice.",
+      "再生・ハリにはASCE+、潤い・ツヤにはベビー注射、コラーゲン補助にはFILLMED 135など、診察で調整します。",
+      "修护与弹性可选ASCE+外泌体，保湿光泽可选婴儿针，胶原护理可选FILLMED 135，面诊时按肤况推荐。"
+    ],
+    "시술 후 12시간 동안 세안과 화장을 삼가 주세요.": [
+      "Avoid face washing and makeup for 12 hours.",
+      "12時間は洗顔・化粧を控えてください。",
+      "术后12小时避免洗脸及化妆。"
+    ],
+    "시술 당일 음주, 사우나, 격한 운동은 피해 주세요.": [
+      "Avoid alcohol, saunas and strenuous exercise on treatment day.",
+      "当日は飲酒・サウナ・激しい運動を避けてください。",
+      "当天避免饮酒、桑拿及剧烈运动。"
+    ],
+    "시술 부위에 자극적인 스크럽이나 필링 제품은 1주일간 사용을 자제해 주세요.": [
+      "Avoid irritating scrubs or peels on the area for one week.",
+      "1週間は刺激の強いスクラブやピーリングを避けてください。",
+      "治疗部位1周内避免刺激性磨砂或去角质产品。"
+    ],
+    "마이크로니들로 피부결, 모공과 패인 흉터를 다루는 시술입니다.": [
+      "Microneedling for skin texture, pores and depressed scars.",
+      "微細針でキメ・毛穴・陥凹性瘢痕に対応します。",
+      "微针改善肤质、毛孔及凹陷疤痕。"
+    ],
+    "염증성 여드름이 있는 상태의 시술과 흉터 관리는 구분해야 합니다. 함께 사용하는 약물의 효과는 별도입니다.": [
+      "Distinguish treatment with inflammatory acne from scar care. Effects of accompanying products are separate.",
+      "炎症性ニキビがある状態と瘢痕ケアを区別します。併用薬剤の効果は別に確認します。",
+      "需区分炎症性痘痘状态下的治疗与疤痕护理，搭配制剂的效果另行判断。"
+    ],
+    "셀르디엠": [
+      "CellREDM",
+      "セルディエム",
+      "CellREDM"
+    ],
+    "피부주사": [
+      "Skin injections",
+      "肌注入施術",
+      "皮肤注射"
+    ],
+    "줄기세포 배양액 스킨부스터. 재생, 보습, 탄력, 광채 개선": [
+      "Stem-cell conditioned-medium skin booster for renewal, hydration, firmness and radiance.",
+      "幹細胞培養液スキンブースターで再生・保湿・ハリ・ツヤを改善。",
+      "干细胞培养液类水光，改善修护、保湿、弹性及光泽。"
+    ],
+    "인체지방 유래 줄기세포 배양액 성분이 피부 깊숙이 전달되어, 자체 재생력을 높이고 탄력과 윤기를 회복시키는 프리미엄 스킨부스터입니다.": [
+      "A premium skin booster delivering human adipose-derived stem-cell conditioned-medium ingredients deeper into skin to support self-renewal, firmness and radiance.",
+      "ヒト脂肪由来幹細胞培養液成分を深く届け、肌の自己再生力、ハリ、ツヤを高めるスキンブースターです。",
+      "将人体脂肪来源干细胞培养液成分传入皮肤深层，增强自我修护、弹性及光泽的高端水光护理。"
+    ],
+    "줄기세포 배양액 기반으로 피부 자체 재생력 강화": [
+      "Conditioned-medium ingredients support skin's own renewal.",
+      "幹細胞培養液を基に自己再生力をサポート。",
+      "以干细胞培养液成分增强肌肤自身修护。"
+    ],
+    "깊은 보습과 탄력 개선을 동시에 관리": [
+      "Addresses deep hydration and firmness together.",
+      "深い保湿とハリを同時ケア。",
+      "同时护理深层保湿及弹性。"
+    ],
+    "피부 톤과 결 개선으로 자연스러운 광채 부여": [
+      "Improved tone and texture for natural radiance.",
+      "トーンとキメを整え、自然なツヤへ。",
+      "改善肤色及肤质，呈现自然光泽。"
+    ],
+    "성장인자가 풍부해 손상된 피부 회복에 도움": [
+      "Rich in growth factors to help damaged skin recover.",
+      "成長因子が豊富で傷んだ肌の回復を補助。",
+      "富含生长因子，帮助受损肌肤修护。"
+    ],
+    "피부 탄력 저하와 건조함이 동시에 고민되는 분": [
+      "People concerned about both reduced firmness and dryness.",
+      "ハリ低下と乾燥が同時に気になる方。",
+      "同时在意弹性下降及干燥的人群。"
+    ],
+    "봄철 환절기에 지친 피부에 깊은 영양을 채우고 싶은 분": [
+      "People seeking deep nourishment for seasonally stressed spring skin.",
+      "春の季節変化で疲れた肌に栄養を届けたい方。",
+      "希望为春季换季疲惫肌肤深层补充营养的人群。"
+    ],
+    "일반 스킨부스터보다 한 단계 높은 관리를 원하는 분": [
+      "People seeking care beyond a standard skin booster.",
+      "一般的なスキンブースターより上のケアを希望する方。",
+      "希望获得高于一般水光护理体验的人群。"
+    ],
+    "칙칙한 피부 톤과 잔주름이 신경 쓰이기 시작한 분": [
+      "People beginning to notice dullness and fine lines.",
+      "くすみや小じわが気になり始めた方。",
+      "开始在意暗沉及细纹的人群。"
+    ],
+    "셀르디엠 ECM 스킨부스터 5cc": [
+      "CellREDM ECM skin booster · 5 cc",
+      "セルディエムECMスキンブースター5cc",
+      "CellREDM ECM水光5cc"
+    ],
+    "피부 본연의 구조와 탄력 개선에 초점을 둔 콜라겐 스킨부스터 미세 입자로 피부에 직접 콜라겐을 공급하여 통증과 약물 뭉침 부담을 줄인 것이 특징": [
+      "A collagen skin booster focused on skin structure and firmness. Fine particles supply collagen directly, reducing discomfort and product-clumping concerns.",
+      "肌本来の構造とハリを重視したコラーゲン製剤。微粒子で直接コラーゲンを補い、痛みや薬剤の塊の負担を抑えます。",
+      "着重改善皮肤结构及弹性的胶原制剂，以微粒直接补充胶原，减轻疼痛与制剂结块顾虑。"
+    ],
+    "셀르디엠은 일반 스킨부스터와 어떻게 다른가요?": [
+      "How does CellREDM differ from standard skin boosters?",
+      "一般的なスキンブースターとの違いは？",
+      "CellREDM与普通水光有何不同？"
+    ],
+    "셀르디엠은 줄기세포 배양액 기반의 프리미엄 스킨부스터로, 단순 수분 공급을 넘어 피부의 자체 재생력을 높이는 데 초점을 맞추고 있어요. 성장인자가 풍부하게 함유되어 있어 탄력, 윤기, 피부결 개선 효과가 기대됩니다.": [
+      "This description presents it as a premium conditioned-medium booster focused on self-renewal beyond hydration. Growth factors are described as supporting firmness, radiance and texture.",
+      "この説明では、保湿だけでなく自己再生に重点を置く培養液系の上位製剤とされています。成長因子によるハリ・ツヤ・キメの改善を説明しています。",
+      "此说明将其描述为培养液类高端制剂，除补水外着重自身修护，并说明生长因子有助于改善弹性、光泽及肤质。"
+    ],
+    "시술 주기와 횟수는 어떻게 되나요?": [
+      "How often and how many sessions?",
+      "間隔と回数は？",
+      "治疗间隔和次数如何？"
+    ],
+    "개인 피부 상태에 따라 다르지만, 보통 2~4주 간격으로 3~5회 시술을 권장해 드려요. 이후에는 유지 관리 차원에서 1~2개월에 한 번씩 받으시면 좋습니다.": [
+      "Depending on skin, usually 3–5 sessions every 2–4 weeks, then maintenance every 1–2 months.",
+      "肌によりますが、通常2〜4週間おきに3〜5回、その後は1〜2か月ごとの維持ケアです。",
+      "视肤况通常建议每2至4周一次，共3至5次，之后每1至2个月维护一次。"
+    ],
+    "시술 후 바로 일상생활이 가능한가요?": [
+      "Can I return to daily life right away?",
+      "すぐ日常に戻れますか？",
+      "可以马上恢复日常吗？"
+    ],
+    "시술 직후 약간의 붉은기가 있을 수 있지만, 대부분 당일~다음 날이면 가라앉아요. 당일 세안과 가벼운 메이크업이 가능하며, 자외선 차단만 신경 써주시면 됩니다.": [
+      "Mild redness generally settles the same or next day. Face washing and light makeup are possible that day; protect skin from UV.",
+      "軽い赤みは当日〜翌日に落ち着きます。当日の洗顔・軽いメイクは可能で、紫外線対策をしてください。",
+      "轻微泛红一般当天至次日消退，当天可洗脸及淡妆，请注意防晒。"
+    ],
+    "시술 당일은 사우나, 찜질방, 격한 운동을 피해 주세요": [
+      "Avoid saunas, heated bathhouses and strenuous exercise that day.",
+      "当日はサウナ、高温浴施設、激しい運動を避けてください。",
+      "当天避免桑拿、汗蒸及剧烈运动。"
+    ],
+    "시술 후 2~3일간 음주를 자제해 주세요": [
+      "Avoid alcohol for 2–3 days afterward.",
+      "術後2〜3日は飲酒を控えてください。",
+      "术后2至3天避免饮酒。"
+    ],
+    "시술 부위에 자외선 차단제를 꼼꼼히 발라 주세요": [
+      "Apply sunscreen carefully to the treated area.",
+      "施術部位に日焼け止めを丁寧に塗ってください。",
+      "治疗部位认真涂抹防晒霜。"
+    ],
+    "시술 후 일시적인 붉은기나 부기는 자연스러운 반응이에요": [
+      "Temporary redness or swelling may be a normal response.",
+      "一時的な赤みや腫れは自然な反応です。",
+      "术后暂时泛红或肿胀属于常见反应。"
+    ],
+    "인체 유래 무세포동종진피(hADM) 기반의 피부 조직 보강 제품입니다.": [
+      "A skin-tissue support product based on human acellular dermal matrix (hADM).",
+      "ヒト由来無細胞同種真皮（hADM）を基にした皮膚組織補強製品です。",
+      "基于人源脱细胞同种异体真皮（hADM）的皮肤组织补充产品。"
+    ],
+    "줄기세포 배양액으로 분류하지 않습니다. 피부결·조직 상태 평가 후 선택하며 사진 점수로 자동 추천하지 않습니다.": [
+      "Not classified as stem-cell conditioned medium. Choose after assessing texture and tissue; no automatic match from photo scores.",
+      "幹細胞培養液には分類しません。キメ・組織を評価して選び、写真スコアから自動推薦しません。",
+      "不归类为干细胞培养液。须评估肤质及组织状态后选择，不依据照片评分自动推荐。"
+    ],
+    "엘라비에 리투오": [
+      "Elravie Re2O",
+      "エラビエ・リトゥオ",
+      "Elravie Re2O"
+    ],
+    "안티에이징 스킨부스터. 콜라겐 생성 촉진, 탄력·볼륨 개선": [
+      "Anti-aging skin booster promoting collagen, firmness and volume.",
+      "コラーゲン生成・ハリ・ボリュームをケアするエイジング製剤。",
+      "抗衰水光，促进胶原生成、改善弹性与容量。"
+    ],
+    "고농축 히알루론산과 아미노산 복합체가 진피층에 작용하여, 콜라겐 생성을 촉진하고 피부 탄력과 볼륨을 회복시키는 프리미엄 안티에이징 스킨부스터입니다.": [
+      "A premium booster combining concentrated hyaluronic acid and amino acids to act in the dermis, stimulate collagen and restore firmness and volume.",
+      "高濃度ヒアルロン酸とアミノ酸複合体が真皮に働き、コラーゲン生成、ハリ、ボリューム回復を促す製剤です。",
+      "高浓度透明质酸与氨基酸复合物作用于真皮，促进胶原生成并恢复弹性与容量的高端制剂。"
+    ],
+    "콜라겐 생성을 촉진하여 근본적인 안티에이징 관리": [
+      "Promotes collagen production for underlying aging care.",
+      "コラーゲン生成を促すエイジングケア。",
+      "促进胶原生成，从基础护理老化问题。"
+    ],
+    "피부 탄력과 자연스러운 볼륨감 동시 개선": [
+      "Improves firmness and natural fullness together.",
+      "ハリと自然なふっくら感を同時に改善。",
+      "同时改善弹性及自然饱满度。"
+    ],
+    "잔주름과 피부 처짐 완화에 도움": [
+      "Helps ease fine lines and sagging.",
+      "小じわとたるみの緩和をサポート。",
+      "有助于改善细纹与松弛。"
+    ],
+    "고농축 성분으로 시술 만족도가 높은 프리미엄 라인": [
+      "A premium, concentrated formulation intended for high treatment satisfaction.",
+      "高濃度成分で満足度を重視した上位ライン。",
+      "高浓度成分的高端系列，注重治疗满意度。"
+    ],
+    "피부 탄력 저하와 잔주름이 본격적으로 고민되는 분": [
+      "People increasingly concerned about firmness and fine lines.",
+      "ハリ低下と小じわが本格的に気になる方。",
+      "明显在意弹性下降及细纹的人群。"
+    ],
+    "볼살이 빠지면서 얼굴에 볼륨감이 부족해진 분": [
+      "People losing facial fullness as cheek volume decreases.",
+      "頬が痩せ、顔のボリュームが不足した方。",
+      "面颊脂肪减少、面部饱满度不足的人群。"
+    ],
+    "안티에이징 관리를 시작하고 싶지만 자연스러운 결과를 원하는 분": [
+      "People starting anti-aging care who want natural results.",
+      "自然な結果でエイジングケアを始めたい方。",
+      "希望开始抗衰护理并获得自然效果的人群。"
+    ],
+    "봄철 건조함과 탄력 저하를 동시에 해결하고 싶은 분": [
+      "People addressing spring dryness and loss of firmness together.",
+      "春の乾燥とハリ低下を同時にケアしたい方。",
+      "希望同时改善春季干燥与弹性下降的人群。"
+    ],
+    "엘라비에 리투오 ECM 스킨부스터 5cc": [
+      "Elravie Re2O ECM skin booster · 5 cc",
+      "エラビエ・リトゥオECMスキンブースター5cc",
+      "Elravie Re2O ECM水光5cc"
+    ],
+    "인체 유래 성분의 동종진피를 주입하는 시술.\n탁월한 생체 적합성으로 피부 조직과 자연스럽게 융합,실제 ECM 성분을 직접 보충해 피부 구조 근본 개선.\n*한정 수량 진행으로 반드시 문의 후 예약해주세요": [
+      "Injection of human-derived allogeneic dermis. Its biocompatibility supports integration with skin tissue, directly replenishing ECM components to improve skin structure.\n*Limited availability: inquire before booking.",
+      "ヒト由来同種真皮を注入します。生体適合性により肌組織になじみ、ECMを直接補い構造の改善を目指します。\n※数量限定のため予約前にお問い合わせください。",
+      "注入人源同种异体真皮，凭借生物相容性与皮肤组织融合，直接补充ECM成分，改善皮肤结构。\n*数量有限，请先咨询再预约。"
+    ],
+    "엘라비에 리투오는 어떤 피부 고민에 적합한가요?": [
+      "Which concerns suit Elravie Re2O?",
+      "どの悩みに向いていますか？",
+      "Elravie Re2O适合哪些问题？"
+    ],
+    "탄력 저하, 잔주름, 볼륨 감소 등 피부 노화 징후가 나타나기 시작한 분들에게 특히 적합해요. 콜라겐 생성을 촉진하는 성분이 진피층에 작용하여 피부 속부터 탄탄하게 채워 줍니다.": [
+      "It is aimed at early signs of aging such as reduced firmness, fine lines and volume loss. Collagen-promoting ingredients act in the dermis to support fullness from within.",
+      "ハリ低下・小じわ・ボリューム低下など初期の老化に向けた施術です。真皮でコラーゲン生成を促し内側から支えます。",
+      "适合弹性下降、细纹、容量流失等初期老化表现，通过促进真皮胶原生成，从内部支撑肌肤。"
+    ],
+    "리쥬란과 어떤 차이가 있나요?": [
+      "How does it differ from Rejuran?",
+      "リジュランとの違いは？",
+      "与Rejuran有何区别？"
+    ],
+    "리쥬란은 PDRN 성분으로 피부 재생에 초점을 맞추고, 엘라비에 리투오는 고농축 히알루론산과 아미노산 복합체로 탄력과 볼륨 회복에 더 특화되어 있어요. 피부 고민에 따라 전문의와 상담 후 선택하시면 좋습니다.": [
+      "The source describes Rejuran as PDRN-focused renewal care, and Elravie Re2O as concentrated hyaluronic acid and amino acids for firmness and volume. Choose after clinical consultation.",
+      "原文ではリジュランをPDRNによる再生、リトゥオを高濃度ヒアルロン酸・アミノ酸によるハリとボリュームケアと説明しています。医師に相談して選んでください。",
+      "原文将Rejuran描述为侧重PDRN修护，Elravie Re2O则以高浓度透明质酸及氨基酸侧重弹性与容量恢复。请面诊后选择。"
+    ],
+    "시술 후 주의할 점이 있나요?": [
+      "What should I watch for afterward?",
+      "施術後の注意は？",
+      "术后需注意什么？"
+    ],
+    "시술 직후 약간의 붉은기와 미세한 부기가 있을 수 있으며, 보통 1~2일이면 자연스럽게 가라앉아요. 시술 당일은 과도한 세안이나 자극적인 스킨케어를 피해 주세요.": [
+      "Mild redness and swelling usually settle in 1–2 days. Avoid excessive washing and irritating skincare that day.",
+      "軽い赤みや腫れは通常1〜2日で落ち着きます。当日は洗いすぎや刺激の強いケアを避けてください。",
+      "轻微泛红及肿胀通常1至2天消退，当天避免过度清洁及刺激性护理。"
+    ],
+    "시술 전후로 강한 필링이나 레이저 시술은 1~2주 간격을 두세요": [
+      "Allow 1–2 weeks between this treatment and strong peels or laser procedures.",
+      "強いピーリングやレーザーとは前後1〜2週間空けてください。",
+      "与强效焕肤或激光治疗前后间隔1至2周。"
+    ],
+    "무세포동종진피(hADM) 기반 ECM을 이용하는 피부결·조직 보강 시술입니다.": [
+      "Skin-texture and tissue support using ECM based on human acellular dermal matrix (hADM).",
+      "hADM由来ECMによる肌のキメ・組織補強施術です。",
+      "利用人源脱细胞同种异体真皮（hADM）ECM改善肤质、补充组织。"
+    ],
+    "피부결 관련 탐색에 배치하며 리프팅 장비나 수분 주사와 동일한 시술로 취급하지 않습니다.": [
+      "Listed for texture; not treated as equivalent to lifting devices or hydration injections.",
+      "キメの項目に配置し、リフト機器や保湿注射と同一視しません。",
+      "列入肤质相关浏览，不等同于提拉设备或补水注射。"
+    ],
+    "리쥬란": [
+      "Rejuran",
+      "リジュラン",
+      "Rejuran"
+    ],
+    "PDRN 재생주사. 손상 피부 회복, 탄력·보습·피부톤 개선": [
+      "PDRN renewal injection for damaged skin, firmness, hydration and tone.",
+      "PDRN再生注射でダメージ・ハリ・保湿・トーンをケア。",
+      "PDRN修护注射，改善受损肌肤、弹性、保湿及肤色。"
+    ],
+    "연어에서 추출한 PDRN(폴리디옥시리보뉴클레오티드) 성분이 피부 세포 재생을 촉진하여, 탄력 회복과 피부결 개선, 보습력 강화에 도움을 주는 대표적인 피부 재생 시술입니다.": [
+      "Salmon-derived PDRN (polydeoxyribonucleotide) promotes skin-cell renewal to support firmness, texture and hydration.",
+      "サケ由来PDRN（ポリデオキシリボヌクレオチド）が細胞再生を促し、ハリ・キメ・保湿を支えます。",
+      "鲑鱼来源PDRN（聚脱氧核糖核苷酸）促进皮肤细胞再生，帮助恢复弹性、改善肤质及保湿。"
+    ],
+    "PDRN 성분이 피부 세포 재생을 촉진하여 근본적인 피부 개선": [
+      "PDRN stimulates skin-cell renewal for underlying improvement.",
+      "PDRNが肌細胞の再生を促し、根本からケア。",
+      "PDRN促进细胞再生，从基础改善皮肤。"
+    ],
+    "탄력, 보습, 톤 개선 등 폭넓은 피부 고민에 대응": [
+      "Addresses concerns including firmness, hydration and tone.",
+      "ハリ・保湿・トーンなど幅広い悩みに対応。",
+      "兼顾弹性、保湿、肤色等多种问题。"
+    ],
+    "힐러·HB·S·아이리쥬란 등 부위와 목적에 맞는 맞춤 선택 가능": [
+      "Choose Healer, HB, S or Eye Rejuran by area and purpose.",
+      "部位と目的でヒーラー・HB・S・アイを選択。",
+      "按部位及目的选择Healer、HB、S或眼部Rejuran。"
+    ],
+    "꾸준한 시술로 건강한 피부 컨디션 유지에 도움": [
+      "Regular treatment helps maintain healthy skin condition.",
+      "継続施術で健やかな肌状態を維持。",
+      "定期治疗有助于维持健康肤况。"
+    ],
+    "피부 재생과 탄력 회복이 필요한 30~40대": [
+      "People in their 30s–40s needing renewal and firmness recovery.",
+      "肌再生とハリ回復が必要な30〜40代の方。",
+      "需要修护与恢复弹性的30至40多岁人群。"
+    ],
+    "건조하고 칙칙한 피부에 생기를 되찾고 싶은 분": [
+      "People restoring vitality to dry, dull skin.",
+      "乾燥・くすみ肌に生き生きした印象を取り戻したい方。",
+      "希望干燥暗沉肌肤恢复活力的人群。"
+    ],
+    "다크서클이나 눈가 잔주름이 고민인 분": [
+      "People concerned about dark circles or fine lines around the eyes.",
+      "クマや目元の小じわが気になる方。",
+      "在意黑眼圈或眼周细纹的人群。"
+    ],
+    "봄철 환절기 피부 컨디션을 빠르게 끌어올리고 싶은 분": [
+      "People seeking a quick springtime skin-condition boost.",
+      "春の季節変化で肌状態を早く整えたい方。",
+      "希望春季换季时快速改善肤况的人群。"
+    ],
+    "리쥬란 힐러 2cc": [
+      "Rejuran Healer · 2 cc",
+      "リジュラン・ヒーラー2cc",
+      "Rejuran Healer 2cc"
+    ],
+    "연어주사의 최상급 버전+피부 속 콜라겐생성\n**리쥬란 정품 정량 눈앞개봉\n**하이쿡스 옵션 추가 50,000원": [
+      "A premium salmon-injection option supporting dermal collagen.\n**Genuine Rejuran, full dose, opened in front of you.\n**Hycoox add-on: ₩50,000.",
+      "サーモン注射の上位版でコラーゲン生成をサポート。\n※正規品・規定量を目の前で開封。\n※ハイコックス追加：₩50,000。",
+      "鲑鱼针高端版本，促进皮肤胶原生成。\n**正品足量Rejuran当面拆封。\n**加购Hycoox：₩50,000。"
+    ],
+    "리쥬란 HB Plus 1cc": [
+      "Rejuran HB Plus · 1 cc",
+      "リジュランHB Plus 1cc",
+      "Rejuran HB Plus 1cc"
+    ],
+    "통증 DOWN 보습UP\n**정품 정량 눈앞개봉\n**하이쿡스 옵션 추가 50,000원": [
+      "Less discomfort, more hydration.\n**Genuine product, full dose, opened in front of you.\n**Hycoox add-on: ₩50,000.",
+      "痛みを抑え、保湿を強化。\n※正規品・規定量を目の前で開封。\n※ハイコックス追加：₩50,000。",
+      "减轻疼痛、增强保湿。\n**正品足量，当面拆封。\n**加购Hycoox：₩50,000。"
+    ],
+    "아이리쥬란 1cc": [
+      "Eye Rejuran · 1 cc",
+      "アイリジュラン1cc",
+      "眼部Rejuran 1cc"
+    ],
+    "눈가전용 리쥬란힐러\n연어주사의 최상급 버전+피부 속 콜라겐생성\n**리쥬란 정품 정량 눈앞개봉": [
+      "Eye-area Rejuran Healer. A premium salmon-injection option supporting collagen.\n**Genuine Rejuran, full dose, opened in front of you.",
+      "目元専用ヒーラー。サーモン注射の上位版でコラーゲンをサポート。\n※正規品・規定量を目の前で開封。",
+      "眼周专用Rejuran Healer，鲑鱼针高端版本，促进胶原生成。\n**正品足量Rejuran当面拆封。"
+    ],
+    "리쥬란 S 1cc": [
+      "Rejuran S · 1 cc",
+      "リジュランS 1cc",
+      "Rejuran S 1cc"
+    ],
+    "패인 흉터, 목주름 개선 특화\n*콜라겐 재생에 특화된 고점도 리쥬란": [
+      "Targets depressed scars and neck wrinkles.\n*High-viscosity Rejuran focused on collagen renewal.",
+      "陥凹性瘢痕・首のしわを集中ケア。\n※コラーゲン再生を重視した高粘度製剤。",
+      "针对凹陷疤痕及颈纹。\n*侧重胶原再生的高黏度Rejuran。"
+    ],
+    "리쥬란 종류별 차이가 뭔가요?": [
+      "How do Rejuran variants differ?",
+      "リジュラン各種の違いは？",
+      "Rejuran各款有何区别？"
+    ],
+    "리쥬란 힐러는 전반적인 피부 재생과 탄력 회복에, HB Plus는 보습과 탄력에 더 특화되어 있어요. 리쥬란 S는 흉터나 모공 부위에 집중적으로 사용하고, 아이리쥬란은 눈가 전용으로 다크서클과 잔주름 관리에 적합합니다.": [
+      "Healer targets overall renewal and firmness; HB Plus emphasizes hydration and firmness. S focuses on scars and pores, while Eye Rejuran is formulated for eye-area dark circles and fine lines.",
+      "ヒーラーは全体の再生・ハリ、HB Plusは保湿・ハリ、Sは瘢痕・毛穴、アイは目元のクマ・小じわを中心に使います。",
+      "Healer侧重整体修护与弹性，HB Plus侧重补水与弹性，S集中护理疤痕和毛孔，眼部款适用于黑眼圈及眼周细纹。"
+    ],
+    "리쥬란은 몇 회 맞아야 효과를 느낄 수 있나요?": [
+      "How many Rejuran sessions before results?",
+      "何回で効果を感じますか？",
+      "Rejuran几次后见效？"
+    ],
+    "1회 시술 후에도 보습감이나 피부결 변화를 느끼실 수 있어요. 탄력이나 재생 효과를 충분히 얻으려면 2~4주 간격으로 3~4회 시술을 권장하며, 이후 유지 관리를 하시면 좋습니다.": [
+      "Hydration or texture changes may appear after one session. For fuller firmness and renewal benefits, 3–4 sessions every 2–4 weeks are recommended, followed by maintenance.",
+      "1回でも潤い・キメの変化が出る場合があります。ハリ・再生には2〜4週間おきに3〜4回、その後維持ケアをおすすめします。",
+      "一次后可能感觉保湿或肤质变化。为充分改善弹性与修护，建议间隔2至4周进行3至4次，随后维护。"
+    ],
+    "시술 후 다운타임은 어떤가요?": [
+      "What is recovery like?",
+      "施術後の回復は？",
+      "术后恢复情况如何？"
+    ],
+    "시술 부위에 작은 구진(볼록한 자국)이 생길 수 있으며, 보통 1~3일이면 자연스럽게 흡수돼요. 붉은기도 당일~다음 날 정도면 가라앉아 일상생활에 큰 지장은 없습니다.": [
+      "Small raised injection marks may appear and usually absorb in 1–3 days. Redness generally settles the same or next day, with little disruption to daily life.",
+      "小さな膨らみは通常1〜3日で吸収され、赤みは当日〜翌日に落ち着きます。日常生活への影響は少なめです。",
+      "注射部位可能出现小丘疹，通常1至3天吸收。泛红一般当天至次日消退，对日常活动影响较小。"
+    ],
+    "아이리쥬란은 다크서클에도 효과가 있나요?": [
+      "Does Eye Rejuran help dark circles?",
+      "アイリジュランはクマにも有効ですか？",
+      "眼部Rejuran能改善黑眼圈吗？"
+    ],
+    "아이리쥬란은 눈가 피부에 최적화된 제형으로, 얇은 눈가 피부의 재생과 탄력 회복에 도움을 줘요. 다크서클의 원인이 피부 얇아짐이나 탄력 저하에 있다면 개선 효과를 기대할 수 있습니다.": [
+      "Its eye-area formulation supports renewal and firmness of thin skin. Improvement may be expected when dark circles result from thinning or reduced firmness.",
+      "薄い目元の肌の再生とハリを支えます。薄さやハリ低下が原因のクマでは改善が期待できます。",
+      "眼周专用配方支持薄皮肤修护与弹性恢复。若黑眼圈源于皮肤变薄或弹性下降，可期待改善。"
+    ],
+    "시술 후 주사 부위의 작은 구진은 1~3일 내 자연 흡수되니 만지지 마세요": [
+      "Do not touch small injection bumps; they usually absorb within 1–3 days.",
+      "小さな注射の膨らみは1〜3日で吸収されるため触らないでください。",
+      "注射后小丘疹通常1至3天吸收，请勿触摸。"
+    ],
+    "해산물(연어 등) 알레르기가 있는 분은 사전에 반드시 말씀해 주세요": [
+      "Disclose seafood allergies, including salmon, before treatment.",
+      "サケなど魚介類のアレルギーは必ず事前に伝えてください。",
+      "如对鲑鱼等海鲜过敏，务必事先告知。"
+    ],
+    "PN(폴리뉴클레오티드) 기반으로 안면부 주름을 다루는 시술입니다.": [
+      "A PN (polynucleotide)-based treatment for facial wrinkles.",
+      "PN（ポリヌクレオチド）を基にした顔のしわの施術です。",
+      "基于PN（多核苷酸）的面部皱纹护理。"
+    ],
+    "일반 PDRN 연어주사와 구분합니다. 세부 제품에 따라 성분과 사용 부위가 달라집니다.": [
+      "Distinct from generic PDRN salmon injections; ingredients and treatment areas vary by product.",
+      "一般的なPDRNサーモン注射と区別し、成分・部位は製品ごとに確認します。",
+      "区别于普通PDRN鲑鱼针，具体成分与使用部位因产品而异。"
+    ],
+    "스킨바이브": [
+      "SKINVIVE",
+      "スキンバイブ",
+      "SKINVIVE"
+    ],
+    "히알루론산 스킨부스터. 수분, 광채, 잔주름 개선": [
+      "Hyaluronic-acid skin booster for hydration, radiance and fine lines.",
+      "ヒアルロン酸で保湿・ツヤ・小じわをケア。",
+      "透明质酸水光，护理补水、光泽及细纹。"
+    ],
+    "쥬비덤 기술로 만든 히알루론산 성분이 피부 속 수분을 채우고, 자연스러운 광채와 탄력감을 부여하는 수분 전문 스킨부스터입니다.": [
+      "A hydration-focused booster using Juvéderm hyaluronic-acid technology to replenish moisture and provide natural radiance and firmness.",
+      "ジュビダーム技術のヒアルロン酸で水分を補い、自然なツヤとハリを与える保湿製剤です。",
+      "采用Juvéderm技术的透明质酸，补充肌肤水分，带来自然光泽与弹性的保湿制剂。"
+    ],
+    "히알루론산이 피부 속 수분을 채워 촉촉한 광채 부여": [
+      "Hyaluronic acid replenishes moisture for a hydrated glow.",
+      "ヒアルロン酸で内側を潤し、みずみずしいツヤへ。",
+      "透明质酸补充水分，带来水润光泽。"
+    ],
+    "자연스러운 볼륨감으로 생기 있는 피부 연출": [
+      "Natural fullness for a fresh appearance.",
+      "自然なふっくら感で生き生きした肌へ。",
+      "自然饱满，呈现活力肌肤。"
+    ],
+    "LDM 병행 프로그램으로 흡수율과 만족도 향상": [
+      "An LDM combination program supports absorption and satisfaction.",
+      "LDM併用で吸収と満足度を高めます。",
+      "结合LDM护理，提高吸收及满意度。"
+    ],
+    "시술 직후부터 수분감과 윤기 변화를 체감": [
+      "Moisture and radiance changes may be felt immediately.",
+      "直後から潤い・ツヤの変化を実感。",
+      "术后即可感受水润及光泽变化。"
+    ],
+    "피부 건조함과 수분 부족으로 화장이 잘 먹지 않는 분": [
+      "People whose dry skin makes makeup difficult to apply.",
+      "乾燥で化粧のりが悪い方。",
+      "因干燥缺水而不易上妆的人群。"
+    ],
+    "자연스러운 물광 효과와 촉촉한 피부를 원하는 분": [
+      "People seeking a natural dewy glow and hydrated skin.",
+      "自然な水光感と潤いを求める方。",
+      "追求自然水光感及水润肌肤的人群。"
+    ],
+    "봄철 건조한 환절기에 집중 수분 케어가 필요한 분": [
+      "People needing intensive hydration during dry spring weather.",
+      "春の乾燥期に集中保湿が必要な方。",
+      "春季干燥换季时需要集中补水的人群。"
+    ],
+    "피부에 생기와 볼륨감을 더하고 싶은 분": [
+      "People seeking more vitality and fullness in their skin.",
+      "肌に生き生きした印象とふっくら感を加えたい方。",
+      "希望增加肌肤活力与饱满感的人群。"
+    ],
+    "스킨바이브 2cc + LDM": [
+      "SKINVIVE 2 cc + LDM",
+      "スキンバイブ2cc＋LDM",
+      "SKINVIVE 2cc＋LDM"
+    ],
+    "시술가능부위: 양볼": [
+      "Treatment area: both cheeks.",
+      "施術部位：両頬。",
+      "可治疗部位：双颊。"
+    ],
+    "스킨바이브 1cc": [
+      "SKINVIVE · 1 cc",
+      "スキンバイブ1cc",
+      "SKINVIVE 1cc"
+    ],
+    "스킨바이브 2cc": [
+      "SKINVIVE · 2 cc",
+      "スキンバイブ2cc",
+      "SKINVIVE 2cc"
+    ],
+    "스킨바이브와 일반 물광 주사의 차이는 뭔가요?": [
+      "How does SKINVIVE differ from standard hydration injections?",
+      "通常の水光注射との違いは？",
+      "SKINVIVE与普通水光有何不同？"
+    ],
+    "스킨바이브는 쥬비덤 기술 기반의 히알루론산을 사용해 피부 속에서 수분을 오래 유지하는 데 특화되어 있어요. 일반 물광 주사보다 지속력이 길고, 자연스러운 광채와 볼륨감이 특징입니다.": [
+      "Juvéderm-based hyaluronic acid is designed for sustained hydration, with longer persistence than standard hydration injections and a natural glow and fullness.",
+      "ジュビダーム技術で長く潤いを保ち、一般的な水光注射より持続しやすく、自然なツヤとふっくら感が特徴です。",
+      "采用Juvéderm技术的透明质酸，着重持续保湿，相较普通水光维持更久，特点为自然光泽与饱满感。"
+    ],
+    "LDM 병행 프로그램은 어떤 건가요?": [
+      "What is the LDM combination program?",
+      "LDM併用プランとは？",
+      "LDM组合方案是什么？"
+    ],
+    "LDM은 초음파를 활용한 피부 관리 장비로, 스킨바이브 시술 후 LDM을 함께 진행하면 히알루론산의 피부 흡수를 도와 시술 효과를 높여 줘요. 2cc + LDM 프로그램으로 합리적으로 받으실 수 있습니다.": [
+      "LDM uses ultrasound for skin care. After SKINVIVE, it supports hyaluronic-acid absorption and treatment effects; the 2 cc + LDM option combines both.",
+      "LDMは超音波ケアです。スキンバイブ後に併用してヒアルロン酸の吸収と効果を補助し、2cc＋LDMプランで受けられます。",
+      "LDM使用超声护理，SKINVIVE后搭配可辅助透明质酸吸收及治疗效果，可选择2cc＋LDM组合。"
+    ],
+    "시술 효과는 얼마나 지속되나요?": [
+      "How long do treatment effects last?",
+      "効果の持続期間は？",
+      "治疗效果持续多久？"
+    ],
+    "개인 피부 상태에 따라 다르지만, 보통 3~6개월 정도 수분감과 광채가 유지돼요. 꾸준한 시술로 피부 보습력 자체가 향상되는 효과도 기대할 수 있습니다.": [
+      "Usually 3–6 months of hydration and radiance, depending on skin. Regular treatment may improve moisture retention.",
+      "肌によりますが通常3〜6か月です。継続により保湿力の向上も期待できます。",
+      "保湿与光泽通常维持3至6个月，因肤况而异，定期治疗可望提高保水能力。"
+    ],
+    "시술 직후 미세한 볼록함이 있을 수 있으며, 1~2일 내 자연스럽게 사라져요": [
+      "Tiny raised spots may appear immediately and usually fade in 1–2 days.",
+      "小さな膨らみは通常1〜2日で消えます。",
+      "术后可能有微小凸起，通常1至2天消退。"
+    ],
+    "히알루론산 미세 주입으로 볼 피부의 수분 유지와 매끄러움을 다룹니다.": [
+      "Hyaluronic-acid microinjections for cheek hydration and smoothness.",
+      "ヒアルロン酸の微量注入で頬の保水と滑らかさをケア。",
+      "透明质酸微量注射，改善面颊保水与平滑度。"
+    ],
+    "주된 목적은 볼의 피부결·수분입니다. 표정주름 보톡스나 처짐 리프팅으로 분류하지 않습니다.": [
+      "Primarily for cheek texture and hydration; not classified as expression-line toxin or lifting for sagging.",
+      "主目的は頬のキメ・保湿です。表情じわ用トキシンやたるみリフトには分類しません。",
+      "主要用于面颊肤质与补水，不归类为表情纹肉毒或松弛提拉。"
+    ],
+    "올리디아 스킨": [
+      "Olidia Skin",
+      "オリディア・スキン",
+      "Olidia Skin"
+    ],
+    "히알루론산 스킨부스터. 수분, 탄력 개선": [
+      "Hyaluronic-acid skin booster for hydration and firmness.",
+      "ヒアルロン酸で保湿とハリをケア。",
+      "透明质酸水光，改善保湿及弹性。"
+    ],
+    "히알루론산 성분이 피부 속 수분과 탄력을 동시에 채워 주는 스킨부스터입니다. 부담 없는 가격으로 꾸준한 피부 관리를 시작하기 좋아요.": [
+      "A hyaluronic-acid booster replenishing moisture and firmness together, offering an affordable way to start regular skin care.",
+      "ヒアルロン酸で潤いとハリを補う製剤で、手頃に継続ケアを始められます。",
+      "透明质酸制剂同时补充水分与弹性，适合以合理费用开始持续护理。"
+    ],
+    "히알루론산 기반으로 보습과 탄력을 동시에 관리": [
+      "Hyaluronic-acid care for hydration and firmness together.",
+      "ヒアルロン酸で保湿とハリを同時ケア。",
+      "以透明质酸同时护理补水与弹性。"
+    ],
+    "부담 없는 가격으로 꾸준한 피부 관리 가능": [
+      "Affordable for ongoing skin care.",
+      "手頃な価格で継続しやすいケア。",
+      "价格合理，适合持续护理。"
+    ],
+    "스킨부스터 입문용으로 부담 없이 시작하기 좋은 시술": [
+      "An accessible introduction to skin boosters.",
+      "初めてのスキンブースターにも選びやすい施術。",
+      "适合初次体验水光护理。"
+    ],
+    "건조함 완화와 피부결 개선에 도움": [
+      "Helps ease dryness and improve texture.",
+      "乾燥の緩和とキメ改善をサポート。",
+      "有助缓解干燥、改善肤质。"
+    ],
+    "합리적인 가격으로 스킨부스터를 시작하고 싶은 분": [
+      "People seeking an affordable first skin booster.",
+      "手頃にスキンブースターを始めたい方。",
+      "希望以合理价格开始水光护理的人群。"
+    ],
+    "봄철 건조해진 피부에 기본 수분을 채우고 싶은 분": [
+      "People replenishing basic moisture in dry spring skin.",
+      "春に乾燥した肌へ基本の潤いを補いたい方。",
+      "希望为春季干燥肌肤补充基础水分的人群。"
+    ],
+    "스킨부스터가 처음이라 부담 없이 경험해 보고 싶은 분": [
+      "First-time users seeking an accessible trial.",
+      "初めてなので気軽に試したい方。",
+      "首次接触水光、希望轻松体验的人群。"
+    ],
+    "정기적인 피부 보습 관리를 합리적으로 유지하고 싶은 분": [
+      "People maintaining regular hydration care affordably.",
+      "定期保湿を無理のない費用で続けたい方。",
+      "希望经济地维持定期保湿护理的人群。"
+    ],
+    "하이쿡스 + 올리디아 스킨 4cc": [
+      "Hycoox + Olidia Skin 4 cc",
+      "ハイコックス＋オリディア・スキン4cc",
+      "Hycoox＋Olidia Skin 4cc"
+    ],
+    "PLLA 성분으로 탄력, 주름, 모공 세 가지 고민을 동시에 개선.\n피부 속 콜라겐 생성을 촉진해 탄탄하고 매끄러운 탄력을 기대할 수 있습니다.\n*하이쿡스 전용 1회용 위생 팁 사용": [
+      "PLLA addresses firmness, wrinkles and pores by stimulating collagen for firmer, smoother skin.\n*Uses a dedicated single-use hygienic Hycoox tip.",
+      "PLLAでハリ・しわ・毛穴に対応し、コラーゲン生成を促します。\n※ハイコックス専用の使い捨て衛生チップを使用。",
+      "PLLA改善弹性、皱纹与毛孔，促进胶原生成，打造紧致平滑肌肤。\n*使用Hycoox专用一次性卫生针头。"
+    ],
+    "올리디아 스킨은 다른 스킨부스터와 어떻게 다른가요?": [
+      "How does Olidia Skin differ from other boosters?",
+      "ほかのスキンブースターとの違いは？",
+      "Olidia Skin与其他水光有何不同？"
+    ],
+    "올리디아 스킨은 히알루론산 기반의 보습·탄력 스킨부스터로, 합리적인 가격이 장점이에요. 프리미엄 라인에 비해 부담이 적어 처음 스킨부스터를 시작하거나 정기적으로 유지 관리하기에 좋습니다.": [
+      "The source describes an affordable hyaluronic-acid hydration and firmness booster, suitable for first-time use or ongoing maintenance at a lower cost than premium lines.",
+      "原文では手頃なヒアルロン酸の保湿・ハリ製剤と説明され、上位ラインより負担が少なく、初回や継続ケア向けとされています。",
+      "原文将其描述为价格合理的透明质酸保湿紧致制剂，比高端系列负担低，适合入门或定期维护。"
+    ],
+    "어떤 분에게 추천하나요?": [
+      "Who is it recommended for?",
+      "どんな方におすすめですか？",
+      "适合哪些人群？"
+    ],
+    "피부 건조함과 탄력 저하가 고민이지만, 부담 없이 꾸준히 관리하고 싶은 분에게 추천해요. 스킨부스터 입문용으로도 좋고, 다른 시술 사이에 유지 관리 목적으로 받으셔도 좋습니다.": [
+      "People with dryness or reduced firmness seeking affordable ongoing care, whether as a first booster or maintenance between other procedures.",
+      "乾燥・ハリ低下を手頃に継続ケアしたい方に。初回やほかの施術の合間の維持にも向いています。",
+      "适合干燥、弹性下降且希望经济持续护理的人群，可作为入门或其他治疗间的维护。"
+    ],
+    "시술 후 일상생활에 지장이 있나요?": [
+      "Will it disrupt daily activities?",
+      "日常生活への影響は？",
+      "会影响日常活动吗？"
+    ],
+    "시술 직후 약간의 붉은기가 있을 수 있지만, 대부분 빠르게 가라앉아요. 당일 세안과 가벼운 메이크업이 가능하며, 일상생활에 큰 지장 없이 받으실 수 있는 시술입니다.": [
+      "Mild redness usually settles quickly. Face washing and light makeup are possible that day with little disruption to daily life.",
+      "軽い赤みは通常すぐ落ち着き、当日の洗顔・軽いメイクも可能で、生活への影響は少なめです。",
+      "轻微泛红通常很快消退，当天可洗脸及淡妆，一般不影响日常活动。"
+    ],
+    "시술 후 일시적인 붉은기는 자연스러운 반응이에요": [
+      "Temporary redness can be a normal response.",
+      "一時的な赤みは自然な反応です。",
+      "术后暂时泛红属于常见反应。"
+    ],
+    "PLLA 기반 제품으로 주름을 다루며 세부 제품과 사용 목적을 확인해야 합니다.": [
+      "A PLLA-based product for wrinkles; confirm the specific product and purpose.",
+      "PLLAによるしわケア製品で、製品の種類と目的の確認が必要です。",
+      "基于PLLA的皱纹护理产品，须确认具体产品及用途。"
+    ],
+    "공식 제품은 PLLA 기반입니다. 원문에 혼재한 HA 설명을 근거로 수분 시술로 분류하지 않습니다.": [
+      "The official product is PLLA-based. Conflicting HA descriptions in the source are not used to classify it as hydration care.",
+      "公式製品はPLLA由来です。原文に混在するHA説明を根拠に保湿施術へ分類しません。",
+      "官方产品基于PLLA，不因原文混杂的HA说明而将其归为补水项目。"
+    ],
+    "쥬베룩": [
+      "Juvelook",
+      "ジュベルック",
+      "Juvelook"
+    ],
+    "PDLLA 콜라겐 부스터. 탄력 저하, 볼륨 손실, 잔주름 개선": [
+      "PDLLA collagen booster for reduced firmness, volume loss and fine lines.",
+      "PDLLAでハリ低下・ボリューム減少・小じわをケア。",
+      "PDLLA胶原制剂，改善弹性下降、容量流失及细纹。"
+    ],
+    "쥬베룩은 PDLLA(폴리디엘락틱애시드) 성분을 주입하여 피부 속 자가 콜라겐 생성을 유도하는 콜라겐 부스터 시술이에요. 시술 직후부터 점진적으로 탄력과 볼륨이 개선됩니다.": [
+      "Juvelook injects PDLLA (poly-D,L-lactic acid) to stimulate your own collagen, gradually improving firmness and volume after treatment.",
+      "PDLLA（ポリD,L乳酸）を注入し、自身のコラーゲン生成を促して、ハリとボリュームを徐々に改善します。",
+      "Juvelook注入PDLLA（聚D,L乳酸），促进自身胶原生成，术后逐步改善弹性与容量。"
+    ],
+    "PDLLA 성분이 자가 콜라겐 생성을 촉진하여 자연스러운 탄력": [
+      "PDLLA stimulates your own collagen for natural firmness.",
+      "PDLLAが自己コラーゲンを促し、自然なハリへ。",
+      "PDLLA促进自身胶原生成，带来自然弹性。"
+    ],
+    "하이쿡스, 물광, 포텐자와 결합한 복합 패키지 구성": [
+      "Combination packages with Hycoox, hydration injections or Potenza.",
+      "ハイコックス・水光・ポテンツァとの複合プラン。",
+      "可与Hycoox、水光或Potenza组成套餐。"
+    ],
+    "시술 후 점진적으로 개선되어 티 나지 않는 변화": [
+      "Gradual improvement for subtle, natural-looking change.",
+      "徐々に改善し、気づかれにくい自然な変化。",
+      "渐进改善，变化自然不突兀。"
+    ],
+    "봄철 칙칙해진 피부에 생기와 볼륨을 동시에": [
+      "Vitality and fullness for dull spring skin.",
+      "春のくすんだ肌に生き生きした印象とふっくら感。",
+      "为春季暗沉肌肤增添活力与饱满度。"
+    ],
+    "피부 탄력 저하와 잔주름이 신경 쓰이는 분": [
+      "People concerned about reduced firmness and fine lines.",
+      "ハリ低下と小じわが気になる方。",
+      "在意弹性下降及细纹的人群。"
+    ],
+    "자연스러운 볼륨감을 원하시는 분": [
+      "People seeking natural fullness.",
+      "自然なふっくら感を求める方。",
+      "希望获得自然饱满感的人群。"
+    ],
+    "일반 수분 주사보다 깊은 피부 개선을 원하시는 분": [
+      "People seeking deeper improvement than hydration injections alone.",
+      "保湿注射だけではない深い改善を求める方。",
+      "希望获得超越单纯补水的深层改善的人群。"
+    ],
+    "콜라겐 생성 촉진으로 장기적인 피부 관리를 원하시는 분": [
+      "People seeking long-term care through collagen stimulation.",
+      "コラーゲン生成を促す長期ケアを希望する方。",
+      "希望通过胶原刺激进行长期护理的人群。"
+    ],
+    "쥬베룩 4cc + 물광주사 1cc + 하이쿡스": [
+      "Juvelook 4 cc + hydrating injection 1 cc + Hycoox",
+      "ジュベルック4cc＋水光注射1cc＋ハイコックス",
+      "Juvelook 4cc＋水光1cc＋Hycoox"
+    ],
+    "자가 콜라겐 생성 촉진 및 피부결, 잔주름, 모공, 여드름 흉터 개선\n*하이쿡스 전용 1회용 위생 팁 사용": [
+      "Promotes your own collagen and improves texture, fine lines, pores and acne scars.\n*Uses a single-use hygienic Hycoox tip.",
+      "自己コラーゲン生成とキメ・小じわ・毛穴・ニキビ跡の改善を促します。\n※ハイコックス専用使い捨てチップを使用。",
+      "促进自身胶原生成，改善肤质、细纹、毛孔及痘疤。\n*使用Hycoox专用一次性卫生针头。"
+    ],
+    "쥬베룩은 몇 회 시술을 권장하나요?": [
+      "How many Juvelook sessions are recommended?",
+      "ジュベルックの推奨回数は？",
+      "Juvelook建议做几次？"
+    ],
+    "피부 상태에 따라 다르지만, 보통 3~4주 간격으로 3회 이상 시술을 권장드려요. 콜라겐이 점진적으로 생성되기 때문에 꾸준한 관리가 효과적입니다.": [
+      "Usually at least 3 sessions, 3–4 weeks apart, depending on skin. Consistent care helps as collagen develops gradually.",
+      "通常3〜4週間おきに3回以上が目安です。コラーゲンは徐々に作られるため継続ケアが効果的です。",
+      "通常建议间隔3至4周、至少3次，按肤况调整。胶原逐步生成，持续护理更有帮助。"
+    ],
+    "하이쿡스+쥬베룩 패키지와 포텐자+쥬베룩 패키지의 차이가 뭔가요?": [
+      "How do Hycoox + Juvelook and Potenza + Juvelook differ?",
+      "ハイコックスとポテンツァの組み合わせの違いは？",
+      "Hycoox＋Juvelook与Potenza＋Juvelook有何不同？"
+    ],
+    "하이쿡스 패키지는 보톡스와 물광 주사를 함께 받아 수분+탄력을 동시에 관리해요. 포텐자 패키지는 마이크로니들 RF로 피부 깊숙이 쥬베룩을 전달하여 더 깊은 콜라겐 재생을 기대할 수 있습니다.": [
+      "The Hycoox package combines toxin and hydration injections for moisture and firmness. Potenza uses RF microneedles to deliver Juvelook deeper for collagen renewal.",
+      "ハイコックスはトキシン・水光と組み合わせ保湿とハリをケア。ポテンツァはRF微細針で深く導入しコラーゲン再生を目指します。",
+      "Hycoox组合搭配肉毒和水光，兼顾补水及弹性；Potenza以射频微针将Juvelook深入导入，促进更深层胶原修护。"
+    ],
+    "효과는 언제부터 느낄 수 있나요?": [
+      "When can I feel results?",
+      "効果はいつ実感できますか？",
+      "何时能感到效果？"
+    ],
+    "시술 직후 수분감은 바로 느낄 수 있고, 콜라겐이 본격적으로 생성되는 4~6주 후부터 탄력 개선을 체감하시는 분이 많아요.": [
+      "Hydration may be felt immediately; many notice improved firmness after 4–6 weeks as collagen production develops.",
+      "潤いは直後から、ハリはコラーゲン生成が進む4〜6週間後に感じる方が多いです。",
+      "补水感可即时出现，随着胶原生成，多数人4至6周后感到弹性改善。"
+    ],
+    "시술 후 시술 부위에 작은 구진(돌기)이 생길 수 있으며, 대부분 1~2주 내 자연스럽게 흡수돼요.": [
+      "Small bumps may develop and usually absorb naturally within 1–2 weeks.",
+      "小さな膨らみは通常1〜2週間で自然に吸収されます。",
+      "可能出现小丘疹，通常1至2周内自然吸收。"
+    ],
+    "시술 당일은 사우나, 찜질방, 격렬한 운동을 삼가 주세요.": [
+      "Avoid saunas, heated bathhouses and intense exercise that day.",
+      "当日はサウナ、高温浴施設、激しい運動を控えてください。",
+      "当天避免桑拿、汗蒸及剧烈运动。"
+    ],
+    "시술 후 자외선 차단제를 꼼꼼히 발라 주시면 결과 유지에 도움이 됩니다.": [
+      "Careful sunscreen use helps maintain results.",
+      "丁寧な紫外線対策が結果の維持に役立ちます。",
+      "认真防晒有助于维持效果。"
+    ],
+    "임신 중이거나 켈로이드 체질이신 분은 사전에 반드시 상담해 주세요.": [
+      "Consult beforehand if pregnant or prone to keloids.",
+      "妊娠中やケロイド体質の方は必ず事前に相談してください。",
+      "孕期或瘢痕疙瘩体质者务必事先咨询。"
+    ],
+    "PDLLA와 히알루론산을 조합한 안면부 주름 관련 시술입니다.": [
+      "A facial-wrinkle treatment combining PDLLA and hyaluronic acid.",
+      "PDLLAとヒアルロン酸を組み合わせた顔のしわの施術です。",
+      "结合PDLLA与透明质酸的面部皱纹护理。"
+    ],
+    "모공·흉터 활용은 세부 제품과 주입 방식에 따라 달라 별도 상담 대상으로 표시합니다.": [
+      "Pore and scar use depends on the specific product and injection technique, so it requires separate consultation.",
+      "毛穴・瘢痕への使用は製品と注入方法で異なるため別途相談対象です。",
+      "毛孔及疤痕用途取决于具体产品及注射方式，须另行面诊确认。"
+    ],
+    "연어주사": [
+      "Salmon injection",
+      "サーモン注射",
+      "鲑鱼针"
+    ],
+    "PDRN 재생주사. 손상 피부 회복, 수분·피부결 개선": [
+      "PDRN renewal injection for damaged skin, hydration and texture.",
+      "PDRNでダメージ肌・保湿・キメをケア。",
+      "PDRN修护注射，护理受损肌肤、补水及肤质。"
+    ],
+    "연어주사는 연어 DNA에서 추출한 PDRN 성분을 피부에 직접 주입하여 손상된 세포의 재생을 돕고, 수분과 영양을 공급하는 시술이에요.": [
+      "PDRN extracted from salmon DNA is injected into skin to support damaged-cell repair and provide hydration and nourishment.",
+      "サケDNA由来PDRNを直接注入し、傷んだ細胞の修復と水分・栄養補給を支えます。",
+      "将鲑鱼DNA提取的PDRN直接注入皮肤，帮助受损细胞修护并补充水分与营养。"
+    ],
+    "2cc 69,000원부터 시작하는 합리적인 재생 관리": [
+      "Affordable renewal care from ₩69,000 for 2 cc.",
+      "2cc ₩69,000からの再生ケア。",
+      "2cc修护护理₩69,000起。"
+    ],
+    "PDRN 성분이 손상된 피부 세포 회복을 촉진": [
+      "PDRN supports repair of damaged skin cells.",
+      "PDRNが傷んだ肌細胞の回復を促します。",
+      "PDRN促进受损皮肤细胞修护。"
+    ],
+    "더모톡신과 함께 받으면 재생+탄력을 동시에 관리": [
+      "Combine with dermotoxin for renewal and firmness.",
+      "ダーマトキシン併用で再生とハリを同時ケア。",
+      "搭配微滴肉毒，同时护理修护与弹性。"
+    ],
+    "봄철 환절기 지친 피부 컨디션 회복에 효과적": [
+      "Helps restore stressed skin during spring transitions.",
+      "春の季節変化で疲れた肌の回復に。",
+      "帮助春季换季疲惫肌肤恢复。"
+    ],
+    "칙칙하고 생기 없는 피부를 개선하고 싶은 분": [
+      "People seeking to improve dull, tired-looking skin.",
+      "くすんで元気のない肌を改善したい方。",
+      "希望改善暗沉、缺乏活力肌肤的人群。"
+    ],
+    "합리적인 가격으로 피부 재생 관리를 시작하고 싶은 분": [
+      "People starting affordable skin repair care.",
+      "手頃に肌修復ケアを始めたい方。",
+      "希望以合理价格开始皮肤修护的人群。"
+    ],
+    "환절기에 예민해지고 건조해진 피부가 고민인 분": [
+      "People with sensitive, dry skin during seasonal changes.",
+      "季節の変わり目に敏感・乾燥肌になる方。",
+      "换季时皮肤敏感干燥的人群。"
+    ],
+    "보톡신과 재생 관리를 함께 받고 싶은 분": [
+      "People combining toxin and renewal care.",
+      "トキシンと再生ケアを併用したい方。",
+      "希望结合肉毒及修护护理的人群。"
+    ],
+    "PDRN 연어재생주사 2cc": [
+      "PDRN salmon renewal injection · 2 cc",
+      "PDRNサーモン再生注射2cc",
+      "PDRN鲑鱼修护针2cc"
+    ],
+    "상처 치유 촉진 × 콜라겐 생성 × 피부 재생\n*연어에서 추출된 PDRN으로 손상된 피부를 회복을 돕는": [
+      "Wound repair × collagen production × skin renewal.\n*Salmon-derived PDRN helps damaged skin recover.",
+      "創傷治癒×コラーゲン生成×肌再生。\n※サケ由来PDRNがダメージ肌の回復を補助。",
+      "伤口修复×胶原生成×肌肤再生。\n*鲑鱼来源PDRN帮助受损肌肤恢复。"
+    ],
+    "PDRN 연어재생주사 2cc + 더모톡신 2cc": [
+      "PDRN salmon injection 2 cc + dermotoxin 2 cc",
+      "PDRNサーモン注射2cc＋ダーマトキシン2cc",
+      "PDRN鲑鱼针2cc＋微滴肉毒2cc"
+    ],
+    "DNA 재생 + 보톡스 효과 = 더블 시너지\n*연어 DNA와 보톡스 성분으로 재생과 주름 개선 동시에": [
+      "DNA renewal + toxin effects for complementary benefits.\n*Salmon DNA and toxin combine renewal and wrinkle care.",
+      "DNA再生＋トキシンの相乗効果。\n※サケDNAとトキシンで再生としわを同時ケア。",
+      "DNA修护＋肉毒作用，双重协同。\n*鲑鱼DNA结合肉毒，同时护理修护与皱纹。"
+    ],
+    "연어주사는 어떤 피부 고민에 좋은가요?": [
+      "Which concerns can salmon injections help?",
+      "どの悩みに向いていますか？",
+      "鲑鱼针适合哪些问题？"
+    ],
+    "건조하고 칙칙한 피부, 잔주름, 여드름 흉터 등 피부 재생이 필요한 다양한 고민에 도움이 돼요. 특히 피부 톤과 결 개선에 효과를 느끼시는 분이 많습니다.": [
+      "Dryness, dullness, fine lines and acne scars are among concerns requiring renewal. Many notice changes in tone and texture.",
+      "乾燥・くすみ・小じわ・ニキビ跡などの再生ケアに用いられ、トーンやキメの変化を感じる方が多いです。",
+      "可护理干燥暗沉、细纹、痘疤等需要修护的问题，不少人感到肤色及肤质改善。"
+    ],
+    "더모톡신과 함께 받으면 어떤 점이 좋은가요?": [
+      "Why combine it with dermotoxin?",
+      "ダーマトキシンを併用する利点は？",
+      "为何搭配微滴肉毒？"
+    ],
+    "더모톡신으로 모공과 피지를 관리하면서, 연어주사로 피부 재생까지 동시에 진행할 수 있어요. 2cc+더모톡신 2cc 패키지가 79,000원으로 합리적입니다.": [
+      "Dermotoxin addresses pores and oil while salmon injections support renewal. The 2 cc + dermotoxin 2 cc package is ₩79,000.",
+      "ダーマトキシンで毛穴・皮脂、サーモン注射で再生をケアします。2cc＋ダーマトキシン2ccは₩79,000です。",
+      "微滴肉毒护理毛孔与油脂，鲑鱼针支持修护。2cc＋微滴肉毒2cc套餐为₩79,000。"
+    ],
+    "시술 주기는 어떻게 되나요?": [
+      "What is the treatment interval?",
+      "施術間隔は？",
+      "治疗间隔如何？"
+    ],
+    "보통 2~4주 간격으로 3~5회 시술을 권장드려요. 이후에는 피부 상태에 따라 월 1회 유지 관리를 하시면 좋습니다.": [
+      "Usually 3–5 sessions every 2–4 weeks, then monthly maintenance according to skin condition.",
+      "通常2〜4週間おきに3〜5回、その後は肌に応じ月1回の維持ケアです。",
+      "通常每2至4周一次，共3至5次，之后按肤况每月维护一次。"
+    ],
+    "시술 후 주사 부위에 가벼운 붉어짐이나 멍이 나타날 수 있으며, 보통 2~3일 내 자연스럽게 사라져요.": [
+      "Mild injection-site redness or bruising usually fades within 2–3 days.",
+      "注射部位の軽い赤みや内出血は通常2〜3日で落ち着きます。",
+      "注射部位轻微泛红或淤青通常2至3天消退。"
+    ],
+    "시술 당일은 음주와 사우나를 피해 주세요.": [
+      "Avoid drinking alcohol and using saunas that day.",
+      "当日は飲酒・サウナを控えてください。",
+      "当天避免饮酒及桑拿。"
+    ],
+    "시술 후에는 보습과 자외선 차단에 신경 써 주시면 효과 유지에 도움이 됩니다.": [
+      "Moisturizing and UV protection help maintain results.",
+      "保湿と紫外線対策が効果の維持に役立ちます。",
+      "保湿及防晒有助于维持效果。"
+    ],
+    "어류 알레르기가 있으신 분은 사전에 반드시 상담해 주세요.": [
+      "Consult beforehand if you have a fish allergy.",
+      "魚アレルギーがある方は必ず事前に相談してください。",
+      "鱼类过敏者务必事先咨询。"
+    ],
+    "통칭으로 쓰이는 주사 이름이므로 제품명과 실제 성분부터 확인해야 합니다.": [
+      "A generic injection name: confirm the product and actual ingredients first.",
+      "通称のため、まず製品名と実際の成分を確認します。",
+      "这是通用注射名称，须先确认产品名及实际成分。"
+    ],
+    "리쥬란과 같은 제품으로 가정하거나 보습·재생 효과를 일괄 적용하지 않습니다.": [
+      "Do not assume it is Rejuran or apply hydration and renewal claims to all products.",
+      "リジュランと同じと仮定せず、保湿・再生効果を一律に当てはめません。",
+      "不能假定等同Rejuran，也不能统一套用补水或修护功效。"
+    ],
+    "릴리이드M": [
+      "Lilied M",
+      "リリードM",
+      "Lilied M"
+    ],
+    "물광주사. 수분, 윤기, 피부결 개선": [
+      "Hydrating injections for moisture, radiance and texture.",
+      "水光注射で保湿・ツヤ・キメを改善。",
+      "水光注射，改善保湿、光泽及肤质。"
+    ],
+    "릴리이드M은 히알루론산과 다양한 영양 성분을 피부에 직접 주입하여 깊은 수분감과 자연스러운 윤기를 선사하는 물광주사 시술이에요.": [
+      "Lilied M injects hyaluronic acid and nutrients directly into skin for deep hydration and natural radiance.",
+      "ヒアルロン酸と栄養成分を直接注入し、深い潤いと自然なツヤを与えます。",
+      "Lilied M将透明质酸及营养成分直接注入皮肤，带来深层水润与自然光泽。"
+    ],
+    "히알루론산 기반 성분이 피부 속 수분을 깊이 채워줌": [
+      "Hyaluronic-acid ingredients deeply replenish moisture.",
+      "ヒアルロン酸成分で深く潤いを補います。",
+      "透明质酸成分深层补水。"
+    ],
+    "릴리톡신은 보톡신 성분 결합으로 모공+수분 동시 관리": [
+      "Lili Toxin adds toxin for combined pore and hydration care.",
+      "リリトキシンはトキシン配合で毛穴と保湿を同時ケア。",
+      "Lili Toxin加入肉毒，兼顾毛孔及补水。"
+    ],
+    "시술 직후부터 촉촉하고 건강한 광채 피부결": [
+      "Moist, healthy-looking radiance and texture from immediately afterward.",
+      "直後からみずみずしく健康的なツヤとキメへ。",
+      "术后即呈现水润健康的光泽与肤质。"
+    ],
+    "봄철 건조함으로 잃은 피부 윤기를 되찾기에 적합": [
+      "Suitable for restoring radiance lost to spring dryness.",
+      "春の乾燥で失ったツヤの回復に。",
+      "适合恢复春季干燥流失的光泽。"
+    ],
+    "피부에 수분과 윤기가 부족하다고 느끼시는 분": [
+      "People whose skin lacks moisture and radiance.",
+      "潤いとツヤが不足している方。",
+      "感到肌肤缺水、缺乏光泽的人群。"
+    ],
+    "화장이 잘 먹지 않고 피부가 거칠어진 분": [
+      "People with rough skin and poor makeup application.",
+      "肌が粗く化粧のりが悪い方。",
+      "肌肤粗糙、不易上妆的人群。"
+    ],
+    "물광주사로 촉촉하고 건강한 피부결을 원하시는 분": [
+      "People seeking hydrated, healthy texture through hydration injections.",
+      "水光注射で潤いのある健やかなキメを求める方。",
+      "希望通过水光获得水润健康肤质的人群。"
+    ],
+    "수분 충전과 모공 관리를 동시에 하고 싶은 분": [
+      "People combining hydration and pore care.",
+      "保湿と毛穴ケアを同時に行いたい方。",
+      "希望同时补水及护理毛孔的人群。"
+    ],
+    "릴리이드M 물광주사 5cc": [
+      "Lilied M hydrating injection · 5 cc",
+      "リリードM水光注射5cc",
+      "Lilied M水光5cc"
+    ],
+    "속부터 차오르는 수분 광채! 촉촉한 윤기 피부\n**하이쿡스 옵션 추가 50,000원": [
+      "Hydration and radiance from within.\n**Hycoox add-on: ₩50,000.",
+      "内側から潤うツヤ肌へ。\n※ハイコックス追加：₩50,000。",
+      "由内而外水润光泽。\n**加购Hycoox：₩50,000。"
+    ],
+    "릴리이드M 물광톡신 5.5cc": [
+      "Lilied M hydrating toxin · 5.5 cc",
+      "リリードM水光トキシン5.5cc",
+      "Lilied M水光肉毒5.5cc"
+    ],
+    "빠른 엠보싱 흡수 및 빠른 흡수력 순수 히알루론산 HA 물광주사\n피부 잔주름까지 쫀쫀하게\n**하이쿡스 옵션 추가 50,000원": [
+      "Pure HA hydration injection with rapid absorption and quickly settling bumps; also addresses fine lines.\n**Hycoox add-on: ₩50,000.",
+      "純粋なHA水光注射で吸収が速く、膨らみが早く落ち着き、小じわにも対応。\n※ハイコックス追加：₩50,000。",
+      "纯HA水光，吸收快、针后凸起消退快，同时护理细纹。\n**加购Hycoox：₩50,000。"
+    ],
+    "릴리이드와 릴리톡신의 차이가 뭔가요?": [
+      "How do Lilied and Lili Toxin differ?",
+      "リリードとリリトキシンの違いは？",
+      "Lilied与Lili Toxin有何区别？"
+    ],
+    "릴리이드는 수분과 영양 성분을 중심으로 구성되어 촉촉한 피부결에 집중해요. 릴리톡신은 여기에 보톡신 성분이 더해져 모공 축소와 피지 조절까지 함께 관리할 수 있습니다.": [
+      "Lilied focuses on hydration and nutrients for moist texture. Lili Toxin adds toxin for pore reduction and oil control.",
+      "リリードは保湿・栄養で潤いを重視し、リリトキシンはトキシンを加えて毛穴・皮脂もケアします。",
+      "Lilied侧重水分与营养，改善水润肤质；Lili Toxin加入肉毒，同时护理毛孔及油脂。"
+    ],
+    "물광주사 효과는 얼마나 지속되나요?": [
+      "How long does the hydrating effect last?",
+      "水光注射の効果はどのくらい続きますか？",
+      "水光效果能维持多久？"
+    ],
+    "개인차가 있지만 보통 2~4주 정도 촉촉한 느낌이 지속돼요. 꾸준히 시술받으시면 피부 자체의 수분 보유력이 개선되어 효과가 더 오래 유지됩니다.": [
+      "Usually 2–4 weeks, with individual variation. Regular treatment may improve moisture retention and extend the effect.",
+      "個人差はありますが通常2〜4週間です。継続で保水力が高まり、より長く保てることがあります。",
+      "因人而异，通常水润感持续2至4周。定期治疗有助提升保水力，延长效果。"
+    ],
+    "민감한 피부도 시술받을 수 있나요?": [
+      "Can sensitive skin be treated?",
+      "敏感肌でも受けられますか？",
+      "敏感肌也可以做吗？"
+    ],
+    "대부분의 피부 타입에서 시술이 가능해요. 다만 극도로 예민하거나 피부 질환이 있으신 경우에는 사전 상담을 통해 적합 여부를 확인해 드립니다.": [
+      "Most skin types can be treated. Extremely sensitive skin or skin disease requires prior consultation to assess suitability.",
+      "多くの肌質に対応しますが、強い敏感肌や皮膚疾患がある場合は事前診察が必要です。",
+      "多数肤质可以接受治疗，极度敏感或有皮肤病时需事先面诊确认。"
+    ],
+    "시술 후 미세한 주사 자국이나 붉어짐이 있을 수 있으며, 보통 1~2일 내 호전돼요.": [
+      "Tiny injection marks or redness usually improve within 1–2 days.",
+      "細かな針跡や赤みは通常1〜2日で改善します。",
+      "微小针眼或泛红通常1至2天改善。"
+    ],
+    "시술 당일은 세안 시 시술 부위를 강하게 문지르지 말아 주세요.": [
+      "Do not rub the treated area strongly when washing that day.",
+      "当日の洗顔は部位を強くこすらないでください。",
+      "当天洗脸勿用力摩擦治疗部位。"
+    ],
+    "시술 후 충분한 수분 섭취와 보습 관리를 병행해 주세요.": [
+      "Drink enough water and moisturize afterward.",
+      "施術後は水分補給と保湿を心がけてください。",
+      "术后充分饮水并做好保湿。"
+    ],
+    "시술 전후 1주일간은 필링이나 레이저 등 다른 피부 시술을 피해 주세요.": [
+      "Avoid other skin procedures, including peels and lasers, for one week before and after.",
+      "前後1週間はピーリングやレーザーなどを避けてください。",
+      "治疗前后1周避免焕肤、激光等其他皮肤项目。"
+    ],
+    "릴리이드와 릴리이드 M을 구분하고 정확한 제품·사용 목적을 확인해야 합니다.": [
+      "Distinguish Lilied from Lilied M and confirm the exact product and purpose.",
+      "リリードとリリードMを区別し、製品と使用目的を確認します。",
+      "需区分Lilied与Lilied M，确认准确产品及用途。"
+    ],
+    "제조사는 두 제품을 별도로 안내합니다. 이름만으로 미용 목적 효능을 자동 연결하지 않습니다.": [
+      "The manufacturer lists them separately; cosmetic benefits are not automatically inferred from the name.",
+      "メーカーは別製品として案内しており、名前だけで美容効果を結び付けません。",
+      "厂商将两者分别介绍，不能仅凭名称自动推定美容功效。"
+    ],
+    "더모톡신": [
+      "Dermotoxin (skin botulinum toxin)",
+      "ダーマトキシン（スキンボトックス）",
+      "微滴肉毒（皮肤肉毒）"
+    ],
+    "스킨보톡스. 모공, 피부결, 잔주름 개선 (약물 5단계 선택)": [
+      "Skin toxin for pores, texture and fine lines, with five product tiers.",
+      "5段階の薬剤から選ぶ毛穴・キメ・小じわのスキントキシン。",
+      "皮肤肉毒护理毛孔、肤质及细纹，提供5档制剂选择。"
+    ],
+    "더모톡신은 보톡신 성분을 피부 표면 가까이 미세하게 주입하여 모공 축소, 피지 조절, 피부 탄력 개선을 돕는 스킨보톡스 시술이에요. 국산부터 프리미엄 수입 약물까지 5가지 중 선택할 수 있습니다.": [
+      "Tiny superficial toxin injections address pores, oil and firmness. Choose from five products, from Korean options to premium imports.",
+      "皮膚表面近くへ微量注入し、毛穴・皮脂・ハリをケア。韓国製から輸入上位製品まで5種類から選べます。",
+      "将少量肉毒浅层注入，护理毛孔、油脂及弹性。可从韩国产到高端进口的5种产品中选择。"
+    ],
+    "국산(69,000원)부터 엘러간(119,000원)까지 5단계 약물 선택": [
+      "Five product tiers from Korean toxin (₩69,000) to Allergan (₩119,000).",
+      "韓国製₩69,000からアラガン₩119,000まで5段階。",
+      "5档制剂，韩国产₩69,000起，Allergan ₩119,000。"
+    ],
+    "모공 축소, 피지 조절, 피부결 개선을 한 번에": [
+      "Pore, oil and texture care in one treatment.",
+      "毛穴・皮脂・キメをまとめてケア。",
+      "一次护理毛孔、油脂及肤质。"
+    ],
+    "제품과 가격을 투명하게 안내하여 합리적으로 선택 가능": [
+      "Clear product and price information supports an informed choice.",
+      "製品と価格を明確に案内し、選びやすくします。",
+      "产品及价格透明，便于合理选择。"
+    ],
+    "봄철 넓어진 모공과 늘어난 피지 관리에 적합": [
+      "Suitable for increased pores and oil in spring.",
+      "春の毛穴の開きと皮脂増加のケアに。",
+      "适合春季毛孔扩大及油脂增多护理。"
+    ],
+    "연어주사와 병행하면 재생+탄력 시너지 효과": [
+      "Combines with salmon injections for renewal and firmness.",
+      "サーモン注射と併用し再生・ハリをケア。",
+      "搭配鲑鱼针，协同护理修护与弹性。"
+    ],
+    "모공이 넓고 피지 분비가 많아 고민인 분": [
+      "People concerned about large pores and excess oil.",
+      "毛穴が大きく皮脂が多い方。",
+      "在意毛孔粗大及油脂旺盛的人群。"
+    ],
+    "보톡스 약물을 직접 선택하고 싶은 분": [
+      "People wanting to choose their toxin product.",
+      "トキシン製品を自分で選びたい方。",
+      "希望自行选择肉毒产品的人群。"
+    ],
+    "합리적인 가격으로 피부 탄력 관리를 시작하고 싶은 분": [
+      "People starting affordable firmness care.",
+      "手頃に肌のハリケアを始めたい方。",
+      "希望经济地开始弹性护理的人群。"
+    ],
+    "봄철 피부결 정돈과 모공 관리가 필요한 분": [
+      "People needing spring texture and pore care.",
+      "春のキメ・毛穴ケアが必要な方。",
+      "需要春季肤质及毛孔护理的人群。"
+    ],
+    "더모톡신 (비에녹스)": [
+      "Dermotoxin · Bienox",
+      "ダーマトキシン（ビエノックス）",
+      "微滴肉毒（Bienox）"
+    ],
+    "톡신을 피부층에 주입하여 표정주름은 자연스럽게 개선하고 탄력 개선과 리프팅 효과": [
+      "Toxin injected into the skin layer for natural-looking expression-line improvement, firmness and lifting.",
+      "皮膚層へのトキシンで自然な表情じわ改善、ハリ、リフトを目指します。",
+      "将肉毒注入皮肤层，自然改善表情纹，并护理弹性与提拉。"
+    ],
+    "더모톡신 (이노톡스)": [
+      "Dermotoxin · Innotox",
+      "ダーマトキシン（イノトックス）",
+      "微滴肉毒（Innotox）"
+    ],
+    "더모톡신 (코어톡스)": [
+      "Dermotoxin · Coretox",
+      "ダーマトキシン（コアトックス）",
+      "微滴肉毒（Coretox）"
+    ],
+    "더모톡신 (제오민)": [
+      "Dermotoxin · Xeomin",
+      "ダーマトキシン（ゼオミン）",
+      "微滴肉毒（Xeomin）"
+    ],
+    "더모톡신 (엘러간)": [
+      "Dermotoxin · Allergan",
+      "ダーマトキシン（アラガン）",
+      "微滴肉毒（Allergan）"
+    ],
+    "더모톡신 (티엠버스)": [
+      "Dermotoxin · Tmvers",
+      "ダーマトキシン（Tmvers）",
+      "微滴肉毒（Tmvers）"
+    ],
+    "5가지 약물의 차이가 뭔가요?": [
+      "How do the five products differ?",
+      "5種類の薬剤の違いは？",
+      "5种制剂有何区别？"
+    ],
+    "국산(69,000원)과 프리미엄 국산(89,000원)은 가성비가 좋은 국산 보톡신이에요. 이노톡스(79,000원)는 액상형으로 희석 없이 사용하여 정밀한 용량 조절이 가능합니다. 제오민(99,000원)은 독일산으로 순수 보톡신 성분만 포함해 항체 형성 우려가 적고, 엘러간(119,000원)은 가장 오랜 임상 데이터를 보유한 글로벌 프리미엄 제품이에요.": [
+      "Korean standard (₩69,000) and premium (₩89,000) options emphasize value. Liquid Innotox (₩79,000) needs no dilution. German Xeomin (₩99,000) contains purified toxin with less concern about antibodies; Allergan (₩119,000) has a long clinical history.",
+      "韓国製標準₩69,000・上位₩89,000は費用重視。液状イノトックス₩79,000は希釈不要。ドイツ製ゼオミン₩99,000は精製トキシンで抗体の懸念が少なく、アラガン₩119,000は長い臨床実績があります。",
+      "韩国产标准款₩69,000、优质款₩89,000侧重性价比。液态Innotox ₩79,000无需稀释；德国Xeomin ₩99,000为纯化肉毒，抗体顾虑较小；Allergan ₩119,000具有长期临床数据。"
+    ],
+    "더모톡신은 일반 보톡스와 뭐가 다른가요?": [
+      "How does dermotoxin differ from regular toxin injections?",
+      "通常のボトックスとの違いは？",
+      "微滴肉毒与常规肉毒有何不同？"
+    ],
+    "일반 보톡스는 근육에 주입하여 주름을 개선하는 반면, 더모톡신(스킨보톡스)은 피부 표면 가까이 미세하게 주입하여 모공 축소, 피지 조절, 피부결 개선에 집중하는 시술이에요.": [
+      "Regular injections target muscles for wrinkles. Dermotoxin uses tiny superficial injections focused on pores, oil and texture.",
+      "通常は筋肉へ注入してしわに対応し、ダーマトキシンは浅く微量注入して毛穴・皮脂・キメを重視します。",
+      "常规肉毒注入肌肉改善皱纹；微滴肉毒浅层微量注射，侧重毛孔、控油及肤质。"
+    ],
+    "시술 후 효과는 얼마나 유지되나요?": [
+      "How long are results maintained?",
+      "効果はどのくらい保てますか？",
+      "效果可以维持多久？"
+    ],
+    "약물 종류와 개인 피부 상태에 따라 다르지만, 보통 2~4개월 정도 유지돼요. 정기적으로 관리받으시면 모공과 피부결 개선 효과를 지속적으로 유지할 수 있습니다.": [
+      "Usually 2–4 months, depending on product and skin. Regular care helps maintain pore and texture improvements.",
+      "製品と肌によりますが通常2〜4か月。定期ケアで毛穴・キメの改善を維持します。",
+      "通常2至4个月，因产品及肤况而异，定期护理有助于维持毛孔与肤质改善。"
+    ],
+    "어떤 약물을 선택해야 할지 모르겠어요.": [
+      "How should I choose a product?",
+      "薬剤はどう選べばよいですか？",
+      "不知道该选哪款怎么办？"
+    ],
+    "처음 시술이시라면 가성비 좋은 국산 제품으로 시작해 보시는 것도 좋고, 항체 형성이 걱정되시면 제오민, 검증된 프리미엄을 원하시면 엘러간을 추천드려요. 상담 시 피부 상태에 맞춰 안내해 드릴게요.": [
+      "Korean products can be an affordable starting point; Xeomin is suggested for antibody concerns and Allergan for a premium option with extensive experience. Consultation tailors the choice.",
+      "初回は費用を抑えた韓国製、抗体が気になる場合はゼオミン、実績ある上位製品ならアラガンなど、診察でご案内します。",
+      "初次可考虑性价比高的韩国产；在意抗体可咨询Xeomin，偏好有长期经验的高端款可咨询Allergan，面诊时按肤况推荐。"
+    ],
+    "시술 후 가벼운 붉어짐이나 미세한 주사 자국이 있을 수 있으며, 보통 1~2일 내 사라져요.": [
+      "Mild redness or tiny needle marks usually fade in 1–2 days.",
+      "軽い赤みや針跡は通常1〜2日で消えます。",
+      "轻微泛红或针眼通常1至2天消退。"
+    ],
+    "시술 당일은 음주, 사우나, 격렬한 운동을 삼가 주세요.": [
+      "Avoid alcohol, saunas and vigorous exercise on treatment day.",
+      "当日は飲酒・サウナ・激しい運動を控えてください。",
+      "当天避免饮酒、桑拿及剧烈运动。"
+    ],
+    "시술 후 4시간 이상 눕지 않는 것을 권장합니다.": [
+      "Avoid lying down for at least 4 hours afterward.",
+      "施術後少なくとも4時間は横にならないことをおすすめします。",
+      "建议术后至少4小时不要躺下。"
+    ],
+    "임신/수유 중이거나 신경근육 질환이 있으신 분은 시술이 어려울 수 있으니 사전에 상담해 주세요.": [
+      "Pregnancy, breastfeeding or neuromuscular conditions may prevent treatment; consult beforehand.",
+      "妊娠・授乳中、神経筋疾患がある場合は受けられないことがあるため事前に相談してください。",
+      "孕期、哺乳期或神经肌肉疾病可能不适合治疗，请事先咨询。"
+    ],
+    "다른 보톡스 시술과 최소 2주 간격을 두는 것을 권장합니다.": [
+      "Allow at least 2 weeks between this and other toxin treatments.",
+      "ほかのトキシン施術とは最低2週間空けることをおすすめします。",
+      "建议与其他肉毒治疗至少间隔2周。"
+    ],
+    "보툴리눔 톡신을 피부층에 사용하는 잔주름·피부결 관련 시술입니다.": [
+      "Superficial botulinum toxin for fine lines and texture.",
+      "皮膚層にボツリヌストキシンを用いる小じわ・キメの施術です。",
+      "将肉毒毒素用于皮肤层，护理细纹及肤质。"
+    ],
+    "모공 활용은 일반 표정주름 시술과 주입 방식이 다릅니다. 활동성 여드름 치료와 구분합니다.": [
+      "Pore use differs in injection technique from standard expression-line treatment and is distinct from active acne care.",
+      "毛穴用途は表情じわと注入法が異なり、活動性ニキビ治療とは区別します。",
+      "毛孔用途的注射方式不同于常规表情纹治疗，且区别于活动性痘痘治疗。"
+    ],
+    "턱보톡스": [
+      "Masseter toxin",
+      "エラボトックス",
+      "咬肌肉毒"
+    ],
+    "보톡스/윤곽주사": [
+      "Toxin / contour injections",
+      "ボトックス・輪郭注射",
+      "肉毒／轮廓注射"
+    ],
+    "사각턱·V라인 개선 (약물 5종 선택)": [
+      "Square-jaw and V-line contouring, with five product options.",
+      "5種類から選ぶエラ・Vラインケア。",
+      "改善方下颌及V形轮廓，5种制剂可选。"
+    ],
+    "발달한 턱 근육(교근)에 보톡스를 주입하여 근육 볼륨을 줄이고, 자연스러운 V라인 턱선을 만드는 대표적인 윤곽 시술입니다. 하이톡스부터 엘러간까지 5단계 약물 중 예산과 목적에 맞게 선택할 수 있어요.": [
+      "Toxin injected into enlarged masseter muscles reduces muscle volume for a natural V-shaped jawline. Choose from five tiers, from Hitox to Allergan, by budget and goal.",
+      "発達した咬筋に注入し、筋肉のボリュームを減らして自然なVラインを目指します。ハイトックスからアラガンまで予算と目的で選べます。",
+      "将肉毒注入发达咬肌，减少肌肉容量，打造自然V形下颌线。可按预算及目标选择Hitox至Allergan等5档产品。"
+    ],
+    "하이톡스부터 엘러간까지 5단계 약물 선택제로 나에게 맞는 보톡스 선택": [
+      "Five toxin tiers from Hitox to Allergan for a personalized choice.",
+      "ハイトックスからアラガンまで5段階から選択。",
+      "Hitox至Allergan共5档肉毒，可按需选择。"
+    ],
+    "비수술로 자연스러운 V라인 턱선 완성": [
+      "A natural V-shaped jawline without surgery.",
+      "手術せず自然なVラインへ。",
+      "无需手术，打造自然V形下颌线。"
+    ],
+    "V라인 패키지(턱보톡스+골드아큐+타이트닝) 90,000원의 합리적 구성": [
+      "V-line package: masseter toxin + Gold Acu + tightening for ₩90,000.",
+      "エラ＋ゴールドアキュー＋タイトニングのVラインプラン₩90,000。",
+      "V形套餐：咬肌肉毒＋Gold Acu＋紧致，₩90,000。"
+    ],
+    "시술 시간이 짧고 일상 복귀가 빨라 부담 없이 받을 수 있는 시술": [
+      "Brief treatment with a quick return to daily life.",
+      "短時間で、日常へ早く戻れる施術。",
+      "治疗时间短，可快速恢复日常活动。"
+    ],
+    "사각턱이 고민이지만 수술 없이 자연스럽게 개선하고 싶은 분": [
+      "People seeking nonsurgical, natural improvement of a square jaw.",
+      "エラを手術せず自然に改善したい方。",
+      "希望不手术、自然改善方下颌的人群。"
+    ],
+    "봄·여름 시즌에 맞춰 갸름한 턱선을 준비하고 싶은 분": [
+      "People preparing a slimmer jawline for spring and summer.",
+      "春夏に向けてすっきりした輪郭を準備したい方。",
+      "希望为春夏打造纤细下颌线的人群。"
+    ],
+    "약물 종류와 가격을 비교해서 직접 선택하고 싶은 분": [
+      "People wanting to compare and choose products and prices.",
+      "薬剤と価格を比較して自分で選びたい方。",
+      "希望比较产品及价格后自行选择的人群。"
+    ],
+    "턱보톡스와 윤곽주사를 함께 받아 V라인 효과를 극대화하고 싶은 분": [
+      "People combining masseter toxin and contour injections for a V-line effect.",
+      "エラと輪郭注射を組み合わせたい方。",
+      "希望结合咬肌肉毒及轮廓注射增强V形效果的人群。"
+    ],
+    "턱보톡스 50U (비에녹스)": [
+      "Masseter toxin 50 U · Bienox",
+      "エラボトックス50U（ビエノックス）",
+      "咬肌肉毒50U（Bienox）"
+    ],
+    "사각턱 개선 | 갸름한 V라인\n*발달된 턱 근육을 축소시켜 자연스럽고 슬림한 얼굴선 완성": [
+      "Square-jaw improvement and a slimmer V-line.\n*Reduces enlarged jaw muscles for a natural, slim contour.",
+      "エラ改善・すっきりVライン。\n※発達した咬筋を縮小し自然な輪郭へ。",
+      "改善方下颌，打造纤细V形轮廓。\n*缩小发达咬肌，形成自然纤细脸部线条。"
+    ],
+    "턱보톡스 50U (이노톡스)": [
+      "Masseter toxin 50 U · Innotox",
+      "エラボトックス50U（イノトックス）",
+      "咬肌肉毒50U（Innotox）"
+    ],
+    "턱보톡스 50U (코어톡스)": [
+      "Masseter toxin 50 U · Coretox",
+      "エラボトックス50U（コアトックス）",
+      "咬肌肉毒50U（Coretox）"
+    ],
+    "턱보톡스 50U (제오민)": [
+      "Masseter toxin 50 U · Xeomin",
+      "エラボトックス50U（ゼオミン）",
+      "咬肌肉毒50U（Xeomin）"
+    ],
+    "턱보톡스 50U (엘러간)": [
+      "Masseter toxin 50 U · Allergan",
+      "エラボトックス50U（アラガン）",
+      "咬肌肉毒50U（Allergan）"
+    ],
+    "턱보톡스 50U (티엠버스)": [
+      "Masseter toxin 50 U · Tmvers",
+      "エラボトックス50U（Tmvers）",
+      "咬肌肉毒50U（Tmvers）"
+    ],
+    "V라인 패키지": [
+      "V-line package",
+      "Vラインプラン",
+      "V形轮廓套餐"
+    ],
+    "턱보톡스 50u(비에녹스) + 골드아큐 6cc + 타이트닝 2대(비에녹스)": [
+      "Masseter toxin 50 U (Bienox) + Gold Acu 6 cc + 2 tightening injections (Bienox)",
+      "エラ50U（ビエノックス）＋ゴールドアキュー6cc＋タイトニング2本（ビエノックス）",
+      "咬肌肉毒50U（Bienox）＋Gold Acu 6cc＋紧致注射2支（Bienox）"
+    ],
+    "턱보톡스 약물 5종의 차이가 뭔가요?": [
+      "How do the five masseter toxin products differ?",
+      "5種類のエラ用薬剤の違いは？",
+      "5种咬肌肉毒有何区别？"
+    ],
+    "하이톡스(24,000원)부터 엘러간(165,000원)까지 가격대와 특성이 달라요. 하이톡스와 이노톡스는 합리적인 입문 옵션이고, 코어톡스는 가성비와 지속력의 균형이 좋아요. 제오민과 엘러간은 프리미엄 약물로 지속력과 안정성이 높습니다. 상담 시 피부 상태와 예산에 맞게 추천해 드려요.": [
+      "Prices range from Hitox (₩24,000) to Allergan (₩165,000). Hitox and Innotox are accessible starting options; Coretox balances cost and duration. Xeomin and Allergan are premium options emphasizing duration and stability. Consultation considers your condition and budget.",
+      "ハイトックス₩24,000〜アラガン₩165,000。ハイトックス・イノトックスは入門向け、コアトックスは費用と持続のバランス、ゼオミン・アラガンは持続性と安定性を重視した上位品です。診察で状態と予算に合わせます。",
+      "价格从Hitox ₩24,000至Allergan ₩165,000。Hitox和Innotox适合入门，Coretox兼顾费用及持续性，Xeomin和Allergan侧重持久与稳定。面诊按情况及预算推荐。"
+    ],
+    "턱보톡스 효과는 언제부터 나타나고 얼마나 유지되나요?": [
+      "When do masseter toxin results appear and how long do they last?",
+      "効果の開始と持続期間は？",
+      "咬肌肉毒何时起效、维持多久？"
+    ],
+    "시술 후 2~4주부터 턱선이 갸름해지는 변화를 느끼실 수 있어요. 효과는 약물 종류와 근육 발달 정도에 따라 3~6개월 정도 지속되며, 정기적으로 맞으시면 근육 자체가 줄어들어 시술 간격을 넓힐 수 있습니다.": [
+      "Slimming becomes noticeable after 2–4 weeks and lasts about 3–6 months depending on product and muscle size. Regular treatment may reduce muscle bulk and allow longer intervals.",
+      "2〜4週間で輪郭の変化が出て、製品・筋肉量により3〜6か月持続します。継続で筋肉量が減り、間隔を延ばせる場合があります。",
+      "2至4周可见下颌线变纤细，按产品及肌肉发达程度维持约3至6个月。定期治疗可能减少肌肉体积，延长间隔。"
+    ],
+    "V라인 패키지는 어떤 구성인가요?": [
+      "What is included in the V-line package?",
+      "Vラインプランの内容は？",
+      "V形套餐包含什么？"
+    ],
+    "턱보톡스 50U(하이톡스) + 골드아큐 6cc + 타이트닝 2대(하이톡스)가 하나의 패키지로 구성되어 있어요. 보톡스로 근육을 줄이고, 윤곽주사로 지방을 관리하며, 타이트닝으로 피부를 조여 주는 복합 V라인 프로그램입니다.": [
+      "Masseter toxin 50 U (Hitox), Gold Acu 6 cc and 2 tightening injections (Hitox): muscle reduction, fat management and skin tightening in one program.",
+      "エラ50U（ハイトックス）＋ゴールドアキュー6cc＋タイトニング2本（ハイトックス）で筋肉・脂肪・皮膚をまとめてケアします。",
+      "咬肌肉毒50U（Hitox）＋Gold Acu 6cc＋紧致注射2支（Hitox），结合缩肌、脂肪护理与皮肤紧致。"
+    ],
+    "턱보톡스 시술이 아프거나 다운타임이 있나요?": [
+      "Is masseter toxin painful or associated with downtime?",
+      "痛みやダウンタイムは？",
+      "咬肌肉毒疼吗，需要恢复期吗？"
+    ],
+    "미세한 주사 바늘을 사용해 통증이 크지 않고, 시술 시간도 10~15분 정도로 짧아요. 시술 직후 약간의 뻐근함이 있을 수 있지만, 일상생활에 지장 없이 바로 복귀 가능합니다.": [
+      "Fine needles limit discomfort, and treatment takes about 10–15 minutes. Mild aching may occur, but normal activities can resume immediately.",
+      "細い針で痛みは軽め、約10〜15分です。軽いだるさが出る場合がありますが、すぐ日常へ戻れます。",
+      "使用细针，疼痛较轻，约10至15分钟。可能轻微酸胀，但可立即恢复日常活动。"
+    ],
+    "시술 후 2~3일간은 딱딱하거나 질긴 음식(오징어, 껌 등)을 피해 주세요": [
+      "Avoid hard or chewy foods such as dried squid or gum for 2–3 days.",
+      "2〜3日はイカやガムなど硬い・噛み応えのある食品を避けてください。",
+      "术后2至3天避免鱿鱼、口香糖等坚硬或耐嚼食物。"
+    ],
+    "시술 당일은 과도한 음주와 격한 운동을 자제해 주세요": [
+      "Avoid excessive drinking and strenuous exercise that day.",
+      "当日は過度の飲酒と激しい運動を控えてください。",
+      "当天避免过量饮酒及剧烈运动。"
+    ],
+    "시술 부위를 세게 문지르거나 마사지하지 마세요": [
+      "Do not rub or massage the area forcefully.",
+      "部位を強くこすったりマッサージしないでください。",
+      "勿用力揉搓或按摩治疗部位。"
+    ],
+    "임산부, 수유 중인 분은 시술이 어려우니 사전에 말씀해 주세요": [
+      "Disclose pregnancy or breastfeeding, as treatment may not be possible.",
+      "妊娠・授乳中は受けられないため事前に伝えてください。",
+      "孕期或哺乳期可能无法治疗，请事先告知。"
+    ],
+    "시술 후 효과가 나타나기까지 2~4주 정도 소요되니 참고해 주세요": [
+      "Allow 2–4 weeks for results to appear.",
+      "効果が出るまで2〜4週間かかります。",
+      "效果显现约需2至4周。"
+    ],
+    "턱 근육의 발달과 기능을 확인한 뒤 선택하는 부위별 보톡스입니다.": [
+      "Localized toxin selected after assessing jaw muscle development and function.",
+      "咬筋の発達と機能を確認して選ぶ部位別トキシンです。",
+      "评估咬肌发达程度及功能后选择的局部肉毒护理。"
+    ],
+    "사진의 좌우 균형 수치만으로 근육 비대 여부나 시술 필요성을 판단하지 않습니다.": [
+      "Photo symmetry scores alone cannot establish muscle enlargement or a need for treatment.",
+      "写真の左右差スコアだけで筋肥大や施術の必要性を判断しません。",
+      "不能仅凭照片左右平衡评分判断肌肉肥大或治疗必要性。"
+    ],
+    "주름보톡스": [
+      "Wrinkle toxin",
+      "しわボトックス",
+      "除皱肉毒"
+    ],
+    "이마, 미간, 눈가 등 표정주름 치료 (부위별 약물 선택)": [
+      "Expression-line treatment for forehead, frown lines and eye area, with product choice by area.",
+      "額・眉間・目元などの表情じわを部位別の薬剤でケア。",
+      "按部位选择制剂，护理额头、眉间及眼周等表情纹。"
+    ],
+    "반복되는 표정으로 생긴 이마, 미간, 눈가 주름을 보톡스로 관리하는 시술입니다. 부위별로 하이톡스부터 엘러간까지 5단계 약물 중 선택할 수 있고, 주름이 깊어지기 전 예방 차원에서도 많이 받으세요.": [
+      "Toxin addresses lines from repeated expressions on the forehead, between the brows and around the eyes. Choose five tiers from Hitox to Allergan; also used before wrinkles deepen.",
+      "繰り返す表情による額・眉間・目元のしわをケアします。ハイトックス〜アラガンの5段階から選べ、深くなる前の予防にも使われます。",
+      "肉毒护理反复表情形成的额头、眉间及眼周皱纹。可选Hitox至Allergan共5档制剂，也用于皱纹加深前的护理。"
+    ],
+    "이마·미간·눈가 등 부위별 맞춤 주름 관리": [
+      "Personalized wrinkle care for forehead, frown lines and eye area.",
+      "額・眉間・目元など部位別のしわケア。",
+      "按额头、眉间、眼周等部位定制除皱。"
+    ],
+    "하이톡스부터 엘러간까지 5단계 약물 선택으로 예산에 맞는 관리 가능": [
+      "Five product tiers from Hitox to Allergan to suit your budget.",
+      "ハイトックス〜アラガンの5段階で予算に対応。",
+      "Hitox至Allergan共5档，适应不同预算。"
+    ],
+    "3부위 하이톡스 49,000원으로 합리적인 복합 주름 관리": [
+      "Three-area Hitox package for ₩49,000.",
+      "3部位ハイトックスプラン₩49,000。",
+      "Hitox 3部位套餐₩49,000。"
+    ],
+    "자연스러운 표정을 유지하면서 주름만 개선하는 정밀 시술": [
+      "Precise treatment aims to soften lines while preserving natural expressions.",
+      "自然な表情を保ち、しわを改善する精密施術。",
+      "精准治疗，保留自然表情并改善皱纹。"
+    ],
+    "이마, 미간, 눈가 주름이 서서히 자리 잡기 시작한 분": [
+      "People beginning to develop forehead, frown or eye-area lines.",
+      "額・眉間・目元にしわが定着し始めた方。",
+      "额头、眉间或眼周皱纹开始形成的人群。"
+    ],
+    "표정 주름이 생기기 전에 예방 차원으로 관리하고 싶은 분": [
+      "People seeking preventive expression-line care.",
+      "表情じわができる前にケアしたい方。",
+      "希望在表情纹形成前护理的人群。"
+    ],
+    "자연스러운 표정은 유지하면서 주름만 줄이고 싶은 분": [
+      "People reducing lines while keeping natural expressions.",
+      "自然な表情を保ちながらしわを減らしたい方。",
+      "希望减少皱纹同时保留自然表情的人群。"
+    ],
+    "봄철 밝고 화사한 인상을 위해 주름 관리를 시작하고 싶은 분": [
+      "People starting wrinkle care for a brighter spring appearance.",
+      "春に明るい印象を目指してしわケアを始めたい方。",
+      "希望春季开始除皱、呈现明亮精神面容的人群。"
+    ],
+    "주름보톡스 1부위 (비에녹스)": [
+      "Wrinkle toxin · 1 area · Bienox",
+      "しわボトックス1部位（ビエノックス）",
+      "除皱肉毒1部位（Bienox）"
+    ],
+    "*시술 가능 부위 : 이마 / 미간 / 눈썹 / 눈가 / 눈밑 / 자갈턱 / 콧볼 / 콧잔등": [
+      "*Areas: forehead / frown lines / brows / crow's feet / under-eyes / dimpled chin / nostrils / nasal bridge.",
+      "※部位：額／眉間／眉／目尻／目の下／梅干しあご／小鼻／鼻筋。",
+      "*部位：额头／眉间／眉部／眼角／眼下／橘皮纹下巴／鼻翼／鼻梁。"
+    ],
+    "주름보톡스 1부위 (이노톡스)": [
+      "Wrinkle toxin · 1 area · Innotox",
+      "しわボトックス1部位（イノトックス）",
+      "除皱肉毒1部位（Innotox）"
+    ],
+    "주름보톡스 1부위 (코어톡스)": [
+      "Wrinkle toxin · 1 area · Coretox",
+      "しわボトックス1部位（コアトックス）",
+      "除皱肉毒1部位（Coretox）"
+    ],
+    "주름보톡스 1부위 (제오민)": [
+      "Wrinkle toxin · 1 area · Xeomin",
+      "しわボトックス1部位（ゼオミン）",
+      "除皱肉毒1部位（Xeomin）"
+    ],
+    "주름보톡스 1부위 (티엠버스)": [
+      "Wrinkle toxin · 1 area · Tmvers",
+      "しわボトックス1部位（Tmvers）",
+      "除皱肉毒1部位（Tmvers）"
+    ],
+    "주름보톡스 1부위 (엘러간)": [
+      "Wrinkle toxin · 1 area · Allergan",
+      "しわボトックス1部位（アラガン）",
+      "除皱肉毒1部位（Allergan）"
+    ],
+    "주름보톡스 3부위 (비에녹스)": [
+      "Wrinkle toxin · 3 areas · Bienox",
+      "しわボトックス3部位（ビエノックス）",
+      "除皱肉毒3部位（Bienox）"
+    ],
+    "*시술가능부위 : 이마,미간,눈썹,눈가,눈밑,자갈턱,콧볼,콧잔등": [
+      "*Areas: forehead, frown lines, brows, crow's feet, under-eyes, dimpled chin, nostrils and nasal bridge.",
+      "※部位：額、眉間、眉、目尻、目の下、梅干しあご、小鼻、鼻筋。",
+      "*部位：额头、眉间、眉部、眼角、眼下、橘皮纹下巴、鼻翼、鼻梁。"
+    ],
+    "주름보톡스는 몇 부위까지 맞을 수 있나요?": [
+      "How many areas can be treated?",
+      "何部位まで施術できますか？",
+      "可以治疗几个部位？"
+    ],
+    "이마, 미간, 눈가(눈꼬리), 콧등, 팔자 등 주름이 생기는 다양한 부위에 시술이 가능해요. 1부위씩 선택할 수도 있고, 3부위 하이톡스 패키지(49,000원)로 여러 부위를 한 번에 관리하시면 더 합리적입니다.": [
+      "Forehead, frown lines, crow's feet, nasal bridge and nasolabial areas are among options. Choose individually or use the three-area Hitox package (₩49,000).",
+      "額、眉間、目尻、鼻筋、ほうれい線などが対象です。1部位ずつ、またはハイトックス3部位₩49,000のプランで選べます。",
+      "可选额头、眉间、眼角、鼻梁、法令纹等部位，可单选或选Hitox 3部位套餐（₩49,000）。"
+    ],
+    "20대인데 주름보톡스를 맞아도 되나요?": [
+      "Can I have wrinkle toxin in my twenties?",
+      "20代でも受けられますか？",
+      "20多岁可以做除皱肉毒吗？"
+    ],
+    "네, 최근에는 20대 후반부터 예방 차원으로 받으시는 분이 많아요. 표정 주름이 반복되면 점점 깊어지기 때문에, 초기에 관리하면 주름이 고정되는 걸 예방할 수 있습니다. 소량으로 자연스럽게 시술해 드려요.": [
+      "Yes; many start preventive care in their late twenties. Early, small-dose treatment aims to prevent repeated expression lines from becoming fixed while maintaining a natural look.",
+      "はい。20代後半から予防目的で始める方もいます。少量の自然な施術で、繰り返す表情じわの定着を防ぐことを目指します。",
+      "可以，许多人20多岁后期开始预防护理。通过早期小剂量自然治疗，减少反复表情纹逐渐固定。"
+    ],
+    "표정이 어색해지진 않나요?": [
+      "Will my expressions look unnatural?",
+      "表情が不自然になりませんか？",
+      "表情会不自然吗？"
+    ],
+    "적절한 용량을 정확한 부위에 주입하면 표정은 자연스럽게 유지되면서 주름만 개선돼요. 뮤즈클리닉에서는 과도한 시술을 지양하고, 자연스러운 결과를 목표로 시술합니다.": [
+      "Correct doses at precise sites aim to improve lines while preserving expression. Muse Clinic describes avoiding excessive treatment and prioritizing natural results.",
+      "適切な量を正確な位置に注入し表情を保ちます。ミューズクリニックは過剰な施術を避け、自然な結果を目指すとしています。",
+      "适量精准注射可在保留表情的同时改善皱纹。Muse Clinic说明其避免过度治疗，追求自然效果。"
+    ],
+    "주름보톡스 효과는 얼마나 지속되나요?": [
+      "How long does wrinkle toxin last?",
+      "しわボトックスの持続期間は？",
+      "除皱肉毒能维持多久？"
+    ],
+    "보통 3~6개월 정도 지속되며, 약물 종류와 개인 대사에 따라 차이가 있어요. 정기적으로 관리하시면 주름이 깊어지는 것을 효과적으로 예방할 수 있습니다.": [
+      "Usually 3–6 months, depending on product and metabolism. Regular care helps prevent lines from deepening.",
+      "通常3〜6か月で、製品と代謝により異なります。定期ケアはしわの深まりを防ぐ助けになります。",
+      "通常3至6个月，因产品及个人代谢而异，定期护理有助于减少皱纹加深。"
+    ],
+    "시술 후 4시간 정도는 누워서 자는 것을 피해 주세요": [
+      "Avoid lying down to sleep for about 4 hours afterward.",
+      "施術後約4時間は横になって眠らないでください。",
+      "术后约4小时避免躺卧睡觉。"
+    ],
+    "시술 효과는 보통 3~7일 후부터 나타나기 시작해요": [
+      "Effects generally start appearing after 3–7 days.",
+      "通常3〜7日後から効果が出始めます。",
+      "通常3至7天后开始起效。"
+    ],
+    "표정근의 움직임과 관련된 주름을 다루는 보툴리눔 톡신 시술입니다.": [
+      "Botulinum toxin for wrinkles related to facial muscle movement.",
+      "表情筋の動きによるしわを扱うボツリヌストキシン施術です。",
+      "用于面部肌肉运动相关皱纹的肉毒护理。"
+    ],
+    "표정주름과 피부 처짐·볼륨 부족은 구분해야 합니다.": [
+      "Distinguish expression lines from sagging and volume loss.",
+      "表情じわと、たるみ・ボリューム不足は区別します。",
+      "应区分表情纹、皮肤松弛及容量不足。"
+    ],
+    "입꼬리보톡스": [
+      "Mouth-corner toxin",
+      "口角ボトックス",
+      "嘴角肉毒"
+    ],
+    "처진 입꼬리 개선": [
+      "Improvement of downturned mouth corners.",
+      "下がった口角を改善。",
+      "改善嘴角下垂。"
+    ],
+    "입꼬리를 아래로 당기는 근육(구각하제근)에 소량의 보톡스를 주입하여, 자연스럽게 올라간 입꼬리와 밝은 인상을 만드는 시술입니다. 하이톡스 15,000원부터 시작할 수 있어요.": [
+      "Small toxin doses in the depressor anguli oris relax downward pull for naturally lifted corners and a brighter expression. Hitox starts at ₩15,000.",
+      "口角を下げる筋肉へ少量注入し、自然な口角と明るい印象を目指します。ハイトックスは₩15,000からです。",
+      "少量肉毒注入降口角肌，减轻向下牵拉，打造自然上扬嘴角及明亮面容。Hitox ₩15,000起。"
+    ],
+    "가만히 있어도 화난 인상, 무표정해 보인다는 말을 듣는 분": [
+      "People told they look angry or expressionless at rest.",
+      "何もしていなくても怒っている・無表情と言われる方。",
+      "静止时常被认为生气或面无表情的人群。"
+    ],
+    "입꼬리가 처져서 피곤하거나 우울해 보이는 게 고민인 분": [
+      "People whose downturned corners make them look tired or sad.",
+      "下がった口角で疲れや落ち込みが見える方。",
+      "嘴角下垂显得疲惫或低落的人群。"
+    ],
+    "봄에 맞춰 밝고 환한 인상으로 변화를 주고 싶은 분": [
+      "People seeking a brighter look for spring.",
+      "春に明るい印象へ変えたい方。",
+      "希望春季呈现明亮面容的人群。"
+    ],
+    "부담 없는 가격으로 간단한 인상 교정을 경험해 보고 싶은 분": [
+      "People seeking a simple, affordable change in expression.",
+      "手頃に簡単な印象の変化を試したい方。",
+      "希望经济地体验简单面容改善的人群。"
+    ],
+    "입꼬리보톡스 (비에녹스)": [
+      "Mouth-corner toxin · Bienox",
+      "口角ボトックス（ビエノックス）",
+      "嘴角肉毒（Bienox）"
+    ],
+    "처진 입꼬리 더 처지지 않도록 예방": [
+      "Helps prevent further downward pulling of mouth corners.",
+      "口角がさらに下がるのを予防。",
+      "帮助预防嘴角进一步下垂。"
+    ],
+    "입꼬리보톡스 (이노톡스)": [
+      "Mouth-corner toxin · Innotox",
+      "口角ボトックス（イノトックス）",
+      "嘴角肉毒（Innotox）"
+    ],
+    "입꼬리보톡스(코어톡스)": [
+      "Mouth-corner toxin · Coretox",
+      "口角ボトックス（コアトックス）",
+      "嘴角肉毒（Coretox）"
+    ],
+    "입꼬리보톡스 (제오민)": [
+      "Mouth-corner toxin · Xeomin",
+      "口角ボトックス（ゼオミン）",
+      "嘴角肉毒（Xeomin）"
+    ],
+    "입꼬리보톡스 (엘러간)": [
+      "Mouth-corner toxin · Allergan",
+      "口角ボトックス（アラガン）",
+      "嘴角肉毒（Allergan）"
+    ],
+    "입꼬리 보톡스 (티엠버스)": [
+      "Mouth-corner toxin · Tmvers",
+      "口角ボトックス（Tmvers）",
+      "嘴角肉毒（Tmvers）"
+    ],
+    "입꼬리보톡스로 인상이 얼마나 달라지나요?": [
+      "How much will my expression change?",
+      "印象はどのくらい変わりますか？",
+      "面容会改变多少？"
+    ],
+    "입꼬리를 당기는 근육이 이완되면서 입꼬리가 자연스럽게 올라가요. 극적인 변화보다는 편안하고 밝아 보이는 인상으로 바뀌는 느낌이에요. 주변에서 '요즘 좋은 일 있어?'라고 물어볼 정도의 자연스러운 변화입니다.": [
+      "Relaxing the downward-pulling muscle allows a subtle lift. The aim is a relaxed, brighter expression rather than dramatic change—enough for others to notice you look happier.",
+      "下へ引く筋肉が緩み、自然に少し上がります。大きな変化よりも、周囲に機嫌が良さそうと思われる程度の穏やかな印象を目指します。",
+      "放松向下牵拉肌肉后，嘴角自然轻抬。追求轻松明亮而非剧烈变化，让人感觉心情更好。"
+    ],
+    "입꼬리보톡스 15,000원이면 정말 효과가 있나요?": [
+      "Can the ₩15,000 option be effective?",
+      "₩15,000でも効果はありますか？",
+      "₩15,000的选项有效吗？"
+    ],
+    "네, 하이톡스 15,000원은 입꼬리 근육에 필요한 적정 용량으로 시술하는 가격이에요. 충분한 효과를 기대할 수 있고, 더 긴 지속력을 원하시면 코어톡스(29,000원)나 엘러간(59,000원) 등 상위 약물도 선택 가능합니다.": [
+      "Yes. Hitox at ₩15,000 includes an appropriate dose for these muscles. For longer duration, the source offers Coretox at ₩29,000 or Allergan at ₩59,000.",
+      "はい。₩15,000は必要な量での価格です。より長い持続を望む場合、コアトックス₩29,000やアラガン₩59,000も選べます。",
+      "可以，Hitox ₩15,000包含适合该肌肉的剂量。希望更长维持时间时，可选Coretox ₩29,000或Allergan ₩59,000。"
+    ],
+    "웃을 때 어색해지지 않나요?": [
+      "Will smiling look unnatural?",
+      "笑顔が不自然になりませんか？",
+      "笑起来会不自然吗？"
+    ],
+    "입꼬리를 아래로 당기는 근육에만 소량을 정밀하게 주입하기 때문에, 웃는 표정이나 말하는 데 영향을 주지 않아요. 자연스러운 웃음은 그대로 유지하면서 무표정 시 입꼬리만 살짝 올라가는 효과를 기대할 수 있습니다.": [
+      "Small, precise doses target only the downward-pulling muscle, aiming to preserve smiling and speech while slightly lifting corners at rest.",
+      "下げる筋肉だけに少量を正確に注入し、笑顔や会話を保ちながら無表情時の口角を少し上げることを目指します。",
+      "少量精准作用于下拉肌肉，旨在保留自然微笑与说话功能，同时轻抬静止时的嘴角。"
+    ],
+    "시술 후 2~3일간은 입 주변을 세게 문지르거나 마사지하지 마세요": [
+      "Do not strongly rub or massage around the mouth for 2–3 days.",
+      "2〜3日は口周りを強くこすったり揉まないでください。",
+      "术后2至3天勿用力揉搓或按摩口周。"
+    ],
+    "시술 당일은 과도한 음주를 자제해 주세요": [
+      "Avoid excessive alcohol on treatment day.",
+      "当日は過度の飲酒を控えてください。",
+      "当天避免过量饮酒。"
+    ],
+    "시술 후 효과는 보통 3~7일 후부터 서서히 나타나요": [
+      "Effects generally develop gradually after 3–7 days.",
+      "通常3〜7日後から徐々に効果が現れます。",
+      "通常3至7天后逐步起效。"
+    ],
+    "입꼬리 주변의 근육 작용을 확인한 뒤 선택하는 부위별 보톡스입니다.": [
+      "Localized toxin selected after assessing the muscles around the mouth corners.",
+      "口角周囲の筋肉の働きを確認して選ぶトキシン施術です。",
+      "评估嘴角周围肌肉作用后选择的局部肉毒护理。"
+    ],
+    "피부 점수나 좌우 균형을 근거로 자동 추천하지 않습니다.": [
+      "Not automatically recommended from skin scores or facial symmetry.",
+      "肌スコアや左右バランスだけでは自動推薦しません。",
+      "不根据皮肤评分或左右平衡自动推荐。"
+    ],
+    "측두근보톡스": [
+      "Temporalis toxin",
+      "側頭筋ボトックス",
+      "颞肌肉毒"
+    ],
+    "옆통수 축소, 긴장성 두통·이갈이 완화": [
+      "Temple slimming and relief of tension headaches or teeth grinding.",
+      "側頭部をすっきりさせ、緊張性頭痛・歯ぎしりを緩和。",
+      "改善侧头部轮廓，缓解紧张性头痛及磨牙。"
+    ],
+    "관자놀이 부위의 발달한 측두근에 보톡스를 주입하여 근육 볼륨을 줄이는 시술입니다. 옆에서 봤을 때 얼굴이 작아 보이는 소두 효과와 함께, 긴장성 두통이나 이갈이 완화에도 도움이 돼요.": [
+      "Toxin reduces enlarged temporalis muscles at the temples, aiming for a smaller side profile and relief of tension headaches or grinding.",
+      "発達した側頭筋に注入して筋量を減らし、横顔を小さく見せる効果と緊張性頭痛・歯ぎしりの緩和を目指します。",
+      "向发达颞肌注入肉毒以减少肌肉容量，使侧面轮廓更小，并帮助缓解紧张性头痛或磨牙。"
+    ],
+    "옆통수 축소로 옆모습까지 갸름한 소두 라인 완성": [
+      "Slimmer temples for a smaller-looking side profile.",
+      "側頭部を縮小し、横顔もすっきり。",
+      "缩小侧头部，侧面轮廓更纤细。"
+    ],
+    "미용 효과와 기능적 효과(두통·이갈이 완화)를 동시에": [
+      "Combines aesthetic and functional goals, including headache and grinding relief.",
+      "美容と頭痛・歯ぎしり緩和の機能面を同時ケア。",
+      "兼顾外观与头痛、磨牙缓解等功能诉求。"
+    ],
+    "하이톡스부터 엘러간까지 5단계 약물 선택으로 맞춤 시술": [
+      "Five product tiers from Hitox to Allergan for tailored treatment.",
+      "ハイトックス〜アラガンの5段階で個別対応。",
+      "Hitox至Allergan共5档，可定制选择。"
+    ],
+    "턱보톡스와 함께 받으면 정면+측면 모두 균형 잡힌 윤곽 완성": [
+      "Combined with masseter toxin for balanced front and side contours.",
+      "エラと併用し、正面と側面の輪郭を整えます。",
+      "搭配咬肌肉毒，协调正面及侧面轮廓。"
+    ],
+    "옆에서 봤을 때 머리가 크다는 고민이 있는 분": [
+      "People concerned that their head looks large from the side.",
+      "横から頭が大きく見えるのが気になる方。",
+      "在意侧面头部显大的人群。"
+    ],
+    "스트레스성 두통이나 이갈이로 측두근이 발달한 분": [
+      "People with developed temporalis muscles from stress headaches or grinding.",
+      "ストレス性頭痛や歯ぎしりで側頭筋が発達した方。",
+      "因压力性头痛或磨牙而颞肌发达的人群。"
+    ],
+    "턱보톡스와 함께 얼굴 윤곽 전체를 정리하고 싶은 분": [
+      "People combining with masseter toxin for overall contour care.",
+      "エラと合わせて輪郭全体を整えたい方。",
+      "希望搭配咬肌肉毒改善整体轮廓的人群。"
+    ],
+    "봄철 가벼운 헤어스타일에 맞춰 소두 효과를 원하는 분": [
+      "People seeking a smaller-looking profile for lighter spring hairstyles.",
+      "春の軽い髪型に合わせ小顔感を求める方。",
+      "希望配合春季轻盈发型、打造小头视觉的人群。"
+    ],
+    "측두근 보톡스 100u (비에녹스)": [
+      "Temporalis toxin 100 U · Bienox",
+      "側頭筋ボトックス100U（ビエノックス）",
+      "颞肌肉毒100U（Bienox）"
+    ],
+    "편두통 완화 + 측두부 슬림 + 스트레스 감소\n*측두근 긴장을 풀어 두통 완화와 얼굴 축소 효과": [
+      "Migraine relief, temple slimming and reduced stress.\n*Relaxes temporalis tension for headache relief and contour reduction.",
+      "片頭痛緩和・側頭部スリム・ストレス軽減。\n※側頭筋の緊張を緩め、頭痛と輪郭をケア。",
+      "缓解偏头痛、修饰颞部、减轻压力。\n*放松颞肌紧张，护理头痛与面部轮廓。"
+    ],
+    "측두근 보톡스 100U (이노톡스)": [
+      "Temporalis toxin 100 U · Innotox",
+      "側頭筋ボトックス100U（イノトックス）",
+      "颞肌肉毒100U（Innotox）"
+    ],
+    "측두근 보톡스 100u (코어톡스)": [
+      "Temporalis toxin 100 U · Coretox",
+      "側頭筋ボトックス100U（コアトックス）",
+      "颞肌肉毒100U（Coretox）"
+    ],
+    "측두근 보톡스 100u (제오민)": [
+      "Temporalis toxin 100 U · Xeomin",
+      "側頭筋ボトックス100U（ゼオミン）",
+      "颞肌肉毒100U（Xeomin）"
+    ],
+    "측두근 보톡스 100u (엘러간)": [
+      "Temporalis toxin 100 U · Allergan",
+      "側頭筋ボトックス100U（アラガン）",
+      "颞肌肉毒100U（Allergan）"
+    ],
+    "측두근 보톡스 100U (티엠버스)": [
+      "Temporalis toxin 100 U · Tmvers",
+      "側頭筋ボトックス100U（Tmvers）",
+      "颞肌肉毒100U（Tmvers）"
+    ],
+    "측두근보톡스로 두통이 정말 완화되나요?": [
+      "Can temporalis toxin really ease headaches?",
+      "頭痛は本当に緩和しますか？",
+      "颞肌肉毒真的能缓解头痛吗？"
+    ],
+    "측두근 긴장에서 오는 두통이라면 효과를 기대할 수 있어요. 측두근이 과도하게 발달하거나 긴장되면 관자놀이 쪽 압박감과 두통을 유발하는데, 보톡스로 근육을 이완시키면 이런 증상이 완화됩니다. 다만 모든 두통에 효과가 있는 것은 아니므로 상담 시 확인해 드려요.": [
+      "It may help headaches caused by temporalis tension or enlargement by relaxing the muscle. It is not effective for every headache; consultation assesses the cause.",
+      "側頭筋の緊張や発達が原因なら、筋肉を緩めて改善が期待できます。すべての頭痛に効くわけではなく診察で確認します。",
+      "若头痛源于颞肌紧张或过度发达，放松肌肉可能有帮助。并非所有头痛都有效，需面诊确认原因。"
+    ],
+    "턱보톡스와 같이 맞으면 효과가 더 좋나요?": [
+      "Is combining with masseter toxin better?",
+      "エラと併用するとよいですか？",
+      "搭配咬肌肉毒效果更好吗？"
+    ],
+    "네, 턱보톡스(교근)와 측두근보톡스를 함께 받으시면 정면의 사각턱과 옆면의 옆통수가 동시에 줄어들어, 전체적으로 균형 잡힌 소형 윤곽을 완성할 수 있어요. 많은 분들이 함께 시술 받으세요.": [
+      "Combining them addresses front-view jaw bulk and side-view temple bulk for a smaller, balanced contour; they are often performed together.",
+      "咬筋と側頭筋を一緒にケアし、正面のエラと側面の張りを減らすため、併用されることが多い施術です。",
+      "同时护理咬肌与颞肌，可减少正面下颌及侧面颞部突出，使轮廓更协调，两者常联合进行。"
+    ],
+    "측두근보톡스 100U의 의미가 뭔가요?": [
+      "What does 100 U mean?",
+      "100Uとは何ですか？",
+      "100U是什么意思？"
+    ],
+    "100U는 양쪽 측두근에 주입하는 총 보톡스 용량이에요. 측두근은 교근보다 넓은 근육이라 보통 50U 이상의 용량이 필요하고, 뮤즈클리닉에서는 100U 기준으로 안내해 드리고 있어요. 약물별로 하이톡스 69,000원부터 엘러간 229,000원까지 선택하실 수 있습니다.": [
+      "It is the total dose for both temporalis muscles. These broad muscles commonly require more than 50 U; Muse Clinic lists a 100 U option, from Hitox ₩69,000 to Allergan ₩229,000.",
+      "両側の合計量です。咬筋より広いため通常50U以上が必要とされ、ミューズクリニックは100U、ハイトックス₩69,000〜アラガン₩229,000で案内しています。",
+      "指双侧颞肌总剂量。颞肌比咬肌更宽，通常需50U以上；Muse Clinic按100U介绍，Hitox ₩69,000至Allergan ₩229,000可选。"
+    ],
+    "시술 후 다운타임이나 주의할 점이 있나요?": [
+      "What downtime or precautions are involved?",
+      "回復期間や注意点は？",
+      "恢复期及注意事项有哪些？"
+    ],
+    "시술 직후 약간의 뻐근함이 있을 수 있지만, 대부분 당일~다음 날이면 괜찮아져요. 효과는 시술 후 2~4주부터 서서히 나타나며, 3~6개월 정도 유지됩니다.": [
+      "Mild aching usually settles the same or next day. Effects develop after 2–4 weeks and last about 3–6 months.",
+      "軽いだるさは当日〜翌日に落ち着き、効果は2〜4週間から現れ、約3〜6か月続きます。",
+      "轻微酸胀通常当天至次日缓解，2至4周逐步见效，维持约3至6个月。"
+    ],
+    "시술 후 2~3일간은 시술 부위를 세게 문지르거나 마사지하지 마세요": [
+      "Avoid forceful rubbing or massage of the area for 2–3 days.",
+      "2〜3日は部位を強くこすったり揉まないでください。",
+      "术后2至3天避免用力揉搓或按摩治疗部位。"
+    ],
+    "이갈이가 심한 분은 취침 시 마우스피스 착용을 병행하면 더 좋아요": [
+      "For severe grinding, wearing a mouthguard during sleep may complement care.",
+      "歯ぎしりが強い方は就寝時のマウスピース併用も役立ちます。",
+      "磨牙严重者可配合睡眠时佩戴牙套。"
+    ],
+    "시술 효과는 2~4주 후부터 서서히 나타나니 참고해 주세요": [
+      "Effects develop gradually from 2–4 weeks.",
+      "効果は2〜4週間後から徐々に現れます。",
+      "效果通常2至4周后逐渐显现。"
+    ],
+    "측두근의 발달과 기능을 평가한 뒤 선택하는 부위별 보톡스입니다.": [
+      "Localized toxin selected after assessing temporalis development and function.",
+      "側頭筋の発達と機能を評価して選ぶ部位別トキシンです。",
+      "评估颞肌发达程度及功能后选择的局部肉毒护理。"
+    ],
+    "턱 근육·측두근의 기능과 증상은 사진 분석만으로 확인할 수 없습니다.": [
+      "Jaw and temporalis muscle function and symptoms cannot be assessed from photos alone.",
+      "咬筋・側頭筋の機能や症状は写真だけでは確認できません。",
+      "无法仅凭照片判断咬肌、颞肌功能及症状。"
+    ],
+    "귀밑샘보톡스": [
+      "Parotid toxin",
+      "耳下腺ボトックス",
+      "腮腺肉毒"
+    ],
+    "귀밑 침샘 축소, 하관 라인 개선": [
+      "Parotid gland reduction and lower-face contouring.",
+      "耳下腺を小さくし、下顔面の輪郭を改善。",
+      "缩小腮腺，改善下面部轮廓。"
+    ],
+    "귀밑샘보톡스는 귀 아래 침샘(이하선)에 보톡스를 주입하여 비대해진 침샘의 크기를 줄이고, 하관 라인을 날렵하게 개선하는 시술이에요. 하이톡스부터 엘러간까지 5가지 약물 중 선택할 수 있습니다.": [
+      "Toxin injected into enlarged parotid glands beneath the ears reduces their size for a slimmer lower face. Five products are available from Hitox to Allergan.",
+      "耳の下の肥大した耳下腺へ注入し、サイズを減らして下顔面を整えます。ハイトックス〜アラガンの5種類から選べます。",
+      "向耳下肥大的腮腺注入肉毒，缩小体积，使下面部更纤细。可选Hitox至Allergan等5种产品。"
+    ],
+    "하이톡스 39,000원부터 시작하는 합리적인 가격": [
+      "Affordable pricing from Hitox ₩39,000.",
+      "ハイトックス₩39,000から。",
+      "Hitox ₩39,000起。"
+    ],
+    "침샘 축소로 하관 라인이 자연스럽게 날렵해짐": [
+      "Gland reduction naturally slims the lower-face line.",
+      "耳下腺を縮小し、自然なシャープさへ。",
+      "缩小腮腺，使下面部自然纤细。"
+    ],
+    "턱보톡스와 병행하면 V라인 효과 향상": [
+      "Can enhance V-line contouring when combined with masseter toxin.",
+      "エラとの併用でVラインをより整えます。",
+      "搭配咬肌肉毒可增强V形轮廓效果。"
+    ],
+    "국산부터 엘러간까지 5단계 약물 중 원하는 제품 선택 가능": [
+      "Choose from five tiers from Korean products to Allergan.",
+      "韓国製〜アラガンの5段階から選択。",
+      "韩国产至Allergan共5档可选。"
+    ],
+    "봄맞이 V라인 준비, 지금 시작하기 좋은 시술": [
+      "An option for preparing a V-line contour for spring.",
+      "春のVライン準備に向けた施術。",
+      "为春季V形轮廓做准备的选项。"
+    ],
+    "하관이 넓어 볼이 퍼져 보이는 게 고민인 분": [
+      "People whose broad lower face makes their cheeks look wide.",
+      "下顔面が広く頬が張って見える方。",
+      "下面部宽、面颊显宽的人群。"
+    ],
+    "턱보톡스만으로 V라인 효과가 부족하다고 느끼시는 분": [
+      "People who feel masseter toxin alone has not achieved their desired contour.",
+      "エラだけではVラインが物足りない方。",
+      "感觉单做咬肌肉毒轮廓改善不足的人群。"
+    ],
+    "비수술로 자연스러운 하관 축소를 원하시는 분": [
+      "People seeking natural nonsurgical lower-face reduction.",
+      "手術せず自然に下顔面を小さくしたい方。",
+      "希望不手术、自然缩小下面部的人群。"
+    ],
+    "봄을 맞아 슬림한 얼굴 라인을 준비하고 싶은 분": [
+      "People preparing a slim facial contour for spring.",
+      "春に向けてすっきりした輪郭を目指す方。",
+      "希望春季拥有纤细面部线条的人群。"
+    ],
+    "귀밑샘 보톡스 50U (비에녹스)": [
+      "Parotid toxin 50 U · Bienox",
+      "耳下腺ボトックス50U（ビエノックス）",
+      "腮腺肉毒50U（Bienox）"
+    ],
+    "이하선 축소 → 얼굴 폭 감소 → 갸름한 얼굴형\n*비대해진 귀밑샘을 줄여 전체적인 더욱 날렵한 턱선": [
+      "Parotid reduction → reduced facial width → slimmer contour.\n*Reduces enlarged glands for a sharper jawline.",
+      "耳下腺縮小→顔幅減少→すっきりした輪郭。\n※肥大した耳下腺を小さくし、シャープなラインへ。",
+      "缩小腮腺→减少脸宽→纤细轮廓。\n*缩小肥大腮腺，使下颌线更清晰。"
+    ],
+    "귀밑샘 보톡스 50U (이노톡스)": [
+      "Parotid toxin 50 U · Innotox",
+      "耳下腺ボトックス50U（イノトックス）",
+      "腮腺肉毒50U（Innotox）"
+    ],
+    "귀밑샘 보톡스 50U (코어톡스)": [
+      "Parotid toxin 50 U · Coretox",
+      "耳下腺ボトックス50U（コアトックス）",
+      "腮腺肉毒50U（Coretox）"
+    ],
+    "귀밑샘 보톡스 50U (제오민)": [
+      "Parotid toxin 50 U · Xeomin",
+      "耳下腺ボトックス50U（ゼオミン）",
+      "腮腺肉毒50U（Xeomin）"
+    ],
+    "귀밑샘 보톡스 50U (엘러간)": [
+      "Parotid toxin 50 U · Allergan",
+      "耳下腺ボトックス50U（アラガン）",
+      "腮腺肉毒50U（Allergan）"
+    ],
+    "귀밑샘 보톡스 50U (티엠버스)": [
+      "Parotid toxin 50 U · Tmvers",
+      "耳下腺ボトックス50U（Tmvers）",
+      "腮腺肉毒50U（Tmvers）"
+    ],
+    "귀밑샘보톡스는 턱보톡스와 뭐가 다른가요?": [
+      "How does parotid toxin differ from masseter toxin?",
+      "エラボトックスとの違いは？",
+      "腮腺肉毒与咬肌肉毒有何不同？"
+    ],
+    "턱보톡스는 턱 근육(교근)을 축소하여 사각턱을 개선하고, 귀밑샘보톡스는 귀 아래 침샘을 축소하여 하관 볼륨을 줄여줘요. 두 시술을 함께 받으시면 턱 근육과 침샘을 동시에 관리하여 더 뚜렷한 V라인 효과를 기대할 수 있습니다.": [
+      "Masseter toxin reduces jaw muscle bulk; parotid toxin reduces salivary gland volume. Combining them addresses both and may produce a more defined V-line.",
+      "エラは咬筋、耳下腺は唾液腺のサイズを減らします。併用で両方をケアし、Vラインをより明確にすることを目指します。",
+      "咬肌肉毒减少下颌肌肉体积，腮腺肉毒减少唾液腺容量。结合两者可同时护理，获得更明显V形轮廓。"
+    ],
+    "시술 후 침이 안 나오거나 입이 마르지 않나요?": [
+      "Will it reduce saliva or cause dry mouth?",
+      "唾液が出なくなったり乾燥しませんか？",
+      "会没口水或口干吗？"
+    ],
+    "침샘은 양쪽 귀밑 외에도 턱밑, 혀밑 등 여러 곳에 분포해 있어요. 이하선 한 곳의 분비량만 조절하기 때문에 일상적인 침 분비에는 큰 영향이 없습니다.": [
+      "Salivary glands also exist under the jaw and tongue. The source explains that adjusting parotid secretion alone generally has little effect on everyday saliva production.",
+      "唾液腺は顎下や舌下にもあります。原文では耳下腺の分泌のみを調整するため、通常の唾液分泌への影響は大きくないと説明しています。",
+      "唾液腺还分布于颌下和舌下。原文说明，仅调节腮腺分泌，一般对日常唾液分泌影响不大。"
+    ],
+    "효과는 언제 나타나고, 얼마나 유지되나요?": [
+      "When do results appear and how long do they last?",
+      "効果の開始と持続は？",
+      "何时见效、持续多久？"
+    ],
+    "보통 시술 후 2~4주부터 침샘 크기가 줄어드는 것을 느끼실 수 있어요. 효과는 약 4~6개월 정도 유지되며, 반복 시술 시 유지 기간이 점차 길어지는 경향이 있습니다.": [
+      "Reduction is usually noticeable after 2–4 weeks and lasts about 4–6 months. Repeated treatment may extend maintenance duration.",
+      "通常2〜4週間で縮小を感じ、約4〜6か月持続します。継続すると持続期間が延びる傾向があります。",
+      "通常2至4周可感到腺体缩小，约维持4至6个月，重复治疗可能延长维持时间。"
+    ],
+    "처음 시술이시라면 가격이 합리적인 하이톡스(39,000원)나 이노톡스(49,000원)로 시작해 보시는 것을 추천드려요. 항체 형성이 걱정되시면 제오민, 검증된 프리미엄을 원하시면 엘러간이 적합합니다.": [
+      "First-time options include Hitox (₩39,000) or Innotox (₩49,000). Xeomin is suggested for antibody concerns, and Allergan for an established premium product.",
+      "初回はハイトックス₩39,000やイノトックス₩49,000、抗体が気になる場合はゼオミン、実績ある上位品ならアラガンが選択肢です。",
+      "初次可考虑Hitox ₩39,000或Innotox ₩49,000；在意抗体可咨询Xeomin，偏好成熟高端产品可咨询Allergan。"
+    ],
+    "시술 후 주사 부위에 가벼운 붓기나 멍이 생길 수 있으며, 보통 2~3일 내 자연스럽게 사라져요.": [
+      "Mild swelling or bruising at injection sites usually fades in 2–3 days.",
+      "注射部位の軽い腫れや内出血は通常2〜3日で消えます。",
+      "注射部位轻微肿胀或淤青通常2至3天消退。"
+    ],
+    "시술 후 4시간 이상 시술 부위를 강하게 누르거나 마사지하지 말아 주세요.": [
+      "Do not press or massage the area firmly for at least 4 hours.",
+      "少なくとも4時間は部位を強く押したり揉まないでください。",
+      "术后至少4小时勿用力按压或按摩治疗部位。"
+    ],
+    "귀밑샘 부위의 원인을 진찰한 뒤 선택하는 시술입니다.": [
+      "Selected only after examination of the cause of fullness around the parotid area.",
+      "耳下腺付近の原因を診察してから選ぶ施術です。",
+      "需面诊确认腮腺区域问题原因后选择。"
+    ],
+    "귀밑샘은 근육이 아닙니다. 지방·근육·침샘 문제를 구분해야 하므로 자동 추천에서 제외합니다.": [
+      "The parotid is not a muscle. Fat, muscle and gland causes must be distinguished, so this is excluded from automatic recommendations.",
+      "耳下腺は筋肉ではありません。脂肪・筋肉・唾液腺を区別するため自動推薦から除外します。",
+      "腮腺不是肌肉。需区分脂肪、肌肉及腺体问题，因此不自动推荐。"
+    ],
+    "타이트닝": [
+      "Tightening toxin",
+      "タイトニング・ボトックス",
+      "紧致肉毒"
+    ],
+    "보톡스 리프팅. 피부 처짐, 탄력 저하 개선": [
+      "Toxin lifting for sagging and reduced firmness.",
+      "トキシンリフトでたるみとハリ低下をケア。",
+      "肉毒提拉，改善松弛及弹性下降。"
+    ],
+    "타이트닝은 보톡스를 피부 표면 가까이 미세하게 주입하여 처진 피부를 끌어올리고 탄력을 개선하는 보톡스 리프팅 시술이에요. 1부위 단위로 세밀하게 관리하거나, 페이스라인 4대 패키지로 한 번에 관리할 수 있습니다.": [
+      "Tiny superficial toxin injections aim to lift sagging skin and improve firmness. Choose focused care by area or a four-injection facial-contour package.",
+      "浅い層へ微量注入してたるみとハリをケア。1部位ずつ、または輪郭4本プランで選べます。",
+      "浅层微量注射肉毒，改善松弛及弹性。可按1个部位精细护理，或选择面部轮廓4支套餐。"
+    ],
+    "1부위 하이톡스 14,000원, 업계 최저 수준의 합리적인 가격": [
+      "Hitox for one area at ₩14,000, an especially affordable price.",
+      "ハイトックス1部位₩14,000の低価格設定。",
+      "Hitox 1部位₩14,000，价格优惠。"
+    ],
+    "하이톡스부터 엘러간까지 5단계 약물 중 직접 선택": [
+      "Choose among five tiers from Hitox to Allergan.",
+      "ハイトックス〜アラガンの5段階から選択。",
+      "Hitox至Allergan共5档可选。"
+    ],
+    "1부위 맞춤 관리 또는 페이스라인 4대 패키지 선택 가능": [
+      "Single-area care or a four-injection facial-contour package.",
+      "1部位ケアまたは輪郭4本プラン。",
+      "可选单部位或面部轮廓4支套餐。"
+    ],
+    "비수술 리프팅으로 시술 후 바로 일상 복귀 가능": [
+      "Nonsurgical lifting with an immediate return to daily life.",
+      "切らないリフトで直後から日常生活へ。",
+      "非手术提拉，术后可立即恢复日常活动。"
+    ],
+    "봄철 처진 피부에 탄력을 되찾아 줄 가성비 관리": [
+      "Affordable care for sagging and firmness in spring.",
+      "春のたるみ・ハリを手頃にケア。",
+      "经济护理春季松弛与弹性问题。"
+    ],
+    "피부 탄력이 떨어져 처짐이 신경 쓰이기 시작한 분": [
+      "People beginning to notice sagging from reduced firmness.",
+      "ハリ低下でたるみが気になり始めた方。",
+      "开始在意弹性下降所致松弛的人群。"
+    ],
+    "합리적인 가격으로 리프팅 관리를 시작하고 싶은 분": [
+      "People starting affordable lifting care.",
+      "手頃にリフトケアを始めたい方。",
+      "希望以合理费用开始提拉护理的人群。"
+    ],
+    "특정 부위만 집중 관리하거나 페이스라인 전체를 한 번에 관리하고 싶은 분": [
+      "People seeking focused care or full facial-contour care.",
+      "特定部位または輪郭全体をケアしたい方。",
+      "希望集中护理局部或整体面部轮廓的人群。"
+    ],
+    "수술 없이 자연스러운 리프팅 효과를 원하시는 분": [
+      "People seeking natural lifting without surgery.",
+      "手術せず自然なリフトを求める方。",
+      "希望不手术、自然提拉的人群。"
+    ],
+    "타이트닝 1부위 (비에녹스)": [
+      "Tightening · 1 area · Bienox",
+      "タイトニング1部位（ビエノックス）",
+      "紧致1部位（Bienox）"
+    ],
+    "턱라인, 헤어라인, 팔자 라인, 목주름, 이마 잔주름, 앞볼 모공, 눈가+눈밑 중 택 1": [
+      "Choose one: jawline, hairline, nasolabial line, neck wrinkles, forehead fine lines, front-cheek pores, or eye area + under-eyes.",
+      "あごライン、ヘアライン、ほうれい線、首のしわ、額の小じわ、頬前面の毛穴、目元＋目の下から1つ選択。",
+      "任选1项：下颌线、发际线、法令纹、颈纹、额头细纹、前颊毛孔、眼周＋眼下。"
+    ],
+    "타이트닝 1부위 (이노톡스)": [
+      "Tightening · 1 area · Innotox",
+      "タイトニング1部位（イノトックス）",
+      "紧致1部位（Innotox）"
+    ],
+    "타이트닝 1부위 (코어톡스)": [
+      "Tightening · 1 area · Coretox",
+      "タイトニング1部位（コアトックス）",
+      "紧致1部位（Coretox）"
+    ],
+    "타이트닝 1부위 (제오민)": [
+      "Tightening · 1 area · Xeomin",
+      "タイトニング1部位（ゼオミン）",
+      "紧致1部位（Xeomin）"
+    ],
+    "타이트닝 1부위 (엘러간)": [
+      "Tightening · 1 area · Allergan",
+      "タイトニング1部位（アラガン）",
+      "紧致1部位（Allergan）"
+    ],
+    "타이트닝 1부위 (티엠버스)": [
+      "Tightening · 1 area · Tmvers",
+      "タイトニング1部位（Tmvers）",
+      "紧致1部位（Tmvers）"
+    ],
+    "페이스라인 타이트닝 (비에녹스) 4대": [
+      "Facial-contour tightening · Bienox · 4 injections",
+      "フェイスライン・タイトニング（ビエノックス）4本",
+      "面部轮廓紧致（Bienox）4支"
+    ],
+    "헤어라인 2대 + 턱라인 2대\n*이노톡스 변경 + 16,000원\n*코어톡스 변경 + 56,000원\n*제오민 변경 + 120,000원\n*엘러간 변경 + 123,000원": [
+      "Hairline 2 injections + jawline 2 injections.\n*Innotox upgrade +₩16,000; Coretox +₩56,000; Xeomin +₩120,000; Allergan +₩123,000.",
+      "ヘアライン2本＋あごライン2本。\n※変更：イノトックス＋₩16,000、コアトックス＋₩56,000、ゼオミン＋₩120,000、アラガン＋₩123,000。",
+      "发际线2支＋下颌线2支。\n*更换Innotox加₩16,000；Coretox加₩56,000；Xeomin加₩120,000；Allergan加₩123,000。"
+    ],
+    "1부위 시술과 페이스라인 4대 패키지의 차이가 뭔가요?": [
+      "How do single-area care and the four-injection package differ?",
+      "1部位と4本プランの違いは？",
+      "单部位与4支套餐有何不同？"
+    ],
+    "1부위 시술은 이마, 눈가, 볼 등 특정 부위만 집중 관리할 때 적합해요. 페이스라인 4대 패키지는 얼굴 윤곽을 따라 4개 부위를 한 번에 관리하여 전체적인 리프팅 효과를 기대할 수 있습니다.": [
+      "Single-area care targets areas such as forehead, eyes or cheeks. The four-injection package addresses four areas along the contour for overall lifting.",
+      "1部位は額・目元・頬などを集中ケア。4本プランは輪郭に沿う4部位で全体のリフトを目指します。",
+      "单部位集中护理额头、眼周或面颊；4支套餐沿面部轮廓护理4个部位，追求整体提拉。"
+    ],
+    "5가지 약물 중 어떤 걸 선택해야 하나요?": [
+      "Which of the five products should I choose?",
+      "5種類からどう選びますか？",
+      "5种制剂如何选择？"
+    ],
+    "가성비를 중시하시면 하이톡스(1부위 14,000원)가 좋고, 액상형으로 정밀한 시술을 원하시면 이노톡스를 추천드려요. 항체 걱정이 있으시면 제오민, 글로벌 프리미엄을 원하시면 엘러간이 적합합니다. 상담 시 피부 상태에 맞춰 안내해 드릴게요.": [
+      "Hitox (₩14,000 per area) emphasizes value, liquid Innotox precision, Xeomin antibody considerations and Allergan a global premium option. Consultation matches the choice to your skin.",
+      "費用重視ならハイトックス1部位₩14,000、液状の精密さならイノトックス、抗体ならゼオミン、上位品ならアラガンなど、診察で選びます。",
+      "重视性价比可选Hitox每部位₩14,000；液态精准注射可选Innotox；在意抗体可咨询Xeomin；高端款可选Allergan，面诊按肤况推荐。"
+    ],
+    "타이트닝 효과는 얼마나 유지되나요?": [
+      "How long does tightening last?",
+      "タイトニングの持続期間は？",
+      "紧致效果维持多久？"
+    ],
+    "약물과 피부 상태에 따라 다르지만, 보통 3~6개월 정도 유지돼요. 정기적으로 관리받으시면 피부 탄력 개선 효과를 꾸준히 유지할 수 있습니다.": [
+      "Usually 3–6 months, depending on product and skin. Regular care helps maintain firmness.",
+      "製品と肌によりますが通常3〜6か月で、定期ケアが維持に役立ちます。",
+      "通常3至6个月，取决于产品及肤况，定期护理有助维持弹性。"
+    ],
+    "턱보톡스나 귀밑샘보톡스와 같이 받을 수 있나요?": [
+      "Can it be combined with masseter or parotid toxin?",
+      "エラや耳下腺と併用できますか？",
+      "可以与咬肌或腮腺肉毒结合吗？"
+    ],
+    "네, 함께 시술받으시면 V라인 효과가 더 좋아요. 특히 윤곽주사의 V라인 패키지에는 턱보톡스+타이트닝 2대가 포함되어 있어 병합 관리를 합리적으로 받으실 수 있습니다.": [
+      "Yes, combinations may enhance the V-line effect. The contour-injection V-line package includes masseter toxin and two tightening injections.",
+      "はい。Vラインをより整える併用が可能です。輪郭注射のVラインプランにはエラとタイトニング2本が含まれます。",
+      "可以，组合可增强V形效果。轮廓注射V形套餐包含咬肌肉毒及紧致注射2支。"
+    ],
+    "시술 후 주사 부위에 가벼운 붉어짐이나 붓기가 있을 수 있으며, 보통 1~2일 내 사라져요.": [
+      "Mild redness or swelling at injection sites usually fades in 1–2 days.",
+      "注射部位の軽い赤みや腫れは通常1〜2日で消えます。",
+      "注射部位轻微泛红或肿胀通常1至2天消退。"
+    ],
+    "시술 당일은 음주, 사우나, 격렬한 운동을 피해 주세요.": [
+      "Avoid alcohol, saunas and intense exercise on the day.",
+      "当日は飲酒・サウナ・激しい運動を避けてください。",
+      "当天避免饮酒、桑拿及剧烈运动。"
+    ],
+    "시술 후 4시간 동안은 시술 부위를 만지거나 마사지하지 말아 주세요.": [
+      "Do not touch or massage the area for 4 hours afterward.",
+      "4時間は部位に触れたり揉まないでください。",
+      "术后4小时勿触摸或按摩治疗部位。"
+    ],
+    "임신/수유 중이거나 신경근육 질환이 있으신 분은 사전에 상담해 주세요.": [
+      "Consult beforehand if pregnant, breastfeeding or affected by neuromuscular disease.",
+      "妊娠・授乳中や神経筋疾患がある場合は事前に相談してください。",
+      "孕期、哺乳期或有神经肌肉疾病者请事先咨询。"
+    ],
+    "원문의 타이트닝 보톡스 옵션으로, 장비 리프팅과 구분한 상담 항목입니다.": [
+      "The source's tightening-toxin option is a consultation item distinct from device lifting.",
+      "原文のタイトニング・トキシンは機器リフトと区別する相談項目です。",
+      "原文中的紧致肉毒作为咨询项目，区别于设备提拉。"
+    ],
+    "타이트닝은 일반 명칭입니다. 주입 부위와 약제·방법 확인 후 탄력 관리 가능 여부를 판단합니다.": [
+      "Tightening is a generic name. Suitability depends on the injection site, product and technique.",
+      "タイトニングは一般名で、部位・薬剤・方法を確認して適応を判断します。",
+      "“紧致”是通用名称，须确认部位、制剂及方法后判断适用性。"
+    ],
+    "윤곽주사": [
+      "Contour injections",
+      "輪郭注射",
+      "轮廓注射"
+    ],
+    "지방분해주사. 볼살, 이중턱, 얼굴 윤곽 개선": [
+      "Fat-reduction injections for cheeks, double chin and facial contours.",
+      "脂肪溶解注射で頬・二重あご・輪郭をケア。",
+      "溶脂注射，改善面颊脂肪、双下巴及轮廓。"
+    ],
+    "윤곽주사는 골드아큐 지방 분해 성분을 주입하여 볼살, 이중턱 등 원하지 않는 지방을 줄이고 얼굴 윤곽을 날렵하게 만드는 비수술 시술이에요. V라인 패키지로 턱보톡스와 타이트닝까지 한 번에 관리할 수 있습니다.": [
+      "Gold Acu fat-reduction ingredients are injected to reduce unwanted cheek and under-chin fat without surgery. The V-line package also includes masseter toxin and tightening.",
+      "ゴールドアキューを注入し、頬・二重あごの脂肪を手術せず減らします。Vラインプランではエラとタイトニングも併用できます。",
+      "注入Gold Acu溶脂成分，非手术减少面颊、双下巴等多余脂肪。V形套餐还可结合咬肌肉毒及紧致。"
+    ],
+    "V라인 패키지 90,000원으로 턱보톡스+골드아큐+타이트닝까지 한 번에": [
+      "V-line package at ₩90,000 combines masseter toxin, Gold Acu and tightening.",
+      "₩90,000でエラ＋ゴールドアキュー＋タイトニング。",
+      "V形套餐₩90,000，结合咬肌肉毒、Gold Acu及紧致。"
+    ],
+    "골드아큐 지방 분해 성분이 볼살·이중턱을 자연스럽게 감소": [
+      "Gold Acu ingredients reduce cheek and double-chin fat naturally.",
+      "ゴールドアキューで頬・二重あごの脂肪を自然に減少。",
+      "Gold Acu溶脂成分自然减少面颊及双下巴脂肪。"
+    ],
+    "비수술 윤곽 관리로 일상 복귀가 빠름": [
+      "Nonsurgical contour care with quick recovery.",
+      "非手術の輪郭ケアで早く日常へ復帰。",
+      "非手术轮廓护理，快速恢复日常。"
+    ],
+    "턱보톡스, 타이트닝과 함께 받아 V라인 시너지 효과": [
+      "Combines with masseter toxin and tightening for complementary V-line effects.",
+      "エラ・タイトニング併用でVラインの相乗効果。",
+      "结合咬肌肉毒及紧致，协同改善V形轮廓。"
+    ],
+    "볼살이나 이중턱이 고민이지만 수술은 부담스러운 분": [
+      "People concerned about cheek fat or a double chin who prefer to avoid surgery.",
+      "頬脂肪・二重あごが気になるが手術は避けたい方。",
+      "在意面颊脂肪或双下巴，但不想手术的人群。"
+    ],
+    "다이어트를 해도 얼굴 지방이 잘 빠지지 않는 분": [
+      "People whose facial fat persists despite dieting.",
+      "ダイエットしても顔の脂肪が落ちにくい方。",
+      "减重后面部脂肪仍难减少的人群。"
+    ],
+    "턱보톡스+타이트닝과 함께 종합적인 V라인 관리를 원하시는 분": [
+      "People seeking comprehensive V-line care with masseter toxin and tightening.",
+      "エラ・タイトニングを含む総合Vラインケアを求める方。",
+      "希望结合咬肌肉毒及紧致全面护理V形轮廓的人群。"
+    ],
+    "봄을 맞아 날렵한 얼굴 윤곽을 준비하고 싶은 분": [
+      "People preparing sharper facial contours for spring.",
+      "春に向けシャープな輪郭を目指す方。",
+      "希望春季打造清晰面部轮廓的人群。"
+    ],
+    "골드 아큐주사 10cc": [
+      "Gold Acu injection · 10 cc",
+      "ゴールドアキュー注射10cc",
+      "Gold Acu注射10cc"
+    ],
+    "*이중턱 전용": [
+      "*For double-chin treatment only.",
+      "※二重あご専用。",
+      "*双下巴专用。"
+    ],
+    "골드 아큐주사 3cc": [
+      "Gold Acu injection · 3 cc",
+      "ゴールドアキュー注射3cc",
+      "Gold Acu注射3cc"
+    ],
+    "아큐주사 + 비타민 B 프리미엄 지방분해주사": [
+      "Acu injection + vitamin B premium fat-reduction injection.",
+      "アキュー＋ビタミンBのプレミアム脂肪溶解注射。",
+      "Acu注射＋维生素B高端溶脂注射。"
+    ],
+    "V라인 패키지에는 어떤 시술이 포함되나요?": [
+      "Which procedures are included in the V-line package?",
+      "Vラインには何が含まれますか？",
+      "V形套餐包含哪些项目？"
+    ],
+    "턱보톡스 50u(하이톡스) + 골드아큐 6cc + 타이트닝 2대(하이톡스)가 모두 포함되어 있어요. 턱 근육 축소, 지방 분해, 피부 리프팅을 한 번에 관리할 수 있어 V라인 효과가 극대화됩니다. 90,000원으로 세 가지 시술을 합리적으로 받으실 수 있어요.": [
+      "Masseter toxin 50 U (Hitox), Gold Acu 6 cc and two tightening injections (Hitox) combine muscle reduction, fat care and lifting for ₩90,000.",
+      "エラ50U（ハイトックス）＋ゴールドアキュー6cc＋タイトニング2本（ハイトックス）。筋肉・脂肪・リフトを₩90,000でまとめてケアします。",
+      "含咬肌肉毒50U（Hitox）、Gold Acu 6cc及紧致2支（Hitox），结合缩肌、溶脂与提拉，总价₩90,000。"
+    ],
+    "골드아큐 윤곽주사 시술 후 붓기가 심한가요?": [
+      "Is swelling severe after Gold Acu contour injections?",
+      "ゴールドアキュー後の腫れは強いですか？",
+      "Gold Acu轮廓注射后会很肿吗？"
+    ],
+    "시술 후 2~3일 정도 가벼운 붓기와 뻐근함이 있을 수 있어요. 개인차가 있지만 대부분 일상생활에 큰 지장이 없는 수준이며, 냉찜질을 하시면 완화에 도움이 됩니다.": [
+      "Mild swelling and aching may last 2–3 days. Usually they do not significantly affect daily life; cold compresses can help.",
+      "軽い腫れ・だるさが2〜3日続くことがありますが、通常は生活への影響が少なく、冷却で和らぐ場合があります。",
+      "可能轻微肿胀、酸胀2至3天，通常不明显影响日常生活，冷敷可帮助缓解。"
+    ],
+    "몇 회 정도 맞아야 효과를 볼 수 있나요?": [
+      "How many sessions are needed for results?",
+      "何回で効果が出ますか？",
+      "几次能看到效果？"
+    ],
+    "지방량과 원하시는 개선 정도에 따라 다르지만, 보통 2~4주 간격으로 2~3회 시술을 권장드려요. 시술 후 3~4주부터 점진적으로 지방이 감소하면서 효과를 체감하실 수 있습니다.": [
+      "Usually 2–3 sessions every 2–4 weeks, depending on fat volume and goals. Gradual fat reduction becomes noticeable from 3–4 weeks afterward.",
+      "脂肪量と目標によりますが通常2〜4週間おきに2〜3回。3〜4週間後から徐々に変化を感じます。",
+      "按脂肪量及目标，通常建议间隔2至4周共2至3次，术后3至4周开始逐步感受减脂变化。"
+    ],
+    "윤곽주사와 턱보톡스 중 어떤 걸 먼저 받아야 하나요?": [
+      "Should contour injections or masseter toxin come first?",
+      "輪郭注射とエラはどちらが先ですか？",
+      "轮廓注射与咬肌肉毒先做哪个？"
+    ],
+    "같은 날 함께 받으시는 게 가장 효과적이에요. V라인 패키지를 이용하시면 턱보톡스, 윤곽주사, 타이트닝을 한 번 방문으로 모두 진행할 수 있어 시간과 비용 모두 절약됩니다.": [
+      "The source recommends same-day combination. The V-line package includes masseter toxin, contour injections and tightening in one visit to save time and cost.",
+      "原文では同日併用をおすすめしています。Vラインプランならエラ・輪郭注射・タイトニングを1回の来院で受けられます。",
+      "原文建议同日结合。V形套餐一次就诊完成咬肌肉毒、轮廓注射及紧致，节省时间与费用。"
+    ],
+    "시술 후 2~3일간 시술 부위의 붓기, 뻐근함, 멍이 나타날 수 있으며 자연스럽게 사라져요.": [
+      "Swelling, aching or bruising may last 2–3 days and usually fades naturally.",
+      "2〜3日は腫れ・だるさ・内出血が出る場合があり、自然に落ち着きます。",
+      "肿胀、酸胀或淤青可能持续2至3天，通常自然消退。"
+    ],
+    "시술 부위를 강하게 문지르거나 마사지하지 말아 주세요.": [
+      "Avoid forceful rubbing or massage of the treated area.",
+      "部位を強くこすったり揉まないでください。",
+      "勿用力揉搓或按摩治疗部位。"
+    ],
+    "시술 후 충분한 수분 섭취가 지방 대사에 도움이 됩니다.": [
+      "Adequate water intake supports fat metabolism afterward.",
+      "十分な水分補給は脂肪代謝をサポートします。",
+      "术后充分饮水有助于脂肪代谢。"
+    ],
+    "갑상선 질환이 있으신 분은 사전에 반드시 상담해 주세요.": [
+      "Consult beforehand if you have thyroid disease.",
+      "甲状腺疾患がある方は必ず事前に相談してください。",
+      "甲状腺疾病患者务必事先咨询。"
+    ],
+    "윤곽주사는 통칭이므로 성분과 대상 부위를 먼저 확인해야 합니다.": [
+      "Contour injection is a generic name; confirm ingredients and target area first.",
+      "輪郭注射は通称のため、成分と対象部位を先に確認します。",
+      "轮廓注射是通用名称，须先确认成分及目标部位。"
+    ],
+    "얼굴 지방·근육·침샘 문제나 좌우 비대칭에 동일한 효과를 가정하지 않습니다.": [
+      "Do not assume equal effects on fat, muscle, salivary glands or facial asymmetry.",
+      "脂肪・筋肉・唾液腺・左右差に同じ効果があるとは考えません。",
+      "不能假定对脂肪、肌肉、唾液腺或左右不对称均有相同效果。"
+    ],
+    "피코 레이저": [
+      "Pico laser",
+      "ピコレーザー",
+      "皮秒激光"
+    ],
+    "피부레이저": [
+      "Skin lasers",
+      "皮膚レーザー",
+      "皮肤激光"
+    ],
+    "기미, 잡티, 흑자, 오타모반 등 색소질환 치료": [
+      "Pigmentation care for melasma, spots, lentigines and nevus of Ota.",
+      "肝斑・しみ・色素斑・太田母斑などの色素ケア。",
+      "护理黄褐斑、色斑、黑子、太田痣等色素问题。"
+    ],
+    "초단위 피코초(1조 분의 1초) 레이저로 색소를 미세하게 분해하여, 기미·잡티·색소침착을 효과적으로 관리하는 시술입니다. 피코슈어와 피코플러스 두 가지 장비를 보유하고 있어 피부 상태에 맞는 맞춤 시술이 가능해요.": [
+      "Picosecond pulses (one trillionth of a second) fragment pigment for melasma, spots and pigmentation care. PicoSure and PicoPlus allow treatment tailored to your skin.",
+      "1兆分の1秒のパルスで色素を細かく分解。ピコシュアとピコプラスで肝斑・しみ・色素沈着を肌に合わせてケアします。",
+      "以皮秒（万亿分之一秒）脉冲细化色素，护理黄褐斑、色斑及色沉。PicoSure与PicoPlus可按肤况定制。"
+    ],
+    "피코슈어+피코플러스 더블토닝 패키지 69,000원으로 색소와 톤을 동시에 관리": [
+      "PicoSure + PicoPlus double toning for pigment and tone at ₩69,000.",
+      "ピコシュア＋ピコプラスで色素・トーンをケア、₩69,000。",
+      "PicoSure＋PicoPlus双重净肤，兼顾色素与肤色，₩69,000。"
+    ],
+    "피코 토닝 49,000원부터 시작하는 합리적인 색소 관리": [
+      "Pico toning from ₩49,000.",
+      "ピコトーニング₩49,000から。",
+      "皮秒净肤₩49,000起。"
+    ],
+    "기미, 잡티, 색소침착, 피부톤 개선까지 폭넓은 적용 범위": [
+      "For melasma, spots, pigmentation and skin tone.",
+      "肝斑・しみ・色素沈着・トーンに対応。",
+      "护理黄褐斑、色斑、色沉及肤色。"
+    ],
+    "봄철 자외선에 대비하는 맑은 피부 베이스 완성": [
+      "A clearer skin base in preparation for spring UV exposure.",
+      "春の紫外線に備え、明るい肌の土台づくり。",
+      "为春季日晒做准备，打造清透肤色基础。"
+    ],
+    "기미, 잡티, 색소침착으로 피부톤이 칙칙하다고 느끼는 분": [
+      "People with dullness from melasma, spots or pigmentation.",
+      "肝斑・しみ・色素沈着によるくすみが気になる方。",
+      "因黄褐斑、色斑或色沉而肤色暗沉的人群。"
+    ],
+    "봄맞이 피부 톤업을 계획하고 있는 분": [
+      "People planning brighter skin tone for spring.",
+      "春のトーンアップを計画している方。",
+      "计划春季提亮肤色的人群。"
+    ],
+    "토닝과 프락셀 중 어떤 시술이 맞는지 고민되는 분": [
+      "People deciding between toning and fractional laser.",
+      "トーニングとフラクショナルで迷う方。",
+      "在净肤与点阵激光之间犹豫的人群。"
+    ],
+    "합리적인 가격으로 꾸준히 색소 관리를 받고 싶은 분": [
+      "People seeking affordable ongoing pigment care.",
+      "手頃に色素ケアを続けたい方。",
+      "希望经济地持续护理色素的人群。"
+    ],
+    "피코슈어 토닝": [
+      "PicoSure toning",
+      "ピコシュア・トーニング",
+      "PicoSure净肤"
+    ],
+    "나노세컨드보다 1000배 빠른 속도로 손상없이 멜라닌을 파괴하여 색소치료": [
+      "Pulses 1,000 times shorter than nanosecond pulses target melanin while minimizing damage.",
+      "ナノ秒の1,000分の1の短いパルスでメラニンを狙い、損傷を抑えてケア。",
+      "比纳秒快1,000倍的脉冲针对黑色素，减少损伤并护理色素。"
+    ],
+    "피코플러스 토닝": [
+      "PicoPlus toning",
+      "ピコプラス・トーニング",
+      "PicoPlus净肤"
+    ],
+    "피코플러스 프락셀 + 크라이오": [
+      "PicoPlus fractional + cryotherapy",
+      "ピコプラス・フラクショナル＋クライオ",
+      "PicoPlus点阵＋冷疗"
+    ],
+    "더 깊은 파장으로 효과적인 흉터개선, 모공축소효과, 그리고 피부결을 매끄럽게!": [
+      "Deeper-reaching wavelengths for scars, pores and smoother texture.",
+      "深く届く波長で瘢痕・毛穴・キメをケア。",
+      "以更深穿透波长护理疤痕、毛孔并平滑肤质。"
+    ],
+    "피코슈어 프락셀 + 크라이오": [
+      "PicoSure fractional + cryotherapy",
+      "ピコシュア・フラクショナル＋クライオ",
+      "PicoSure点阵＋冷疗"
+    ],
+    "여드름흉터, 넓은 모공, 피부결 개선 한번에 개선!": [
+      "Acne scars, enlarged pores and texture care in one treatment.",
+      "ニキビ跡・毛穴・キメを同時に改善。",
+      "同时护理痘疤、毛孔粗大及肤质。"
+    ],
+    "더블토닝 패키지": [
+      "Double-toning package",
+      "ダブルトーニングプラン",
+      "双重净肤套餐"
+    ],
+    "피코 슈어 토닝 + 피코 플러스 토닝 + 시트팩": [
+      "PicoSure toning + PicoPlus toning + sheet mask",
+      "ピコシュア＋ピコプラス・トーニング＋シートマスク",
+      "PicoSure净肤＋PicoPlus净肤＋面膜"
+    ],
+    "피코 토닝과 프락셀의 차이가 뭔가요?": [
+      "How do pico toning and fractional treatment differ?",
+      "トーニングとフラクショナルの違いは？",
+      "皮秒净肤与点阵有何区别？"
+    ],
+    "토닝은 넓은 범위의 색소와 전체적인 피부톤을 밝게 관리하는 시술이에요. 프락셀은 미세한 점 형태로 피부 깊은 층을 자극해 모공, 흉터, 깊은 색소까지 집중적으로 개선합니다. 가벼운 톤 관리라면 토닝, 깊은 색소나 피부결 개선이 필요하면 프락셀을 추천해 드려요.": [
+      "Toning addresses diffuse pigment and overall brightness. Fractional treatment stimulates deeper skin in tiny spots for pores, scars and deeper pigment. The source suggests toning for lighter tone care and fractional treatment for deeper pigment or texture.",
+      "トーニングは広範囲の色素・明るさをケア。フラクショナルは点状に深部を刺激し毛穴・瘢痕・深い色素に対応します。軽いトーンには前者、深い色素・キメには後者を案内しています。",
+      "净肤护理广泛色素与整体亮度；点阵以微点刺激深层，针对毛孔、疤痕及较深色素。原文建议轻度肤色护理选净肤，深色素或肤质问题考虑点阵。"
+    ],
+    "더블토닝 패키지는 어떤 구성인가요?": [
+      "What is included in double toning?",
+      "ダブルトーニングの内容は？",
+      "双重净肤包含什么？"
+    ],
+    "피코슈어 토닝과 피코플러스 토닝을 한 번에 받는 패키지예요. 두 장비의 파장과 특성이 달라서, 함께 시술하면 다양한 깊이의 색소를 더 효과적으로 관리할 수 있어요. 시술 후 시트팩까지 포함되어 69,000원입니다.": [
+      "PicoSure and PicoPlus combine different wavelengths and characteristics to treat pigment at different depths. Includes a sheet mask for ₩69,000.",
+      "波長・特性の異なる2機種でさまざまな深さの色素をケア。マスク込み₩69,000です。",
+      "结合PicoSure与PicoPlus的不同波长及特性，护理不同深度色素，含面膜共₩69,000。"
+    ],
+    "피코 레이저 시술 후 일상생활에 지장이 있나요?": [
+      "Will pico laser affect daily life?",
+      "日常生活への影響は？",
+      "皮秒激光会影响日常吗？"
+    ],
+    "토닝의 경우 시술 직후 약간의 붉은기가 있을 수 있지만, 대부분 당일 내로 가라앉아요. 프락셀은 미세 딱지가 3~5일 정도 생길 수 있으므로 중요한 일정 전에는 여유를 두고 시술 받으시길 권해 드려요.": [
+      "Toning redness usually settles the same day. Fractional treatment may cause fine crusts for 3–5 days; leave recovery time before major events.",
+      "トーニングの赤みは通常当日中に落ち着きます。フラクショナルは3〜5日かさぶたが出る場合があるため予定前に余裕を取ってください。",
+      "净肤泛红通常当天消退；点阵可能微小结痂3至5天，重要活动前请预留恢复时间。"
+    ],
+    "토닝은 보통 3~5회차부터 피부톤이 밝아지는 걸 느끼시는 분이 많아요. 색소 종류와 깊이에 따라 차이가 있지만, 꾸준히 관리하시면 점점 맑고 투명한 피부를 기대할 수 있습니다.": [
+      "Many notice brighter tone after 3–5 sessions. Results depend on pigment type and depth; continued care supports clearer skin.",
+      "3〜5回から明るさを感じる方が多く、色素の種類・深さにより異なります。継続で透明感を目指します。",
+      "许多人3至5次后感到肤色提亮，因色素类型及深度而异，持续护理有助于清透肤色。"
+    ],
+    "시술 후 자외선 차단제를 꼼꼼히 발라 주세요. 색소 재발 방지에 매우 중요해요": [
+      "Use sunscreen carefully to help prevent pigment recurrence.",
+      "色素再発を防ぐため丁寧に日焼け止めを使用してください。",
+      "认真防晒，对预防色素复发尤为重要。"
+    ],
+    "프락셀 시술 후 미세 딱지가 생기면 억지로 떼지 말고 자연스럽게 떨어지게 해 주세요": [
+      "Let fine crusts after fractional treatment shed naturally; do not pick.",
+      "フラクショナル後のかさぶたは無理にはがさないでください。",
+      "点阵后小结痂勿抠掉，等待自然脱落。"
+    ],
+    "시술 전후 레티놀, AHA/BHA 등 자극성 성분 사용을 1주일 정도 자제해 주세요": [
+      "Avoid retinol, AHA/BHA and irritating ingredients for about a week around treatment.",
+      "前後約1週間はレチノール・AHA/BHAなどを控えてください。",
+      "治疗前后约1周避免视黄醇、AHA/BHA等刺激成分。"
+    ],
+    "시술 후 충분한 보습을 유지해 주시면 회복이 빨라져요": [
+      "Keep skin well moisturized to support recovery.",
+      "十分な保湿で回復を助けてください。",
+      "术后充分保湿，帮助恢复。"
+    ],
+    "피코초 레이저를 사용하는 색소 관련 시술입니다.": [
+      "Pigment-related treatment using picosecond lasers.",
+      "ピコ秒レーザーによる色素関連施術です。",
+      "使用皮秒激光护理色素相关问题。"
+    ],
+    "기미는 색소의 원인과 피부 상태 평가가 먼저입니다. 흉터·모공은 장비와 프락셔널 모드 확인이 필요합니다.": [
+      "Melasma requires assessment of cause and skin. Scars and pores require confirmation of the device and fractional mode.",
+      "肝斑は原因と肌状態の評価が先です。瘢痕・毛穴は機器とフラクショナルモードを確認します。",
+      "黄褐斑需先评估原因及肤况；疤痕和毛孔用途须确认设备及点阵模式。"
+    ],
+    "카프리 레이저": [
+      "Capri laser",
+      "カプリレーザー",
+      "Capri激光"
+    ],
+    "여드름, 피지, 모공 치료 (압출 케어 포함)": [
+      "Acne, oil and pore treatment with extraction options.",
+      "圧出ケアを含むニキビ・皮脂・毛穴治療。",
+      "护理痘痘、油脂及毛孔，可含清痘。"
+    ],
+    "1,450nm 파장의 카프리 레이저는 피지선을 선택적으로 타겟하여 과도한 피지 분비를 조절하고, 넓어진 모공을 관리하는 시술입니다. 여드름이 반복되거나 모공이 고민인 분께 효과적이에요.": [
+      "The 1,450 nm Capri laser targets sebaceous glands to control excess oil and enlarged pores, addressing recurring acne and pore concerns.",
+      "1,450nmのレーザーが皮脂腺を狙い、過剰な皮脂と毛穴をケア。繰り返すニキビや毛穴の悩みに対応します。",
+      "1,450nm Capri激光选择性作用于皮脂腺，控制过度出油并护理毛孔粗大，针对反复长痘及毛孔问题。"
+    ],
+    "여드름과 모공을 동시에 관리하는 듀얼 효과": [
+      "Combined acne and pore care.",
+      "ニキビと毛穴を同時にケア。",
+      "同时护理痘痘及毛孔。"
+    ],
+    "압출 미포함 59,000원, 압출 포함 89,000원의 합리적 구성": [
+      "₩59,000 without extraction or ₩89,000 including extraction.",
+      "圧出なし₩59,000、圧出あり₩89,000。",
+      "不含清痘₩59,000，含清痘₩89,000。"
+    ],
+    "피지선을 직접 타겟하여 여드름 재발을 줄여주는 근본적 관리": [
+      "Targets sebaceous glands to reduce acne recurrence.",
+      "皮脂腺を直接狙いニキビの再発を減らします。",
+      "直接作用于皮脂腺，减少痘痘复发。"
+    ],
+    "봄철 피지 증가 시즌에 맞춘 선제적 피부 정돈": [
+      "Proactive care before spring oil production increases.",
+      "春の皮脂増加に備えた先回りケア。",
+      "针对春季出油增多的提前护理。"
+    ],
+    "여드름이 반복적으로 올라와 근본적인 관리가 필요한 분": [
+      "People with recurring acne needing ongoing cause-focused care.",
+      "繰り返すニキビを原因からケアしたい方。",
+      "反复长痘、需要针对原因护理的人群。"
+    ],
+    "코와 볼 주변 모공이 넓어져서 고민인 분": [
+      "People concerned about large pores around the nose and cheeks.",
+      "鼻や頬の毛穴の開きが気になる方。",
+      "在意鼻部及面颊毛孔粗大的人群。"
+    ],
+    "봄철 피지 분비가 늘어나기 전에 피부를 정돈하고 싶은 분": [
+      "People preparing skin before oil production rises in spring.",
+      "春に皮脂が増える前に肌を整えたい方。",
+      "希望春季出油增多前调理肤况的人群。"
+    ],
+    "레이저 관리와 압출을 한 번에 받고 싶은 분": [
+      "People wanting laser care and extraction in one session.",
+      "レーザーと圧出を一度に受けたい方。",
+      "希望一次完成激光及清痘的人群。"
+    ],
+    "카프리레이저(압출미포함)": [
+      "Capri laser · without extraction",
+      "カプリレーザー（圧出なし）",
+      "Capri激光（不含清痘）"
+    ],
+    "피지선 파괴로 반복되는 여드름 관리! 치료와 예방을 동시에": [
+      "Targets sebaceous glands for recurring acne care and prevention.",
+      "皮脂腺に働きかけ、繰り返すニキビを治療・予防。",
+      "作用于皮脂腺，兼顾反复痘痘护理及预防。"
+    ],
+    "카프리레이저(압출포함)": [
+      "Capri laser · with extraction",
+      "カプリレーザー（圧出あり）",
+      "Capri激光（含清痘）"
+    ],
+    "카프리 레이저가 일반 여드름 치료와 다른 점이 뭔가요?": [
+      "How does Capri differ from standard acne care?",
+      "通常のニキビケアとの違いは？",
+      "Capri与普通痘痘护理有何不同？"
+    ],
+    "일반 여드름 관리가 이미 올라온 여드름을 치료하는 데 집중한다면, 카프리 레이저는 피지선 자체를 타겟해 피지 분비를 줄여 줘요. 여드름이 생기는 원인을 관리하기 때문에 반복적인 여드름 고민에 효과적입니다.": [
+      "Standard care focuses on existing acne; Capri targets the glands to reduce oil production and address a cause of recurring acne.",
+      "既存のニキビをケアする方法に対し、カプリは皮脂腺を狙って分泌を減らし、再発の原因に働きかけます。",
+      "一般护理侧重已出现的痘痘，Capri针对皮脂腺减少油脂分泌，从原因上护理反复长痘。"
+    ],
+    "압출 포함과 미포함 중 어떤 걸 선택해야 하나요?": [
+      "Should I choose extraction or no extraction?",
+      "圧出あり・なしはどう選びますか？",
+      "选择含清痘还是不含清痘？"
+    ],
+    "현재 여드름이 활발하게 올라와 있다면 압출 포함(89,000원)을 추천해 드려요. 여드름은 잠잠한데 모공 관리나 피지 조절이 목적이라면 압출 미포함(59,000원)으로도 충분합니다.": [
+      "The source recommends extraction (₩89,000) for active breakouts; when acne is quiet and the goal is pores or oil control, the no-extraction option (₩59,000) may suffice.",
+      "現在ニキビが多い場合は圧出あり₩89,000、落ち着いていて毛穴・皮脂目的なら圧出なし₩59,000を案内しています。",
+      "原文建议正在明显长痘时选含清痘（₩89,000）；痘痘稳定、主要护理毛孔或控油时可选不含清痘（₩59,000）。"
+    ],
+    "시술이 아프거나 다운타임이 긴가요?": [
+      "Is treatment painful or downtime long?",
+      "痛みや長い回復期間はありますか？",
+      "疼痛或恢复期长吗？"
+    ],
+    "시술 시 따끔한 느낌이 있지만 참을 수 있는 수준이에요. 시술 후 1~2일 정도 붉은기가 있을 수 있고, 압출을 함께 받으시면 부위에 따라 2~3일 정도 더 걸릴 수 있습니다. 일상생활은 바로 가능해요.": [
+      "A tolerable stinging sensation may occur. Redness can last 1–2 days, with extraction sometimes adding 2–3 days by area. Daily activities can resume immediately.",
+      "耐えられる程度の刺激があります。赤みは1〜2日、圧出併用では部位によりさらに2〜3日かかる場合がありますが、日常生活はすぐ可能です。",
+      "可能有可耐受的刺痛。泛红持续1至2天，清痘部位可能再多需2至3天，但可立即恢复日常活动。"
+    ],
+    "시술 후 자극적인 화장품(레티놀, 필링 제품 등) 사용을 3~5일 자제해 주세요": [
+      "Avoid irritating products such as retinol and peels for 3–5 days.",
+      "3〜5日はレチノールやピーリングなどを控えてください。",
+      "术后3至5天避免视黄醇、去角质等刺激性产品。"
+    ],
+    "시술 당일은 과도한 음주와 사우나를 피해 주세요": [
+      "Avoid excessive alcohol and saunas that day.",
+      "当日は過度の飲酒とサウナを避けてください。",
+      "当天避免过量饮酒及桑拿。"
+    ],
+    "시술 후 충분한 보습과 자외선 차단을 꼼꼼히 해 주세요": [
+      "Moisturize well and carefully protect skin from UV afterward.",
+      "施術後は十分な保湿と丁寧な紫外線対策をしてください。",
+      "术后充分保湿，认真防晒。"
+    ],
+    "압출 부위에 딱지가 생기면 손으로 뜯지 말고 자연스럽게 떨어지게 해 주세요": [
+      "Do not pick crusts on extraction sites; let them fall off naturally.",
+      "圧出部位のかさぶたは取らず自然に落ちるのを待ってください。",
+      "清痘部位结痂勿抠掉，等待自然脱落。"
+    ],
+    "피지선에 작용하는 1450nm 레이저를 이용한 여드름 관련 시술입니다.": [
+      "An acne-related treatment using a 1450 nm laser targeting sebaceous glands.",
+      "皮脂腺に作用する1450nmレーザーのニキビ関連施術です。",
+      "以1450nm激光作用于皮脂腺的痘痘相关护理。"
+    ],
+    "피부과 진료 안내를 근거로 여드름·피지에 분류했습니다. 여드름의 원인과 치료 단계를 확인한 뒤 선택합니다.": [
+      "Classified for acne and oil based on dermatology guidance. Confirm the acne cause and treatment stage before choosing.",
+      "皮膚科の案内を基にニキビ・皮脂へ分類。原因と治療段階を確認して選びます。",
+      "依据皮肤科说明归入痘痘与皮脂类，选择前须确认痘痘原因及治疗阶段。"
+    ],
+    "AAD · Microneedling": [
+      "AAD · Microneedling",
+      "AAD · マイクロニードリング",
+      "AAD · 微针"
+    ],
+    "AAD · Acne scars": [
+      "AAD · Acne scars",
+      "AAD · ニキビ跡",
+      "AAD · 痘疤"
+    ],
+    "AAD · Rosacea treatment": [
+      "AAD · Rosacea treatment",
+      "AAD · 酒さ治療",
+      "AAD · 玫瑰痤疮治疗"
+    ],
+    "AAD · Melasma treatment": [
+      "AAD · Melasma treatment",
+      "AAD · 肝斑治療",
+      "AAD · 黄褐斑治疗"
+    ],
+    "AAD · Wrinkles": [
+      "AAD · Wrinkles",
+      "AAD · しわ",
+      "AAD · 皱纹"
+    ],
+    "Solta · Thermage FLX": [
+      "Solta · Thermage FLX",
+      "Solta · サーマクールFLX",
+      "Solta · 热玛吉FLX"
+    ],
+    "Merz · Ultherapy PRIME": [
+      "Merz · Ultherapy PRIME",
+      "Merz · ウルセラ・プライム",
+      "Merz · Ultherapy PRIME"
+    ],
+    "BTL · EMFACE": [
+      "BTL · EMFACE",
+      "BTL · エムフェイス",
+      "BTL · EMFACE"
+    ],
+    "INNOXUS · ALLTITE": [
+      "INNOXUS · ALLTITE",
+      "INNOXUS · オルタイト",
+      "INNOXUS · ALLTITE"
+    ],
+    "Jeisys · DENSITY": [
+      "Jeisys · DENSITY",
+      "Jeisys · デンシティ",
+      "Jeisys · DENSITY"
+    ],
+    "CLASSYS · 슈링크 유니버스": [
+      "CLASSYS · Shurink Universe",
+      "CLASSYS · シュリンク・ユニバース",
+      "CLASSYS · Shurink Universe"
+    ],
+    "InMode · Forma": [
+      "InMode · Forma",
+      "InMode · Forma",
+      "InMode · Forma"
+    ],
+    "Jeisys · POTENZA": [
+      "Jeisys · POTENZA",
+      "Jeisys · ポテンツァ",
+      "Jeisys · POTENZA"
+    ],
+    "Jeisys · POTENZA product profile": [
+      "Jeisys · POTENZA product profile",
+      "Jeisys · ポテンツァ製品概要",
+      "Jeisys · POTENZA产品介绍"
+    ],
+    "4.4의원 · 포텐자 모공·흉터": [
+      "4.4 Clinic · Potenza for pores and scars",
+      "4.4クリニック · ポテンツァの毛穴・瘢痕治療",
+      "4.4诊所 · Potenza毛孔与疤痕护理"
+    ],
+    "BAZ BIOMEDIC · 큐어젯 기술": [
+      "BAZ BIOMEDIC · CureJet technology",
+      "BAZ BIOMEDIC · キュアジェットの技術",
+      "BAZ BIOMEDIC · CureJet技术"
+    ],
+    "Cutera · Secret RF": [
+      "Cutera · Secret RF",
+      "Cutera · シークレットRF",
+      "Cutera · Secret RF"
+    ],
+    "Hans Biomed · CellREDM": [
+      "Hans Biomed · CellREDM",
+      "Hans Biomed · セルディエム",
+      "Hans Biomed · CellREDM"
+    ],
+    "엘레브의원 · 리투오 ECM": [
+      "Eleve Clinic · Re2O ECM",
+      "エレヴクリニック · リトゥオECM",
+      "Eleve诊所 · Re2O ECM"
+    ],
+    "PharmaResearch · 리쥬란 PN": [
+      "PharmaResearch · Rejuran PN",
+      "PharmaResearch · リジュランPN",
+      "PharmaResearch · Rejuran PN"
+    ],
+    "Allergan · SKINVIVE patient information": [
+      "Allergan · SKINVIVE patient information",
+      "Allergan · スキンバイブ患者向け情報",
+      "Allergan · SKINVIVE患者资料"
+    ],
+    "PRP Science · 올리디아 PLLA": [
+      "PRP Science · Olidia PLLA",
+      "PRP Science · オリディアPLLA",
+      "PRP Science · Olidia PLLA"
+    ],
+    "VAIM · JUVELOOK": [
+      "VAIM · JUVELOOK",
+      "VAIM · ジュベルック",
+      "VAIM · JUVELOOK"
+    ],
+    "에피소드의원 · 쥬베룩 스킨": [
+      "Episode Clinic · Juvelook Skin",
+      "エピソードクリニック · ジュベルック・スキン",
+      "Episode诊所 · Juvelook Skin"
+    ],
+    "BMI Korea · Lilied M": [
+      "BMI Korea · Lilied M",
+      "BMI Korea · リリードM",
+      "BMI Korea · Lilied M"
+    ],
+    "엘리온의원 · 릴리이드 M": [
+      "Elion Clinic · Lilied M",
+      "エリオンクリニック · リリードM",
+      "Elion诊所 · Lilied M"
+    ],
+    "리뉴미피부과 · 더모톡신": [
+      "Renewme Dermatology · Dermotoxin",
+      "リニューミー皮膚科 · ダーマトキシン",
+      "Renewme皮肤科 · 微滴肉毒"
+    ],
+    "Cleveland Clinic · Botox for jaw muscles": [
+      "Cleveland Clinic · Botox for jaw muscles",
+      "Cleveland Clinic · 咬筋のボトックス",
+      "Cleveland Clinic · 咬肌肉毒"
+    ],
+    "프리마피부과 · 부위별 보톡스": [
+      "Prima Dermatology · Toxin by treatment area",
+      "プリマ皮膚科 · 部位別ボトックス",
+      "Prima皮肤科 · 分部位肉毒"
+    ],
+    "Cynosure · PicoSure": [
+      "Cynosure · PicoSure",
+      "Cynosure · ピコシュア",
+      "Cynosure · PicoSure"
+    ],
+    "셀런스의원 · 카프리 레이저": [
+      "Cellance Clinic · Capri laser",
+      "セランスクリニック · カプリレーザー",
+      "Cellance诊所 · Capri激光"
+    ],
+    "대한임상피부치료연구회 · NECA 미용주사 검토 소개": [
+      "Korean Society for Clinical Therapeutic Dermatology · NECA cosmetic-injection review",
+      "韓国臨床皮膚治療研究会 · NECA美容注射レビュー紹介",
+      "韩国临床皮肤治疗研究会 · NECA美容注射评估介绍"
+    ]
+  },
+  "sourceSha256": "3cb19eac28f453a8d3c9c675ccdc2ee67b509675ffa561bfb02250974b73f75f"
+}

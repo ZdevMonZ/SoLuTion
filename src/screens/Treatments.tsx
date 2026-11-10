@@ -24,6 +24,7 @@ import { treatmentImage } from '../data/treatmentImages'
 import { useStrings } from '../data/strings'
 import { useCopy, useLang } from '../i18n'
 import { useCatalog } from '../i18n/catalog'
+import { treatmentText } from '../i18n/treatmentContent'
 import { TREATMENT_LIST } from '../i18n/treatments'
 import { matchesLeadingConcern } from '../analysis/treatmentRecommendations'
 import { TREATMENT_CONCERN_COPY } from '../i18n/treatmentConcerns'
@@ -54,7 +55,7 @@ export function Treatments() {
   const [filter, setFilter] = useState<ConcernFilter>(ALL)
 
   const matched = recommendations.length > 0
-  // The store ranks the English objects; the cards read the same ids in this language.
+  // The store ranks the source objects; the cards read the same ids in this language.
   const list: Treatment[] = matched ? recommendations.map((t) => cat.treatment(t)) : cat.TREATMENTS
   const priority = analysis ? rankedCategories(analysis).slice(0, 2).map((row) => row.category) : []
   const filters = [...new Set([...priority, ...TREATMENT_CONCERNS])]
@@ -193,7 +194,7 @@ export function Treatments() {
                     {tags.map((tag) => <Tag key={tag}>{concerns.labels[tag]}</Tag>)}
                     {conditional && <Tag bg="#FFF5E5" color="#875B19">{concerns.conditional}</Tag>}
                   </div>
-                  <div lang="ko" style={{ marginBottom: 8, fontSize: 12, color: C.bodyMuted }}>{t.source?.category}</div>
+                  <div lang={lang} style={{ marginBottom: 8, fontSize: 12, color: C.bodyMuted }}>{t.source?.category}</div>
                   <Pressable
                     onClick={() => open(t.id)}
                     style={{ display: 'block', textAlign: 'left', flex: 1 }}
@@ -217,8 +218,8 @@ export function Treatments() {
 
                   <details className="treatment-classification-note">
                     <summary>{concerns.sources}</summary>
-                    <p lang="ko">{rule.note}</p>
-                    {rule.sourceIds.map((id) => <a key={id} href={CLASSIFICATION_SOURCES[id].url} target="_blank" rel="noreferrer">{CLASSIFICATION_SOURCES[id].title} ↗</a>)}
+                    <p lang={lang}>{treatmentText(rule.note, lang)}</p>
+                    {rule.sourceIds.map((id) => <a key={id} href={CLASSIFICATION_SOURCES[id].url} target="_blank" rel="noreferrer">{treatmentText(CLASSIFICATION_SOURCES[id].title, lang)} ↗</a>)}
                   </details>
                   <div
                     style={{
@@ -287,8 +288,7 @@ export function Treatments() {
         <details className="treatment-source-list">
           <summary>{concerns.sources} · {concerns.reviewed(CLASSIFICATION_REVIEWED_AT)}</summary>
           <p>{concerns.sourcesNote}</p>
-          {lang !== 'ko' && <p>{concerns.languageNote}</p>}
-          <ul>{sourceIds.map((id) => <li key={id}><a href={CLASSIFICATION_SOURCES[id].url} target="_blank" rel="noreferrer">{CLASSIFICATION_SOURCES[id].title} ↗</a></li>)}</ul>
+          <ul>{sourceIds.map((id) => <li key={id}><a href={CLASSIFICATION_SOURCES[id].url} target="_blank" rel="noreferrer">{treatmentText(CLASSIFICATION_SOURCES[id].title, lang)} ↗</a></li>)}</ul>
         </details>
         <Note style={{ marginTop: 26, maxWidth: 720 }}>{flow.priceNote}</Note>
       </Shell>

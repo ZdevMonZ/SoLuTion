@@ -1,9 +1,6 @@
-/**
- * Localized catalog access. CSV-backed treatment copy stays in the supplied
- * Korean; legacy translation tables only localize clinics, products and posts.
- * IDs, prices and ranking metadata are shared across every UI language.
- */
+/** Localized catalog access. Treatment copy follows the supplied CSV in all four languages. */
 import { useMemo } from 'react'
+import { localizeTreatment } from './treatmentContent'
 import {
   CLINICS,
   DISTRICTS,
@@ -52,19 +49,21 @@ export interface LocalCatalog {
   productsFor: (treatment: Treatment) => Product[]
   tieFor: (product: Product, treatmentId: string) => string
   priceRangeIn: (districtKey: string | null, treatmentId: string) => string
-  /** Re-reads an object the store is holding (English) in the page's language. */
+  /** Re-reads the store's source object in the page's language. */
   treatment: (t: Treatment) => Treatment
 }
 
+const englishTreatments = TREATMENTS.map((t) => localizeTreatment(t, 'en'))
+const englishById = new Map(englishTreatments.map((t) => [t.id, t]))
 const ENGLISH: LocalCatalog = {
-  TREATMENTS,
+  TREATMENTS: englishTreatments,
   PRODUCTS,
   CLINICS,
   DISTRICTS,
   SEED_POSTS,
   EARN_RULES,
   STORE_ITEMS,
-  treatmentById,
+  treatmentById: (id) => id ? englishById.get(id) : undefined,
   productById,
   clinicById,
   districtByKey,
@@ -73,7 +72,7 @@ const ENGLISH: LocalCatalog = {
   productsFor,
   tieFor,
   priceRangeIn,
-  treatment: (t) => t,
+  treatment: (t) => englishById.get(t.id) ?? t,
 }
 
 const WORDS: Record<Exclude<Lang, 'en'>, CatalogText> = {
@@ -85,13 +84,13 @@ const WORDS: Record<Exclude<Lang, 'en'>, CatalogText> = {
 // Built on first use and kept: a language nobody picks is never assembled.
 const built = new Map<Lang, LocalCatalog>()
 
-/** Builds the catalogue for one language. English is the source, returned as is. */
+/** Builds and caches the catalogue for the selected language. */
 export function catalogFor(lang: Lang): LocalCatalog {
   if (lang === 'en') return ENGLISH
   let catalog = built.get(lang)
   if (!catalog) {
     if (import.meta.env.DEV) reportGaps(lang, WORDS[lang])
-    catalog = overlay(WORDS[lang])
+    catalog = overlay(WORDS[lang], lang)
     built.set(lang, catalog)
   }
   return catalog
@@ -119,8 +118,9 @@ function walkLabel(english: string, walk: CatalogText['walk']): string {
   return walk(Number(match[1]), metres)
 }
 
-function withWords(en: Treatment, words: TreatmentText | undefined): Treatment {
-  if (en.source || !words) return en
+function withWords(en: Treatment, words: TreatmentText | undefined, lang: Lang): Treatment {
+  if (en.source) return localizeTreatment(en, lang)
+  if (!words) return en
   const { steps, priceBasis, ...rest } = words
   return {
     ...en,
@@ -134,8 +134,8 @@ const byId = <T extends { id: string }>(list: T[]): Map<string, T> =>
   new Map(list.map((item) => [item.id, item]))
 
 /** The English catalogue with one language's words laid over it, id for id. */
-function overlay(words: CatalogText): LocalCatalog {
-  const treatments = TREATMENTS.map((t) => withWords(t, entry(words.treatments, t.id)))
+function overlay(words: CatalogText, lang: Lang): LocalCatalog {
+  const treatments = TREATMENTS.map((t) => withWords(t, entry(words.treatments, t.id), lang))
   const products = PRODUCTS.map((p) => {
     const w = entry(words.products, p.id)
     return w ? { ...p, ...w } : p

@@ -31,7 +31,6 @@ const en = {
   sources: 'Classification notes & sources', sourcesNote: 'Manufacturer information, medical societies, and clinic guidance inform this classification. Uses and approvals vary by product, mode, and country.',
   reviewed: (date: string) => `Reviewed ${date}`,
   topNeedsConsultation: 'Your leading concern needs an examination before a procedure can be matched. You can still explore every category below.',
-  languageNote: 'The treatment summaries and classification notes are provided in Korean.',
 }
 export const TREATMENT_CONCERN_COPY: Tables<typeof en> = {
   en,
@@ -56,7 +55,6 @@ export const TREATMENT_CONCERN_COPY: Tables<typeof en> = {
     noMatch: '이 고민은 원인 확인이 먼저예요', browseAll: '전체 시술 둘러보기',
     sources: '분류 기준과 참고 자료', sourcesNote: '제조사 안내·의학회 자료·의료기관 설명을 참고해 분류했습니다. 제품·시술 방식·국가별 허가 범위가 같다는 뜻은 아닙니다.',
     reviewed: (date) => `${date} 자료 확인`, topNeedsConsultation: '가장 먼저 확인할 고민은 진찰 후 시술을 정해야 해요. 아래에서 다른 고민별 시술도 모두 살펴볼 수 있습니다.',
-    languageNote: '시술 요약과 분류 설명은 한국어로 제공됩니다.',
   },
   ja: {
     labels: { PORES: '毛穴', ACNE: 'ニキビ・皮脂', SCARS: 'ニキビ跡', PIGMENT: '色素・肝斑', WRINKLES: 'しわ', LAXITY: 'ハリ・たるみ', HYDRATION: '保湿・肌質', CONTOUR: '輪郭・部位別の悩み', REDNESS: '赤み', BALANCE: '左右バランス', CONSULT: '相談して選択' },
@@ -71,7 +69,7 @@ export const TREATMENT_CONCERN_COPY: Tables<typeof en> = {
     heading: '悩み別に探す', intro: '診断後もすべての悩みを閲覧できます。主な用途を先に、関連・条件付きの施術を次に表示します。', allDescription: 'カードで主な目的を確認できます。分類は参考情報で、施術には医師の評価が必要です。',
     count: (n) => `${n}件の施術`, priority: '診断で注目', related: '主な悩みに関連', conditional: '相談して確認', primary: '主な目的', secondary: '関連する悩み',
     noMatch: 'まず原因の確認が必要です', browseAll: 'すべての施術を見る', sources: '分類の根拠と参考資料', sourcesNote: 'メーカー・医学会・医療機関の情報を参考にしています。製品、方法、国によって承認範囲が異なります。',
-    reviewed: (date) => `確認日 ${date}`, topNeedsConsultation: '最優先の悩みは診察後に施術を選びます。下でほかの分類も閲覧できます。', languageNote: '施術の要約と分類の説明は韓国語で提供されます。',
+    reviewed: (date) => `確認日 ${date}`, topNeedsConsultation: '最優先の悩みは診察後に施術を選びます。下でほかの分類も閲覧できます。',
   },
   zh: {
     labels: { PORES: '毛孔', ACNE: '痘痘·皮脂', SCARS: '痘疤', PIGMENT: '色素·黄褐斑', WRINKLES: '皱纹', LAXITY: '紧致·松弛', HYDRATION: '保湿·肤质', CONTOUR: '轮廓·局部问题', REDNESS: '泛红', BALANCE: '左右平衡', CONSULT: '咨询后选择' },
@@ -84,6 +82,6 @@ export const TREATMENT_CONCERN_COPY: Tables<typeof en> = {
     heading: '按问题查找', intro: '检测后仍可浏览所有分类。先显示主要用途，再显示相关或有条件的选项。', allDescription: '卡片显示项目主要目的。分类供浏览参考，实际选择需医生评估。',
     count: (n) => `${n}个项目`, priority: '检测关注项', related: '与主要问题相关', conditional: '咨询后确认', primary: '主要用途', secondary: '相关用途',
     noMatch: '先确认原因', browseAll: '浏览所有项目', sources: '分类依据与参考资料', sourcesNote: '参考厂商、医学会及医疗机构资料。不同产品、方法和国家的适用及批准范围可能不同。',
-    reviewed: (date) => `资料确认 ${date}`, topNeedsConsultation: '最优先问题需面诊后选择项目。您仍可浏览下方其他分类。', languageNote: '项目摘要与分类说明以韩语提供。',
+    reviewed: (date) => `资料确认 ${date}`, topNeedsConsultation: '最优先问题需面诊后选择项目。您仍可浏览下方其他分类。',
   },
 }

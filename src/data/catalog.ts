@@ -1,7 +1,10 @@
 import { classificationFor } from './treatmentConcerns'
 import source from './treatments.generated.json'
 
-export type TreatmentSource = (typeof source.treatments)[number]
+type GeneratedTreatment = (typeof source.treatments)[number]
+export type TreatmentSource = Omit<GeneratedTreatment, 'packages'> & {
+  packages: GeneratedTreatment['packages'][number][]
+}
 
 import type { SeverityLevel, SkinCategory } from '../analysis/types'
 

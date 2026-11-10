@@ -49,15 +49,21 @@ test('cancel stays on the originating page, without granting review access', () 
     assert.equal(finishSignup(canceled).page, page) // voluntary signup has no stale redirect
   }
 })
-test('30 source records keep their content in every UI language and have unique English artwork', () => {
+test('30 records retain source provenance and unique English artwork in every UI language', () => {
   assert.equal(TREATMENTS.length, 30)
   const imageUrls = new Set()
   for (const lang of ['en', 'ko', 'ja', 'zh']) {
     const cat = catalogFor(lang)
     for (const t of cat.TREATMENTS) {
-      assert.equal(t.summary, t.source.raw['시술 안내'].trim())
-      assert.equal(t.cardSummary, classificationFor(t.id).summary)
-      assert.equal(t.name, t.source.raw['장비(시술)'].trim())
+      const original = TREATMENTS.find((row) => row.id === t.id)
+      assert.deepEqual(t.source.raw, original.source.raw)
+      assert.equal(t.summary, t.source.overview)
+      assert.equal(t.name, t.source.name)
+      if (lang === 'ko') {
+        assert.equal(t.summary, t.source.raw['시술 안내'].trim())
+        assert.equal(t.cardSummary, classificationFor(t.id).summary)
+        assert.equal(t.name, t.source.raw['장비(시술)'].trim())
+      }
       assert.ok(t.source.faqs.length > 0)
       assert.ok(t.source.cautions.length > 0)
       assert.equal(cat.productsFor(t).length, 0)
