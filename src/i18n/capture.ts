@@ -16,6 +16,7 @@ import type { Tables } from './index'
 const en = {
   title: 'Line your face up inside the outline.',
   backHome: 'Back to home',
+  androidCameraDenied: 'Allow camera access for SoLuTion in Android Settings → Apps → SoLuTion → Permissions, then return and tap Try again.',
   mobileTitle: 'Frame your face',
   mobileTip: 'Face the light and keep your whole face in the oval.',
   mobileAlign: 'Look straight ahead and align your face with the oval.',
@@ -65,6 +66,7 @@ export const CAPTURE_SCREEN: Tables<typeof en> = {
   ko: {
     title: '얼굴을 가이드라인 안에 맞춰 주세요.',
     backHome: '홈으로 돌아가기',
+    androidCameraDenied: '휴대폰 설정 → 앱 → SoLuTion → 권한에서 카메라를 허용한 뒤 돌아와 다시 시도를 눌러 주세요.',
     mobileTitle: '얼굴을 가이드에 맞춰 주세요',
     mobileTip: '밝은 곳에서 얼굴 전체가 보이도록 맞춰 주세요.',
     mobileAlign: '정면을 보고 타원 안에 얼굴을 맞춰 주세요.',
@@ -99,6 +101,7 @@ export const CAPTURE_SCREEN: Tables<typeof en> = {
   ja: {
     title: '枠の中に顔を合わせてください。',
     backHome: 'ホームに戻る',
+    androidCameraDenied: '端末の設定 → アプリ → SoLuTion → 権限でカメラを許可し、戻って「もう一度試す」を押してください。',
     mobileTitle: '枠の中に顔を合わせてください',
     mobileTip: '明るい場所で、顔全体を枠に収めてください。',
     mobileAlign: '正面を向いて、枠の中に顔を合わせてください。',
@@ -133,6 +136,7 @@ export const CAPTURE_SCREEN: Tables<typeof en> = {
   zh: {
     title: '请将面部对准框内。',
     backHome: '返回首页',
+    androidCameraDenied: '请在手机设置 → 应用 → SoLuTion → 权限中允许使用摄像头，然后返回并点击重试。',
     mobileTitle: '请将面部对准框内',
     mobileTip: '请面向光源，让整个面部出现在框内。',
     mobileAlign: '请直视镜头，将面部对准椭圆框。',

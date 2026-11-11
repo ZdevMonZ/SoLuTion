@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:android": "tsc -b && vite build --outDir dist-android --base /SoLuTion/ --target chrome100",
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "node --import ./scripts/test-register.mjs --test tests/*.test.mjs",

@@ -76,6 +76,7 @@ export function Capture() {
   const { CAPTURE, ageBandLabel, genderLabel } = useStrings()
   const copy = useCopy(CAPTURE_SCREEN)
   const flow = useCopy(TREATMENT_FLOW)
+  const androidHost = typeof location !== 'undefined' && location.hostname === 'appassets.androidplatform.net'
 
   const videoRef = useRef<HTMLVideoElement | null>(null)
   const previewRef = useRef<HTMLDivElement | null>(null)
@@ -137,6 +138,22 @@ export function Capture() {
     setArmed(false)
     setAttempt((value) => value + 1)
   }, [stop])
+
+  // The Android host releases the camera in the background and reacquires it
+  // on return, without leaving a stale stream attached to the preview.
+  useEffect(() => {
+    let suspended = false
+    const pause = () => { suspended = true; stop() }
+    const resume = () => {
+      if (suspended) { suspended = false; restart() }
+    }
+    window.addEventListener('solution:pause', pause)
+    window.addEventListener('solution:resume', resume)
+    return () => {
+      window.removeEventListener('solution:pause', pause)
+      window.removeEventListener('solution:resume', resume)
+    }
+  }, [stop, restart])
 
   useEffect(() => {
     const video = videoRef.current
@@ -403,7 +420,7 @@ export function Capture() {
                 {copy.blocked[block].title}
               </div>
               <Prose size={14.5} style={{ marginTop: 12, maxWidth: 460 }}>
-                {copy.blocked[block].body}
+                {androidHost && block === 'denied' ? copy.androidCameraDenied : copy.blocked[block].body}
               </Prose>
               <div
                 style={{

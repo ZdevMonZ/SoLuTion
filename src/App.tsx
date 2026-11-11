@@ -35,6 +35,7 @@ import { C } from './theme'
 import { useCopy } from './i18n'
 import { APP } from './i18n/app'
 import { useStore, type Page } from './state/store'
+import { backDestination } from './state/navigation'
 
 const SCREENS: Record<Page, () => React.JSX.Element> = {
   landing: Landing,
@@ -62,7 +63,7 @@ const SCREENS: Record<Page, () => React.JSX.Element> = {
 }
 
 export default function App() {
-  const { page, modal, signedIn } = useStore()
+  const { page, modal, signedIn, go, closeModal } = useStore()
   const copy = useCopy(APP)
   const Screen = page === 'community' && !signedIn ? Landing : SCREENS[page]
 
@@ -72,6 +73,16 @@ export default function App() {
     document.title = copy.documentTitle
     document.querySelector('meta[name="description"]')?.setAttribute('content', copy.description)
   }, [copy])
+
+  useEffect(() => {
+    const back = (event: Event) => {
+      if (modal) { event.preventDefault(); closeModal(); return }
+      const destination = backDestination(page)
+      if (destination) { event.preventDefault(); go(destination) }
+    }
+    window.addEventListener('solution:back', back)
+    return () => window.removeEventListener('solution:back', back)
+  }, [page, modal, go, closeModal])
 
   return (
     <div
