@@ -18,3 +18,6 @@
 .treatment-next { position:sticky; top:100px; }
 .treatment-reference-price { font-size:25px; font-weight:600; color:#14203a; margin-top:8px; overflow-wrap:anywhere; }
 @media (max-width:900px) { .treatment-detail-layout { grid-template-columns:minmax(0,1fr); gap:28px; } .treatment-next { position:static; grid-row:2; } }
+
+.treatment-classification-detail { margin-top:24px; color:#5c6680; font-size:13px; line-height:1.8; }
+.treatment-classification-detail summary { cursor:pointer; color:#2e5aac; font-weight:600; }

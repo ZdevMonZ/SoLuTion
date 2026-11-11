@@ -8,6 +8,9 @@ import { useCopy, useLang } from '../i18n'
 import { useCatalog } from '../i18n/catalog'
 import { TREATMENT_FLOW } from '../i18n/treatmentFlow'
 import { FILTER_TREATMENT_PREFIX, useStore, useTreatment } from '../state/store'
+import { classificationFor, CLASSIFICATION_SOURCES } from '../data/treatmentConcerns'
+import { TREATMENT_CONCERN_COPY } from '../i18n/treatmentConcerns'
+import { treatmentText } from '../i18n/treatmentContent'
 import './Detail.css'
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
@@ -23,6 +26,8 @@ export function Detail() {
   const treatment = cat.treatment(useTreatment())
   const source = treatment.source!
   const copy = useCopy(TREATMENT_FLOW)
+  const concerns = useCopy(TREATMENT_CONCERN_COPY)
+  const rule = classificationFor(treatment.id)
   const { lang } = useLang()
   const narrow = useNarrow()
   const image = treatmentImage(treatment.id)
@@ -63,6 +68,11 @@ export function Detail() {
               ))}
             </Section>
             <Section title={copy.cautions}><Points items={source.cautions} /></Section>
+            <details className="treatment-classification-detail">
+              <summary>{concerns.sources}</summary>
+              <p>{treatmentText(rule.note, lang)}</p>
+              <ul>{rule.sourceIds.map((id) => <li key={id}><a href={CLASSIFICATION_SOURCES[id].url} target="_blank" rel="noreferrer">{treatmentText(CLASSIFICATION_SOURCES[id].title, lang)} ↗</a></li>)}</ul>
+            </details>
           </article>
           <aside className="treatment-next">
             <Card style={{ padding: narrow ? 22 : 28 }}>

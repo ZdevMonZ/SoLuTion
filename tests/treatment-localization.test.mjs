@@ -88,10 +88,10 @@ test('language switching uses current names throughout cards, detail, clinics an
     const cards = render(Treatments)
     for (const t of cat.TREATMENTS) {
       assert.ok(cards.includes(escapeText(t.cardSummary)), `${lang}: missing ${t.id} card summary`)
-      assert.ok(cards.includes(escapeText(treatmentText(classificationFor(t.id).note, lang))))
     }
     const detail = render(Detail)
     assert.ok(detail.includes(cat.TREATMENTS[0].source.overview))
+    assert.ok(detail.includes(escapeText(treatmentText(classificationFor(cat.TREATMENTS[0].id).note, lang))), "classification notes are available in detail")
     assert.ok(detail.includes(`lang="${lang}"`))
     for (const screen of [Treatments, Detail, Clinics, Booking]) {
       const html = render(screen)

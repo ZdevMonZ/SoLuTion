@@ -1,9 +1,12 @@
 import research from './treatmentClassification.json'
-import type { SkinCategory } from '../analysis/types'
+import { SKIN_CATEGORIES, type SkinCategory } from '../analysis/types'
 
 export const TREATMENT_CONCERNS = ['PORES', 'ACNE', 'SCARS', 'PIGMENT', 'WRINKLES', 'LAXITY', 'HYDRATION', 'CONTOUR', 'REDNESS', 'BALANCE', 'CONSULT'] as const
 export type TreatmentConcern = (typeof TREATMENT_CONCERNS)[number]
 export type ConcernFilter = 'all' | TreatmentConcern
+/** Visible on mobile and desktop; retain the full taxonomy for treatment metadata. */
+export const TREATMENT_BROWSE_CATEGORIES = SKIN_CATEGORIES.filter((category) => category !== 'BALANCE')
+export type BrowseFilter = 'all' | (typeof TREATMENT_BROWSE_CATEGORIES)[number]
 export interface TreatmentClassification {
   primary: TreatmentConcern[]
   secondary: TreatmentConcern[]

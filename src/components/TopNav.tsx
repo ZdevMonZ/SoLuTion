@@ -8,12 +8,13 @@ import { useSyncExternalStore } from 'react'
  */
 import { Icon, PATHS } from './Icons'
 import { Pressable } from './primitives'
-import { useCaptureLayout } from './layout'
+import { useCaptureLayout, useNarrow } from './layout'
 import { C, FONT_DISPLAY } from '../theme'
 import { LANGUAGES } from '../data/languages'
 import { useCopy, useLang } from '../i18n'
 import { NAV, type NavTab } from '../i18n/nav'
 import { useStore, type Page } from '../state/store'
+import './TopNav.css'
 
 interface NavItem {
   id: NavTab
@@ -82,6 +83,8 @@ export function TopNav() {
   const { lang } = useLang()
   const copy = useCopy(NAV)
   const captureLayout = useCaptureLayout()
+  const phone = useNarrow()
+  const bottomTabs = phone && page === 'treatments'
   const active = NAV_FOR[page]
   const narrow = useSyncExternalStore(subscribeNav, () => window.matchMedia(COMPACT_NAV).matches, () => false)
   // The language in force, in its own script: "한국어" on a Korean page, not
@@ -96,23 +99,25 @@ export function TopNav() {
         onClick={() => go(item.page)}
         className="nav-item"
         style={{
-          padding: narrow ? '9px 4px' : '9px 15px',
+          padding: bottomTabs ? '8px 2px' : narrow ? '9px 4px' : '9px 15px',
           flex: narrow ? 1 : undefined,
           textAlign: 'center',
           borderRadius: 9,
-          fontSize: narrow ? 13.5 : 14.5,
+          fontSize: bottomTabs ? 10.5 : narrow ? 13.5 : 14.5,
           fontWeight: on ? 600 : 500,
           whiteSpace: 'nowrap',
           color: on ? C.blue : C.bodyFaint,
-          background: on ? C.chip : 'transparent',
+          background: on && !bottomTabs ? C.chip : 'transparent',
         }}
       >
+        {bottomTabs && <Icon path={item.id === 'home' ? 'M3 10l9-7 9 7v10h-6v-7H9v7H3z' : item.id === 'skin' ? PATHS.camera : item.id === 'community' ? PATHS.comment : 'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z'} size={20} />}
         {copy.tabs[item.id]}
       </Pressable>
     )
   })
 
   return (
+    <>
     <div
       style={{
         position: 'sticky',
@@ -239,7 +244,7 @@ export function TopNav() {
         </div>
       </div>
 
-      {narrow ? (
+      {narrow && !bottomTabs ? (
         <>
           <nav
             style={{
@@ -253,5 +258,7 @@ export function TopNav() {
         </>
       ) : null}
     </div>
+    {bottomTabs && <nav className="treatment-mobile-nav">{tabs}</nav>}
+    </>
   )
 }

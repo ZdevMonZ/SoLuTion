@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { TREATMENTS } from '../src/data/catalog.ts'
-import { classificationFor, CLASSIFICATION_SOURCES, TREATMENT_CONCERNS, concernTier, filterTreatments } from '../src/data/treatmentConcerns.ts'
+import { classificationFor, CLASSIFICATION_SOURCES, TREATMENT_CONCERNS, TREATMENT_BROWSE_CATEGORIES, concernTier, filterTreatments } from '../src/data/treatmentConcerns.ts'
 import { rankTreatments, matchesLeadingConcern } from '../src/analysis/treatmentRecommendations.ts'
 import { SKIN_CATEGORIES } from '../src/analysis/types.ts'
 import { TREATMENT_CONCERN_COPY } from '../src/i18n/treatmentConcerns.ts'
@@ -77,4 +77,11 @@ test('filtering is stable, deduplicated, and does not mutate the recommendation 
     assert.deepEqual(tiers, [...tiers].sort())
   }
   assert.deepEqual(TREATMENTS.map((t) => t.id), original)
+})
+
+test('browse categories follow diagnosis order without balance; full catalogue remains available', () => {
+  assert.deepEqual(TREATMENT_BROWSE_CATEGORIES, SKIN_CATEGORIES.filter((key) => key !== 'BALANCE'))
+  assert.equal(TREATMENT_BROWSE_CATEGORIES.length, 6)
+  const all = filterTreatments(TREATMENTS, 'all')
+  for (const id of ['tx_skinvive', 'tx_jaw_botox', 'tx_delivery']) assert.ok(all.some((t) => t.id === id))
 })
