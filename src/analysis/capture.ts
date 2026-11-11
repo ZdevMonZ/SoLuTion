@@ -26,7 +26,7 @@ import { ELLIPSE_CX, ELLIPSE_CY, ELLIPSE_RX, ELLIPSE_RY, measure } from './skinP
 import type { SkinMetrics } from './skinPixelAnalysis'
 import type { FaceBox } from './faceGateRules'
 
-/** The viewfinder's shape in the design (`aspect-ratio:16/10`). */
+/** Desktop viewfinder shape; mobile uses its available viewport instead. */
 export const PREVIEW_ASPECT = 16 / 10
 
 /**
@@ -51,14 +51,37 @@ export interface CropRect {
   height: number
 }
 
+export interface PreviewSize {
+  width: number
+  height: number
+}
+
+/** Mobile shows the entire sensor image (object-fit: contain), without digital
+ * zoom. Keep the guide inside that image, including when the phone rotates. */
+export function mobileFraming(videoW: number, videoH: number, preview: PreviewSize) {
+  const scale = Math.min(preview.width / videoW, preview.height / videoH)
+  const visibleW = videoW * scale
+  const visibleH = videoH * scale
+  const ovalWidth = Math.min(visibleW * 0.68, visibleH * 0.60 * (250 / 326))
+  const ovalHeight = ovalWidth * (326 / 250)
+  const centreX = preview.width / 2
+  const centreY = (preview.height - visibleH) / 2 + visibleH * 0.48
+  const width = ovalWidth / scale / (2 * ELLIPSE_RX)
+  const height = ovalHeight / scale / (2 * ELLIPSE_RY)
+  return {
+    guide: { left: centreX - ovalWidth / 2, top: centreY - ovalHeight / 2, width: ovalWidth, height: ovalHeight },
+    crop: { x: videoW / 2 - ELLIPSE_CX * width, y: videoH * 0.48 - ELLIPSE_CY * height, width, height },
+  }
+}
+
 /**
  * Where the analysis looks inside a video frame of `videoW` x `videoH`.
  *
- * Mirrors what the browser does to fit the frame into the viewfinder
- * (`object-fit: cover`): the frame is centre-cropped to the box's aspect first,
- * and the guide oval lives inside what survives.
+ * Desktop mirrors object-fit: cover, centre-cropping to 16:10. Mobile mirrors
+ * object-fit: contain and derives the larger guide from the whole sensor image.
  */
-export function cropRectFor(videoW: number, videoH: number): CropRect {
+export function cropRectFor(videoW: number, videoH: number, mobilePreview?: PreviewSize): CropRect {
+  if (mobilePreview) return mobileFraming(videoW, videoH, mobilePreview).crop
   const videoAspect = videoW / videoH
   const visW = videoAspect > PREVIEW_ASPECT ? videoH * PREVIEW_ASPECT : videoW
   const visH = videoAspect > PREVIEW_ASPECT ? videoH : videoW / PREVIEW_ASPECT
@@ -84,8 +107,9 @@ export function cropRectFor(videoW: number, videoH: number): CropRect {
 export function regionMapper(
   videoW: number,
   videoH: number,
+  mobilePreview?: PreviewSize,
 ): (box: FaceBox) => FaceBox {
-  const crop = cropRectFor(videoW, videoH)
+  const crop = cropRectFor(videoW, videoH, mobilePreview)
   return (box) => ({
     left: (box.left * videoW - crop.x) / crop.width,
     right: (box.right * videoW - crop.x) / crop.width,
@@ -107,10 +131,10 @@ function downscale(width: number, height: number): number {
  * what people expect to see of themselves, but the analysis reads the true frame,
  * as the phone's saved JPEG did.
  */
-export function grabFrame(video: HTMLVideoElement): HTMLCanvasElement {
+export function grabFrame(video: HTMLVideoElement, mobilePreview?: PreviewSize): HTMLCanvasElement {
   const vw = video.videoWidth
   const vh = video.videoHeight
-  const crop = cropRectFor(vw, vh)
+  const crop = cropRectFor(vw, vh, mobilePreview)
   const scale = downscale(crop.width, crop.height)
 
   const canvas = document.createElement('canvas')

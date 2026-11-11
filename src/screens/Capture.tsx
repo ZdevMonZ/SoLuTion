@@ -23,7 +23,7 @@ import { TREATMENT_FLOW } from '../i18n/treatmentFlow'
  * after `FALLBACK_MS` the button arms itself regardless, because a detector that
  * cannot read someone must not lock them out of their own reading.
  */
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Icon, PATHS } from '../components/Icons'
 import {
   Card,
@@ -37,7 +37,8 @@ import {
   StepProgress,
   useTracking,
 } from '../components/primitives'
-import { screenPadding, useNarrow } from '../components/layout'
+import { screenPadding, useCaptureLayout } from '../components/layout'
+import './Capture.css'
 import { C, FONT_DISPLAY, FONT_MONO_TEXT } from '../theme'
 import { useStrings } from '../data/strings'
 import { useCopy } from '../i18n'
@@ -48,6 +49,7 @@ import {
   canvasFromImage,
   grabFrame,
   regionMapper,
+  mobileFraming,
 } from '../analysis/capture'
 import { inspect, loadVideoDetector, readVideoFrame } from '../analysis/faceDetector'
 import { faceLost, next } from '../analysis/blinkRules'
@@ -69,13 +71,15 @@ type Phase = 'starting' | 'live' | 'paused' | 'blocked'
 
 export function Capture() {
   const { go, runAnalysis, profile } = useStore()
-  const narrow = useNarrow()
+  const narrow = useCaptureLayout()
   const tracking = useTracking()
   const { CAPTURE, ageBandLabel, genderLabel } = useStrings()
   const copy = useCopy(CAPTURE_SCREEN)
   const flow = useCopy(TREATMENT_FLOW)
 
   const videoRef = useRef<HTMLVideoElement | null>(null)
+  const previewRef = useRef<HTMLDivElement | null>(null)
+  const [frame, setFrame] = useState({ width: 360, height: 480, videoW: 720, videoH: 960 })
   const cameraRef = useRef<ReturnType<typeof startCameraPreview> | null>(null)
   const livenessRef = useRef<LivenessState>('NO_FACE')
   /** Held so the detector loop and the key handler cannot both fire the shutter. */
@@ -90,6 +94,31 @@ export function Capture() {
   const [armed, setArmed] = useState(false)
   const [rejection, setRejection] = useState<CaptureRejection | null>(null)
   const [rejections, setRejections] = useState(0)
+
+  // The guide, face detector and saved crop all use the rendered video geometry.
+  // ResizeObserver covers Safari's changing toolbar height as well as rotation.
+  const blocked = phase === 'blocked'
+  useLayoutEffect(() => {
+    const preview = previewRef.current
+    const video = videoRef.current
+    if (!preview || !video || !narrow) return
+    const update = () => {
+      const { width, height } = preview.getBoundingClientRect()
+      if (width > 0 && height > 0) setFrame({ width, height, videoW: video.videoWidth || 720, videoH: video.videoHeight || 960 })
+    }
+    const observer = new ResizeObserver(update)
+    observer.observe(preview)
+    video.addEventListener('resize', update)
+    update()
+    return () => { observer.disconnect(); video.removeEventListener('resize', update) }
+  }, [narrow, blocked])
+
+  const previewSize = useCallback(() => {
+    if (!narrow || !previewRef.current) return undefined
+    const { width, height } = previewRef.current.getBoundingClientRect()
+    return width > 0 && height > 0 ? { width, height } : undefined
+  }, [narrow])
+  const mobileGuide = mobileFraming(frame.videoW, frame.videoH, frame).guide
 
   const stop = useCallback(() => {
     cameraRef.current?.stop()
@@ -161,12 +190,12 @@ export function Capture() {
     if (!video || busyRef.current || video.videoWidth === 0) return
     busyRef.current = true
     try {
-      void submit(grabFrame(video))
+      void submit(grabFrame(video, previewSize()))
     } catch (error) {
       console.warn('[capture] the frame could not be grabbed', error)
       busyRef.current = false
     }
-  }, [submit])
+  }, [submit, previewSize])
 
   // The detector loop. Runs only while the viewfinder is live and no capture is
   // being processed, and never overlaps itself.
@@ -182,7 +211,7 @@ export function Capture() {
       void readVideoFrame(
         video,
         performance.now(),
-        regionMapper(video.videoWidth, video.videoHeight),
+        regionMapper(video.videoWidth, video.videoHeight, previewSize()),
       )
         .then((reading) => {
           if (cancelled) return
@@ -206,7 +235,7 @@ export function Capture() {
       cancelled = true
       clearInterval(timer)
     }
-  }, [phase, rejection, shoot])
+  }, [phase, rejection, shoot, previewSize])
 
   // The two clocks: one admits the blink check is struggling, the other hands the
   // shutter over anyway.
@@ -267,8 +296,22 @@ export function Capture() {
           : CAPTURE.livenessPrompt
 
   return (
-    <div style={{ flex: 1, padding: screenPadding(narrow, 48, 80) }}>
-      <Shell width={980}>
+    <div className={narrow ? 'capture-mobile' : undefined} style={{ flex: 1, padding: narrow ? undefined : screenPadding(false, 48, 80) }}>
+      <Shell width={980} style={narrow ? { width: '100%', height: '100%', display: 'flex', flexDirection: 'column', minHeight: 0 } : undefined}>
+        {narrow ? (
+          <header className="capture-header">
+            <div className="capture-header-actions">
+              <Pressable onClick={() => go('landing')} label={copy.backHome} className="capture-back">
+                <span style={{ display: 'flex', transform: 'rotate(180deg)' }}><Icon path={PATHS.arrow} size={20} /></span>
+              </Pressable>
+              <span className="capture-step">01 / 02</span>
+              <Pressable onClick={() => go('form')} className="capture-profile">{flow.profile}</Pressable>
+              <Pressable onClick={skip} className="capture-skip">{CAPTURE.skip}</Pressable>
+            </div>
+            <h1>{copy.mobileTitle}</h1>
+            <p>{copy.mobileTip}</p>
+          </header>
+        ) : <>
         <StepProgress step={1} of={2} width={720} />
         <div style={{ marginTop: 16, display: 'flex', gap: 12, flexWrap: 'wrap', fontSize: 13, color: C.bodyMuted }}>
           <span>{profile.ageBand ? ageBandLabel(profile.ageBand) : '—'} · {profile.gender ? genderLabel(profile.gender) : '—'}</span>
@@ -307,9 +350,10 @@ export function Capture() {
             {CAPTURE.skip}
           </Pressable>
         </div>
-
+        </>}
         {phase === 'blocked' ? (
           <Card
+            className={narrow ? 'capture-blocked' : undefined}
             style={{
               marginTop: narrow ? 22 : 30,
               padding: narrow ? 12 : 22,
@@ -405,17 +449,20 @@ export function Capture() {
           </Card>
         ) : (
           <Card
+            className={narrow ? 'capture-panel' : undefined}
             style={{
-              marginTop: narrow ? 22 : 30,
-              padding: narrow ? 12 : 22,
+              marginTop: narrow ? 0 : 30,
+              padding: narrow ? 0 : 22,
               borderRadius: narrow ? 18 : 22,
               boxShadow: '0 20px 50px rgba(20,32,58,.07)',
             }}
           >
             <div
+              ref={previewRef}
+              className={narrow ? 'capture-viewfinder' : undefined}
               style={{
                 position: 'relative',
-                aspectRatio: '16/10',
+                aspectRatio: narrow ? undefined : '16/10',
                 borderRadius: 16,
                 overflow: 'hidden',
                 background: 'linear-gradient(200deg,#13294D 0%,#0E2142 45%,#0B1E3D 100%)',
@@ -431,7 +478,7 @@ export function Capture() {
                   inset: 0,
                   width: '100%',
                   height: '100%',
-                  objectFit: 'cover',
+                  objectFit: narrow ? 'contain' : 'cover',
                   // A mirror is what people expect of themselves. The analysis reads
                   // the true frame; only the preview is flipped.
                   transform: 'scaleX(-1)',
@@ -449,9 +496,11 @@ export function Capture() {
               >
                 <div
                   style={{
-                    position: 'relative',
-                    width: `${GUIDE_OVAL_W_FRAC * 100}%`,
-                    height: `${GUIDE_OVAL_H_FRAC * 100}%`,
+                    position: narrow ? 'absolute' : 'relative',
+                    width: narrow ? mobileGuide.width : `${GUIDE_OVAL_W_FRAC * 100}%`,
+                    height: narrow ? mobileGuide.height : `${GUIDE_OVAL_H_FRAC * 100}%`,
+                    left: narrow ? mobileGuide.left : undefined,
+                    top: narrow ? mobileGuide.top : undefined,
                   }}
                 >
                   <div
@@ -459,8 +508,8 @@ export function Capture() {
                       position: 'absolute',
                       inset: 0,
                       borderRadius: '50% 50% 48% 48%/58% 58% 42% 42%',
-                      border: `2px dashed ${liveness === 'NO_FACE' ? 'rgba(143,184,232,.9)' : 'rgba(186,220,255,.95)'}`,
-                      boxShadow: '0 0 70px rgba(46,90,172,.3) inset',
+                      border: `${narrow ? 3 : 2}px dashed ${liveness === 'NO_FACE' ? 'rgba(143,184,232,.9)' : 'rgba(186,220,255,.95)'}`,
+                      boxShadow: narrow ? '0 0 0 100vmax rgba(4,15,32,.22)' : '0 0 70px rgba(46,90,172,.3) inset',
                     }}
                   />
                   <div
@@ -506,6 +555,7 @@ export function Capture() {
                   display: 'flex',
                   alignItems: 'center',
                   gap: narrow ? 7 : 9,
+                  maxWidth: narrow ? '49%' : undefined,
                   padding: narrow ? '6px 10px' : '8px 13px',
                   borderRadius: 20,
                   background: 'rgba(11,30,61,.62)',
@@ -525,6 +575,7 @@ export function Capture() {
                 </div>
               </div>
               <div
+                className={narrow ? 'capture-local' : undefined}
                 style={{
                   position: 'absolute',
                   right: narrow ? 10 : 18,
@@ -550,7 +601,7 @@ export function Capture() {
               )}
 
               {/* The prompt sits over the frame, where the eyes already are. */}
-              <div
+              {!narrow && <div
                 role="status"
                 aria-live="polite"
                 style={{
@@ -577,12 +628,17 @@ export function Capture() {
                 >
                   {prompt}
                 </div>
-              </div>
+              </div>}
             </div>
 
+            {narrow && <div className="capture-status" role="status" aria-live="polite">
+              {canShoot ? copy.mobileReady : trouble ? copy.mobileManual : liveness === 'NO_FACE' ? copy.mobileAlign : copy.blinkHint}
+            </div>}
+
             <div
+              className={narrow ? 'capture-controls' : undefined}
               style={{
-                marginTop: narrow ? 14 : 20,
+                marginTop: narrow ? 0 : 20,
                 display: 'flex',
                 flexWrap: 'wrap',
                 gap: narrow ? 14 : 18,
@@ -591,7 +647,7 @@ export function Capture() {
                 padding: narrow ? '0 4px 4px' : undefined,
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, maxWidth: 520 }}>
+              {!narrow && <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, maxWidth: 520 }}>
                 <div
                   style={{
                     width: 34,
@@ -611,7 +667,7 @@ export function Capture() {
                   <span style={{ fontWeight: 600, color: C.ink }}>{copy.lightLead}</span>
                   {copy.lightBody}
                 </div>
-              </div>
+              </div>}
               {/* On a phone the two buttons share the full width, the shutter the larger half. */}
               <div
                 style={{
@@ -624,7 +680,7 @@ export function Capture() {
               >
                 <GhostButton
                   onClick={restart}
-                  height={50}
+                  height={narrow ? 60 : 50}
                   fontSize={15}
                   padding={narrow ? 12 : 22}
                   full={narrow}
@@ -637,7 +693,7 @@ export function Capture() {
                 <PrimaryButton
                   onClick={shoot}
                   disabled={!canShoot}
-                  height={50}
+                  height={narrow ? 60 : 50}
                   padding={narrow ? 12 : 28}
                   fontSize={15.5}
                   full={narrow}
@@ -650,13 +706,7 @@ export function Capture() {
               </div>
             </div>
             {/* A phone has no Space or R key to press. */}
-            {narrow ? (
-              canShoot ? null : (
-                <Note style={{ marginTop: 10, padding: '0 4px', fontSize: 12.5 }}>
-                  {copy.blinkHint}
-                </Note>
-              )
-            ) : (
+            {!narrow && (
               <Note style={{ marginTop: 14, fontSize: 12.5 }}>
                 {canShoot ? copy.keysArmed : copy.keysWaiting}
               </Note>
@@ -699,6 +749,8 @@ export function Capture() {
             style={{
               width: '100%',
               maxWidth: 520,
+              maxHeight: narrow ? 'calc(100dvh - 32px)' : undefined,
+              overflowY: narrow ? 'auto' : undefined,
               borderRadius: 22,
               padding: narrow ? 22 : 32,
               boxShadow: '0 40px 80px rgba(11,30,61,.28)',

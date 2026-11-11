@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" />
+    <title>Capture layout QA — simulated camera</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      // Development-only visual fixture; never requests camera permission.
+      // Open /tests/manual/capture.html in Vite, then use device emulation.
+      import React, { useEffect } from 'react'
+      import { createRoot } from 'react-dom/client'
+      import App from '/src/App.tsx'
+      import { LangProvider } from '/src/i18n/index.tsx'
+      import { StoreProvider, useStore } from '/src/state/store.tsx'
+      import '/src/index.css'
+      if (!import.meta.env.DEV) throw new Error('Development fixture only')
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', { value: async () => {
+        const canvas = document.createElement('canvas')
+        canvas.width = 720
+        canvas.height = 960
+        const ctx = canvas.getContext('2d')
+        const gradient = ctx.createLinearGradient(0, 0, 720, 960)
+        gradient.addColorStop(0, '#536b85')
+        gradient.addColorStop(1, '#b9c9d7')
+        ctx.fillStyle = gradient
+        ctx.fillRect(0, 0, 720, 960)
+        ctx.strokeStyle = 'rgba(255,255,255,.2)'
+        for (let x = 0; x <= 720; x += 120) {
+          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 960); ctx.stroke()
+        }
+        for (let y = 0; y <= 960; y += 120) {
+          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(720, y); ctx.stroke()
+        }
+        return canvas.captureStream(5)
+      } })
+      function Preview() {
+        const { go } = useStore()
+        useEffect(() => { go('capture') }, [go])
+        return React.createElement(App)
+      }
+      createRoot(document.getElementById('root')).render(
+        React.createElement(LangProvider, null,
+          React.createElement(StoreProvider, null, React.createElement(Preview))))
+    </script>
+  </body>
+</html>

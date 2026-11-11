@@ -9,6 +9,18 @@ import { useSyncExternalStore } from 'react'
  * screen stacks into one, and the page gutter drops from 32px to 16px.
  */
 const NARROW_QUERY = '(max-width: 760px)'
+const CAPTURE_QUERY = '(max-width: 760px), (max-height: 500px) and (pointer: coarse)'
+
+function subscribeCapture(onChange: () => void) {
+  const mq = window.matchMedia(CAPTURE_QUERY)
+  mq.addEventListener('change', onChange)
+  return () => mq.removeEventListener('change', onChange)
+}
+
+/** Keep the focused camera layout when a phone turns sideways. */
+export function useCaptureLayout(): boolean {
+  return useSyncExternalStore(subscribeCapture, () => window.matchMedia(CAPTURE_QUERY).matches, () => false)
+}
 
 function subscribeNarrow(onChange: () => void) {
   const mq = window.matchMedia(NARROW_QUERY)

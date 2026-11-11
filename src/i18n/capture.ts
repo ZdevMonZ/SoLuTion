@@ -15,6 +15,12 @@ import type { Tables } from './index'
 
 const en = {
   title: 'Line your face up inside the outline.',
+  backHome: 'Back to home',
+  mobileTitle: 'Frame your face',
+  mobileTip: 'Face the light and keep your whole face in the oval.',
+  mobileAlign: 'Look straight ahead and align your face with the oval.',
+  mobileManual: 'Hold still. You can also use the Capture button shortly.',
+  mobileReady: 'When ready, tap Capture or blink to take your photo.',
   /**
    * The panel in place of the viewfinder: access refused (`denied`), or no camera
    * the browser could open (`unavailable`). Each body names the way forward.
@@ -58,6 +64,12 @@ export const CAPTURE_SCREEN: Tables<typeof en> = {
   en,
   ko: {
     title: '얼굴을 가이드라인 안에 맞춰 주세요.',
+    backHome: '홈으로 돌아가기',
+    mobileTitle: '얼굴을 가이드에 맞춰 주세요',
+    mobileTip: '밝은 곳에서 얼굴 전체가 보이도록 맞춰 주세요.',
+    mobileAlign: '정면을 보고 타원 안에 얼굴을 맞춰 주세요.',
+    mobileManual: '잠시 멈춰 주세요. 곧 촬영 버튼으로도 찍을 수 있어요.',
+    mobileReady: '준비되면 촬영 버튼을 누르거나 눈을 깜빡여 주세요.',
     blocked: {
       denied: {
         title: '카메라 접근이 차단되어 있어요',
@@ -86,6 +98,12 @@ export const CAPTURE_SCREEN: Tables<typeof en> = {
   },
   ja: {
     title: '枠の中に顔を合わせてください。',
+    backHome: 'ホームに戻る',
+    mobileTitle: '枠の中に顔を合わせてください',
+    mobileTip: '明るい場所で、顔全体を枠に収めてください。',
+    mobileAlign: '正面を向いて、枠の中に顔を合わせてください。',
+    mobileManual: '動かずにお待ちください。まもなく撮影ボタンも使えます。',
+    mobileReady: '準備ができたら撮影ボタンを押すか、まばたきしてください。',
     blocked: {
       denied: {
         title: 'カメラへのアクセスがブロックされています',
@@ -114,6 +132,12 @@ export const CAPTURE_SCREEN: Tables<typeof en> = {
   },
   zh: {
     title: '请将面部对准框内。',
+    backHome: '返回首页',
+    mobileTitle: '请将面部对准框内',
+    mobileTip: '请面向光源，让整个面部出现在框内。',
+    mobileAlign: '请直视镜头，将面部对准椭圆框。',
+    mobileManual: '请保持不动，稍后也可点击拍摄按钮。',
+    mobileReady: '准备好后，请点击拍摄按钮或眨眼拍照。',
     blocked: {
       denied: {
         title: '摄像头访问被阻止',

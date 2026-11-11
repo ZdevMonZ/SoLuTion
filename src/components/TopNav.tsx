@@ -8,6 +8,7 @@ import { useSyncExternalStore } from 'react'
  */
 import { Icon, PATHS } from './Icons'
 import { Pressable } from './primitives'
+import { useCaptureLayout } from './layout'
 import { C, FONT_DISPLAY } from '../theme'
 import { LANGUAGES } from '../data/languages'
 import { useCopy, useLang } from '../i18n'
@@ -80,11 +81,13 @@ export function TopNav() {
   const { page, signedIn, go, openModal } = useStore()
   const { lang } = useLang()
   const copy = useCopy(NAV)
+  const captureLayout = useCaptureLayout()
   const active = NAV_FOR[page]
   const narrow = useSyncExternalStore(subscribeNav, () => window.matchMedia(COMPACT_NAV).matches, () => false)
   // The language in force, in its own script: "한국어" on a Korean page, not
   // "Korean" — the word its card in the picker leads with.
   const current = LANGUAGES.find((l) => l.lang === lang)?.native ?? 'English'
+  if (page === 'capture' && captureLayout) return null
   const tabs = TABS.map((item) => {
     const on = active === item.id
     return (
